@@ -1,0 +1,7 @@
+2017-08-30 00:10:43.334 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-08-30 00:46:26.571 +02:00 [Information] Campus data: e92de5a4-eb0f-4395-a675-2892a4cad5b9 2017.08.22. 0:00:00 2017.08.31. 0:00:00 True
+2017-08-30 01:09:42.314 +02:00 [Information] Campus data: 0bf49dd8-74ff-428b-b77b-e0e5b5337889 2018.03.01. 0:00:00 2018.05.10. 0:00:00 False
+2017-08-30 01:47:33.005 +02:00 [Information] Campus data: cb3aed8b-0ccf-4b2a-ac6a-923820f080d2 2018.06.01. 0:00:00 2018.08.31. 0:00:00 False
+2017-08-30 02:16:35.159 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-08-30 02:18:22.286 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-08-30 02:22:53.493 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
