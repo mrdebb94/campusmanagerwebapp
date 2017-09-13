@@ -11,7 +11,7 @@ using System;
 namespace EvoManager.Migrations
 {
     [DbContext(typeof(EvoDbContext))]
-    [Migration("20170830002752_InitialCreate")]
+    [Migration("20170908095556_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -597,7 +597,7 @@ namespace EvoManager.Migrations
 
             modelBuilder.Entity("EvoManager.Models.CampusParticipation", b =>
                 {
-                    b.HasOne("EvoManager.Models.Campus")
+                    b.HasOne("EvoManager.Models.Campus", "Campus")
                         .WithMany("CampusParticipations")
                         .HasForeignKey("CampusId");
 

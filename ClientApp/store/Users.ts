@@ -2,12 +2,12 @@ import { fetch, addTask } from 'domain-task';
 import { Action, Reducer, ActionCreator } from 'redux';
 import { AppThunkAction } from './';
 
-
 export interface User {
-	id?: string;
+	userId?: string;
 	name: string;
 	password: string;
 	email: string;
+	type: string;
 };
 
 export interface UsersState {
@@ -40,45 +40,80 @@ interface ToggleUserDialog {
 
 type KnownAction = SetUsersListAction | AddUserAction | ToggleUserDialog | ModifyEditedUserAction;
 
+export const userServices = {
+
+	//credentials: 'include' 
+	listUsers: (): Promise<any> => new Promise<any>((resolve) => {
+		//TODO: hibakezelés
+		fetch('api/user/list', {
+			method: 'GET',
+		}).then(response => response.json()).then((response) => {
+			resolve(response);
+		});
+	}),
+
+	addUser: (editedUser, xsrfToken): Promise<any> => new Promise<any>((resolve) => {
+		let data = JSON.stringify({
+			Name: editedUser.name,
+			Password: editedUser.password,
+			Email: editedUser.email,
+			Type: editedUser.type
+		});
+		//TODO: hibakezelés
+		let headers = {};
+
+		headers['Content-Type'] = 'application/json';
+		headers['X-XSRF-TOKEN'] = xsrfToken;
+
+		fetch('api/user/add', {
+			method: 'POST',
+			/*headers: {
+				'Content-Type': 'application/json'	
+			}*/
+			headers,
+			body: data,
+			credentials: 'include'
+		})
+			.then((response) => {
+				resolve(response);
+			});
+	})
+}
+
 export const actionCreators = {
 	addUser: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
 
 		let { users: { editedUser } } = getState();
+		let { session } = getState();
 
 		if (editedUser) {
+
+			console.log("Token " + session.xsrfToken);
 
 			//let {name, email,password } = editedUser;
 
 			//let data = new FormData();
 			//data.append("json", JSON.stringify({ Name: editedUser.name, Password: editedUser.password, Email: editedUser.email }));
-            let data = JSON.stringify({ Name: editedUser.name, Password: editedUser.password, Email: editedUser.email });
+			let data = JSON.stringify({ Name: editedUser.name, Password: editedUser.password, Email: editedUser.email });
 			//TODO: hibakezelés
-			fetch('api/user/add', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: data
-			})
-				.then((response) => {
+			userServices.addUser(editedUser, session.xsrfToken).then((response) => {
+				userServices.listUsers().then((response) => {
+					dispatch({ type: 'SET_USERS_LIST', usersList: response });
 					dispatch({ type: 'TOGGLE_USER_DIALOG', open: false });
 				});
+			});
 		}
 
 	},
 	setUsersList: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
 
-		//TODO: hibakezelés
-		fetch('api/user/list', {
-			method: 'GET',
-		})
-			.then(response => response.json()).then((response) => {
-				dispatch({ type: 'SET_USERS_LIST', usersList: response });
-			});
+		userServices.listUsers().then((response) => {
+			dispatch({ type: 'SET_USERS_LIST', usersList: response });
+		});
 	},
 
-	modifyEditedUser: ({ id = '', name = '', email = '', password = '' }: { id?: string, name?: string, email?: string, password?: string }): AppThunkAction<KnownAction> => (dispatch, getState) => {
-		dispatch({ type: 'MODIFY_EDITED_USER', user: { id, name, email, password } });
+	modifyEditedUser: ({ id = '', name = '', email = '', password = '', type = '' }: { id?: string, name?: string, email?: string, password?: string, type?: string }): AppThunkAction<KnownAction> => (dispatch, getState) => {
+		dispatch({ type: 'MODIFY_EDITED_USER', user: { id, name, email, password, type } });
 	},
 
 	toggleUserDialog: (open: boolean): AppThunkAction<KnownAction> => (dispatch, getState) => {

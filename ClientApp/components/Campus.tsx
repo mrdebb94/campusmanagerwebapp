@@ -25,6 +25,7 @@ type CampusProps =
 
 interface CampusTabState {
     slideIndex: number;
+    selectedRows: number[] | string;
 }
 
 class Campus extends React.Component<CampusProps, CampusTabState> {
@@ -33,6 +34,7 @@ class Campus extends React.Component<CampusProps, CampusTabState> {
         super(props);
         this.state = {
             slideIndex: 0,
+            selectedRows: []
         };
     }
 
@@ -56,11 +58,23 @@ class Campus extends React.Component<CampusProps, CampusTabState> {
                 <Tab label="Campus szemeszterek" value={0} >
                     <CampusDialog {...this.props} />
                     <Toolbar>
-                        <ToolbarGroup>
-                            <RaisedButton label="Új campus" primary={true} onClick={() => { this.props.toggleCampusDialog(true); }} />
+                        <ToolbarGroup lastChild={true}>
+                            <RaisedButton label="Módosítás" primary={true} onClick={() => {
+                                this.props.toggleCampusDialog(true, "edit");
+                            }} />
+                            <RaisedButton label="Új campus" primary={true} onClick={() => {
+                                this.props.modifyEditedCampus({});
+                                this.props.toggleCampusDialog(true, "create");
+                            }} />
                         </ToolbarGroup>
                     </Toolbar>
-                    <Table>
+                    <Table
+                        onRowSelection={(selectedRows) => {
+                            console.log(selectedRows);
+                            this.setState({ selectedRows });
+                            this.props.modifyEditedCampus({ ...this.props.campusList[selectedRows[0]] });
+                        }}
+                    >
                         <TableHeader>
                             <TableRow>
                                 <TableHeaderColumn>Campus kezdete</TableHeaderColumn>
@@ -68,9 +82,12 @@ class Campus extends React.Component<CampusProps, CampusTabState> {
                                 <TableHeaderColumn>Aktív</TableHeaderColumn>
                             </TableRow>
                         </TableHeader>
-                        <TableBody>
-                            {this.props.campusList.map((campus) =>
-                                <TableRow key={campus.id}>
+                        <TableBody
+                            deselectOnClickaway={false}>
+                            {this.props.campusList.map((campus, i) =>
+                                <TableRow
+                                    key={campus.campusId}
+                                    selected={(this.state.selectedRows as number[]).indexOf(i) !== -1}>
                                     <TableRowColumn>{campus.startDate.format('YYYY-MM-DD')}</TableRowColumn>
                                     <TableRowColumn>{campus.endDate.format('YYYY-MM-DD')}</TableRowColumn>
                                     <TableRowColumn>

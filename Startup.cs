@@ -36,15 +36,27 @@ namespace EvoManager
         {
 			Log.Information(Configuration.GetConnectionString("DefaultConnection"));
 			
-			 services.AddDbContext<EvoDbContext>(options =>
-        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+			services.AddDbContext<EvoDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-         services.AddIdentity<User, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<EvoDbContext>()
                 .AddDefaultTokenProviders();
-
-			
+                
+            services.AddAntiforgery(x => x.HeaderName = "X-XSRF-TOKEN");
+            //services.AddAntiforgery(opts => opts.Cookie.Name = "MyAntiforgeryCookie");
             services.AddMvc();
+
+            // Configure Identity
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 4;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

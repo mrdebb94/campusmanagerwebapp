@@ -9,15 +9,24 @@ import { routes } from './routes';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import configureStore from './configureStore';
 
+import { fetch, addTask } from 'domain-task';
+
+import { INIT_SESSION } from './store/Session';
+
+const XSRF_TOKEN_KEY = "xsrfToken";
+const XSRF_TOKEN_NAME_KEY = "xsrfTokenName";
+
 export default createServerRenderer(params => {
 
     return new Promise<RenderResult>((resolve, reject) => {
         // Prepare Redux store with in-memory history, and dispatch a navigation event
         // corresponding to the incoming URL
+
         const basename = params.baseUrl.substring(0, params.baseUrl.length - 1); // Remove trailing slash
         const urlAfterBasename = params.url.substring(basename.length);
         const store = configureStore(createMemoryHistory());
         store.dispatch(replace(urlAfterBasename));
+        store.dispatch({ type: INIT_SESSION, payload: { xsrfToken: params.data.xsrfToken, id: params.data.sessionId } });
 		
 		
         // Prepare an instance of the application and perform an inital render that will

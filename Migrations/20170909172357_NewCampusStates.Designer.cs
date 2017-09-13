@@ -11,9 +11,10 @@ using System;
 namespace EvoManager.Migrations
 {
     [DbContext(typeof(EvoDbContext))]
-    partial class EvoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170909172357_NewCampusStates")]
+    partial class NewCampusStates
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

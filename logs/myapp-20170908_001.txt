@@ -1,0 +1,18 @@
+2017-09-08 11:02:13.236 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-08 11:50:37.522 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-08 11:55:38.404 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-08 12:00:50.942 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-08 13:08:31.002 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-08 13:13:08.314 +02:00 [Information] Campus data: c591103c-b941-4a0d-9eba-36e35dcae9e6 2017.09.01. 0:00:00 2017.11.23. 0:00:00 True
+2017-09-08 13:14:06.436 +02:00 [Information] Campus data: da93322e-992c-4acb-a3dd-d5d1bd437a1c 2017.02.01. 0:00:00 2017.05.01. 0:00:00 True
+2017-09-08 13:15:20.410 +02:00 [Information] Campus data: 4b113ffd-56ec-482b-85f8-6cbfe645f16b 2018.02.01. 0:00:00 2018.05.05. 0:00:00 False
+2017-09-08 15:02:34.508 +02:00 [Information] Supporting role True
+2017-09-08 15:03:02.703 +02:00 [Information] Supporting role True
+2017-09-08 15:03:34.750 +02:00 [Information] Supporting role True
+2017-09-08 15:04:17.035 +02:00 [Information] Campus data: 19df6d1f-0293-408d-9491-dd691386638b 2018.02.01. 0:00:00 2018.05.05. 0:00:00 False
+2017-09-08 15:12:33.609 +02:00 [Information] Supporting role True
+2017-09-08 15:13:17.463 +02:00 [Information] Supporting role True
+2017-09-08 15:13:33.345 +02:00 [Information] Belepes: False
+2017-09-08 22:05:05.653 +02:00 [Information] Supporting role True
+2017-09-08 22:05:25.339 +02:00 [Information] Supporting role True
+2017-09-08 22:07:22.873 +02:00 [Information] Supporting role True

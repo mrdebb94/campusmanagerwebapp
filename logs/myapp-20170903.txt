@@ -1,0 +1,12 @@
+2017-09-03 11:29:53.877 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-03 11:34:34.787 +02:00 [Information] Supporting role True
+2017-09-03 18:33:15.721 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-03 18:54:33.585 +02:00 [Information] Supporting role True
+2017-09-03 19:00:12.334 +02:00 [Information] Supporting role True
+2017-09-03 19:06:56.059 +02:00 [Information] Supporting role True
+2017-09-03 19:19:00.462 +02:00 [Information] Supporting role True
+2017-09-03 20:27:46.312 +02:00 [Information] Supporting role True
+2017-09-03 20:35:36.105 +02:00 [Information] Supporting role True
+2017-09-03 23:23:03.279 +02:00 [Information] Supporting role True
+2017-09-03 23:24:27.822 +02:00 [Information] Supporting role True
+2017-09-03 23:25:10.260 +02:00 [Information] Supporting role True

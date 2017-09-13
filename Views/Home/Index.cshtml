@@ -1,8 +1,11 @@
 @{
     ViewData["Title"] = "Home Page";
+     dynamic data = new { xsrfToken = ViewBag.AntiForgeryRequestToken};
 }
 
-<div id="react-app" asp-prerender-module="ClientApp/dist/main-server">Loading...</div>
+<div id="xsrf-token" data-xsrf-token="@ViewBag.AntiForgeryRequestToken"></div>
+
+<div id="react-app" asp-prerender-module="ClientApp/dist/main-server"  asp-prerender-data=data>Loading...</div>
 
 @section scripts {
     <script src="~/dist/main-client.js" asp-append-version="true"></script>

@@ -11,6 +11,7 @@ import { ApplicationState }  from './store';
 import * as RoutesModule from './routes';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as injectTapEventPluginAll from 'react-tap-event-plugin';
+import { CookiesProvider, withCookies, Cookies } from 'react-cookie';
 
 let routes = RoutesModule.routes;
 
@@ -28,11 +29,13 @@ function renderApp() {
     // and injects the app into a DOM element.
     ReactDOM.render(
         <AppContainer>
+        <CookiesProvider>
 		 <MuiThemeProvider>
             <Provider store={ store }>
                 <ConnectedRouter history={ history } children={ routes } />
             </Provider>
-		 </MuiThemeProvider>	
+		 </MuiThemeProvider>
+         </CookiesProvider>
         </AppContainer>,
         document.getElementById('react-app')
     );

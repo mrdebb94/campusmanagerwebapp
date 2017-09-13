@@ -1,0 +1,23 @@
+2017-09-09 00:36:16.392 +02:00 [Information] Supporting role True
+2017-09-09 02:12:51.838 +02:00 [Information] Supporting role True
+2017-09-09 02:16:50.983 +02:00 [Information] Supporting role True
+2017-09-09 12:43:51.855 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 12:48:39.264 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 14:19:33.745 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 14:41:14.955 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 15:14:35.424 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 17:01:14.576 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 17:32:01.839 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 18:02:00.911 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 18:25:38.212 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 18:47:30.520 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 18:55:14.077 +02:00 [Information] Enum 3
+2017-09-09 19:23:45.355 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 19:33:32.826 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 19:41:05.443 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 19:53:03.409 +02:00 [Information] Enum 3
+2017-09-09 19:57:53.617 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 20:00:23.878 +02:00 [Information] Enum 3
+2017-09-09 20:27:19.443 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-09 20:31:02.409 +02:00 [Information] Enum 3
+2017-09-09 20:34:20.894 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;

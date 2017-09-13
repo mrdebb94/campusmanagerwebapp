@@ -6,6 +6,9 @@ import * as UsersState from '../store/Users';
 import { Dialog } from 'material-ui';
 import { FlatButton } from 'material-ui';
 import { TextField } from 'material-ui';
+import { CookiesProvider, withCookies, Cookies } from 'react-cookie';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 
 
 
@@ -13,14 +16,18 @@ import { TextField } from 'material-ui';
 type UsersProps =
     UsersState.UsersState       // ... state we've requested from the Redux store
     & typeof UsersState.actionCreators      // ... plus action creators we've requested
-
+    & { cookies: Cookies }
 const styles = {
-    dialog:{
+    dialog: {
         height: 500
     }
 }
 
-class CreateUserDialog extends React.Component<UsersProps, {}> {
+interface CreateUserDialogState {
+    token: string;
+}
+
+class CreateUserDialog extends React.Component<UsersProps, CreateUserDialogState> {
 
     public render() {
         return <div>
@@ -31,27 +38,40 @@ class CreateUserDialog extends React.Component<UsersProps, {}> {
                 open={this.props.openUserDialog}
                 autoScrollBodyContent={false}
                 autoDetectWindowHeight={true}
-                actions={[<FlatButton label="Hozzádás" primary={true} onClick={()=>{ this.props.addUser(); }}/>,
-                <FlatButton label="Mégse" primary={true} onClick={()=>{ this.props.toggleUserDialog(false); }}/>]}
+                actions={[<FlatButton label="Hozzádás" primary={true} onClick={() => { this.props.addUser(); }} />,
+                <FlatButton label="Mégse" primary={true} onClick={() => { this.props.toggleUserDialog(false); }} />]}
             >
                 <TextField
                     floatingLabelText="Felhasználónév"
                     floatingLabelFixed={true}
                     value={this.props.editedUser ? this.props.editedUser.name : ''}
                     onChange={(event) => { let target = event.target as HTMLInputElement; this.props.modifyEditedUser({ ...this.props.editedUser, name: target.value }); }}
-                /><br/>
+                /><br />
                 <TextField
                     floatingLabelText="Jelszó"
                     floatingLabelFixed={true}
                     value={this.props.editedUser ? this.props.editedUser.password : ''}
                     onChange={(event) => { let target = event.target as HTMLInputElement; this.props.modifyEditedUser({ ...this.props.editedUser, password: target.value }); }}
-                /><br/>
+                /><br />
                 <TextField
                     floatingLabelText="E-mail"
                     floatingLabelFixed={true}
                     value={this.props.editedUser ? this.props.editedUser.email : ''}
                     onChange={(event) => { let target = event.target as HTMLInputElement; this.props.modifyEditedUser({ ...this.props.editedUser, email: target.value }); }}
-                />
+                /><br />
+                <SelectField
+                    floatingLabelText="Típus"
+                    value={this.props.editedUser ? this.props.editedUser.type : ''}
+                    onChange={(event, index, value) => {
+                        let target = event.target as HTMLInputElement;
+                        this.props.modifyEditedUser({ ...this.props.editedUser, type: value });
+                    }}
+                >
+                    <MenuItem value={"User"} primaryText="Felhasználó" />
+                    <MenuItem value={"Admin"} primaryText="Adminisztrátor" />
+                    <MenuItem value={"Student"} primaryText="Tanuló" />
+                    <MenuItem value={"Mentor"} primaryText="Mentor" />
+                </SelectField>
             </Dialog>
         </div>;
     }

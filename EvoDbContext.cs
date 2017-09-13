@@ -19,6 +19,8 @@ namespace EvoManager {
         }*/
 		
         public DbSet<Campus> Campus { get; set; }
+	    public DbSet<CampusParticipation> CampusParticipations { get; set; }
+		public DbSet<CampusState> CampusState { get; set; }
         public DbSet<CampusEvent> CampusEvents { get; set; }
         public DbSet<Student> Students { get; set; }
 		public DbSet<Mentor> Mentors { get; set; }
