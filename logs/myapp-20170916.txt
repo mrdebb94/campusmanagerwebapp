@@ -1,0 +1,52 @@
+2017-09-16 00:01:03.935 +02:00 [Information] Kilepes: True
+2017-09-16 00:14:12.810 +02:00 [Information] Token by first loading: CfDJ8Ny3EdM3ZS5LtWSy5cml2yHE83FlyQNWaLiHItrthSh9veb9z_YIremqvxzGfCZqbH7tRLgZkK5RbT4wDSD454JuDv10trPhR5osLWYIejeaqvNifO-gI8JgjRjZOkAtmOSkfEU65i5sTUE2DrCv8mI
+2017-09-16 00:14:26.144 +02:00 [Information] Supporting role True
+2017-09-16 00:15:06.823 +02:00 [Information] Belepes: False
+2017-09-16 00:15:06.826 +02:00 [Information] Token by login: CfDJ8Ny3EdM3ZS5LtWSy5cml2yE0wsG2YFQD1OKtlY2DAqLAKkfWAorCB1Q99IVuLhGUx81qmDPGcUG8dBFm6Y-DVnfblALfOyZZ3LorJdYtFMs-NmvL7jrcL9xafmNxJWuRvqEzGZHtLC2mw5b8A6cLl-E
+2017-09-16 00:23:46.152 +02:00 [Information] Token by first loading: CfDJ8Ny3EdM3ZS5LtWSy5cml2yGspGwxXy_sECDvkf7tpkWu7TY9nyxerjj25YGpygBqNbMDUXa8VJG5VsMI8TVXHNY7SwKoskjy91YWlX9mR7Z8RcBriRxlnpO3g9eDLv9QLNYqtrshfWLkMDfIFCnHqCooNwFfjVM3St9TjOIDK8AiZkg8Y90hp-cZ49evDIj3Xg
+2017-09-16 00:23:57.292 +02:00 [Information] Supporting role True
+2017-09-16 00:24:11.349 +02:00 [Information] Supporting role True
+2017-09-16 00:24:45.771 +02:00 [Information] Supporting role True
+2017-09-16 00:25:03.643 +02:00 [Information] Kilepes: True
+2017-09-16 00:25:11.165 +02:00 [Information] Supporting role True
+2017-09-16 00:25:29.837 +02:00 [Information] Supporting role True
+2017-09-16 00:25:58.503 +02:00 [Information] Supporting role True
+2017-09-16 00:26:20.006 +02:00 [Information] Token by first loading: CfDJ8Ny3EdM3ZS5LtWSy5cml2yEMuG-TxrYxtsrX4seDko4j7rcwqw_Q_BrsJwxx079nrpJ9ImawGRjaCX8ZXNQ9lb9OwwfhMfdzXugCVIQQV3Ct1HJx49HeZ2jIGaTfyb0m_MI9fzJ41IeBrXqkxrpElJk
+2017-09-16 00:26:38.808 +02:00 [Information] Belepes: False
+2017-09-16 00:26:38.817 +02:00 [Information] Token by login: CfDJ8Ny3EdM3ZS5LtWSy5cml2yFfGoB0j7wHm2dqSm_ZqkjG-T8lysON1vZbg1nUhVNDDPJ83W2QLUlZ8rwJH6myTVRbs_PY3GL7xLOy50EZIaYUeE-puMZD43vdAqqt8UPtHLXjacJa0p3XjhBjMSkgl_4
+2017-09-16 00:27:09.542 +02:00 [Information] Supporting role True
+2017-09-16 00:27:45.810 +02:00 [Information] Supporting role True
+2017-09-16 00:27:57.550 +02:00 [Information] Token by first loading: CfDJ8Ny3EdM3ZS5LtWSy5cml2yF2CCmjIS5iTXU4xr6H6ZjuaCbi06ENRfdCQhGhXXBK39Kdwyz7cLlv6Q_W3s8fNQcS_5KPtRmCVMCrmWJD0TPYxBlTj5FWwKmZxpuMDV7Tz44-VOY8IFDrcQEMIBm7LdsUxfx6l2MgTWK9ZNiKyoBAd0Rr-ZLmwo3Cvoz0wP-Seg
+2017-09-16 00:28:23.595 +02:00 [Information] Supporting role True
+2017-09-16 00:28:37.995 +02:00 [Information] Supporting role True
+2017-09-16 00:29:03.994 +02:00 [Information] Supporting role True
+2017-09-16 00:29:13.947 +02:00 [Information] Kilepes: True
+2017-09-16 00:29:16.306 +02:00 [Information] Supporting role True
+2017-09-16 00:29:30.299 +02:00 [Information] Supporting role True
+2017-09-16 00:37:53.262 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-16 00:40:57.592 +02:00 [Information] Token by first loading: CfDJ8Ny3EdM3ZS5LtWSy5cml2yFJ2sRx0Nwc5FXz5BU6_Gt-COt2kDJurL78L22pVyFkc3qHlH-9P-04ehZr0VKh1mkXBZ26NQe47JUZNw6Dh4CFcEfmG2cz67NTfHs_Rq-rXq0JatrdU_SLztjVWGhG8mk
+2017-09-16 00:42:19.286 +02:00 [Information] Supporting role True
+2017-09-16 00:42:39.189 +02:00 [Information] Supporting role True
+2017-09-16 00:42:57.751 +02:00 [Information] Belepes: False
+2017-09-16 00:42:57.755 +02:00 [Information] Token by login: CfDJ8Ny3EdM3ZS5LtWSy5cml2yELgrz9be-T8oPZ1fI0Xuus-3LMuPeJddJekP8Yz05uDJ_SSX0lHCQouWj4KOIpjiba3hr5tI7NyGeYHGtNhM9j5XRfAaUiUn7jwCTLGjb8eGPmeY6tqEu7SAtM_AxUmL4
+2017-09-16 00:48:55.458 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-16 11:16:14.876 +02:00 [Information] Token by first loading: CfDJ8Ny3EdM3ZS5LtWSy5cml2yHm_Tp6QsRgieiWoc-CL5kgSgTt5FIRJ1CR4UDo675zuDcpSVhAlhILksfSm9Umd4WWUlczIBwsVqTqdDmsoGuTCM_4PQMu4ykvfLvCHmXxid-OkEjyXosnVJOZc5mSgAVzqv7xvzl75uYLO31CW8sYimiTaZt2jd1EwSrhsJ4UqQ
+2017-09-16 11:18:17.858 +02:00 [Information] Kilepes: True
+2017-09-16 11:18:24.761 +02:00 [Information] Supporting role True
+2017-09-16 11:18:56.423 +02:00 [Information] Supporting role True
+2017-09-16 11:36:25.029 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-16 11:38:48.620 +02:00 [Information] Token by first loading: CfDJ8Ny3EdM3ZS5LtWSy5cml2yE6XxofP_XCuTVsOUa0Wz51IZ8v7TVrDx5UB72tsiwqwpbLDtRFxxck60npY6g3N0aFS6cNJgPcNqqnr2VAdDMsuMIwN4_N8J8j3ke_E66GQK2iy7-BFaCo3P8PxpfeOdY
+2017-09-16 11:41:56.595 +02:00 [Information] Supporting role True
+2017-09-16 11:42:31.167 +02:00 [Information] Supporting role True
+2017-09-16 11:42:48.057 +02:00 [Information] Belepes: False
+2017-09-16 11:42:51.571 +02:00 [Information] Supporting role True
+2017-09-16 11:43:06.595 +02:00 [Information] Supporting role True
+2017-09-16 16:04:50.584 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-16 16:46:31.676 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-16 17:00:09.075 +02:00 [Information] Token by first loading: CfDJ8Ny3EdM3ZS5LtWSy5cml2yGeXgJlE7xQuzGU9G1AdJ32TzJnqunqdN1K32fzeuuSFs7CnAaYVZ2u3Kpmve7SpDM2zhN1qO4LjKjwIdNvThqCAmUfpz-rkB-vl_0nxJh4zCHlfOZd7r4ydRLrCnG-1b5G1feKIhW_1bW4yJog4WDHPPM-Ux2hBbNf9nRkGODyZQ
+2017-09-16 18:01:17.485 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-16 18:42:08.702 +02:00 [Information] Token by first loading: CfDJ8Ny3EdM3ZS5LtWSy5cml2yE8mI-nkemJBs6wRYxFPqBNQbSezV3oOBNlSbfk59HBtXJLnf4MwVRe4D7nEDaiqYb8EOJbLK8v4MSc8t0Wu3eRV5Tl8PQt5M6a4ma8Crs3ELwOjxGgBgCQ0ZSQZh60Iv6Z0l20955R8-HSZZxEoodrSaYK7R-7sdj7wgfHtHZO_g
+2017-09-16 18:46:20.086 +02:00 [Information] Token by first loading: CfDJ8Ny3EdM3ZS5LtWSy5cml2yFU6myu58bsmkR7EUGiniaKW1lpNv61muesLQPsJ47p_reSwxMIplTTzl7yQ9ZoetcKNwvMmnQxJcb1iZ98BYX3U5WJat-LGWAtCmo0M0hBeXcNekhzYuXjHZc1Ej1nkhf_htePy7hHJ--gvdRoraL7jA_FZnFYT-KkM3Z-EMZuBQ
+2017-09-16 19:49:19.287 +02:00 [Information] Supporting role True
+2017-09-16 19:49:55.062 +02:00 [Information] Supporting role True
+2017-09-16 19:50:05.771 +02:00 [Information] Kilepes: True

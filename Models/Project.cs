@@ -8,12 +8,14 @@ namespace EvoManager.Models
 		public string ProjectId { get; set;}
 		public string Name { get; set; }
 		public string Description { get; set; }
+
+		public virtual ICollection<ProjectCampus> ProjectCampus { get; set; }
+
+	/*	public string UserId { get; set; }
+	    public virtual User User { get; set; }
 		
 		public string ProjectStatusId { get; set; }
 		public virtual ProjectStatus ProjectStatus { get; set; }
-		
-		public string UserId { get; set; }
-	    public virtual User User { get; set; }
 		
 		public string  CampusId { get; set; }
 	    public virtual Campus Campus { get; set; }
@@ -29,6 +31,7 @@ namespace EvoManager.Models
 		
 		public virtual ICollection<Task> Tasks { get; set; }
 		public virtual ICollection<ProjectMeeting> ProjectMeetings { get; set; }
+	*/
 		
 	}
 }

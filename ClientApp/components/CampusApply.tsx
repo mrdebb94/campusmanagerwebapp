@@ -48,10 +48,9 @@ class CampusApply extends React.Component<CampusProps, any> {
                 }
             </CardText>
             <CardActions>
-                <FlatButton label="Jelentkezés" />
+                <FlatButton label="Jelentkezés" onClick={()=>this.props.applyActiveCampus()}/>
             </CardActions>
         </Card>
-
     }
 }
 

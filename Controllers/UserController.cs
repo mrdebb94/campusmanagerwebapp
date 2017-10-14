@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication;
@@ -13,6 +14,7 @@ using EvoManager.ViewModels;
 using Serilog;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Antiforgery;
 
 namespace EvoManager.Controllers
 {
@@ -25,13 +27,18 @@ namespace EvoManager.Controllers
 	  private readonly UserManager<User> _userManager;
       private readonly SignInManager<User> _signInManager;
 	  private readonly RoleManager<IdentityRole> _roleManager;
+	  private readonly IAntiforgery _antiForgeryService;
+	  private readonly IUserClaimsPrincipalFactory<User> _userClaimsPrincipalFactory;
 	  
 	  public UserController(EvoDbContext context,  UserManager<User> userManager,
-          SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager) {
+          SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager,
+		  IAntiforgery antiForgeryService,  IUserClaimsPrincipalFactory<User> userClaimsPrincipalFactory) {
 		  _context = context;  
 		  _userManager = userManager;
           _signInManager = signInManager;
 		  _roleManager =  roleManager;
+		  _antiForgeryService = antiForgeryService;
+		  _userClaimsPrincipalFactory =  userClaimsPrincipalFactory;
 
 	  }
 	  
@@ -54,6 +61,11 @@ namespace EvoManager.Controllers
 			Type = (roles.Count>0?roles[0]:"")
 	   		});
 	   }
+
+	   /*var tokens =  _antiForgeryService.GetAndStoreTokens(this.HttpContext);
+       this.HttpContext.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken, 
+                        new CookieOptions() { HttpOnly = false });
+       Log.Information("New Token " + tokens.RequestToken);*/
         
 	  return resultUsers;
 
@@ -68,8 +80,18 @@ namespace EvoManager.Controllers
 			userModel.Password, false, lockoutOnFailure: false);
 			if (result.Succeeded)
 			{
+				//var user =  _context.Users.FirstOrDefault(m=>m.UserName == userModel.Name);
+                //HttpContext.User = await _userClaimsPrincipalFactory.CreateAsync(user);
+				//var tokens =  _antiForgeryService.GetAndStoreTokens(this.HttpContext);
 				Log.Information("Belepes: " + this.User.Identity.IsAuthenticated);
-				return Ok();
+				//Log.Information("Token by login: " +  tokens.RequestToken);
+				//var tokens =  _antiForgeryService.GetAndStoreTokens(this.HttpContext);
+				/*var tokens =_antiForgeryService.GetAndStoreTokens(this.HttpContext);
+                this.HttpContext.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken, 
+                        new CookieOptions() { HttpOnly = false });
+                Log.Information("New Token LOGIN" + tokens.RequestToken);
+				*/
+				return Ok(Json("Sikeres belepes"));
 			} else {
 				return NotFound();
 			}
@@ -106,12 +128,18 @@ namespace EvoManager.Controllers
 	  
 	  }
 	  
-	  [HttpPost]
+	  [HttpPost("[action]")]
       [ValidateAntiForgeryToken]
       public async Task<IActionResult> LogOut()
       {
          await _signInManager.SignOutAsync();
+		 //var tokens =  _antiForgeryService.GetAndStoreTokens(this.HttpContext);
          Log.Information("Kilepes: " + this.User.Identity.IsAuthenticated);
+		 /*var tokens =_antiForgeryService.GetAndStoreTokens(this.HttpContext);
+                this.HttpContext.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken, 
+                        new CookieOptions() { HttpOnly = false });
+
+                Log.Information("New Token LOGOUT" + tokens.RequestToken);*/
          return Ok();
       }
 	}

@@ -7,8 +7,8 @@ namespace EvoManager.Models {
 		
 		public string ProjectMeetingId { get; set; }
 		
-		public virtual Project Project { get; set; }
-		public string ProjectId { get; set; }
+		public virtual ProjectCampus ProjectCampus { get; set; }
+		public string ProjectCampusId { get; set; }
 		
 		public DateTime StartTime { get; set; }
 		public DateTime EndTime { get; set; }

@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using EvoManager.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Antiforgery;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 using Serilog;
 
@@ -60,7 +63,7 @@ namespace EvoManager
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env,  IAntiforgery antiforgery)
         {
             if (env.IsDevelopment())
             {
@@ -78,7 +81,33 @@ namespace EvoManager
 
             app.UseStaticFiles();
 
+            //app.UseResponseCaching();
+
             app.UseAuthentication();
+
+            app.Use(next => context =>
+            {
+                string path = context.Request.Path.Value;
+                Log.Information("Path " + path);
+                if (
+                    string.Equals(path, "/", StringComparison.OrdinalIgnoreCase) 
+                   || string.Equals(path, "/index.html", StringComparison.OrdinalIgnoreCase)
+                   //|| string.Equals(path, "/api/user/logout", StringComparison.OrdinalIgnoreCase)
+                )
+                {
+                    // We can send the request token as a JavaScript-readable cookie, 
+                    // and Angular will use it by default.
+                    //Log.Information("New Token " + tokens.RequestToken);
+                    var tokens = antiforgery.GetAndStoreTokens(context);
+                    context.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken, 
+                        new CookieOptions() { HttpOnly = false });
+
+                    Log.Information("New Token " + tokens.RequestToken);
+                                                
+                }
+
+                return next(context);
+            });
 
             app.UseMvc(routes =>
             {

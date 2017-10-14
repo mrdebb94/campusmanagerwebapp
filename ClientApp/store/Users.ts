@@ -47,6 +47,7 @@ export const userServices = {
 		//TODO: hibakezelés
 		fetch('api/user/list', {
 			method: 'GET',
+			credentials: 'same-origin'
 		}).then(response => response.json()).then((response) => {
 			resolve(response);
 		});
@@ -61,6 +62,9 @@ export const userServices = {
 		});
 		//TODO: hibakezelés
 		let headers = {};
+		
+		//let xsrfToken = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, "$1"); 
+		//console.log("Kapott token LOGIN" +  xsrfToken);
 
 		headers['Content-Type'] = 'application/json';
 		headers['X-XSRF-TOKEN'] = xsrfToken;
@@ -72,7 +76,7 @@ export const userServices = {
 			}*/
 			headers,
 			body: data,
-			credentials: 'include'
+			credentials: 'same-origin'
 		})
 			.then((response) => {
 				resolve(response);

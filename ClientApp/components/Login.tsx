@@ -7,7 +7,15 @@ import * as SessionStore from '../store/Session';
 import { ApplicationState } from '../store';
 
 const style = {
-    margin: 12,
+  button: {
+    margin: 12
+  },
+  component: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  } as React.CSSProperties
 };
 
 class Login extends React.Component<any, any> {
@@ -20,14 +28,14 @@ class Login extends React.Component<any, any> {
     }
 
     public render() {
-        return (<div>
+        return (<div style={style.component}>
           {!this.props.authenticated&&<div><TextField
                 hintText={''}
                 floatingLabelText={'Felhasználónév'}
                 value={this.state.userName}
                 onChange={(event) => {
                     let target = event.target as HTMLInputElement;
-                    this.setState({ ...this.state, userName: target.value });
+                    this.setState({ userName: target.value });
                 }}
             /><br />
             <TextField
@@ -37,14 +45,14 @@ class Login extends React.Component<any, any> {
                 value={this.state.password}
                 onChange={(event) => {
                     let target = event.target as HTMLInputElement;
-                    this.setState({ ...this.state, password: target.value });
+                    this.setState({ password: target.value });
                 }}
             /><br />
-            <RaisedButton label="Belépés" primary={true} style={style} onClick={ (event) => {
+            <RaisedButton label="Belépés" primary={true} style={style.button} onClick={ (event) => {
                 this.props.login(this.state.userName, this.state.password);} } />
           </div>}
           {this.props.authenticated&&
-              <div><RaisedButton label="Kilépés" primary={true} style={style} onClick={ (event) => {
+              <div><RaisedButton label="Kilépés" primary={true} style={style.button} onClick={ (event) => {
                 this.props.logout(); } } /></div>}
         </div>)
     }

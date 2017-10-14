@@ -53,6 +53,7 @@ namespace EvoManager.Controllers
 			 CampusId = m.CampusId,
 			 StartDate = m.StartDate,
 			 EndDate = m.EndDate,
+			 Active = m.Active,
 			 CampusInactive = m.CampusStates
 			  .Where(s=>s.CampusStateValue==(int)CampusStateValue.CAMPUS_INACTIVE)
 			  .Select(s=>new DateRange { StartDate = s.StartDate, EndDate = s.EndDate})
@@ -81,13 +82,31 @@ namespace EvoManager.Controllers
 
 		 return _context.CampusState
 		 .Include(m=>m.Campus)
-		 .Where(m=>m.CampusStateValue==(int)CampusStateValue.CAMPUS_ACTIVE_NOT_STARTED&&m.StartDate<=currentDate&&
+		 .Where(m=>m.Campus.Active&&m.CampusStateValue==(int)CampusStateValue.CAMPUS_ACTIVE_NOT_STARTED&&m.StartDate<=currentDate&&
 		 m.EndDate>=currentDate).Select(m=>new Campus { CampusId = m.Campus.CampusId,
 			 StartDate = m.Campus.StartDate,
 			 EndDate = m.Campus.EndDate}).FirstOrDefault();
 ;		  
 	  }	
 
+	  [AllowAnonymous]
+	  [HttpGet("current/participations")]
+	  public IList<CampusParticipation> GetCampusParticipationsCurrentCampus() 
+	  {
+		 
+		 DateTime currentDate = DateTime.Now;
+
+		 return _context.CampusParticipations
+		 .Where(
+			 s=>s.Campus.Active/*&&s.Campus.StartDate<=currentDate
+		 &&s.Campus.EndDate>=currentDate*/)
+		 .Select(s=>new CampusParticipation
+		 { 
+            CampusParticipationId = s.CampusParticipationId,
+            Student = s.Student!=null?new Student { StudentId = s.Student.StudentId, Name = s.Student.Name}:null,
+			Mentor = s.Mentor!=null?new Mentor { MentorId = s.Mentor.MentorId, Name = s.Mentor.Name}:null
+		 }).ToList();
+	  }	
 	   [AllowAnonymous]
 	   [HttpPost("[action]")]
 	   public IActionResult Add([FromBody][Bind("StartDate", "EndDate","Active", "CampusInactive", 
@@ -103,13 +122,25 @@ namespace EvoManager.Controllers
              CAMPUS_FINISHED=3
 	     */
 
+         //TODO: átlapolások figyelése
+
 		 String guid = Guid.NewGuid().ToString();
 		 campus.CampusId=guid;
+
+         //egyszerre csak egy Campus lehessen aktív
+         if(campus.Active) {
+           foreach(var otherCampus in _context.Campus) {
+			   otherCampus.Active = false;
+		   }
+		 }
+         
+		 _context.SaveChanges();
 
 		 _context.Campus.Add(new Campus {
 			  CampusId = campus.CampusId, 
 			  StartDate = campus.StartDate,
-		      EndDate = campus.EndDate
+		      EndDate = campus.EndDate,
+			  Active = campus.Active
 		  });
 		 _context.SaveChanges();
 
@@ -121,6 +152,8 @@ namespace EvoManager.Controllers
 			campusState.CampusStateId = Guid.NewGuid().ToString();
 			campusState.CampusId = campus.CampusId;
 			Log.Information("Inaktív " + (int)CampusStateValue.CAMPUS_INACTIVE);
+			Log.Information("Inaktív Start " + campus.CampusInactive.StartDate.ToString());
+			Log.Information("Inaktív End " + campus.CampusInactive.EndDate.ToString());
 			campusState.CampusStateValue = (int)CampusStateValue.CAMPUS_INACTIVE;
 			campusState.StartDate = campus.CampusInactive.StartDate;
 			campusState.EndDate = campus.CampusInactive.EndDate;
@@ -149,6 +182,8 @@ namespace EvoManager.Controllers
 			campusState.CampusStateId = Guid.NewGuid().ToString();
 			campusState.CampusId = campus.CampusId;
 			Log.Information("Elindult " + (int)CampusStateValue.CAMPUS_ACTIVE_STARTED);
+			Log.Information("Elindult Start " + campus.CampusActiveStarted.StartDate.ToString());
+			Log.Information("Elindult End " + campus.CampusActiveStarted.EndDate.ToString());
 			campusState.CampusStateValue = (int)CampusStateValue.CAMPUS_ACTIVE_STARTED;
 			campusState.StartDate = campus.CampusActiveStarted.StartDate;
 			campusState.EndDate = campus.CampusActiveStarted.EndDate;
@@ -187,9 +222,17 @@ namespace EvoManager.Controllers
 		   .FirstOrDefault(m=>m.CampusId == campus.CampusId);
 
 		   if(campus!=null) {
+                  //egyszerre csak egy Campus lehessen aktív
+			 if(campus.Active) {
+				foreach(var otherCampus in _context.Campus) {
+					otherCampus.Active = false;
+				}
+			}
+			_context.SaveChanges();
+			
               editedCampus.StartDate = campus.StartDate;
 			  editedCampus.EndDate = campus.EndDate;
-			  //editedCampus.Active = campus.Active;
+			  editedCampus.Active = campus.Active;
 
 			   //TOO: időintervallumok ellenőrzése
          if(campus.CampusInactive!=null)
@@ -262,10 +305,10 @@ namespace EvoManager.Controllers
 	   
        private Task<User> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
-
        [Authorize(Roles = "User")]
 	   [HttpPost("[action]")]
-	   public async Task<IActionResult> ApplyCampus([FromBody][Bind("CampusId","Role")] CampusApplyViewModel campus) {
+	   [ValidateAntiForgeryToken]
+	   public async Task<IActionResult> Apply([FromBody][Bind("CampusId","Role")] CampusApplyViewModel campus) {
 
 	     String guid = Guid.NewGuid().ToString();	 
 	  
@@ -273,11 +316,12 @@ namespace EvoManager.Controllers
          IList<String>  roles = await _userManager.GetRolesAsync(user);
 
 		 if(!roles.Contains("Student")&&!roles.Contains("Mentor")) {
-            await _userManager.AddToRoleAsync(user,campus.Role);
+            await _userManager.AddToRoleAsync(user,"Student");
       
 			  Student student = new Student();
 			  student.StudentId = guid;
 			  student.UserId = user.Id;
+			  student.Name = user.UserName;
 			  _context.Students.Add(student);
 			  _context.SaveChanges();
 
@@ -292,7 +336,9 @@ namespace EvoManager.Controllers
 			  _context.SaveChanges();
 			
 		} else {
-      
+              
+			  //TODO: ellenőrizni, hogy még nem jelentkezett
+			  //TODO: mentor vagy tanuló?
 			  Student student = _context.Students.FirstOrDefault(m=>m.UserId == campus.UserId);
 
 			  guid = Guid.NewGuid().ToString();
@@ -307,10 +353,84 @@ namespace EvoManager.Controllers
 
 		}
 
-		 return Ok();	  
+		 return Ok(Json("Sikeres jelentkezés!"));	  
 	  
 	  } 
 	  
+	   [Authorize(Roles = "Admin")]
+	   [HttpPost("[action]")]
+	   [ValidateAntiForgeryToken]
+	   public async Task<IActionResult> ChangeCampusParticipation(
+		   [FromBody][Bind("CampusParticipationId", "Role")] CampusParticipationViewModel campusParticipation) {
+        
+		//var user = await GetCurrentUserAsync(); 
+        //IList<String>  roles = await _userManager.GetRolesAsync(user);
+    
+	    var editedCampusParticipation = _context.CampusParticipations
+			   .Include(m=>m.Student)
+			   .Include(m=>m.Mentor)
+               .FirstOrDefault(m=>m.CampusParticipationId == campusParticipation.CampusParticipationId );
+		
+		//from Student To Mentor
+		if(editedCampusParticipation!=null) {
+			Log.Information("Tanulo");
+            if(editedCampusParticipation.StudentId!=null&&campusParticipation.Role=="Mentor") 
+			{
+				Log.Information("Tanulobol Mentor");
+
+				//Set inactive student
+				editedCampusParticipation.Student.IsDeleted = true;
+				_context.SaveChanges(); 
+
+				//add mentor
+                 String guid = Guid.NewGuid().ToString();
+				 Mentor mentor = new Mentor();
+			     mentor.MentorId = guid;
+			     mentor.UserId = editedCampusParticipation.Student.UserId;
+			     mentor.Name = editedCampusParticipation.Student.Name;
+			     _context.Mentors.Add(mentor);
+			     _context.SaveChanges();
+
+				 editedCampusParticipation.StudentId = null;
+                 editedCampusParticipation.MentorId =  mentor.MentorId;
+
+                _context.SaveChanges();
+
+                var user = _context.Users.FirstOrDefault(m=>m.Id == mentor.UserId);
+				await _userManager.RemoveFromRoleAsync(user, "Student");
+				await _userManager.AddToRoleAsync(user,"Mentor");
+
+			} else if(editedCampusParticipation.MentorId!=null&&campusParticipation.Role=="Student") {
+               
+			    //Set inactive mentor
+				editedCampusParticipation.Mentor.IsDeleted = true;
+				_context.SaveChanges(); 
+
+				//add student
+                 String guid = Guid.NewGuid().ToString();
+				 Student student = new Student();
+			     student.StudentId = guid;
+			     student.UserId = editedCampusParticipation.Mentor.UserId;
+			     student.Name = editedCampusParticipation.Mentor.Name;
+			     _context.Students.Add(student);
+			     _context.SaveChanges();
+
+				 editedCampusParticipation.MentorId = null;
+                 editedCampusParticipation.StudentId = student.StudentId;
+
+                _context.SaveChanges();
+
+                var user = _context.Users.FirstOrDefault(m=>m.Id == student.UserId);
+				await _userManager.RemoveFromRoleAsync(user, "Mentor");
+				await _userManager.AddToRoleAsync(user,"Student");
+
+			}
+		}
+
+        
+		return Ok();
+	   
+	   }
 
 	}
 }

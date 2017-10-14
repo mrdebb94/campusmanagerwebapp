@@ -7,8 +7,8 @@ namespace EvoManager.Models {
 		
 		public string SubscribedStudentId { get; set; }
 		
-		public string ProjectId { get; set; }
-		public virtual Project Project { get; set; }
+		public string ProjectCampusId { get; set; }
+		public virtual ProjectCampus ProjectCampus { get; set; }
 		
 		public string StudentId { get; set; }
 		public virtual Student Student { get; set; }

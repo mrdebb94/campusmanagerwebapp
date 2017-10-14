@@ -1,0 +1,20 @@
+2017-09-21 00:03:44.631 +02:00 [Information] Path /currentparticipants
+2017-09-21 00:03:55.205 +02:00 [Information] Path /api/campus/current/participations
+2017-09-21 00:14:22.868 +02:00 [Information] Path /currentparticipants
+2017-09-21 00:14:35.051 +02:00 [Information] Path /api/campus/current/participations
+2017-09-21 02:01:27.039 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-21 02:02:44.515 +02:00 [Information] Path /currentparticipants
+2017-09-21 02:03:00.562 +02:00 [Information] Path /currentparticipants
+2017-09-21 02:06:08.786 +02:00 [Information] Path /currentparticipants
+2017-09-21 02:06:14.559 +02:00 [Information] Path /currentparticipants
+2017-09-21 02:06:25.142 +02:00 [Information] Path /
+2017-09-21 02:06:25.568 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGHrI9imMSGaoctrCzn5wIVzPV67-EY6tK7Zmaqgckx0bOHYV-wAbmS1F1IIVDV1r5AmBEJMHH7fxPom_M_EH-UbAs8zRHWIdTqhY2o3sCbGS811X0XqOu711Y1DT3W4MA
+2017-09-21 02:06:48.812 +02:00 [Information] Path /api/campus/current/participations
+2017-09-21 02:07:28.609 +02:00 [Information] Path /api/user/list
+2017-09-21 02:07:28.894 +02:00 [Information] Supporting role True
+2017-09-21 02:07:34.145 +02:00 [Information] Path /users
+2017-09-21 02:07:44.120 +02:00 [Information] Path /api/user/list
+2017-09-21 02:07:44.947 +02:00 [Information] Supporting role True
+2017-09-21 02:07:59.909 +02:00 [Information] Path /api/campus/current/participations
+2017-09-21 02:10:09.060 +02:00 [Information] Path /currentparticipants
+2017-09-21 02:10:22.887 +02:00 [Information] Path /api/campus/current/participations

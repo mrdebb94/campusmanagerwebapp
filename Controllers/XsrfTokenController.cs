@@ -22,14 +22,20 @@ public class XsrfTokenController : Controller
         _antiforgery = antiforgery;
     }
  
-    [HttpGet]
+    [HttpGet("[action]")]
     public IActionResult Get()
     {
         var tokens = _antiforgery.GetAndStoreTokens(HttpContext);
  
-        return new ObjectResult(new {
+        /*return new ObjectResult(new {
             token = tokens.RequestToken,
             tokenName = tokens.HeaderName
-        });
+        });*/
+
+        this.HttpContext.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken, 
+                        new CookieOptions() { HttpOnly = false });
+        
+        return Ok();
+
     }
 }

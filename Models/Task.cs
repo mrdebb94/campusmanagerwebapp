@@ -9,8 +9,8 @@ namespace EvoManager.Models
 		public string TeamMemberId { get; set; }
 		public virtual TeamMember TeamMember { get; set;} 
 		
-		public string ProjectId { get; set; }
-		public virtual Project Project { get; set; }
+		public string ProjectCampusId { get; set; }
+		public virtual ProjectCampus ProjectCampus { get; set; }
 		
 		public bool Status { get; set; }
 		public bool Accept { get; set; }

@@ -1,0 +1,47 @@
+2017-09-20 23:16:18.414 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-20 23:23:38.122 +02:00 [Information] Path /
+2017-09-20 23:23:38.302 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yH0UWCqd0GBUMGx0Qxpofpwt94X0wxkqYUxP1Noi4IY8FbK2KGkELZlxGStV5dJdgLOOQJrq1mvNulHKfgSER3KcpRGhi11HforyRa0VfEyUXD_jzDCWQ87Q1NxsYG48lg
+2017-09-20 23:24:47.576 +02:00 [Information] Path /
+2017-09-20 23:24:47.682 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGzj0GjVdSifYWg-rpvH2sYhEMpJiIdhQ7wRKiy1_ce_4tRlLQ6E_b9ubz9Uv1EIjqj3xs9h9KzMkxzGxaxeUzhdbj-e8CmpSGNT_gw7Y0hQ8R5CBhhzl2ZjPPY6CuAY5Q
+2017-09-20 23:28:19.387 +02:00 [Information] Path /api/user/list
+2017-09-20 23:28:20.641 +02:00 [Information] Supporting role True
+2017-09-20 23:29:21.636 +02:00 [Information] Path /api/user/add
+2017-09-20 23:29:35.578 +02:00 [Information] Path /api/user/list
+2017-09-20 23:29:35.587 +02:00 [Information] Supporting role True
+2017-09-20 23:29:57.619 +02:00 [Information] Path /api/user/login
+2017-09-20 23:29:58.773 +02:00 [Information] Belepes: False
+2017-09-20 23:29:58.866 +02:00 [Information] Path /api/xsrftoken/get
+2017-09-20 23:30:05.077 +02:00 [Information] Path /api/user/logout
+2017-09-20 23:30:05.365 +02:00 [Information] Kilepes: True
+2017-09-20 23:30:05.392 +02:00 [Information] Path /api/xsrftoken/get
+2017-09-20 23:30:14.142 +02:00 [Information] Path /api/user/login
+2017-09-20 23:30:14.611 +02:00 [Information] Belepes: False
+2017-09-20 23:30:14.647 +02:00 [Information] Path /api/xsrftoken/get
+2017-09-20 23:30:16.511 +02:00 [Information] Path /api/campus/current
+2017-09-20 23:30:23.459 +02:00 [Information] Path /api/campus/apply
+2017-09-20 23:30:30.470 +02:00 [Information] Path /api/user/list
+2017-09-20 23:30:30.495 +02:00 [Information] Supporting role True
+2017-09-20 23:30:38.805 +02:00 [Information] Path /api/user/logout
+2017-09-20 23:30:38.819 +02:00 [Information] Kilepes: True
+2017-09-20 23:30:38.878 +02:00 [Information] Path /api/xsrftoken/get
+2017-09-20 23:30:42.784 +02:00 [Information] Path /api/user/list
+2017-09-20 23:30:42.956 +02:00 [Information] Supporting role True
+2017-09-20 23:30:56.016 +02:00 [Information] Path /api/user/add
+2017-09-20 23:30:56.382 +02:00 [Information] Path /api/user/list
+2017-09-20 23:30:56.628 +02:00 [Information] Supporting role True
+2017-09-20 23:31:17.541 +02:00 [Information] Path /api/user/login
+2017-09-20 23:31:17.927 +02:00 [Information] Belepes: False
+2017-09-20 23:31:17.993 +02:00 [Information] Path /api/xsrftoken/get
+2017-09-20 23:31:22.073 +02:00 [Information] Path /api/campus/current
+2017-09-20 23:31:24.908 +02:00 [Information] Path /api/campus/apply
+2017-09-20 23:31:27.829 +02:00 [Information] Path /api/user/logout
+2017-09-20 23:31:27.834 +02:00 [Information] Kilepes: True
+2017-09-20 23:31:27.894 +02:00 [Information] Path /api/xsrftoken/get
+2017-09-20 23:31:30.057 +02:00 [Information] Path /api/user/list
+2017-09-20 23:31:30.135 +02:00 [Information] Supporting role True
+2017-09-20 23:31:56.219 +02:00 [Information] Path /api/campus/current
+2017-09-20 23:31:58.201 +02:00 [Information] Path /api/campus/participations
+2017-09-20 23:40:44.185 +02:00 [Information] Path /currentparticipants
+2017-09-20 23:40:54.015 +02:00 [Information] Path /api/campus/current/participations
+2017-09-20 23:48:33.814 +02:00 [Information] Path /currentparticipants
+2017-09-20 23:49:23.184 +02:00 [Information] Path /api/campus/current/participations

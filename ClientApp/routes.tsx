@@ -8,6 +8,8 @@ import Users from './components/Users';
 import Campus from './components/Campus';
 import Login from './components/Login';
 import CampusApply from './components/CampusApply';
+import CurrentParticipants from './components/CurrentParticipants';
+import Project from './components/Projects';
 
 export const routes = <Layout>
     <Route exact path='/' component={ Home } />
@@ -17,4 +19,6 @@ export const routes = <Layout>
     <Route path='/campus' component={ Campus } />
     <Route path='/login' component={ Login } />
     <Route path='/currentcampus' component={ CampusApply } />
+    <Route path='/currentparticipants' component={ CurrentParticipants } />
+    <Route path='/projects' component={ Project } />
 </Layout>;

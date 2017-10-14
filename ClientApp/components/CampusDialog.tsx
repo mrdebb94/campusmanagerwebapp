@@ -182,6 +182,22 @@ class CampusDialog extends React.Component<CampusProps, {}> {
                     <Chip
                         style={styles.chip}>
                         Projekt időszak
+                        <DatePicker
+                        hintText="Időszak kezdete"
+                        textFieldStyle={styles.datePickerTextField}
+                        onChange={this.setCampusActiveNotStartedStartDate}
+                        value={this.props.editedCampus && this.props.editedCampus.campusActiveStarted
+                            && this.props.editedCampus.campusActiveStarted.startDate
+                            ? this.props.editedCampus.campusActiveStarted.startDate.toDate() : undefined}
+                    />
+                    <DatePicker
+                        hintText="Időszak vége"
+                        textFieldStyle={styles.datePickerTextField}
+                        onChange={this.setCampusActiveNotStartedEndDate}
+                        value={this.props.editedCampus && this.props.editedCampus.campusActiveStarted
+                            && this.props.editedCampus.campusActiveStarted.endDate
+                            ? this.props.editedCampus.campusActiveStarted.endDate.toDate() : undefined}
+                    />
                 </Chip>
                 </div>
                 <div style={{...styles.stateBlock, justifyContent: 'space-between'}}>

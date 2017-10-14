@@ -1,7 +1,7 @@
 import { fetch, addTask } from 'domain-task';
 import { Action, Reducer, ActionCreator } from 'redux';
 import { AppThunkAction } from './';
-import { isEmpty } from '../utils/helper'
+import { isEmpty, transformDateRangeToUtc } from '../utils/helper'
 import * as moment from 'moment';
 
 export interface DateRange {
@@ -62,6 +62,7 @@ export const campusServices = {
     getActiveCampus: (): Promise<any> => new Promise((resolve) => {
         fetch('api/campus/current', {
             method: 'GET',
+            credentials: 'same-origin'
         }).then(response => response.json())
             .then(campus => {
                 console.log(!isEmpty(campus));
@@ -78,6 +79,7 @@ export const campusServices = {
     listCampus: (): Promise<any> => new Promise((resolve) => {
         fetch('api/campus/list', {
             method: 'GET',
+            credentials: 'same-origin'
         }).then(response => response.json())
             .then(response => {
                 let campusList = response.map((campus) => ({
@@ -85,33 +87,47 @@ export const campusServices = {
                     startDate: moment(campus.startDate),
                     endDate: moment(campus.endDate),
                     active: campus.active,
-                    campusInactive: campus.campusInactive?({ 
-                        startDate: moment(campus.campusInactive.startDate), 
-                        endDate:  moment(campus.campusInactive.endDate)
-                    }):null,
-                    campusActiveNotStarted: campus.campusActiveNotStarted?({
-                        startDate: moment(campus.campusActiveNotStarted.startDate), 
-                        endDate:  moment(campus.campusActiveNotStarted.endDate)
-                    }):null
+                    campusInactive: campus.campusInactive ? ({
+                        startDate: moment(campus.campusInactive.startDate),
+                        endDate: moment(campus.campusInactive.endDate)
+                    }) : null,
+                    campusActiveNotStarted: campus.campusActiveNotStarted ? ({
+                        startDate: moment(campus.campusActiveNotStarted.startDate),
+                        endDate: moment(campus.campusActiveNotStarted.endDate)
+                    }) : null
                 }));
                 resolve(campusList);
             });
     }),
-    addCampus: (editedCampus): Promise<any> => new Promise((resolve) => {
+    addCampus: (editedCampus, xsrfToken): Promise<any> => new Promise((resolve) => {
         let data = JSON.stringify({
             StartDate: editedCampus.startDate.format(),
             EndDate: editedCampus.endDate.format(),
             Active: editedCampus.active,
-            CampusInactive: editedCampus.campusInactive,
+            CampusInactive: editedCampus.campusInactive
+                ? transformDateRangeToUtc(editedCampus.campusInactive)
+                : null,
             CampusActiveNotStarted: editedCampus.campusActiveNotStarted
+                ? transformDateRangeToUtc(editedCampus.campusActiveNotStarted)
+                : null,
+            CampusActiveStarted: editedCampus.campusActiveStarted
+                ? transformDateRangeToUtc(editedCampus.campusActiveStarted)
+                : null,
+            CampusFinished: editedCampus.campusFinished
+                ? transformDateRangeToUtc(editedCampus.campusFinished)
+                : null
         });
+
+        let headers = {};
+
+        headers['Content-Type'] = 'application/json';
+        headers['X-XSRF-TOKEN'] = xsrfToken;
 
         fetch('api/campus/add', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: data
+            headers,
+            body: data,
+            credentials: 'same-origin'
         }).then((response) => {
             resolve(response);
         });
@@ -123,8 +139,18 @@ export const campusServices = {
             StartDate: editedCampus.startDate.utc().format(),
             EndDate: editedCampus.endDate.utc().format(),
             Active: editedCampus.active,
-            CampusInactive: editedCampus.campusInactive,
+            CampusInactive: editedCampus.campusInactive
+                ? transformDateRangeToUtc(editedCampus.campusInactive)
+                : null,
             CampusActiveNotStarted: editedCampus.campusActiveNotStarted
+                ? transformDateRangeToUtc(editedCampus.campusActiveNotStarted)
+                : null,
+            CampusActiveStarted: editedCampus.campusActiveStarted
+                ? transformDateRangeToUtc(editedCampus.campusActiveStarted)
+                : null,
+            CampusFinished: editedCampus.campusFinished
+                ? transformDateRangeToUtc(editedCampus.campusFinished)
+                : null
         });
 
         let headers = {};
@@ -135,12 +161,31 @@ export const campusServices = {
             method: 'POST',
             headers,
             body: data,
-            credentials: 'include'
+            credentials: 'same-origin'
         }).then((response) => {
             resolve(response);
         });
 
-    })
+    }),
+    applyCampus: (campusId, xsrfToken): Promise<any> => new Promise((resolve) => {
+        let data = JSON.stringify({
+            CampusId: campusId
+        });
+
+        let headers = {};
+        headers['Content-Type'] = 'application/json';
+        headers['X-XSRF-TOKEN'] = xsrfToken;
+
+        fetch('api/campus/apply', {
+            method: 'POST',
+            headers,
+            body: data,
+            credentials: 'same-origin'
+        }).then((response) => {
+            resolve(response);
+        });
+    }),
+
 }
 
 export const actionCreators = {
@@ -151,13 +196,23 @@ export const actionCreators = {
         })
     },
 
+    applyActiveCampus: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
+
+        let { campus: { activeCampus } } = getState();
+        let { session } = getState();
+        campusServices.applyCampus(activeCampus!.campusId, session.xsrfToken).then(campus => {
+            //dispatch({ type: 'SET_ACTIVE_CAMPUS', activeCampus: { ...campus } });
+        })
+    },
+
     addCampus: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
 
         let { campus: { editedCampus } } = getState();
+        let { session } = getState();
 
         if (editedCampus) {
 
-            campusServices.addCampus(editedCampus).then((response) => {
+            campusServices.addCampus(editedCampus, session.xsrfToken).then((response) => {
 
                 campusServices.listCampus().then((response) => {
                     //TODO: valahogy a Promise-ba definiálni
@@ -192,6 +247,7 @@ export const actionCreators = {
         }
 
     },
+
     setCampusList: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
 
         //TODO: hibakezelés
@@ -205,13 +261,13 @@ export const actionCreators = {
     //TODO: hozzáfűzés ne a Component-ben legyen, hanem itt!
     modifyEditedCampus: ({
             campusId = '',
-            startDate = moment(),
-            endDate = moment(),
-            active = false,
-            campusInactive,
-            campusActiveNotStarted,
-            campusActiveStarted,
-            campusFinished
+        startDate = moment(),
+        endDate = moment(),
+        active = false,
+        campusInactive,
+        campusActiveNotStarted,
+        campusActiveStarted,
+        campusFinished
         }:
         {
             campusId?: string,
@@ -222,13 +278,18 @@ export const actionCreators = {
             campusActiveStarted?: DateRange,
             campusFinished?: DateRange,
         }): AppThunkAction<KnownAction> => (dispatch, getState) => {
-            dispatch({ type: 'MODIFY_EDITED_CAMPUS', campus: { campusId, startDate, endDate, active,
-                campusInactive, campusActiveNotStarted, campusActiveStarted, campusFinished } });
+            dispatch({
+                type: 'MODIFY_EDITED_CAMPUS', campus: {
+                    campusId, startDate, endDate, active,
+                    campusInactive, campusActiveNotStarted, campusActiveStarted, campusFinished
+                }
+            });
         },
 
     toggleCampusDialog: (open: boolean, mode: string): AppThunkAction<KnownAction> => (dispatch, getState) => {
         dispatch({ type: 'TOGGLE_CAMPUS_DIALOG', status: { open, mode } });
-    }
+    },
+
 
 };
 const initialState: CampusState = { campusList: [], campusDialog: { open: false, mode: '' } };

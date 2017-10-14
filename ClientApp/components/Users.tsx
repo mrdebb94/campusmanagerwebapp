@@ -3,6 +3,7 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as UsersStore from '../store/Users';
+import * as SessionStore from '../store/Session';
 import { RaisedButton } from 'material-ui';
 import CreateUserDialog from './CreateUserDialog';
 import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
@@ -20,6 +21,7 @@ import { CookiesProvider, withCookies, Cookies } from 'react-cookie';
 type UsersProps =
   UsersStore.UsersState        // ... state we've requested from the Redux store
   & typeof UsersStore.actionCreators      // ... plus action creators we've requested
+  & typeof SessionStore.actionCreators 
   & RouteComponentProps<{}>
   & {cookies:Cookies}
 
@@ -36,7 +38,11 @@ class Users extends React.Component<UsersProps, {}> {
   }
 
   componentDidMount() {
+    const { cookies } = this.props;
+    console.log("TOKEN " +cookies.get('XSRF-TOKEN'));
+    //this.props.setXsrfToken(cookies.get('XSRF-TOKEN'));
     this.props.setUsersList();
+  
   }
 
   public render() {
@@ -73,6 +79,6 @@ class Users extends React.Component<UsersProps, {}> {
 
 // Wire up the React component to the Redux store
 export default connect(
-  (state: ApplicationState) => state.users, // Selects which state properties are merged into the component's props
-  UsersStore.actionCreators                 // Selects which action creators are merged into the component's props
+  (state: ApplicationState) => (state.users), // Selects which state properties are merged into the component's props
+  {...UsersStore.actionCreators, ...SessionStore.actionCreators }                // Selects which action creators are merged into the component's props
 )(withCookies(Users)) as typeof Users;

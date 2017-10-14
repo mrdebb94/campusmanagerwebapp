@@ -3,7 +3,7 @@ using System;
 namespace EvoManager.Models {
 	public class CampusParticipation {
 		
-	    public string CampusParticipationId { get; set; }
+	  public string CampusParticipationId { get; set; }
       
       public string CampusId { get; set; }
       public virtual Campus Campus { get; set; }

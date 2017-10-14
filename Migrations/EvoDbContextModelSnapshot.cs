@@ -25,6 +25,8 @@ namespace EvoManager.Migrations
                     b.Property<string>("CampusId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("Active");
+
                     b.Property<DateTime>("EndDate");
 
                     b.Property<DateTime>("StartDate");
@@ -107,6 +109,8 @@ namespace EvoManager.Migrations
                     b.Property<string>("MentorId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("IsDeleted");
+
                     b.Property<string>("Name");
 
                     b.Property<string>("Phone");
@@ -127,17 +131,25 @@ namespace EvoManager.Migrations
                     b.Property<string>("ProjectId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("CampusId");
-
                     b.Property<string>("Description");
-
-                    b.Property<string>("MentorId");
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("ProjectStatusId");
+                    b.HasKey("ProjectId");
 
-                    b.Property<string>("StudentId");
+                    b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("EvoManager.Models.ProjectCampus", b =>
+                {
+                    b.Property<string>("ProjectCampusId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CampusId");
+
+                    b.Property<string>("ProjectId");
+
+                    b.Property<string>("ProjectStatusId");
 
                     b.Property<string>("TfsProjectName");
 
@@ -145,19 +157,17 @@ namespace EvoManager.Migrations
 
                     b.Property<string>("UserId");
 
-                    b.HasKey("ProjectId");
+                    b.HasKey("ProjectCampusId");
 
                     b.HasIndex("CampusId");
 
-                    b.HasIndex("MentorId");
+                    b.HasIndex("ProjectId");
 
                     b.HasIndex("ProjectStatusId");
 
-                    b.HasIndex("StudentId");
-
                     b.HasIndex("UserId");
 
-                    b.ToTable("Projects");
+                    b.ToTable("ProjectCampus");
                 });
 
             modelBuilder.Entity("EvoManager.Models.ProjectLeader", b =>
@@ -167,13 +177,13 @@ namespace EvoManager.Migrations
 
                     b.Property<string>("MentorId");
 
-                    b.Property<string>("ProjectId");
+                    b.Property<string>("ProjectCampusId");
 
                     b.HasKey("ProjectLeaderId");
 
                     b.HasIndex("MentorId");
 
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("ProjectCampusId");
 
                     b.ToTable("ProjectLeaders");
                 });
@@ -211,7 +221,7 @@ namespace EvoManager.Migrations
 
                     b.Property<bool>("IsCancelled");
 
-                    b.Property<string>("ProjectId");
+                    b.Property<string>("ProjectCampusId");
 
                     b.Property<string>("Room");
 
@@ -219,7 +229,7 @@ namespace EvoManager.Migrations
 
                     b.HasKey("ProjectMeetingId");
 
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("ProjectCampusId");
 
                     b.ToTable("ProjectMeetings");
                 });
@@ -242,6 +252,8 @@ namespace EvoManager.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<bool>("HasScholarship");
+
+                    b.Property<bool>("IsDeleted");
 
                     b.Property<string>("Name");
 
@@ -291,7 +303,7 @@ namespace EvoManager.Migrations
 
                     b.Property<string>("MentorId");
 
-                    b.Property<string>("ProjectId");
+                    b.Property<string>("ProjectCampusId");
 
                     b.Property<DateTime>("SubscribedDate");
 
@@ -299,7 +311,7 @@ namespace EvoManager.Migrations
 
                     b.HasIndex("MentorId");
 
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("ProjectCampusId");
 
                     b.ToTable("SubscribedMentors");
                 });
@@ -309,7 +321,7 @@ namespace EvoManager.Migrations
                     b.Property<string>("SubscribedStudentId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ProjectId");
+                    b.Property<string>("ProjectCampusId");
 
                     b.Property<string>("StudentId");
 
@@ -317,7 +329,7 @@ namespace EvoManager.Migrations
 
                     b.HasKey("SubscribedStudentId");
 
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("ProjectCampusId");
 
                     b.HasIndex("StudentId");
 
@@ -335,7 +347,7 @@ namespace EvoManager.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("ProjectId");
+                    b.Property<string>("ProjectCampusId");
 
                     b.Property<bool>("Status");
 
@@ -347,7 +359,7 @@ namespace EvoManager.Migrations
 
                     b.HasKey("TaskId");
 
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("ProjectCampusId");
 
                     b.HasIndex("TeamMemberId");
 
@@ -361,13 +373,13 @@ namespace EvoManager.Migrations
 
                     b.Property<DateTime>("JoinDate");
 
-                    b.Property<string>("ProjectId");
+                    b.Property<string>("ProjectCampusId");
 
                     b.Property<string>("StudentId");
 
                     b.HasKey("TeamMemberId");
 
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("ProjectCampusId");
 
                     b.HasIndex("StudentId");
 
@@ -641,23 +653,19 @@ namespace EvoManager.Migrations
                         .HasForeignKey("EvoManager.Models.Mentor", "UserId");
                 });
 
-            modelBuilder.Entity("EvoManager.Models.Project", b =>
+            modelBuilder.Entity("EvoManager.Models.ProjectCampus", b =>
                 {
                     b.HasOne("EvoManager.Models.Campus", "Campus")
-                        .WithMany("Projects")
+                        .WithMany("ProjectCampus")
                         .HasForeignKey("CampusId");
 
-                    b.HasOne("EvoManager.Models.Mentor")
-                        .WithMany("Projects")
-                        .HasForeignKey("MentorId");
+                    b.HasOne("EvoManager.Models.Project", "Project")
+                        .WithMany("ProjectCampus")
+                        .HasForeignKey("ProjectId");
 
                     b.HasOne("EvoManager.Models.ProjectStatus", "ProjectStatus")
                         .WithMany()
                         .HasForeignKey("ProjectStatusId");
-
-                    b.HasOne("EvoManager.Models.Student")
-                        .WithMany("Projects")
-                        .HasForeignKey("StudentId");
 
                     b.HasOne("EvoManager.Models.User", "User")
                         .WithMany()
@@ -667,12 +675,12 @@ namespace EvoManager.Migrations
             modelBuilder.Entity("EvoManager.Models.ProjectLeader", b =>
                 {
                     b.HasOne("EvoManager.Models.Mentor", "Mentor")
-                        .WithMany()
+                        .WithMany("ProjectLeaders")
                         .HasForeignKey("MentorId");
 
-                    b.HasOne("EvoManager.Models.Project", "Project")
+                    b.HasOne("EvoManager.Models.ProjectCampus", "ProjectCampus")
                         .WithMany("ProjectLeaders")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("ProjectCampusId");
                 });
 
             modelBuilder.Entity("EvoManager.Models.ProjectLeaderParticipationMeeting", b =>
@@ -688,9 +696,9 @@ namespace EvoManager.Migrations
 
             modelBuilder.Entity("EvoManager.Models.ProjectMeeting", b =>
                 {
-                    b.HasOne("EvoManager.Models.Project", "Project")
+                    b.HasOne("EvoManager.Models.ProjectCampus", "ProjectCampus")
                         .WithMany("ProjectMeetings")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("ProjectCampusId");
                 });
 
             modelBuilder.Entity("EvoManager.Models.Student", b =>
@@ -718,30 +726,30 @@ namespace EvoManager.Migrations
             modelBuilder.Entity("EvoManager.Models.SubscribedMentor", b =>
                 {
                     b.HasOne("EvoManager.Models.Mentor", "Mentor")
-                        .WithMany()
+                        .WithMany("SubscribeMentors")
                         .HasForeignKey("MentorId");
 
-                    b.HasOne("EvoManager.Models.Project", "Project")
+                    b.HasOne("EvoManager.Models.ProjectCampus", "ProjectCampus")
                         .WithMany("SubscribedMentors")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("ProjectCampusId");
                 });
 
             modelBuilder.Entity("EvoManager.Models.SubscribedStudent", b =>
                 {
-                    b.HasOne("EvoManager.Models.Project", "Project")
+                    b.HasOne("EvoManager.Models.ProjectCampus", "ProjectCampus")
                         .WithMany("SubscribedStudents")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("ProjectCampusId");
 
                     b.HasOne("EvoManager.Models.Student", "Student")
-                        .WithMany()
+                        .WithMany("SubscribeStudents")
                         .HasForeignKey("StudentId");
                 });
 
             modelBuilder.Entity("EvoManager.Models.Task", b =>
                 {
-                    b.HasOne("EvoManager.Models.Project", "Project")
+                    b.HasOne("EvoManager.Models.ProjectCampus", "ProjectCampus")
                         .WithMany("Tasks")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("ProjectCampusId");
 
                     b.HasOne("EvoManager.Models.TeamMember", "TeamMember")
                         .WithMany("Tasks")
@@ -750,12 +758,12 @@ namespace EvoManager.Migrations
 
             modelBuilder.Entity("EvoManager.Models.TeamMember", b =>
                 {
-                    b.HasOne("EvoManager.Models.Project", "Project")
+                    b.HasOne("EvoManager.Models.ProjectCampus", "ProjectCampus")
                         .WithMany("TeamMembers")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("ProjectCampusId");
 
                     b.HasOne("EvoManager.Models.Student", "Student")
-                        .WithMany()
+                        .WithMany("TeamMembers")
                         .HasForeignKey("StudentId");
                 });
 

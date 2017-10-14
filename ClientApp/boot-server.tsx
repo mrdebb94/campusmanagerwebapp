@@ -26,18 +26,24 @@ export default createServerRenderer(params => {
         const urlAfterBasename = params.url.substring(basename.length);
         const store = configureStore(createMemoryHistory());
         store.dispatch(replace(urlAfterBasename));
-        store.dispatch({ type: INIT_SESSION, payload: { xsrfToken: params.data.xsrfToken, id: params.data.sessionId } });
-		
-		
+        store.dispatch({
+            type: INIT_SESSION, payload: {
+                authenticated: params.data.authenticated,
+                xsrfToken: '',
+                id: params.data.sessionId
+            }
+        });
+
+
         // Prepare an instance of the application and perform an inital render that will
         // cause any async tasks (e.g., data access) to begin
         const routerContext: any = {};
         const app = (
-		 <MuiThemeProvider>
-            <Provider store={ store }>
-                <StaticRouter basename={ basename } context={ routerContext } location={ params.location.path } children={ routes } />
-            </Provider>
-		 </MuiThemeProvider>
+            <MuiThemeProvider>
+                <Provider store={store}>
+                    <StaticRouter basename={basename} context={routerContext} location={params.location.path} children={routes} />
+                </Provider>
+            </MuiThemeProvider>
         );
         renderToString(app);
 
@@ -46,7 +52,7 @@ export default createServerRenderer(params => {
             resolve({ redirectUrl: routerContext.url });
             return;
         }
-        
+
         // Once any async tasks are done, we can perform the final render
         // We also send the redux store state, so the client can continue execution where the server left off
         params.domainTasks.then(() => {

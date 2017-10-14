@@ -7,6 +7,7 @@ namespace EvoManager.ViewModels
        public string CampusId { get; set; }
        public DateTime StartDate { get; set; }
        public DateTime EndDate { get; set; }
+       public bool Active { get; set; }
        public DateRange CampusInactive { get; set; }
        public DateRange CampusActiveNotStarted { get; set; }
        public DateRange CampusActiveStarted { get; set; }

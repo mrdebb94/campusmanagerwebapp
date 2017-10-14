@@ -27,6 +27,12 @@ function renderApp() {
 	injectTapEventPluginAll();
     // This code starts up the React app when it runs in a browser. It sets up the routing configuration
     // and injects the app into a DOM element.
+
+    var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+    //console.log("Kapott token " +  cookieValue);
+    store.dispatch({type:'SetXsrfTokenAction', xsrfToken: cookieValue});
+
     ReactDOM.render(
         <AppContainer>
         <CookiesProvider>

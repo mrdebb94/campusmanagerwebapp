@@ -1,0 +1,520 @@
+2017-09-17 13:20:16.548 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 13:29:20.180 +02:00 [Information] Supporting role True
+2017-09-17 13:31:48.515 +02:00 [Information] Supporting role True
+2017-09-17 13:32:21.536 +02:00 [Information] Belepes: False
+2017-09-17 13:32:38.333 +02:00 [Information] Supporting role True
+2017-09-17 13:33:00.494 +02:00 [Information] Supporting role True
+2017-09-17 13:34:17.654 +02:00 [Information] Supporting role True
+2017-09-17 13:34:29.665 +02:00 [Information] Supporting role True
+2017-09-17 13:35:04.875 +02:00 [Information] Supporting role True
+2017-09-17 13:35:07.747 +02:00 [Information] Kilepes: True
+2017-09-17 13:38:16.530 +02:00 [Information] Supporting role True
+2017-09-17 13:38:24.871 +02:00 [Information] Supporting role True
+2017-09-17 13:38:49.168 +02:00 [Information] Supporting role True
+2017-09-17 13:39:05.818 +02:00 [Information] Supporting role True
+2017-09-17 13:39:16.381 +02:00 [Information] Supporting role True
+2017-09-17 13:39:24.862 +02:00 [Information] Supporting role True
+2017-09-17 13:42:41.933 +02:00 [Information] Supporting role True
+2017-09-17 13:42:55.253 +02:00 [Information] Belepes: False
+2017-09-17 13:53:50.747 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 13:58:22.833 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFGzFa-_FyWWQ28kaEW9IsftJVU3rq7rctbUNiCjgzG5JtFiRJx6FAI4d5pHWpB8aqHjcoDU1oSiOfWMbBTKuFNbVYIFXh17_cpqcpbyAjJVtj_KCP1v-HlsBYCPnc1kho
+2017-09-17 14:01:16.489 +02:00 [Information] Supporting role True
+2017-09-17 14:01:39.803 +02:00 [Information] Belepes: False
+2017-09-17 14:02:01.340 +02:00 [Information] Supporting role True
+2017-09-17 14:08:54.457 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 14:11:16.460 +02:00 [Information] Path /
+2017-09-17 14:11:16.490 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGK4ZR98btw5V0PMkKElqD1vb6fHvgS3oxY3DtBfX8-zVpSoJM_EfaHxlJknc6pH43PhRRLZRt3aT1mjqnU4VkzfBOyH4xwJKVvfdf6rChe-mkpEw9ewYaulu6-QHk27DjoWKUhwUl9jGmLZ5FJyaOajwKcSGxDvEn2lyVASu0y7g
+2017-09-17 14:12:27.827 +02:00 [Information] Path /api/user/logout
+2017-09-17 14:12:32.455 +02:00 [Information] Path /api/user/list
+2017-09-17 14:12:32.645 +02:00 [Information] Supporting role True
+2017-09-17 14:19:02.217 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 14:23:47.812 +02:00 [Information] Path /
+2017-09-17 14:23:47.830 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGTOr2QnoRrpRIvPOx7zpB-_8XN1x5o003VjQ2wbTgqIZUDEDJE3LuSgEQIcmIu8qebyVPqqkQpzkB9Bxyo2f73N2KAFKXUbVJj_GwvbvGjbThpfeReLBNWSCifd51UumBshm38igbsVKYSV--CTA7EPXAgJHjmKkBbVPR232XsAA
+2017-09-17 14:24:44.092 +02:00 [Information] Path /api/user/list
+2017-09-17 14:24:44.227 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yETwfrt6PV-NmFIjFKYPA42BEaVoWT4nmYNyjCk8lk6HQc_LAGr__Nj36VVeClBYwYjMFNtrzRU8rzlHJ3erFcu1JRNDl4iegy091rSZqZx2mU9C8Sme8V7XvhlLSxKho8
+2017-09-17 14:24:44.337 +02:00 [Information] Supporting role True
+2017-09-17 14:26:09.870 +02:00 [Information] Path /api/user/add
+2017-09-17 14:26:09.921 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHTt1iFiq0qdCgV7RPc0OF08h4MFZtFVu6dN3VNQvzk8aPCumcaKJabjyV5CfC5GZmAn86kbhsDQqhRN502GKsLM8MHRym0nZsT2JCRGjz8pCqgWX2K7qyC0t71OXa3FPwHiULitYxGxSk3EELrzTNWhVE1wYxi_Sj0KkrtlGbARg
+2017-09-17 14:26:11.732 +02:00 [Information] Path /api/user/list
+2017-09-17 14:26:11.850 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFRtXGWXjcbKEeyhzKlqS40SzFEmq9sD8wXYwm_7dVw6Xx0n0ivFTvgeCXqAbFV7Nnkw5CSl58RvO2JMVbVNSd8LX4xm7i9onqGpbaBOf_0Apzv809eRVD8u-Xu0wL0sYk
+2017-09-17 14:26:11.856 +02:00 [Information] Supporting role True
+2017-09-17 14:26:37.259 +02:00 [Information] Path /api/user/add
+2017-09-17 14:26:37.281 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yERQ3LzfrIyviCgLPzSutVIwL6NV8wBvoVgdWaxJqfZu-rzF-4Hj3tnqBEXz42bCYGzaSs-APftOvzqa7P511vnsH5NP7BrN3k8q-YZGMDyT27JVsUsOgEXk_mLI8whOvAFHUot25sP5XcrdBMel1diiPEnErHmKtLyj99RfrJitg
+2017-09-17 14:26:37.613 +02:00 [Information] Path /api/user/list
+2017-09-17 14:26:37.646 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFjpXbbwIcMNyPL3eTJNVlXbbWdugzVXrLIyu64DW2yDSxZQN3gtknNfLlb_w8GdNQN1WhuaPlQ4whk_M_zCDoKVPK_-oczLQH2xbpX-4mpcfEttRUYVmd6pp9ilXHOJ5E
+2017-09-17 14:26:37.649 +02:00 [Information] Supporting role True
+2017-09-17 14:26:53.340 +02:00 [Information] Path /api/user/logout
+2017-09-17 14:26:53.350 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEcIm7K3n6SW0GK4TqCb0YjNwqEDQF_k0HwwSmqhPwI16UJDwAKYsDYMoqjmC8DUxBRgQdE8Ta3uhKmkb4-c8amaDA6rztS0QRKLrAgr03fnjz1eiTZG9YgaY1KXni4eeyGnrkI0UqrmXJVWCst2uyX8t7wR1T3lRJP2LhWvZiBew
+2017-09-17 14:26:53.455 +02:00 [Information] Kilepes: True
+2017-09-17 14:27:13.144 +02:00 [Information] Path /api/user/login
+2017-09-17 14:27:13.270 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEeN5T58LL9_hAqBAUxtnbgsadtIk-rSb0B8N_JK2tmRwCzmGUe9aCFqknM7nRO8HcBxgBIWAChuEm2u6pEVOip1Uplg9F1YvfjlE-B9kqNxB3kJI7W4RbUaT4ZxPypNZY
+2017-09-17 14:27:19.112 +02:00 [Information] Path /api/user/list
+2017-09-17 14:27:19.150 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHXFyKondHq2L6KEMADDIhiZoE47pHV4xGHgMm0I8q5avBBdKyZDJwwwwMjIoiOnf3hMRoKHKXsaNNzZC9vUSTbyRTMYaS3YDjXAejdb0PG2uhp7_i8So_m-so6wG2Avo4
+2017-09-17 14:27:19.153 +02:00 [Information] Supporting role True
+2017-09-17 14:27:28.918 +02:00 [Information] Path /api/user/login
+2017-09-17 14:27:28.920 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yG8jEvfgQHrhB-WBfkW2wDPcPTYOxVGJTueFsognMqH37t2nm7fXwcVx2LSGDIk0Wy5r0zQBLYms2S9DE1BwOGe0VEnBJ2YXnYpyWEsTpRf7lwiMpZFaT6-FrppJ0pY8tU
+2017-09-17 14:27:29.519 +02:00 [Information] Belepes: False
+2017-09-17 14:27:35.534 +02:00 [Information] Path /api/user/list
+2017-09-17 14:27:35.561 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFaYyiyI6OVer1_RUz_g_V_jVx_r4fYNAz7liGKrlttwIHDweYL5y0CmPCO8u1NXlwCmJHq2I6Ye7-UI-PI0pHI5TGPEZ9rJv_2BF9F0fER6aJpcKRcjq7rtrF9GP5XYEM
+2017-09-17 14:27:35.563 +02:00 [Information] Supporting role True
+2017-09-17 14:27:50.840 +02:00 [Information] Path /api/user/add
+2017-09-17 14:27:50.853 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHVFR6QZEscVgMUAXFBlRTpFxw8kzLcpod09cv4DQXqYc8l_nFSzLytspNH9vG7DWRAjhFGS7yRQTGGBvEqxu9QuVx-mjdO7mtOBUSjh6TjfgIK_ISrP5A4INl3v1X5KGRhZD6kfRq0Sr4BFUgDax2su3Xyf_QcwoBkpngzoEd9nQ
+2017-09-17 14:27:50.929 +02:00 [Information] Path /api/user/list
+2017-09-17 14:27:50.993 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFJus-adve-ljmTs4ZUGu4fkyKf8vLoSqu7M5hD_nqKYbqN42nKU7l-P_zHIpuyeZZtAb8EHJgIwpX_tFvsBoFSSr4xDWe7_ZpNEBGwRrRBc8gCJacdFkeuGPVLs1yf8iE
+2017-09-17 14:27:50.996 +02:00 [Information] Supporting role True
+2017-09-17 14:27:59.308 +02:00 [Information] Path /api/SampleData/WeatherForecasts
+2017-09-17 14:27:59.314 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGFdTGRyxS96JuHkaOIHqnrsHIvuA88L3GPSpi9gQaot81cKmGG_P6_UChRrkxNBAKGl3k5SCCbm-veTGFUGTxhNF8X1zfYK4g3vjoJaCnp96KtkZp_3bhdZpqQE_Pai2s
+2017-09-17 14:28:00.622 +02:00 [Information] Path /api/user/list
+2017-09-17 14:28:00.676 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEdbEfo9p6OnzgpS-gBAgosjq0kGeuHVmgHqEj2wUrUOTqwtsHOmaFxTGfsJQ_PAkQS9XQmYY5N-14DNXOAGlHS2tm3ddkgfELZGi0lwCWgb6lmG-x4JkzUROqr3uALEFQ
+2017-09-17 14:28:00.679 +02:00 [Information] Supporting role True
+2017-09-17 14:28:09.083 +02:00 [Information] Path /api/user/add
+2017-09-17 14:28:09.308 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yG0OkYr7j2V_JPRmOet9kEPebLqeFTzYfuo0bMz29Lk4TjD2yywttWLe4YY52F3ctkYjVOTepbCf-SgwYHWCmSIhCL6ezOQNs74ia-aUiYgTVyRQu0NPRD7USA10fwi9QU97HdR-ApR4tFE6537If-cHu55Ukhwdutdu3xbcp_PUA
+2017-09-17 14:28:09.660 +02:00 [Information] Path /api/user/list
+2017-09-17 14:28:09.665 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHebtfmXDYv3MbgnLzR4VwlHqze-nV5OxzqwkGFajSTdQqWBTbxQT-jrb-XQK1SlznNyA-oOEDHQ7J-ClEgemRUXW4hWzYT3RT2TyNwxV_tVzc792JqtXwkWpycguEqCzM
+2017-09-17 14:28:09.668 +02:00 [Information] Supporting role True
+2017-09-17 14:45:52.819 +02:00 [Information] Path /
+2017-09-17 14:45:52.824 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGDdaJvnhTBcK1gbLeLSbJ3-lj0g8QUGixQ0Le86e-IK4ZbxDqpDymOjAFdC-HM29F4nQhSk_u3pCaIVURdlNG9wf0Q92OapAIex45Zb3PFUpvBECGdNSVKbx5izW49hlY
+2017-09-17 19:37:49.267 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 19:40:16.726 +02:00 [Information] Path /
+2017-09-17 19:40:16.759 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGQzQSIwE23m_WPEhfGiaYUA_9WqTv_Wko4Zy-MVafureepXJZT4y9ULdFWcDgMMi3Mmdde2gs9lZ0lpIZYJGmdpzdADsO_OkK5vOcMhfxP4Fxl-KVV5JFyaZ5RyIaNo84
+2017-09-17 20:00:31.848 +02:00 [Information] Path /api/user/list
+2017-09-17 20:00:32.435 +02:00 [Information] Supporting role True
+2017-09-17 20:01:14.168 +02:00 [Information] Path /api/user/add
+2017-09-17 20:01:15.384 +02:00 [Information] Path /api/user/list
+2017-09-17 20:01:15.454 +02:00 [Information] Supporting role True
+2017-09-17 20:01:25.230 +02:00 [Information] Path /api/user/list
+2017-09-17 20:01:25.426 +02:00 [Information] Supporting role True
+2017-09-17 20:01:32.165 +02:00 [Information] Path /api/campus/list
+2017-09-17 20:01:35.208 +02:00 [Information] Path /api/user/list
+2017-09-17 20:01:35.236 +02:00 [Information] Supporting role True
+2017-09-17 20:01:41.319 +02:00 [Information] Path /api/user/list
+2017-09-17 20:01:41.372 +02:00 [Information] Supporting role True
+2017-09-17 20:01:47.863 +02:00 [Information] Path /api/user/list
+2017-09-17 20:01:48.389 +02:00 [Information] Supporting role True
+2017-09-17 20:02:04.587 +02:00 [Information] Path /api/user/login
+2017-09-17 20:02:05.017 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGSKE7f5bNYYOfMcg03BWjzhc8CJV8EHq1PMNm_QGvLU4r5AIoYwC5KIjCCbkrRoE8WPCbWCoJ8hjBpysdlpXYMy8jE1lICRgYilGzLVKwu1ELYnV8NwmWJgiMeCp7GHl4
+2017-09-17 20:02:06.623 +02:00 [Information] Belepes: False
+2017-09-17 20:02:13.478 +02:00 [Information] Path /api/user/list
+2017-09-17 20:02:13.979 +02:00 [Information] Supporting role True
+2017-09-17 20:02:33.644 +02:00 [Information] Path /api/user/add
+2017-09-17 20:02:34.053 +02:00 [Information] Path /api/user/list
+2017-09-17 20:02:34.149 +02:00 [Information] Supporting role True
+2017-09-17 20:03:22.499 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:03:22.529 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEYikI8tUU7bndaN9reMr6KoOh7yVOHbEsajAuHSnU54eewLdoB1e1RrjwMBRFCz0JKjcKo0RCnZCPKrJuE9R03VmKcbQQiiPvcZ1clfkOetpp72ST2TIK6f4Dor9WjQBdlq805rLnjxJkTkJeyWDfIEZnbvexQq86U71WD7YCvjA
+2017-09-17 20:03:24.692 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:03:24.700 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yF0j2z_Zl7SsX4McH_9fAvUTr_iQ9EGvGUf5r769daI27G64O5RBwXhuC1ATMyumKOew7vwvuiqnnxAE4NLXSk54gfc_DX_Snert-VyBOOPWpgkW3kODiaYlT3P4Pk9LE4A-VJqRcFDg-E3u0nt0X8kS4UM-Qum0kHB1rl6_xAhPQ
+2017-09-17 20:03:26.819 +02:00 [Information] Path /api/user/list
+2017-09-17 20:03:26.906 +02:00 [Information] Supporting role True
+2017-09-17 20:03:53.497 +02:00 [Information] Path /
+2017-09-17 20:03:53.534 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE4IIRcccyQQePl3ve0274uI3N4VWxRl-cN2mWNYRgh1PdKHOsDunKeXvNwKuSk52bZx4ync3ZAre3EE6-NkWRxyxmCMslmsaG7vtwQAqmtkToEUv4-XLI5ItFoJs9Z-8Jgticgs5PUSQEduPlrFWC8Giey6ar02cRCNfUUsz5ZPA
+2017-09-17 20:04:20.230 +02:00 [Information] Path /api/user/list
+2017-09-17 20:04:20.383 +02:00 [Information] Supporting role True
+2017-09-17 20:04:55.009 +02:00 [Information] Path /api/user/add
+2017-09-17 20:04:58.138 +02:00 [Information] Path /api/user/list
+2017-09-17 20:04:58.219 +02:00 [Information] Supporting role True
+2017-09-17 20:05:28.187 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:05:28.275 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEblm8LURayxoKRC3SoJ5SZFugljZnxPSxH9WwC987Wvmz68HnOXLg6c8PMwhDhww6blHnr2Yk9GmfRey2w8GdS3UGpwkkIlZq39Yn6TZe-Sq9Udrq5SBSzSLpEgTXgY-JEsveUFOIyA2gDp6tQnDh1sopzDi5YkEZ3n6f0HrsB5w
+2017-09-17 20:05:28.334 +02:00 [Information] Kilepes: True
+2017-09-17 20:05:34.265 +02:00 [Information] Path /api/user/list
+2017-09-17 20:05:34.784 +02:00 [Information] Supporting role True
+2017-09-17 20:05:53.582 +02:00 [Information] Path /api/user/add
+2017-09-17 20:05:53.904 +02:00 [Information] Path /api/user/list
+2017-09-17 20:05:54.070 +02:00 [Information] Supporting role True
+2017-09-17 20:11:28.855 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 20:13:24.685 +02:00 [Information] Path /dist/f6dfe2ede134cb5c5e69.hot-update.json
+2017-09-17 20:13:24.707 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHaWM-p6C6R2ussoMOiF8velqQbOQYpyqeIcL6qj--1hcZgeJOdSaR3YflC-UXboK71BDYLEui-1voWJqbuWzp5zKwfIR5EDjVHt3F0T_bvP1QeOPNn0mtTr-ubbRe9Bls
+2017-09-17 20:13:39.698 +02:00 [Information] Path /
+2017-09-17 20:13:39.760 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHRgukX2jDHSDyoSBtduJGyvSos0BRjyetX2GOnPElvJmeQODwRAbx_-IqDmtH1-uCXAceOibJOzIfJ_Dq-5ykPoKEanyHN60BLQqDyYKUsT3DVq38mChdZJviH7ZcCJj8
+2017-09-17 20:14:13.645 +02:00 [Information] Path /api/user/list
+2017-09-17 20:14:13.753 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHLdN7m9d1xj4VmsmHqk-r6FftoGB0QUZM1zgsga6sTRzWemP-fC_4_3b1MDdRan-Olx4do5duUi4jVnl2dkZZOiEij9T9bbcBBGhGaNZZh7oEEfN5chgesn-wGrE8qN3c
+2017-09-17 20:14:14.325 +02:00 [Information] Supporting role True
+2017-09-17 20:14:38.843 +02:00 [Information] Path /api/user/add
+2017-09-17 20:14:38.910 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEsr6B2hKqL9df_om7RLv7su9vBc_Y-3vCyjuSetlViSbUXOyqPI8jVLjtj5IgsmnRAbXcLIVCU-1ftVjj-ZYahxyrjiJiIrtWzPW_McXDY2BvK5451p9_MNYR3HHZpTFc
+2017-09-17 20:14:39.633 +02:00 [Information] Path /api/user/list
+2017-09-17 20:14:39.640 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFhy7U8nFmDf4w-odcZhvZ0BaWySm3UtLwSj3TYnWLrqKa07UdMS6bgUwrQZ0jdGQNOX4iIGwHYsja5qM0nnIXX70Xmf3BQATa7XeIy7lFR-mt4DvKLoru-LSRgZhK6kMc
+2017-09-17 20:14:39.646 +02:00 [Information] Supporting role True
+2017-09-17 20:14:53.789 +02:00 [Information] Path /api/user/login
+2017-09-17 20:14:53.922 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFqgGK8bDymDaqO_S9ar838PZPvaMAVwHyjsG8Y1VuIDrV-nNO_Jm-zdZU_Tu-5cidw5SiwxGF1XwNtEOAJZdvT7o3uc2kpwLKVcsNB3rq1yPnI5HAyepXK49Z0oc3kRKM
+2017-09-17 20:14:54.830 +02:00 [Information] Belepes: False
+2017-09-17 20:15:04.368 +02:00 [Information] Path /api/user/list
+2017-09-17 20:15:04.460 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGhLPwkAOkAzyQ2PpMtwDsSwVJ2t1OcbI0q_i_ZRKzusiebWjYfRB6exoRBQbRhBowS61hIxYU2lASM5Jf50d0M5hASds2CKOeWJMIc1RDNdw3qycYoy24QbhzKiuKOfVE
+2017-09-17 20:15:04.471 +02:00 [Information] Supporting role True
+2017-09-17 20:15:27.339 +02:00 [Information] Path /api/user/add
+2017-09-17 20:15:27.405 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEKOylLgCQHlGoFfS5_QA5UDc13UtjSXyKw0A1VKYfcnBPYK8pwJO-5Eh3vlszjLkd3OLbzVqZJW1t1rneWjpQAlChv7B9O7njOcsb9tWNo-SRRkTnffy22_DEjavdo3ARXOH0MCD21Pi-HIuTTMjZ7ac2CFBv0KfeT59HF9atBig
+2017-09-17 20:15:27.512 +02:00 [Information] Path /api/user/list
+2017-09-17 20:15:27.536 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE045dpMNOq3WG2caItS7RLkxi-kyyBCxcIo60RE16uyy-8NJt2WdkKCCfh37Gn1vHMiVUqFcqCuW-iFWKWSlfRqRSpg2fNgaPxVEstmj6j-ZCtrYArJgmMyIQSHQEHnw0
+2017-09-17 20:15:27.545 +02:00 [Information] Supporting role True
+2017-09-17 20:15:34.278 +02:00 [Information] Path /api/user/add
+2017-09-17 20:15:34.436 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEAbtPwSVmd_aY1iZ2UwS7sQgz3nBTdGck2yF4wv84-_L2JBm4oFlJ2jQHg3gpmreKzDgyjYN-J-foafyqVYzEMduMulbWPINQSr-tCB4oOlRHjrT_cDrm2FXGBPu1mcrdUelo4DWRivij3IujL0UD-LNOQxmRl0Uk1AxMkitrF3Q
+2017-09-17 20:15:34.483 +02:00 [Information] Path /api/user/list
+2017-09-17 20:15:34.498 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yG2MqDMKUaVU5od9ZC4tFQkH3bvqBoFJWdRRS0lVj2fqbkdcU_spbQhUVe-PsJVZ9dqwmjbzivE-xZfGT2OTOlb5m9cPZauLE9sfG_5Q0cq5n_KZHDlUOefiT7ksZ2XeJ8
+2017-09-17 20:15:34.502 +02:00 [Information] Supporting role True
+2017-09-17 20:16:18.992 +02:00 [Information] Path /api/user/add
+2017-09-17 20:16:19.234 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yF2iZ6Ozzn3y-PSvJHyMDtH6xaXEEKqlSye-1fRmtMZq_e0DvwuO6P0ElstifN7pdd01TQcoxGNHafNVDJI1P300djhQCqUnbqeizWhdO9x9N7-uMIMDUS_Ib0HGVMQwLtgK_VTaKOcTKVPH8nMb7ijNZiz15P1IxbitfMHzIf-jQ
+2017-09-17 20:16:19.303 +02:00 [Information] Path /api/user/list
+2017-09-17 20:16:19.431 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yErx4rWMLKeRjg7JY68yFssGt1cnZ5KanMKfDNnxiEyuzAB4NKVZpsc_uHjIk_nw78v6jxc3pO-4YwYmEVS2XRKoShUFe4QvYS7ZPOJnrysdTiLbCHAGL_fpMOTaSYirqs
+2017-09-17 20:16:19.435 +02:00 [Information] Supporting role True
+2017-09-17 20:16:30.456 +02:00 [Information] Path /api/campus/current
+2017-09-17 20:16:30.488 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEnfr3J8F9GcEEO6_LxitXkTklc6o3BKM_fiuLhIrI-vtqnUzE2wqbxOgKAF9tT12ZRSYdR8ilNse4UXJhomnUcUTF_bQWLWz7SB94n80t8Uw1EJ8AfmCaBARttvuVdl7M
+2017-09-17 20:16:34.746 +02:00 [Information] Path /api/campus/apply
+2017-09-17 20:16:34.760 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGWdl-N0SvVpTf8wzuDYSeXU7ZSM1oiEM53R5U9KkuLc8EEtTR8TJZs0tldTXYm-ohXlSTFJ16y7BDA6J9Ke2nvMVe5hwJ_uuL9X4HyW8fr5MzhYJWqBdtU0Z3nZlFwLC67U1iHmNNpR9SP2M5A28lRrfHFxHu8UHUp_cL0_B0Y2w
+2017-09-17 20:16:42.476 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:16:42.616 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHXnWbFxQpnvqofoqxDr37MuAKeo-xcefJqAgb9fVwckx5Cvrn7nDOtSiTUw9b0qd9xgt-rG47FwpZxO2mYDBTlXSMYlPpJwVvf0UerB_Krn2ZSSVq2ECRgW3Wdf6KF3RmcEOAcUTrnTiBYr8e6SN_Q2jak1pG8_8qjk0va7wQ7Sg
+2017-09-17 20:16:42.692 +02:00 [Information] Kilepes: True
+2017-09-17 20:16:53.247 +02:00 [Information] Path /api/user/login
+2017-09-17 20:16:53.479 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGbmt6OB4DPiIEPIn9lU943qP24eKA3kIZZZuCK7D0hTCLe3Ttt7AzzI-WdId8w3f1BMGfLWmCaXT0nhURFC-ZWhwGo9WZFbVXSrao2AAHKLTbtAlZszMIqV_UC7nUUevc
+2017-09-17 20:16:54.833 +02:00 [Information] Path /api/user/login
+2017-09-17 20:16:54.963 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHs6emP-aaZDcmsd_rlFyBYT_fNQ7hRGsWeE7FVvJK5H30aRsL793tZlnRUrVbMcIHDzKx2KbOHp2Wt0G9st9Qrxrqtr8tGYz_3KCygXbxtvTZhSSpqH4iW_j0tdS3i0Ac
+2017-09-17 20:16:56.403 +02:00 [Information] Path /api/user/login
+2017-09-17 20:16:56.529 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFk3IXIndJi2mq508gw9neotMzv3_MOiesTqxM3ZhkM7cEJ1xWh1D-h2hJLdPXnM2XzSGf3KtJ0xABeAbbHIohaAiH1QGM43YPjjKKOwZVuPr_oLYpxNgMPxCrp1Cr9a0U
+2017-09-17 20:16:57.651 +02:00 [Information] Path /api/user/login
+2017-09-17 20:16:57.900 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHfyu2jJfCy-RbZGUSP-5Io71NB3W3iZMLGOmN8PN0MUP-R_lA-NkvoT3M9Ob4QYp4MHBBzbiTS0mLJY8HUefeCTM8RnSOZV4r-8nDbuaPq2H-iXoqi14lDYsbmz-2z7qA
+2017-09-17 20:16:59.856 +02:00 [Information] Path /api/user/login
+2017-09-17 20:16:59.992 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yF4CoR1a2HXsWW-_YQq4_8m4fLtmgMDb2-ze_vUhrl_309yQTndqdLnzAekXcaLth5hWgEh-uBwHT0RcMuT-rjODJLCacvp9-MWFrb4LkZSP8GS3J1g8FoSew5APS8w2ko
+2017-09-17 20:17:18.139 +02:00 [Information] Path /api/user/login
+2017-09-17 20:17:18.335 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFIrL2rVvML9_NghhAduzoSuMfIunKdDCU-aH0YyFf8OqO2mYPm0MPfddvwWfalsXgppgRHlcTy7-KTc1NHUU1DiIhFFXFV0sb0ZTLQtUrL0KLSgS0BFkXmPrclLrqwT0s
+2017-09-17 20:17:29.319 +02:00 [Information] Path /api/user/login
+2017-09-17 20:17:29.526 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFY7gvw0FCTCsKWXUBZnw6JZ3JckTJc9zlGW_NNK0L6P5ssiZAD-_wKKWXwOIee7gNTPGmYPCt2saupP__QPw3Iy9cY0yENLeFJZU_KfQr4N5qotCX_e8H2IjWtopGpeLs
+2017-09-17 20:17:39.392 +02:00 [Information] Path /login
+2017-09-17 20:17:39.560 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFHrdnJQvbBImulAm_nIHW3OyJCgKHdg4wfB2sfA2jla7MKbrRISxXJKmqg9eZgJKKFiWsL6bGNxYWc9TMWY4f5oncwFGVcGYE3Hm3EpmdUZlHb01DmJ798U77JDXYEAPQ
+2017-09-17 20:17:56.120 +02:00 [Information] Path /api/user/list
+2017-09-17 20:17:56.254 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEKBH-ZoEStFmLxS39Ri4ZRE1UgyN49_bMi8tEV1WCSMnza75Qo4dJrm1wMLIUOTJvAr2TMFq5ocUBQqtS0i8W58fd2mKWIBfhOAvidhpYdDhwR57S09JTXXCgPRP7taRE
+2017-09-17 20:17:56.263 +02:00 [Information] Supporting role True
+2017-09-17 20:18:11.084 +02:00 [Information] Path /api/user/login
+2017-09-17 20:18:11.323 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHtgUfNQB6zP6odUOcN7Yb8ZPdcBSihW28JjQNVd-Ee6lW-o9GsfQV8ASKrOd-Ch5PicxSLS0eGpEbE-AjQyLtW6k5EmAbYQs3xFSUCG4Aq7MeYY4z_yn4Zd2Uge1mJWdM
+2017-09-17 20:18:11.540 +02:00 [Information] Belepes: False
+2017-09-17 20:18:13.943 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:18:14.155 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yF1jWDsbMnt5yav3yiouo_LWZ4138484J3Yk81m7EHXqK_7UWTVnK0D1IN5_nXXmfrtfJURlUue17l_MN7qMOk57D6tjTANKFHQENqqv7IejaoFLpJVioQkNDBOo2wNWJ0jFItTlLF7SHMfD4OF65w72b1WSdK4CEdgZHgRySexBA
+2017-09-17 20:18:15.743 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:18:15.985 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHv9gV3pbOuFAOr02cJ6KaojRotUwYG2KvV9Hsb8PQLhsKCKL0aA7bQirUO0BsaohHu_oEEBn8owOkb-lk2X47vU0__fyuXPx33b8j8ee1CdqN1TdDPoltiQ_u7aDqkCQgnaAq6Dpg5pHqgWuKN9RXhwyqY_9OGj76YSo0Mtn2zRw
+2017-09-17 20:18:15.992 +02:00 [Information] Kilepes: True
+2017-09-17 20:18:50.346 +02:00 [Information] Path /api/user/login
+2017-09-17 20:18:50.593 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGj4v3XF8xb7KQ6sf1EMJS-7I1uDdAx8zyvLmnPZlfj2fPycIMNU-XqNcC0znBzaywnfrz2lW63PLMKF_0zDRSOsPK6vzNVn9I81R9Gy_vfCoDgfacUR7uA-V2Zvg5NROE
+2017-09-17 20:18:51.840 +02:00 [Information] Path /api/user/login
+2017-09-17 20:18:52.029 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGEwajbvUd4q64wLaUqaZuaZOUaY2kEjpTjYBboiYxSNw3iLutM2jHwwoLoaCK89ZFvhxTtrKfItnsjIWjdmXWG8F-wL3Zn7qimY7Xw6GTSt9wbrTuSWA_ar0RfagtUcts
+2017-09-17 20:18:54.543 +02:00 [Information] Path /api/user/login
+2017-09-17 20:18:54.544 +02:00 [Information] Path /api/user/login
+2017-09-17 20:18:54.692 +02:00 [Information] Belepes: False
+2017-09-17 20:18:54.721 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE3u164461HG1TVkOE4eRdKHDu3W_mjy2J2KPKXe-GqoaVZVxOhQ0nHJos0KSI6ioLGjAcMdvT3tWu5ti3f78w057BMTxJsnX_dUEJtCvEk7eKHMhaFknVF64zzQ_uf46A
+2017-09-17 20:18:54.743 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE3MHnh505ast35CZpfn-ASWRW4wn4vLjmRSbChUa3bVoS7VAf0a-O3_oh4dCiMGkIzYlCNvRZkzMlSu55kcwCouL0kUW_NPfPpSo3-_ZlzFE7L_CO3CWLAlQBsl8o-nfY
+2017-09-17 20:18:55.171 +02:00 [Information] Belepes: False
+2017-09-17 20:18:55.421 +02:00 [Information] Belepes: False
+2017-09-17 20:18:58.235 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:18:58.401 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGnjMBUGrwj4noOm-uGdiuBeTNqaizf4QHNKwqSWQC6bJq7pE05Xg_9_1oujU_ygbX0Sry2XS6PwIeLnZqnT1ogtjl0eyOP19ovLroAaWEPFppsCYbjs6QfnV47GdTCJonhwrXvkDkxowUuOXDXzc0aoGgVPTU0151Q5vG9ZcZORg
+2017-09-17 20:18:59.684 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:18:59.853 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFh4ROb56LVYhdapdP_dU68ijk94xm81ItU-6x_urYggIpVGnL1_S74vACIAuo3ALBAaGm-04-Hy3XbqhDafb-8nO4Q6eUdXEbvG4DIyualSyuY5YmHHkU-6IIlLixsfMaAhaXwFY89n65h7L5CKKer9Zu-IWmGTBvbqE79YoGd2g
+2017-09-17 20:18:59.866 +02:00 [Information] Kilepes: True
+2017-09-17 20:19:06.480 +02:00 [Information] Path /api/user/login
+2017-09-17 20:19:06.728 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHnIJYUvQh7Sr71LBmd7OXrLq3eS1I-EmiQaBX32ckT71vBaCutO_9wpi_mr4z6HdgLwsSmnlohf0sz7z-PxAzE0ElGa_IKKEWiWNIIfWhyK-iVSWyujGq0Mexxj1yYE_M
+2017-09-17 20:21:48.946 +02:00 [Information] Path /
+2017-09-17 20:21:51.905 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGwyuxShVilEyFY7J_Z4tP9KwBeGXQb9FdaYm2cGQQbjUgregBHDT_-Ty5RrrIFaZtHmd1G_sAsqKZ39OpvOCR0Jxw7fA7FrFanOpdgS8QQT_tuAqUzP0t1Zx2o2sZqUqA
+2017-09-17 20:22:32.684 +02:00 [Information] Path /api/user/list
+2017-09-17 20:22:32.821 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHp1WWVvY6K_15KPKJ4VugP0Kz8xo6fIYRQo4drqa7QSxeNOY29CIsAoiT-3vivABlBVVwSXyY_SUyATeBLTL3K8rIbg3uERCiVzP7RshQacs7bYhpsRuMzqrwkbtAjV7A
+2017-09-17 20:22:32.830 +02:00 [Information] Supporting role True
+2017-09-17 20:22:49.292 +02:00 [Information] Path /api/user/login
+2017-09-17 20:22:49.647 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGzrknHKR5O4H_82KvQtf8Bie8IR1hm56ZtY5m_jtIToP0HlM2lPKbdo2e2r_MnEQfqiW6JUShi6gDdoutheNHnL0D43IJKcBiTje4AE8VFYLbi1nWQ9SrhxEsLTJ6jSEY
+2017-09-17 20:22:49.843 +02:00 [Information] Belepes: False
+2017-09-17 20:22:57.276 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:22:57.332 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yER8ZAXPBfRw5tOXH-gLXervviTd_OfBlDyBZEUyKepVoH37PFLSDStvwUIreNCdFI5QB8xVXf7V08McgHJnqbVShKl36Ub40jRskOYfTTPKIPhurh7_HiapsYjv7r4rlpW7fWI9GbhTr_kOc7O33Y4kyuMkcDoI0KkFfddite_Mw
+2017-09-17 20:23:52.791 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:23:52.954 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE6OR7whPc8UTEgjMgdaadmBsPEsKlNoiP1Dz7qMhIpsbSTQ9f1fzVtEFxc0l_yhQ5SeSo8yYWcXW_M9_s3Ksf-HxlExxtEMqHaVPyfFrXqzwK0_rCZCLz_Z4eRF1Ij98o5eo0XhDcdo2PYlv_FvvoFzZKWYGqouATNhvM79L3vcA
+2017-09-17 20:23:52.959 +02:00 [Information] Kilepes: True
+2017-09-17 20:24:03.259 +02:00 [Information] Path /api/user/login
+2017-09-17 20:24:03.451 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFBRaVrLsiTrfq8It7Qv2GlFb2kvBpe8SMY0gNLBSFFXdhBrq2CHLx9aeRp9bLLsfvCM2TtFiWICOFLRQ03w8zwcf4xQntXMPpY47eRgN1n_X9ldMbZZKZc6Ky_NVMyOEM
+2017-09-17 20:24:32.388 +02:00 [Information] Path /api/user/login
+2017-09-17 20:24:32.557 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGoxp8cxZ9N_a8msi9EPRT3BWz8XRDHVGUciymS4f3UcK3PrYT7516knaP8jY1QaMA6y-px0lC5ibg1CbxsEiP9se1nr18VfGKSY6BrUyQLttjEOUxStFvNvHbqULKmjEs
+2017-09-17 20:24:32.840 +02:00 [Information] Belepes: False
+2017-09-17 20:24:39.212 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:24:39.435 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yG3YMujYmXtieirSzXAItBan3RuEtSrrC58rmIh23uVdrZYjb351xvigZsVbTHntSs9MYCBS8j_ebIx-5CpGMPc_ImKmlepVE8Fm03rf8zqrftoYXcSv_jYL8zwzHgz0TkRezmWCwp83GUU7ecQ2-UIYu8VSvfHaNGC-fCCgCVhXw
+2017-09-17 20:24:41.116 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:24:41.396 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFg1ZJLR3Xw6Dd5UMJjld7SYZmHpv4wlLua8aKffNXSvX_ObbAhDqUYke8bDAYcWtNwRF-QsE5NyKPYoyV21Acyc-kryVaf4k3Acc_XU45XM40bgChf0iDZ4AARP2lVC7TB7NaP3PfHH87m-K_2pU_wUA-qySGuUp9aMan2Vcmrtg
+2017-09-17 20:24:41.408 +02:00 [Information] Kilepes: True
+2017-09-17 20:24:47.397 +02:00 [Information] Path /api/user/login
+2017-09-17 20:24:47.559 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGbEUuJlc2rPHmMNrv7W6d70UdXkGcDOHqR-Wl29R_1dCVlPDHCBBjNxuLlVl5IJxut4s80xzGSkoye41sBXQ65Mke9tUBP7jNlZETpe7zO6DaNcmQCjxMv9x49lxvL0Vc
+2017-09-17 20:24:48.400 +02:00 [Information] Path /api/user/login
+2017-09-17 20:24:48.595 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGCJ7fTV1WvmSF4SuVcqy0QhAhkREMdz2svqLrPhyx1SD-9th3KgoAg-H0eJVm3f9HGdCA8Nz_dcOWQH9p_BUBtLD2hCPY2DrTrB5TLYHb5uC02cIhzjkQ3fOFJwLGlfaU
+2017-09-17 20:24:48.727 +02:00 [Information] Belepes: False
+2017-09-17 20:25:38.579 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:25:38.730 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGiV-_kzrGty0vO2VgUc-jSXSjWO2NEXOhZtuG1w0Ap6IiWKqPSIRlIc-4Jzl_LxMLBd7elcQf3AynNKbh06Zdc9B3irUK3_Om5cgjLVRvxoYMWKNRpFP_6Q9rKtTnbdIy7UATYoZYb-OhDjgIlsywbLIO9db42d5FZSLh7vWkrvA
+2017-09-17 20:25:39.686 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:25:39.851 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yG0KhjQHAY1OIgJDNmrvuuXiH7_4wdCA0i2_2VixJ_72xWGB0SSxLepH1j9swdwV6-8UTubwi_w0b3KM6avn6edS4w4bFijn9sHJI_QwoOrApYeBa05xDjfqKWKD4yf2wKnaLH_K6kvG2g9vAiEytgFVoVsPvN3oGFh0LCtx3ysEg
+2017-09-17 20:25:39.862 +02:00 [Information] Kilepes: True
+2017-09-17 20:25:41.561 +02:00 [Information] Path /api/user/login
+2017-09-17 20:25:41.659 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFyk-v5ti9htolVU05mlIgZnYLcx4hLWQMTMozXzWJMKA7LfZJYgnqB_QclmevvcoSuzckMTyRAOgqAtLYFJ-YRTiTAYCdJRWuHJWv8rrxD3g5KYZ7LMny2jidy78nyBWU
+2017-09-17 20:25:42.503 +02:00 [Information] Path /api/user/login
+2017-09-17 20:25:42.679 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE5My09CEAsJd6iNWntmYy3uW9h7OFMYUYq0opJEwLWd9lndNG8Euu-7cBDAZbUwVJFSs_QkJjLhwJC3y8Xvjnw857RE-8aiPMVsA5zjFv6W5WNS7cwOSBdpPlkt5zcKUM
+2017-09-17 20:25:42.835 +02:00 [Information] Belepes: False
+2017-09-17 20:25:45.254 +02:00 [Information] Path /api/user/list
+2017-09-17 20:25:45.802 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFmPMQvOBnsroFOI7fi9pnclvVnpR5ed2FZSGBZPdnyvXQLQv351tEnUigeTGT3gZkLBz1L1NPESWy8tLYmmwcfSS9HU_Xxoow12HJia18VVmeeBSD6sXm49U9dziD3AD0
+2017-09-17 20:25:45.807 +02:00 [Information] Supporting role True
+2017-09-17 20:26:38.416 +02:00 [Information] Path /api/user/add
+2017-09-17 20:26:38.602 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yET593DyIt21pP2mXLIj1_9RoTUHXy-xmHod757Ty1Cza4bCmPkV7-mMpL10IpG4kywvmbr-5l3rR5aQiyIlUNDrg3llxdkGhjdzhtSsGr_xD4dSJkDpFoyroAYZdhcOUNaxQKMsAR0zIeXyQVxC2HkTyuVgctrfKEO2cTAGFu4zA
+2017-09-17 20:26:38.645 +02:00 [Information] Path /api/user/list
+2017-09-17 20:26:38.720 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yH2OFPQl700pgUBR6MmA1IN-Lqng1FzsNk4v2GWQK8UjeGEQ4LMaxyxHirdfH6TnjX7FnsMDUw3ugzD2UWJF8DSt-pfMZHawhegjeicFSaStpLdDlR7VsvgV0mEVGeTrms
+2017-09-17 20:26:38.738 +02:00 [Information] Supporting role True
+2017-09-17 20:26:45.148 +02:00 [Information] Path /api/user/add
+2017-09-17 20:26:45.264 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHTiHqfoEQLgmM9P9jfOxgfaozqcXjrE5oVcHKtxga5SyrY0FNJi1hlzvNRhFkqV2aS39JUO_-FnPm3-aQwXNOPvJoc-bxmQAswpbAEbjBoODUxuw08y6Y_nnfuPuj5KFxyFEYLnif4_eSNNA1inFqpsHB2x9LlbkcrXjFZFQyOFw
+2017-09-17 20:26:46.611 +02:00 [Information] Path /api/user/list
+2017-09-17 20:26:46.744 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE6a50VKkhDIr86D8Ie5yp7wj-AytoNNz9Wc83AmQM5lDhBv8UOhxjoKSQPKHNwEB8Af4jiiBPh-GqHiEiAb7gCj6wlC2uGjQvrDMe1YHHuO_-Clq1qqchOLToD-C3TQyY
+2017-09-17 20:26:46.760 +02:00 [Information] Supporting role True
+2017-09-17 20:36:15.198 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 20:38:32.933 +02:00 [Information] Path /
+2017-09-17 20:43:42.561 +02:00 [Information] Path /api/user/list
+2017-09-17 20:43:42.903 +02:00 [Information] Supporting role True
+2017-09-17 20:44:19.483 +02:00 [Information] Path /api/user/add
+2017-09-17 20:44:21.761 +02:00 [Information] Path /api/user/list
+2017-09-17 20:44:21.829 +02:00 [Information] Supporting role True
+2017-09-17 20:44:27.829 +02:00 [Information] Path /api/user/logout
+2017-09-17 20:44:28.273 +02:00 [Information] Kilepes: True
+2017-09-17 20:44:30.967 +02:00 [Information] Path /api/user/list
+2017-09-17 20:44:31.604 +02:00 [Information] Supporting role True
+2017-09-17 20:44:50.812 +02:00 [Information] Path /api/user/add
+2017-09-17 20:44:51.246 +02:00 [Information] Path /api/user/list
+2017-09-17 20:44:51.731 +02:00 [Information] Supporting role True
+2017-09-17 20:44:52.295 +02:00 [Information] Path /api/user/add
+2017-09-17 20:44:54.083 +02:00 [Information] Path /api/user/list
+2017-09-17 20:44:54.490 +02:00 [Information] Supporting role True
+2017-09-17 20:45:00.757 +02:00 [Information] Path /api/user/add
+2017-09-17 20:45:01.077 +02:00 [Information] Path /api/user/list
+2017-09-17 20:45:01.336 +02:00 [Information] Supporting role True
+2017-09-17 20:45:14.265 +02:00 [Information] Path /api/user/login
+2017-09-17 20:45:16.187 +02:00 [Information] Path /api/user/login
+2017-09-17 20:45:20.448 +02:00 [Information] Path /api/user/login
+2017-09-17 20:45:21.564 +02:00 [Information] Path /api/user/login
+2017-09-17 20:45:22.638 +02:00 [Information] Path /api/user/login
+2017-09-17 20:45:23.827 +02:00 [Information] Path /api/user/login
+2017-09-17 20:45:24.913 +02:00 [Information] Path /api/user/login
+2017-09-17 20:45:32.859 +02:00 [Information] Path /api/user/login
+2017-09-17 20:49:33.225 +02:00 [Information] Path /api/user/login
+2017-09-17 20:49:36.981 +02:00 [Information] Path /login
+2017-09-17 20:51:06.142 +02:00 [Information] Path /api/user/login
+2017-09-17 20:51:13.221 +02:00 [Information] Path /login
+2017-09-17 20:58:15.165 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 20:59:17.395 +02:00 [Information] Path /login
+2017-09-17 21:00:53.899 +02:00 [Information] Path /api/user/list
+2017-09-17 21:00:57.702 +02:00 [Information] Supporting role True
+2017-09-17 21:01:45.172 +02:00 [Information] Path /api/user/add
+2017-09-17 21:01:45.587 +02:00 [Information] Path /api/user/list
+2017-09-17 21:01:45.621 +02:00 [Information] Supporting role True
+2017-09-17 21:01:55.431 +02:00 [Information] Path /
+2017-09-17 21:01:55.497 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHhxgvK2m9CJdIm6A5pxAB_mSCvd8h0S5ozlMxtvt0ghnGfM2wpPBaE84iDDdyKuobYd7xlZ-N32xr_YV6-V5ks80ZzRznFlyPRqv_j496GKYm6tKFLDLmrVAr9uUwYUdQ
+2017-09-17 21:02:35.729 +02:00 [Information] Path /api/user/login
+2017-09-17 21:02:37.139 +02:00 [Information] Belepes: False
+2017-09-17 21:02:43.275 +02:00 [Information] Path /api/user/list
+2017-09-17 21:02:43.401 +02:00 [Information] Supporting role True
+2017-09-17 21:03:15.129 +02:00 [Information] Path /api/user/add
+2017-09-17 21:03:15.413 +02:00 [Information] Path /api/user/list
+2017-09-17 21:03:15.600 +02:00 [Information] Supporting role True
+2017-09-17 21:03:17.255 +02:00 [Information] Path /api/user/add
+2017-09-17 21:03:17.685 +02:00 [Information] Path /api/user/list
+2017-09-17 21:03:18.034 +02:00 [Information] Supporting role True
+2017-09-17 21:03:21.077 +02:00 [Information] Path /api/user/logout
+2017-09-17 21:03:22.304 +02:00 [Information] Path /api/user/logout
+2017-09-17 21:03:23.579 +02:00 [Information] Path /api/user/logout
+2017-09-17 21:31:13.122 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 21:35:11.276 +02:00 [Information] Path /login
+2017-09-17 21:41:55.073 +02:00 [Information] Path /api/user/logout
+2017-09-17 21:41:56.862 +02:00 [Information] Path /api/user/logout
+2017-09-17 21:41:59.972 +02:00 [Information] Path /login
+2017-09-17 21:42:07.022 +02:00 [Information] Path /
+2017-09-17 21:42:07.077 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHCnPZBadd-ubENfSshlHtzykKs_eLqbIpN_5gp2ZRuifYImFBDVizfnxtb8pv96Z8t-IOQFzpo5BdVVisd193cttIcKwwcI5pWQSPbAqe5CwF3mqerKVZJey_sf2YN6MTvCZVEjv6-Vp2EtZwXkd1ilXSPNGoMVFjHKMSD6yXWnQ
+2017-09-17 21:42:07.221 +02:00 [Information] Path /
+2017-09-17 21:42:07.360 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFWxrnaaZJL2Ok4DOKB71rPn1I7RoFAnEILP1XTWBJbnHcl0BT7lgZNwbnBOFxV3qhKIhPUwQ9kz4kbB8FhcjopwxnAZHvbBhCSyWSA4MK4-JId3Z_M4oycH2AyF3kWxr1c2NsI057RYHOwueiyma0KRBpAlXfhCyYbj_e-v8_pow
+2017-09-17 21:42:10.719 +02:00 [Information] Path /
+2017-09-17 21:42:10.823 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGas33QP4XLpdQCLuThs459gkBuDuOdpUqLM2TqHnVgr_aP9M8_0b-K3P5HwnRwDvCHaU0JunW9BUvsgQ08Cl-GjX7uuIvlh4ikxaXp7spR1ZYmuB7dQ77ez6kj38vEyMAXMensk_mgRwlDESdFd13v8nmk71lv_2_-vqkhiLEAWw
+2017-09-17 21:42:23.020 +02:00 [Information] Path /
+2017-09-17 21:42:23.031 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEvMaOYEVjOaqzqOxAmPbJbqYCg4IF6ECPRCDCHWG69_aXJ1kpIp4HwG0FIRdZ0dNa5T2-2_CfNCVgFL0-wjkxuGCR9axHl5yg5r4c0dbFWpT3gyqL7-HENe-os62H7K4gy5bXr1T8qNWC35QnlZWJJPXyz2tTMZtY5_8VdHGkhbQ
+2017-09-17 21:48:48.489 +02:00 [Information] Path /api/user/logout
+2017-09-17 21:48:48.675 +02:00 [Information] Kilepes: True
+2017-09-17 21:49:07.505 +02:00 [Information] Path /api/user/login
+2017-09-17 21:49:21.951 +02:00 [Information] Path /
+2017-09-17 21:49:21.989 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGkhkgmI2tpudMcrahrSQzTa0pWMetykeucP5TQ4hUYfEMfe3on4h05keQwfneWBb31VrAwV99tv9fETeABe0xbyGTSIZH8_cUbFapHkzD1f8Odi9-SYeeKMFtAg1qDvu8
+2017-09-17 21:53:33.264 +02:00 [Information] Path /api/user/login
+2017-09-17 21:53:44.506 +02:00 [Information] Path /api/user/login
+2017-09-17 21:53:48.033 +02:00 [Information] Belepes: True
+2017-09-17 21:53:54.616 +02:00 [Information] Path /api/user/list
+2017-09-17 21:53:54.728 +02:00 [Information] Supporting role True
+2017-09-17 21:54:32.177 +02:00 [Information] Path /api/user/add
+2017-09-17 21:54:32.441 +02:00 [Information] Path /api/user/list
+2017-09-17 21:54:32.489 +02:00 [Information] Supporting role True
+2017-09-17 21:54:55.768 +02:00 [Information] Path /api/user/logout
+2017-09-17 21:54:57.173 +02:00 [Information] Path /api/user/logout
+2017-09-17 21:54:58.468 +02:00 [Information] Path /api/user/logout
+2017-09-17 21:54:59.488 +02:00 [Information] Path /api/user/logout
+2017-09-17 21:55:02.394 +02:00 [Information] Path /
+2017-09-17 21:55:02.424 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEO-sMjUIHJkaQ9qLwwfPaCsf0iHSl3gXvSNS3tISEYkJrjSx7S_qqnm0WrByy9lAbBsG5R1ZCAIQQepa6SvrASjiIikW_hN_J0bIy2Y5zeJ6kb35et4C067xDjQGZrUEnC4G3_WUjwZimcULEusfucvDbSSN8eoztaNor9gPwGFw
+2017-09-17 21:55:12.161 +02:00 [Information] Path /api/user/logout
+2017-09-17 21:55:12.295 +02:00 [Information] Kilepes: True
+2017-09-17 21:55:21.353 +02:00 [Information] Path /api/user/login
+2017-09-17 22:04:41.831 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 22:10:34.208 +02:00 [Information] Path /
+2017-09-17 22:10:34.231 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFwLSi8wxYPZ0SZbWYp8ZGj93YWjyAWOubpvSdV9_zT2ci2hLNVcp3kUnn4Uv2vJ-yNf53VVQLOg-pJATTdlNzALQwKlCLC4geHhxLaCMlF7R67cswujOL-Hwmb9c14OdA
+2017-09-17 22:14:08.878 +02:00 [Information] Path /api/user/login
+2017-09-17 22:14:09.086 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yH9GoZA_C9fuA9Mg7ilJyAdU96XJzFPm628x018vOCFdD06gkE86SlyY7tO7WTt5_tiHxMyu1Ih7yyGSdOFutdFtFsUq47LtzCDmddhJf8_4pBxdc82XW5WAgKxX9aRiZE
+2017-09-17 22:14:21.522 +02:00 [Information] Path /api/user/login
+2017-09-17 22:14:21.720 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEvTHQnBMFqH5qN-aYrLq8KUAX7otrUZiFRNLie9JM3oYEgIeZowsnyewwT1a5tg9KErYiUzLLNJ4-UexqjV9XYMb5klekwOOGhlPd_H4EFAzmXhv_McjmV2cGZeF3OTg8
+2017-09-17 22:14:44.989 +02:00 [Information] Path /api/user/logout
+2017-09-17 22:14:45.138 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEiGI5w9cm6mqa-H6z8XQoS-w5gYopFQyfqLprTkNVx86ClqZDSGsOyVXk2ZAhONM6eG0pIa4t1g843t0_XewKW02SKQ88Re9QQcsKyoxoTDa5VCrYHpE8gpGXHEezTzIYKYQl-LYqKrZDGFUFlE4Dt7Bgm5e3L-0-0tE5akLx2Fg
+2017-09-17 22:15:04.834 +02:00 [Information] Path /api/user/logout
+2017-09-17 22:15:05.148 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yH-gya0yYvXBrIwe2cKDri7xNC4Zr1UzPTS2L0Cpla50uY94URktq1Wz-dHhzOV4UhSIoS6Z9o78uVqcZOI4GozBQN-ENVV4XUMqbJPM7IoJSV_RbMXrNxeZWnYxy6I2DccDQxEUyDyXRBgyOfDGemDLrYAinvFLd6GXcLHuink3g
+2017-09-17 22:15:05.270 +02:00 [Information] Kilepes: True
+2017-09-17 22:15:12.019 +02:00 [Information] Path /api/user/login
+2017-09-17 22:15:12.163 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHkLsqhTJ3WVbRlu21H5KPX1pKfQhEDfyK51tD81QRuYr5nTohHXJgM6WhkELel8Jcd30k5WHNRZ3dKqDeFwK6geCx7dmveTX8Th7mgXoht4sVqsgq3P8jUDmBW8LMpq6Y
+2017-09-17 22:15:14.637 +02:00 [Information] Path /api/user/login
+2017-09-17 22:15:14.791 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGDWMHyHWj6loIMB6iVYe7GRkkhC5ZRUAOzRY6ETP5JUxyuAzdtBAjuOVkmLhGsSht3m6aLean4PcU8QqV9Sg3CuavsBF1SKra7RLJhwYLVrk4zuwfVbMVkRKMJ00WXBdw
+2017-09-17 22:15:23.778 +02:00 [Information] Path /api/user/list
+2017-09-17 22:15:23.842 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGHG0npUk1u7BmXDlgmbpRfky-5Qy6FmRp8S4yqCxQBtaIwnr31Fm7fHA6GaPzdHVeyB8BQoop5jwOcleR4TZhzpDND4Hya32PC2LnoC-SMusyuifzrn_o96v-7AsZG0mI
+2017-09-17 22:15:23.893 +02:00 [Information] Supporting role True
+2017-09-17 22:15:51.581 +02:00 [Information] Path /api/user/add
+2017-09-17 22:15:51.681 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFkgYY3vdDDQMdnHiFt4ONFkoQlNWipHRAZmtGbbsHJMCmQeziG3CTXfu7dSUuLcWnAqlzE79v87hgf8tDoCaOuKLgEWEaI2YVMl6LskjnkTQYnT2e14GyL0JWBj3x_gr7Cs1GzqOyIwj6GjwdHit2oVuVczJnm72d_VR8S0JhsTw
+2017-09-17 22:15:51.805 +02:00 [Information] Path /api/user/list
+2017-09-17 22:15:51.829 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE0AZO6q4xLYdtRd8fOy5AE3ykTPLqkLZXRMHt-1zE229PNISvJR-Imc8FWEgHik5kbvBpfDtwY3-XodIv0QPxq-eUV2KMRhC6uVQj1jDnj1j9pNTfzjAPZ6oQ2w7rWbUk
+2017-09-17 22:15:51.842 +02:00 [Information] Supporting role True
+2017-09-17 22:16:14.836 +02:00 [Information] Path /api/user/add
+2017-09-17 22:16:14.975 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE3t0XLFI2RhgU0R3IGMe16iYFoaZZRA-pBGQlV6tMQYz07zuFbKB5K5J94DIEgb2pmcWVo6LcWN1g1QcryOzYuaa2i8Axs60CLTsYURFfEy0eCtYq5N2gKjL0sN5RoBSCXWBRD6IAg76mYbRdMkrlkgAVqUsZzJK3ycyFQZFnjsA
+2017-09-17 22:16:17.562 +02:00 [Information] Path /api/user/list
+2017-09-17 22:16:17.588 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGm51NfR9YMqDnuUPVurSV4kU4lFZtR4eF1EK3GlxY0iZtk0uzKaJL8ioX7N31_q1mjLBGroHlqOM7ZkLH1r-inxNuxSRT1tk49psC6YoJqQdClzf5ZfoR5K5CPd_eZmG4
+2017-09-17 22:16:17.592 +02:00 [Information] Supporting role True
+2017-09-17 22:19:35.305 +02:00 [Information] Path /api/user/logout
+2017-09-17 22:19:35.496 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEVi4d9IJhdnPwATyhk_cg0bL7K0oZTwXl7CjstpU-9rdh7q-KpB0nqm_CPtB48Pf43jgfFV4rApAAyZiOzfiIxG-FwaIxsvsUW6rfuVGtj083GmoClHky-5W-fiObVmqEGdMkYszefxHCI-zej7HzdgBjPwqQjY_lORrBE3-BQMw
+2017-09-17 22:19:35.502 +02:00 [Information] Kilepes: True
+2017-09-17 22:19:45.231 +02:00 [Information] Path /
+2017-09-17 22:19:45.237 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFKdHdq3omXM6Q20VXsp2D5vGbeWW-8dIqr6EMppuRtjl5lVzU0vDWaaHyFKNtPNfGLvckl1yyWJFzpMT0w2IA_11S5IDTTFqwk2z-XmRzxmXFgnKhA2EeD4Da-m6c8L7M
+2017-09-17 22:20:12.561 +02:00 [Information] Path /api/user/login
+2017-09-17 22:20:12.755 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFuFnUdOhjQ7QGkojIuQswdvs82bSUmVh4SMQO7A_i0iPC1fQamV0KnbBT7tiRwwBeAKrxghNc5XOzvfAid0_5SoprSE1e1UrgqiJfie6v-IRV_Vxb4vcERgLE7-XSxvpk
+2017-09-17 22:20:49.844 +02:00 [Information] Path /api/user/logout
+2017-09-17 22:20:49.918 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yH9z8hYBcMAgdxMkeBy2L3oCkJ_HERWiFfIBeZ0Av7-TpFgvnTWu3SQPO9PQcSIswY-dvRAw-aLKZCfzGidQgwzmRYYdD1wje_IoSssEAsOkiglVKgb8YJGdMlyvCJurvMo2yk-zTztpUZG0P_wyGi6xQTi55KQwtlJek9v3ekc-Q
+2017-09-17 22:21:54.546 +02:00 [Information] Path /api/user/logout
+2017-09-17 22:21:54.786 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHKEJlOmDISFPvTw6yYqtdMwzxYZR7zpv3BH9Yy4w0kU7fVx-6WbiYzcjcjwAj2xbCiasgboqmxd_gSy_DZFh1t0oL5-fzH7Phs3KezoeMWbtbgO9r4Q3yK18WuX7EGCGpQcGTmt5JyrqZ-45OUui2pNAi8EhCo0Q7AkrMNIqFgOQ
+2017-09-17 22:21:54.809 +02:00 [Information] Kilepes: True
+2017-09-17 22:24:52.950 +02:00 [Information] Path /api/user/login
+2017-09-17 22:24:53.117 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHua--5sQMos6cOmNl03t6wD9Hvz547oonKzJnDbmGiF23uvWKI5tPra_evwKYn6omplSHar_YpwyHqFFF6JhI1RJXXiNlvY6cTOUOiPaKWqQi8po775WzaX2qe3P21laE
+2017-09-17 22:51:12.600 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 22:52:17.806 +02:00 [Information] Path /
+2017-09-17 22:52:17.851 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHgGCkMKLDn1cMi1KRBNCiEj7fFzchhqUZzHgbYJqAuPKtvWHXuDcunYzpdFs2Kbk59VikSqxasP6E0gF4JkN7h6MF_UoSo8FmmwtLqkiYluwSkpkeoqx1R1_clIc9p6RU
+2017-09-17 22:53:38.932 +02:00 [Information] Path /api/user/login
+2017-09-17 22:53:44.770 +02:00 [Information] Belepes: False
+2017-09-17 22:53:51.524 +02:00 [Information] Path /api/user/logout
+2017-09-17 22:53:56.500 +02:00 [Information] Path /
+2017-09-17 22:53:56.513 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHMblmpDVFVft1JdoRNPTdnJN9Wjagix3PkDayXi4l4F3mwhEqFo9k5Xzs3frMEIXnHayg-LoaXQ2vUDTFiVNHd1fkdYmAlGKvLwn9RGmo8m4vTTWVhzIwAzk3in7C9DnoSr2WNpIFC-XaS2ZEgbleiy4y1PoJajjT_TKbqNX-TUA
+2017-09-17 22:54:26.962 +02:00 [Information] Path /api/user/logout
+2017-09-17 22:54:27.145 +02:00 [Information] Kilepes: True
+2017-09-17 22:54:29.814 +02:00 [Information] Path /api/user/list
+2017-09-17 22:54:29.946 +02:00 [Information] Supporting role True
+2017-09-17 22:54:30.327 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEosAsFkO2zoAdGhLHdqrO5PKjn0VW2Ec2zCB0MzBBBiE25K6rDGYU3hF-hgNKDdhrG9TrROd3-MP49g605-S5w1XA5pwrB2GNyf5pycgjayZ6cmvBjjbrF3j9nExr2Ds8
+2017-09-17 22:55:23.936 +02:00 [Information] Path /api/user/login
+2017-09-17 22:55:25.379 +02:00 [Information] Path /api/user/login
+2017-09-17 22:55:26.724 +02:00 [Information] Path /api/user/login
+2017-09-17 22:56:40.315 +02:00 [Information] Path /api/user/list
+2017-09-17 22:56:40.412 +02:00 [Information] Supporting role True
+2017-09-17 22:56:40.611 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGR5086bIeKEaExTEUaTJ5AQ7uWV6nRBQvSMPeQtxVzIhektbi6eBmWfBCoHU3S0sSKenOcLvSZyR-3HXcITTAWv_FmBJPUcyzD171i1fOXQMRqd2pN8E2vv-9NTe17CMM
+2017-09-17 23:03:42.861 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 23:04:08.016 +02:00 [Information] Path /
+2017-09-17 23:04:08.835 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yES0STJF5zn99sv3taZF2_j5w9iGJerUleXxwGW3asTqPiNPsgJisIHXBsspGb_-xvd8VIrd-PWQymXpIgEgA3ktABeY5PlIh285YQdBvMjrrlZ1XCmF2NXK8rJaxvC7EE
+2017-09-17 23:06:03.629 +02:00 [Information] Path /api/user/list
+2017-09-17 23:06:03.728 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGyJK8a7_HEBpvRjtm6fn5W69L83r-QtipM5hj-zY253kieUN_AWMDjsbqIuFiPFwNKeTExOq9PuAw2_BQN24DhXj5ljZBc2FksRw_U5iQwzbXek5vlT1cYqwKCXhsb_Cs
+2017-09-17 23:06:04.229 +02:00 [Information] Supporting role True
+2017-09-17 23:07:11.802 +02:00 [Information] Path /api/user/login
+2017-09-17 23:07:13.338 +02:00 [Information] Belepes: False
+2017-09-17 23:07:27.898 +02:00 [Information] Path /api/user/list
+2017-09-17 23:07:27.970 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yG5LHslBYZuM4xklMgJRLp6xnIFAtvm3yfXt0tTNxnEeA2Vh3Dty_6BBTzOB8OyVNAW1FLHyjWxFEbRKcHJBUMiIKYc43sh1ADFxnEyUiwPhrGwYYHHmPIi6M25uaZ8WBs
+2017-09-17 23:07:27.975 +02:00 [Information] Supporting role True
+2017-09-17 23:07:33.918 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:07:36.048 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:07:37.080 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:07:39.058 +02:00 [Information] Path /api/user/list
+2017-09-17 23:07:39.153 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEWI3GKM4PX7nCUPuSp9dSDQapd53MajzWJaJPfLfB5xC1YHYBvvIKGNX0tXmUTi-Jl2yITdLY6OWaIemn0J4k2VNs1gMODBKED2-6XCsF14zPMoftRw7PfAgn5FE9Mi9k
+2017-09-17 23:07:39.157 +02:00 [Information] Supporting role True
+2017-09-17 23:07:43.665 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:08:52.781 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:08:53.994 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:08:55.035 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:08:56.302 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:08:57.461 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:08:58.429 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:09:00.336 +02:00 [Information] Path /login
+2017-09-17 23:09:13.669 +02:00 [Information] Path /
+2017-09-17 23:09:13.835 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGqcaLrQCgreLHnfRf3XkC2gGub6KlswGumM45TC16oUpCMdOgT3h4txBnQIpdkcePbQIRJL_UwjAXzm7iQtFvnwhzOLO9pP0HhltXeSZ2W-jUZ7bU7EuZCi53pJB4YnH1WFemeyVe431o0w0mDdk0wGWYikCSb5MNjIqGDAfz7pA
+2017-09-17 23:09:52.721 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:09:53.127 +02:00 [Information] Kilepes: True
+2017-09-17 23:10:05.372 +02:00 [Information] Path /api/user/login
+2017-09-17 23:10:06.926 +02:00 [Information] Path /api/user/login
+2017-09-17 23:10:09.099 +02:00 [Information] Path /api/user/list
+2017-09-17 23:10:09.229 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGw6xW4C3ZHbW1QDy51KlFReWI1oMcw4Qi-QM425Oh0Zx6tTHL4itj1isdmYdSevAWnUDmOJmNEOacIX1LBaiACYK5j4kPmjKQ6BwpVNcTsaKcdwybEcWqXg4GGEJxbE9w
+2017-09-17 23:10:09.240 +02:00 [Information] Supporting role True
+2017-09-17 23:10:20.829 +02:00 [Information] Path /api/user/login
+2017-09-17 23:10:45.240 +02:00 [Information] Path /
+2017-09-17 23:10:45.306 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFuRz-t7vFmYDs3oy9jvbMWvutkICMEJE6twSveO5Qr_8pZL0Rl8_wkKTCaXvn-SoLjJB7s2Umh4YvPhzDSxodW1XInF-tyi4TgVNJ63RYAdupdE_zGciHVyKs3XOmBOTQ
+2017-09-17 23:10:59.744 +02:00 [Information] Path /
+2017-09-17 23:10:59.762 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFYA62AXLcGwwk2GxieGegr_g6gcRd5ckf9cjwDy-LnlgYIN-PGmy4xVjw3H7vHPDVrXHGDWZ00Q4VXdwMT4p0dxiyQz94L_8nZ2lCBXybQLqUWRcQy7dOkj3c_Xd4e3FQ
+2017-09-17 23:11:11.307 +02:00 [Information] Path /api/user/list
+2017-09-17 23:11:11.449 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFkLh1w-Jjwsics7EBGvZ75LlDr7sdI3ErxIePxP4ryxvoB-QpiFSkSKDVztiL1Utm5dZOt2vdJzpIJ0LukW5Ecllx3h77QZxlBOaGXhSQ7ZmxcNT9S1of_vCm6k2IZXfc
+2017-09-17 23:11:11.466 +02:00 [Information] Supporting role True
+2017-09-17 23:13:31.058 +02:00 [Information] Path /api/user/login
+2017-09-17 23:13:31.371 +02:00 [Information] Belepes: False
+2017-09-17 23:13:49.362 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:13:50.631 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:17:12.762 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:17:24.355 +02:00 [Information] Path /api/user/list
+2017-09-17 23:17:24.416 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGO0ujtgKQU-kdpDZc2Xc-T59LXULgM0hmFFqA7SSoox5umVuYGUkk9_SoLg1iisui2UrZ_vc4r52WM7dldp5B1uuhzHk8j3FTTMvbQlg69wHDV9L0gQismne9HqAj83Eg
+2017-09-17 23:17:24.424 +02:00 [Information] Supporting role True
+2017-09-17 23:20:11.486 +02:00 [Information] Path /api/campus/list
+2017-09-17 23:20:19.611 +02:00 [Information] Path /api/user/list
+2017-09-17 23:20:19.637 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEOkkdsvCd0APmceRhJ61ZfrctqIlVH0jhUPz1MmlYA5qe5k04y5PeL9zaWu5cFP1K7n08HWZw8ltCyzDlsBgaEQdnxLHuKuXgBUbuIU3ROPUp_-j29lrJkhmVF2_YDqRM
+2017-09-17 23:20:19.642 +02:00 [Information] Supporting role True
+2017-09-17 23:20:34.929 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:23:08.645 +02:00 [Information] Path /
+2017-09-17 23:23:08.654 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEMlrmI8y5-5hBJelQbPVj-QDxk3dVwyi3X1C2ibMz7FKp6eIJxVEP_l_fb40llS_GZFgk63zQ43rlIuEdd6CPmMEjepy4kftcc5nd9JRxM2nh-T_4MsH11cuCUfMFVi3Zdv7qRaFUgyLcGOGJ3TkFF7VSMo1LNk4BEMp_jy8OGHw
+2017-09-17 23:25:16.498 +02:00 [Information] Path /
+2017-09-17 23:25:16.513 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHJFy_rk_O1HgyFVwJRJtDd2U4Yg_yddtOMZ-ShCVL3rrpeSKrPIDrkcY6t0cxVsJBxkXz-_AiuPyngzlx9dkgbEZvyMDilfBUAarcEiJT1TlvjwUfykf3qfRYFJbsfElaU_vnjA-iWIdVyvhEmDNkxF81pwBM7gqPkEHUEOkHg3w
+2017-09-17 23:25:38.659 +02:00 [Information] Path /api/user/list
+2017-09-17 23:25:38.673 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHNGkf-HaLSZzoCLpqVqdA9D5IpCxG6Y8iVA4MtR5xIVS-q3Piwo6xaEYYv_0xpnnf-mOT3XD_4jBA2AqJ9Gv7yHSoaIhgTM5IOvlm5LEg_Urk-lbMsnL4xQctI7y2z7No
+2017-09-17 23:25:38.698 +02:00 [Information] Supporting role True
+2017-09-17 23:26:37.094 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:26:37.240 +02:00 [Information] Kilepes: True
+2017-09-17 23:26:50.912 +02:00 [Information] Path /api/user/login
+2017-09-17 23:28:54.677 +02:00 [Information] Path /api/user/list
+2017-09-17 23:28:54.700 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE76R63noGAO8Osv1ywsEhKGWE9P0i4eoEEoGCih6MHyMzkcZ9rBeEam1jtlQUasNndw71nWz-OWRZPDE1FwxOfjelCqFW7FvWVnvaIwVvfPUB9VaNPiGKtlqNKOINQk5s
+2017-09-17 23:28:54.704 +02:00 [Information] Supporting role True
+2017-09-17 23:29:07.760 +02:00 [Information] Path /api/user/login
+2017-09-17 23:29:33.085 +02:00 [Information] Path /api/user/list
+2017-09-17 23:29:33.104 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFjCzuNa6DC3awbMy1U_V6OPMwdO1F8QR9BMTI1uz0K57xMe9mgdjhrBQKQ7dU_p6Ac9KgJcx_3ziDlOrJzpX2KNSWfeIhb-8NpB9C3BHIOhu05gkXHMiafpAlDoWMkIg4
+2017-09-17 23:29:33.109 +02:00 [Information] Supporting role True
+2017-09-17 23:31:04.555 +02:00 [Information] Path /api/user/login
+2017-09-17 23:31:04.930 +02:00 [Information] Belepes: False
+2017-09-17 23:34:27.505 +02:00 [Information] Path /
+2017-09-17 23:34:28.158 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHHPqKmRsakxY64U-EjDTe2AalnoyWuAnhpQBFrdW-SL86vUr6I2O9OVFHefYvUQ2lWS4zTAD0FXTBT93WbHgt7zN10vZeMmf_6zXVXq1REBifEEbCnn9rBcTbJjt8DhEiD0PhmyOf8m6QKeYRQsGgtHKaFBFcQ8V1nYJepO2uGcQ
+2017-09-17 23:35:04.748 +02:00 [Information] Path /api/user/list
+2017-09-17 23:35:04.897 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFl6du_IVWxfQXCIeVKmNm5oc3U44KYv4-njuMgQCFsJlQ-daIZtnANFsOkGbQ-DFwJpNHbGh1-bdl5J8C7M4hYCCWquruTDbH72XILZWX-l52yCPlzRQrFt7mdXnoZVWF3VZ66w2WU47cU0oM93bYEKwDS-CmdLpv6od2VaBp-Og
+2017-09-17 23:35:04.902 +02:00 [Information] Supporting role True
+2017-09-17 23:35:16.220 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:35:16.336 +02:00 [Information] Kilepes: True
+2017-09-17 23:35:36.943 +02:00 [Information] Path /api/user/login
+2017-09-17 23:35:39.915 +02:00 [Information] Path /api/user/list
+2017-09-17 23:35:40.030 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yG7uvGy0PoaeUcFEONYENOcxyBc3V9WhMGpg6Tu1Hq1X236zzzHKeLhoYOi2Xv7bWWLd01BKZvWebh74DUKe-1KzQPN_y49lqgEBmX4Dv5sYbjKKVtANis839qrirzED1g
+2017-09-17 23:35:40.034 +02:00 [Information] Supporting role True
+2017-09-17 23:35:52.424 +02:00 [Information] Path /api/user/login
+2017-09-17 23:35:52.780 +02:00 [Information] Belepes: False
+2017-09-17 23:35:56.532 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:35:59.544 +02:00 [Information] Path /api/user/list
+2017-09-17 23:35:59.587 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE9K6ADs-MgbqciQ61F6WOj6oysbBqWrXeIeB4SC8GzN-SKItfxFyq9PMP_O6CQDZYTnaaDkaIGnqoni190JG0dNyneyC-BqxZz-xaNSpxMywuHgQoGC3pdV0JiqhYUTvQj6iTywTkJXAMur5IavBnzQsZ3qnSreSGz4HZhMKk2Sg
+2017-09-17 23:35:59.594 +02:00 [Information] Supporting role True
+2017-09-17 23:36:05.166 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:36:05.187 +02:00 [Information] Kilepes: True
+2017-09-17 23:50:37.336 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-17 23:53:31.085 +02:00 [Information] Path /
+2017-09-17 23:53:31.109 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHV-aKTM7i9Zx8zjzGgu4ijoQc_r6jYQmjh_xroiTgvP1dowWNq6LhsCiGJdSBlgZEcQyNepEQwetNpYwH48_UXnza4VF9Lah0x_ZQuxRuDn4VAljyLra4S8RamPARZn9c
+2017-09-17 23:58:18.356 +02:00 [Information] Path /
+2017-09-17 23:58:18.497 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yENB31eyBbyak3Uipb_ofNUqeLXTn0T-cVkA-RyFm5jDXc4zC7UHvAT0TObBRO1WuGSmVWx5oxNYRlcYBw1Aok9eQjDknYMl3rnUF2DkErM979EYjSTOQSa4EZe0ef9KLU
+2017-09-17 23:58:39.052 +02:00 [Information] Path /api/user/login
+2017-09-17 23:58:43.941 +02:00 [Information] Belepes: False
+2017-09-17 23:58:43.949 +02:00 [Information] New Token LOGINCfDJ8Ny3EdM3ZS5LtWSy5cml2yFhn4J7nmt0NJinMUJkP8qEn5__bc_JHj03nHMpQJEXM5lTKQKBeUYz1OJL-M-Esej4XyqJGdNp7rZe6K5EkkgFgHqOMdddNhLjF48_pOb69hoJLEbJNk-ch5ehZYce7k8
+2017-09-17 23:58:52.100 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:58:54.329 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:58:55.987 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:59:14.130 +02:00 [Information] Path /api/user/list
+2017-09-17 23:59:14.200 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFcsJrxFprLRht75-bB0VEl6cM6s2TeeQP8H1XcCzGBcuw59tUZtaMyTdkjhNHJkxCWx4-KfsbOWwLpr5KLa5wPRKFFbzqk6JhMVyrrvVeaDO_Z3U4cxjYaQFVR4sjZzFGJaCFYQ7xOodgJ7BqvmS519Zr9mkBe27yvTMKuDGnM0Q
+2017-09-17 23:59:14.327 +02:00 [Information] Supporting role True
+2017-09-17 23:59:18.496 +02:00 [Information] Path /api/user/logout
+2017-09-17 23:59:18.711 +02:00 [Information] Kilepes: True
+2017-09-17 23:59:18.717 +02:00 [Information] New Token LOGOUTCfDJ8Ny3EdM3ZS5LtWSy5cml2yGIKTW9fzfvsclpYtKlnF7uM47vlqGZr5uoucVD0snO5bnLHb_YkSbViOJp5K_ltS2ergZYLnbSrrC1GLRHyJAARrHZOgbq3GKjK2AMbOTrm8RBTXSRBDQVe23vfDSnyETn_Gz3ZA5BKH9gqEDkJ98flzg9qZ2dkDnj9sVzFJJDKQ

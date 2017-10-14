@@ -25,6 +25,7 @@ namespace EvoManager {
         public DbSet<Student> Students { get; set; }
 		public DbSet<Mentor> Mentors { get; set; }
 		public DbSet<Project> Projects { get; set; }
+		public DbSet<ProjectCampus> ProjectCampus { get; set; }
 		public DbSet<ProjectLeader> ProjectLeaders { get; set; }
 		public DbSet<ProjectLeaderParticipationMeeting> ProjectLeaderParticipationMeetings { get; set; }
 		public DbSet<TeamMemberParticipationMeeting> TeamMemberParticipationMeetings { get; set; }

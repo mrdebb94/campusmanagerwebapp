@@ -1,0 +1,82 @@
+2017-09-28 17:07:25.156 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-28 17:26:21.228 +02:00 [Information] Path /
+2017-09-28 17:26:21.559 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEYVdDt8_xl65WU1eNAPcZGZFn7DW0j_5kZ-j2_ZEvybF600S5zRdsO52EkGsG2xBQ-VZvG2vBqqAZQwokCuYUNkgXwbwJTbsRBlM3ZBUWhFyTUHaWl9esbmdUk_vqzxpw
+2017-09-28 17:42:31.628 +02:00 [Information] Path /api/user/login
+2017-09-28 17:43:04.618 +02:00 [Information] Belepes: False
+2017-09-28 17:43:04.945 +02:00 [Information] Path /api/xsrftoken/get
+2017-09-28 17:48:35.687 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 17:49:05.053 +02:00 [Information] Path /api/campus/changeCampusParticipation
+2017-09-28 17:49:05.783 +02:00 [Information] Tanulo
+2017-09-28 17:49:10.032 +02:00 [Information] Path /api/campus/current
+2017-09-28 17:49:12.532 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 17:49:32.897 +02:00 [Information] Path /api/campus/changeCampusParticipation
+2017-09-28 17:49:33.252 +02:00 [Information] Tanulo
+2017-09-28 17:56:17.157 +02:00 [Information] Path /currentparticipants
+2017-09-28 17:56:24.505 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 17:57:01.923 +02:00 [Information] Path /api/campus/changeCampusParticipation
+2017-09-28 17:57:02.068 +02:00 [Information] Tanulo
+2017-09-28 18:22:48.017 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-28 18:23:43.769 +02:00 [Information] Path /currentparticipants
+2017-09-28 18:25:18.334 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 18:27:40.165 +02:00 [Information] Path /api/campus/changeCampusParticipation
+2017-09-28 18:27:40.984 +02:00 [Information] Tanulo
+2017-09-28 18:27:40.987 +02:00 [Information] Tanulobol Mentor
+2017-09-28 18:28:10.399 +02:00 [Information] Path /login
+2017-09-28 18:28:24.540 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 18:28:35.626 +02:00 [Information] Path /api/campus/changeCampusParticipation
+2017-09-28 18:28:35.916 +02:00 [Information] Tanulo
+2017-09-28 18:28:35.927 +02:00 [Information] Tanulobol Mentor
+2017-09-28 18:42:28.667 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-28 18:50:11.760 +02:00 [Information] Path /currentparticipants
+2017-09-28 18:51:09.861 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 18:53:15.643 +02:00 [Information] Path /api/campus/changeCampusParticipation
+2017-09-28 18:53:17.223 +02:00 [Information] Tanulo
+2017-09-28 18:53:17.226 +02:00 [Information] Tanulobol Mentor
+2017-09-28 18:53:30.730 +02:00 [Information] Path /api/campus/current
+2017-09-28 18:53:33.067 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 19:18:32.209 +02:00 [Information] Path /api/user/list
+2017-09-28 19:18:32.285 +02:00 [Information] Supporting role True
+2017-09-28 20:02:17.076 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-28 20:03:18.121 +02:00 [Information] Path /users
+2017-09-28 20:07:08.439 +02:00 [Information] Path /users
+2017-09-28 20:07:19.993 +02:00 [Information] Path /api/user/list
+2017-09-28 20:07:20.269 +02:00 [Information] Supporting role True
+2017-09-28 20:07:35.827 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 20:07:53.132 +02:00 [Information] Path /api/campus/changeCampusParticipation
+2017-09-28 20:07:56.075 +02:00 [Information] Tanulo
+2017-09-28 20:07:56.078 +02:00 [Information] Tanulobol Mentor
+2017-09-28 20:16:11.663 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-28 20:16:41.184 +02:00 [Information] Path /currentparticipants
+2017-09-28 20:18:18.524 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 20:18:31.241 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 20:18:43.799 +02:00 [Information] Path /api/user/list
+2017-09-28 20:18:43.918 +02:00 [Information] Supporting role True
+2017-09-28 20:19:09.017 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 20:19:43.401 +02:00 [Information] Path /api/campus/current
+2017-09-28 20:19:47.176 +02:00 [Information] Path /api/user/list
+2017-09-28 20:19:47.348 +02:00 [Information] Supporting role True
+2017-09-28 20:19:50.624 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 20:20:14.118 +02:00 [Information] Path /api/campus/changeCampusParticipation
+2017-09-28 20:20:15.492 +02:00 [Information] Tanulo
+2017-09-28 20:20:15.499 +02:00 [Information] Tanulobol Mentor
+2017-09-28 20:28:52.957 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-28 20:29:40.498 +02:00 [Information] Path /currentparticipants
+2017-09-28 20:32:26.374 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 20:33:38.375 +02:00 [Information] Path /api/campus/changeCampusParticipation
+2017-09-28 20:33:39.226 +02:00 [Information] Tanulo
+2017-09-28 20:33:39.229 +02:00 [Information] Tanulobol Mentor
+2017-09-28 20:38:28.526 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-09-28 21:21:02.253 +02:00 [Information] Path /currentparticipants
+2017-09-28 21:21:58.003 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 21:27:12.277 +02:00 [Information] Path /api/campus/current
+2017-09-28 21:27:23.038 +02:00 [Information] Path /api/campus/list
+2017-09-28 21:27:53.723 +02:00 [Information] Path /api/user/list
+2017-09-28 21:27:54.005 +02:00 [Information] Supporting role True
+2017-09-28 21:28:02.749 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 21:44:47.603 +02:00 [Information] Path /currentparticipants
+2017-09-28 21:44:59.894 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 21:56:10.682 +02:00 [Information] Path /currentparticipants
+2017-09-28 21:56:23.646 +02:00 [Information] Path /api/campus/current/participations
+2017-09-28 21:57:10.880 +02:00 [Information] Path /api/campus/changeCampusParticipation
+2017-09-28 21:57:12.471 +02:00 [Information] Tanulo
+2017-09-28 21:57:12.475 +02:00 [Information] Tanulobol Mentor

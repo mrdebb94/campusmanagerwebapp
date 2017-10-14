@@ -19,11 +19,12 @@ namespace EvoManager.Models
 		public string UserId { get; set; }
 	    public virtual User User { get; set; }
 		
-		//Subscribed
-		public virtual ICollection<Project> Projects { get; set; }
+		public bool IsDeleted { get; set; }
 		
+		
+		public virtual ICollection<TeamMember> TeamMembers { get; set; }
+		public virtual ICollection<SubscribedStudent> SubscribeStudents { get; set; }
 		public virtual ICollection<CampusParticipation> CampusParticipations { get; set; }
-		
 		public virtual ICollection<StudentRating> StudentRatings { get; set; }
 	}
 }
