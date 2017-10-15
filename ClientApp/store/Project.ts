@@ -20,6 +20,7 @@ export interface Project {
 
 export interface ProjectState {
     projectList: Project[];
+    activeProjectList?: Project[];
     editedProject?: Project;
     projectDialog: {
         open: boolean,
@@ -31,6 +32,11 @@ export interface ProjectState {
 
 interface SetProjectListAction {
     type: 'SET_PROJECT_LIST';
+    projectList: Project[];
+}
+
+interface SetActiveProjectListAction {
+    type: 'SET_ACTIVE_PROJECT_LIST';
     projectList: Project[];
 }
 
@@ -50,7 +56,8 @@ interface ToggleProjectDialog {
 }
 
 
-type KnownAction = SetProjectListAction | AddProjectAction | ToggleProjectDialog | ModifyEditedProjectAction;
+type KnownAction = SetProjectListAction | AddProjectAction | 
+ToggleProjectDialog | ModifyEditedProjectAction | SetActiveProjectListAction;
 
 export const projectServices = {
 
@@ -90,6 +97,32 @@ export const projectServices = {
                     projectId: project.projectId,
                     name: project.name,
                     description: project.description,
+                }));
+                resolve(projectList);
+            });
+    }),
+    listActiveProjectInCurrentCampus: (): Promise<any> => new Promise((resolve) => {
+        fetch('api/project/current/active/list', {
+            method: 'GET',
+            credentials: 'same-origin'
+        }).then(response => response.json())
+            .then(response => {
+
+                //TODO: nem lenne elég csak a moment-es részt módosítani,
+                //TODO: ha a többi egyezik?
+
+                let projectList = response.map((project) => ({
+                    projectCampusId: project.projectCampusId,
+                    name: project.name,
+                    description: project.description,
+                    campus: {
+                        campusId: project.campus.campusId,
+                        startDate: moment(project.campus.startDate),
+                        endDate: moment(project.campus.endDate)
+                    },
+                    projectStatus: {
+                        value: project.projectStatus.value
+                    }
                 }));
                 resolve(projectList);
             });
@@ -166,7 +199,18 @@ export const actionCreators = {
         });
     },
 
+    setActiveProjectList: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
+        
+        dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList: [] });
+                //TODO: hibakezelés
+                projectServices.listActiveProjectInCurrentCampus().then((response) => {
+                    //TODO: valahogy a Promise-ba definiálni
+                    let projectList: Project[] = response as Project[];
+                    dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList });
+                });
+        },
     //TODO: hozzáfűzés ne a Component-ben legyen, hanem itt!
+    //TODO: ahhoz itt is (dispatch, getState) -t kell használni!
     modifyEditedProject: ({
         projectCampusId = null,
         projectId = null,
@@ -217,6 +261,12 @@ export const reducer: Reducer<ProjectState> = (state = initialState, incomingAct
             return {
                 ...state,
                 projectList: action.projectList
+            };
+        }
+        case 'SET_ACTIVE_PROJECT_LIST': {
+            return {
+                ...state,
+                activeProjectList: [...action.projectList]
             };
         }
         case 'MODIFY_EDITED_PROJECT': {

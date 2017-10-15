@@ -269,3 +269,29 @@
 2017-10-14 22:55:07.066 +02:00 [Information] Supporting role True
 2017-10-14 22:55:39.384 +02:00 [Information] Path /api/user/list
 2017-10-14 22:55:39.761 +02:00 [Information] Supporting role True
+2017-10-14 23:05:30.089 +02:00 [Information] Path /api/campus/current/participations
+2017-10-14 23:05:31.285 +02:00 [Information] Path /api/campus/current
+2017-10-14 23:05:33.663 +02:00 [Information] Path /api/user/list
+2017-10-14 23:05:33.672 +02:00 [Information] Supporting role True
+2017-10-14 23:05:44.656 +02:00 [Information] Path /api/campus/list
+2017-10-14 23:06:36.914 +02:00 [Information] Path /api/user/list
+2017-10-14 23:06:37.145 +02:00 [Information] Supporting role True
+2017-10-14 23:11:53.754 +02:00 [Information] Path /users
+2017-10-14 23:12:05.745 +02:00 [Information] Path /api/user/list
+2017-10-14 23:12:06.372 +02:00 [Information] Supporting role True
+2017-10-14 23:14:29.314 +02:00 [Information] Path /api/campus/list
+2017-10-14 23:19:23.482 +02:00 [Information] Path /api/user/login
+2017-10-14 23:19:26.908 +02:00 [Information] Belepes: False
+2017-10-14 23:19:27.067 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-14 23:19:29.128 +02:00 [Information] Path /api/user/logout
+2017-10-14 23:19:29.164 +02:00 [Information] Kilepes: True
+2017-10-14 23:19:29.267 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-14 23:19:34.719 +02:00 [Information] Path /api/user/list
+2017-10-14 23:19:34.764 +02:00 [Information] Supporting role True
+2017-10-14 23:19:41.331 +02:00 [Information] Path /api/project/current/list
+2017-10-14 23:19:41.456 +02:00 [Information] Path /Account/Login
+2017-10-14 23:19:47.286 +02:00 [Information] Path /api/campus/current/participations
+2017-10-14 23:19:50.590 +02:00 [Information] Path /api/campus/current
+2017-10-14 23:19:52.483 +02:00 [Information] Path /api/campus/current/participations
+2017-10-14 23:20:02.022 +02:00 [Information] Path /api/campus/current
+2017-10-14 23:20:05.434 +02:00 [Information] Path /api/campus/list

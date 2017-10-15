@@ -1,0 +1,58 @@
+2017-10-15 11:18:51.029 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-10-15 11:21:49.762 +02:00 [Information] Path /
+2017-10-15 11:21:50.588 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEwaEJOpVRD281iOeAj9dIxldFpIuMUIqz2UWtRlGQ7JBvXzSwJZ11JTl6t-mb6UMJFDifKVLQ1TgikRW6ZeEyYgX7sTsjxZ4zSG3EcwsAJzsWiSbnUEB_yU26dE9fjvJ0
+2017-10-15 11:28:53.219 +02:00 [Information] Path /api/user/list
+2017-10-15 11:28:53.677 +02:00 [Information] Supporting role True
+2017-10-15 11:32:27.205 +02:00 [Information] Path /api/campus/list
+2017-10-15 11:32:33.644 +02:00 [Information] Path /api/campus/current
+2017-10-15 19:03:54.725 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-10-15 22:12:24.195 +02:00 [Information] Path /
+2017-10-15 22:12:26.155 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGn2JFGQdRItKlpzD3ji8WWR6UKZq69R_vEOxjJ5h8tIPriYLhuuCXDOt-nj-dqcBOXSmeoRn1c2DwkxpKi-mf7mbF9SEjl1Zn5pXe3M6X2fEh36gnj0nEnJrVTF3YcBqs
+2017-10-15 22:17:56.225 +02:00 [Information] Path /
+2017-10-15 22:17:56.434 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHBj3X90Pa03tdBkbXOU-uhspK7IXn4hN9umMCgBIu3HRkWeMUzroz4-nvYklQAqwzbRomdONnnQjcDdxU1LxjHBgJPgo6uS5Ba_CFwvoXHZQ3EjVOXVtnk4nyDcLmGJGA
+2017-10-15 22:18:12.632 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:18:13.218 +02:00 [Information] Path /Account/Login
+2017-10-15 22:18:44.166 +02:00 [Information] Path /api/user/login
+2017-10-15 22:18:48.198 +02:00 [Information] Belepes: False
+2017-10-15 22:18:48.505 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-15 22:18:51.741 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:19:23.634 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:20:00.768 +02:00 [Information] Path /projects
+2017-10-15 22:20:10.654 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:22:59.290 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:23:47.478 +02:00 [Information] Path /subscribe
+2017-10-15 22:23:58.805 +02:00 [Information] Path /
+2017-10-15 22:23:58.848 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGFQ_KGgaoFQVoBJah7lde_iIL0ah5zzE2HT0GwGorRY0sz6GWsrgUYTyTwljIalvuwGdYFGLog-v76nccsqkaKERMYCwJsr5Dqq8aKvavX_f4XYLyJjtF6IFVzlpfflo5Kqr0VhW_s6JzOoJEdI9hCzHXneQgmkdX4grPGr-RDrA
+2017-10-15 22:31:17.794 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:31:24.168 +02:00 [Information] Path /projects
+2017-10-15 22:31:37.698 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:34:07.699 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:34:12.086 +02:00 [Information] Path /projects
+2017-10-15 22:34:23.306 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:34:34.289 +02:00 [Information] Path /api/project/current/active/list
+2017-10-15 22:34:44.695 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:34:48.422 +02:00 [Information] Path /api/campus/list
+2017-10-15 22:34:50.095 +02:00 [Information] Path /api/project/continuable/list
+2017-10-15 22:35:00.987 +02:00 [Information] Path /api/campus/list
+2017-10-15 22:35:01.456 +02:00 [Information] Path /api/project/continuable/list
+2017-10-15 22:35:07.679 +02:00 [Information] Path /api/campus/current/participations
+2017-10-15 22:35:12.520 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:35:15.528 +02:00 [Information] Path /api/campus/list
+2017-10-15 22:35:16.019 +02:00 [Information] Path /api/project/continuable/list
+2017-10-15 22:36:06.891 +02:00 [Information] Path /api/campus/list
+2017-10-15 22:36:07.331 +02:00 [Information] Path /api/project/continuable/list
+2017-10-15 22:36:10.364 +02:00 [Information] Path /api/campus/list
+2017-10-15 22:36:15.237 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:36:17.214 +02:00 [Information] Path /api/campus/list
+2017-10-15 22:36:17.877 +02:00 [Information] Path /api/project/continuable/list
+2017-10-15 22:37:01.351 +02:00 [Information] Path /api/project/add
+2017-10-15 22:37:04.029 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:37:09.961 +02:00 [Information] Path /api/project/current/active/list
+2017-10-15 22:37:45.578 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:37:47.844 +02:00 [Information] Path /api/campus/list
+2017-10-15 22:37:48.462 +02:00 [Information] Path /api/project/continuable/list
+2017-10-15 22:38:10.310 +02:00 [Information] Path /api/project/add
+2017-10-15 22:38:11.005 +02:00 [Information] Path /api/project/current/list
+2017-10-15 22:38:15.346 +02:00 [Information] Path /api/project/current/active/list
+2017-10-15 23:02:56.624 +02:00 [Information] Path /subscribe
+2017-10-15 23:03:30.252 +02:00 [Information] Path /api/project/current/active/list

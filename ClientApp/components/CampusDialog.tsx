@@ -96,6 +96,27 @@ class CampusDialog extends React.Component<CampusProps, {}> {
         });
     };
 
+    setCampusActiveStartedStartDate = (event, date) => {
+        this.props.modifyEditedCampus({
+            ...this.props.editedCampus,
+            campusActiveStarted: {
+                startDate: moment(date),
+                endDate: (this.props.editedCampus && this.props.editedCampus.campusActiveStarted) ?
+                    this.props.editedCampus.campusActiveStarted.endDate : undefined
+            }
+        });
+    };
+
+    setCampusActiveStartedEndDate = (event, date) => {
+        this.props.modifyEditedCampus({
+            ...this.props.editedCampus,
+            campusActiveStarted: {
+                startDate: (this.props.editedCampus && this.props.editedCampus.campusActiveStarted) ?
+                    this.props.editedCampus.campusActiveStarted.startDate : undefined,
+                endDate: moment(date)
+            }
+        });
+    };
 
     public render() {
         return <div>
@@ -134,7 +155,7 @@ class CampusDialog extends React.Component<CampusProps, {}> {
                         checked={this.props.editedCampus ? this.props.editedCampus.active : false}
                     />
                 </div>
-                <div style={{...styles.stateBlock, justifyContent: 'space-between'}}>
+                <div style={{ ...styles.stateBlock, justifyContent: 'space-between' }}>
                     <Chip
                         style={styles.chip}>
                         Inaktív
@@ -156,7 +177,7 @@ class CampusDialog extends React.Component<CampusProps, {}> {
                             ? this.props.editedCampus.campusInactive.endDate.toDate() : undefined}
                     />
                 </div>
-                <div style={{...styles.stateBlock, justifyContent: 'space-between'}}>
+                <div style={{ ...styles.stateBlock, justifyContent: 'space-between' }}>
                     <Chip
                         style={styles.chip}>
                         Jelentkezési időszak
@@ -178,14 +199,15 @@ class CampusDialog extends React.Component<CampusProps, {}> {
                             ? this.props.editedCampus.campusActiveNotStarted.endDate.toDate() : undefined}
                     />
                 </div>
-                <div style={{...styles.stateBlock, justifyContent: 'space-between'}}>
+                <div style={{ ...styles.stateBlock, justifyContent: 'space-between' }}>
                     <Chip
                         style={styles.chip}>
                         Projekt időszak
-                        <DatePicker
+                    </Chip>
+                    <DatePicker
                         hintText="Időszak kezdete"
                         textFieldStyle={styles.datePickerTextField}
-                        onChange={this.setCampusActiveNotStartedStartDate}
+                        onChange={this.setCampusActiveStartedStartDate}
                         value={this.props.editedCampus && this.props.editedCampus.campusActiveStarted
                             && this.props.editedCampus.campusActiveStarted.startDate
                             ? this.props.editedCampus.campusActiveStarted.startDate.toDate() : undefined}
@@ -193,14 +215,13 @@ class CampusDialog extends React.Component<CampusProps, {}> {
                     <DatePicker
                         hintText="Időszak vége"
                         textFieldStyle={styles.datePickerTextField}
-                        onChange={this.setCampusActiveNotStartedEndDate}
+                        onChange={this.setCampusActiveStartedEndDate}
                         value={this.props.editedCampus && this.props.editedCampus.campusActiveStarted
                             && this.props.editedCampus.campusActiveStarted.endDate
                             ? this.props.editedCampus.campusActiveStarted.endDate.toDate() : undefined}
                     />
-                </Chip>
                 </div>
-                <div style={{...styles.stateBlock, justifyContent: 'space-between'}}>
+                <div style={{ ...styles.stateBlock, justifyContent: 'space-between' }}>
                     <Chip
                         style={styles.chip}>
                         Lezárási időszak
