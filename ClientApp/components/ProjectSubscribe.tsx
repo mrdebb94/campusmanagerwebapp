@@ -4,7 +4,26 @@ import { connect } from 'react-redux';
 import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import { ApplicationState } from '../store';
+import Avatar from 'material-ui/Avatar';
+import Chip from 'material-ui/Chip';
+import SvgIconFace from 'material-ui/svg-icons/action/face';
+import FileCloudDownload from 'material-ui/svg-icons/file/cloud-download';
 import * as ProjectStore from '../store/Project';
+
+
+
+const styles = {
+    chip: {
+      margin: 4,
+    },
+    container: {
+      display: "flex",
+      flexDirection: "row"
+    } as React.CSSProperties,
+    iconStyles : {
+        marginRight: 24,
+      }
+}
 
 type ProjectProps =
 ProjectStore.ProjectState        // ... state we've requested from the Redux store
@@ -28,16 +47,42 @@ class ProjectSubscribe extends React.Component<ProjectProps,any> {
             <Card containerStyle={{marginBottom:10}}>
             <CardTitle title={project.name} subtitle="Információk" />
             <CardText>
-                <h3>Leírás</h3>
                 <p>{project.description}</p>
+                <div style={styles.container}>
+                    <div>
+                    {project.subscribedMentors?project.subscribedMentors.map( mentor=>(
+                    <Chip key={mentor.mentorId}
+                      style={styles.chip}
+                    >
+                    <Avatar icon={
+                        <FileCloudDownload />} />
+                    {mentor.name}
+                    </Chip>
+                    )):<span>Nem ismert</span>
+                    }
+                    </div>
+                    <div>
+                    {project.subscribedStudents?project.subscribedStudents.map( student=>(
+                    <Chip key={student.studentId}
+                      style={styles.chip}
+                    >
+                    <Avatar icon={<SvgIconFace />} />
+                    {student.name}
+                    </Chip>
+                    )):<span>Nem ismert</span>
+                    }
+                    </div>
+                </div>
             </CardText>
             <CardActions>
-                <FlatButton label="Jelentkezés" onClick={()=>{}}/>
+                <FlatButton label="Jelentkezés" onClick={()=>{
+                    this.props.subscribeProject(project.projectCampusId);
+                }}/>
             </CardActions>
         </Card>
         )
       )
-            }
+    }
       </div>
     );
     }

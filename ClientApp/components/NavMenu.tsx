@@ -38,7 +38,7 @@ export class NavMenu extends React.Component<any, {}> {
                 <Subheader inset={true}>Aktuális félév</Subheader>
                 <Menu  width={this.props.width} autoWidth={false}>
                     <NavLink to={'/currentcampus'} activeClassName='active'>
-                        <MenuItem primaryText="Jelentkezés" />
+                        <MenuItem primaryText="Szemeszter jelentkezés" />
                     </NavLink>
                     <NavLink to={'/currentparticipants'} activeClassName='active'>
                         <MenuItem primaryText="Résztvevők" />

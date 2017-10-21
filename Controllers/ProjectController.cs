@@ -40,6 +40,7 @@ namespace EvoManager.Controllers
       [HttpGet("current/active/list")]
       public IList<ProjectViewModel> ListActiveProjectsInCurrentCampus() {
           return _context.ProjectCampus
+         .Include(m=>m.SubscribedStudents)
          .Where(m=>m.Campus.Active&&
                 m.ProjectStatus.Value=="Active")
          .Select(m=>new ProjectViewModel {
@@ -52,7 +53,19 @@ namespace EvoManager.Controllers
              Campus = new Campus {
                  StartDate = m.Campus.StartDate,
                  EndDate = m.Campus.EndDate
-             }
+             },
+             SubscribedStudents = m.SubscribedStudents.Select(
+                 s=>new Student {
+                     StudentId=s.Student.StudentId,
+                     Name=s.Student.Name
+                 }
+             ).ToList(),
+             SubscribedMentors = m.SubscribedMentors.Select(
+                 s=>new Mentor {
+                     MentorId = s.Mentor.MentorId,
+                     Name=s.Mentor.Name
+                 }
+             ).ToList()
          })
          .ToList();
       }
@@ -60,7 +73,8 @@ namespace EvoManager.Controllers
       [Authorize(Roles = "Mentor, Student")]
       [HttpPost("subscribe")]
       [ValidateAntiForgeryToken]
-      public async Task<ActionResult> SubscribeProject(ProjectViewModel project) 
+      public async Task<ActionResult> SubscribeProject(
+          [FromBody][Bind("ProjectCampusId")] ProjectViewModel project) 
       {
            DateTime currentDate = DateTime.Now;
             
@@ -103,6 +117,8 @@ namespace EvoManager.Controllers
                             subscribedStudent.SubscribedDate = currentDate;
                             _context.SubscribedStudents.Add(subscribedStudent);
                             _context.SaveChanges();
+
+                            return Ok(Json("Sikeres jelentkezés!"));
                         } else {
                             return Ok(Json("Már jelentkezett erre a projektre!"));	
                         }
@@ -122,6 +138,8 @@ namespace EvoManager.Controllers
                             subscribedMentor.SubscribedDate = currentDate;
                             _context.SubscribedMentors.Add(subscribedMentor);
                             _context.SaveChanges();
+
+                             return Ok(Json("Sikeres jelentkezés!"));
                         } else {
                             return Ok(Json("Már jelentkezett erre a projektre!"));
                         }

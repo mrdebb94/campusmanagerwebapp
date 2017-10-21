@@ -4,11 +4,13 @@ import { AppThunkAction } from './';
 import { isEmpty } from '../utils/helper'
 import * as moment from 'moment';
 import { Campus, campusServices } from './Campus'
+import { Mentor, Student } from './CampusParticipation'
 
 export interface ProjectStatus {
     value: string;
 }
 
+//TODO: ProjectDetails status
 export interface Project {
     projectCampusId?: string | null;
     projectId: string | null;
@@ -16,6 +18,8 @@ export interface Project {
     description: string;
     campus?: Campus;
     projectStatus?: ProjectStatus;
+    subscribedMentors?: Mentor[];
+    subscribedStudents?: Student[];
 }
 
 export interface ProjectState {
@@ -56,8 +60,8 @@ interface ToggleProjectDialog {
 }
 
 
-type KnownAction = SetProjectListAction | AddProjectAction | 
-ToggleProjectDialog | ModifyEditedProjectAction | SetActiveProjectListAction;
+type KnownAction = SetProjectListAction | AddProjectAction |
+    ToggleProjectDialog | ModifyEditedProjectAction | SetActiveProjectListAction;
 
 export const projectServices = {
 
@@ -70,7 +74,7 @@ export const projectServices = {
 
                 //TODO: nem lenne elég csak a moment-es részt módosítani,
                 //TODO: ha a többi egyezik?
-
+               
                 let projectList = response.map((project) => ({
                     projectCampusId: project.projectCampusId,
                     name: project.name,
@@ -83,7 +87,8 @@ export const projectServices = {
                     projectStatus: {
                         value: project.projectStatus.value
                     }
-                }));
+                }
+            ));
                 resolve(projectList);
             });
     }),
@@ -110,7 +115,6 @@ export const projectServices = {
 
                 //TODO: nem lenne elég csak a moment-es részt módosítani,
                 //TODO: ha a többi egyezik?
-
                 let projectList = response.map((project) => ({
                     projectCampusId: project.projectCampusId,
                     name: project.name,
@@ -122,7 +126,9 @@ export const projectServices = {
                     },
                     projectStatus: {
                         value: project.projectStatus.value
-                    }
+                    },
+                    subscribedStudents: project.subscribedStudents,
+                    subscribedMentors: project.subscribedMentors
                 }));
                 resolve(projectList);
             });
@@ -137,7 +143,7 @@ export const projectServices = {
             Campus: {
                 CampusId: editedProject.campus.campusId
             },
-            ProjectId : editedProject.projectId
+            ProjectId: editedProject.projectId
         });
 
         let headers = {};
@@ -155,6 +161,28 @@ export const projectServices = {
         });
 
     }),
+
+    subscribeProject: (projectCampusId, xsrfToken): Promise<any> => new Promise((resolve) => {
+
+        let data = JSON.stringify({
+            ProjectCampusId: projectCampusId
+        });
+
+        let headers = {};
+
+        headers['Content-Type'] = 'application/json';
+        headers['X-XSRF-TOKEN'] = xsrfToken;
+
+        fetch('api/project/subscribe', {
+            method: 'POST',
+            headers,
+            body: data,
+            credentials: 'same-origin'
+        }).then((response) => {
+            resolve(response);
+        });
+
+    })
 
 }
 
@@ -200,15 +228,16 @@ export const actionCreators = {
     },
 
     setActiveProjectList: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
-        
+
         dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList: [] });
-                //TODO: hibakezelés
-                projectServices.listActiveProjectInCurrentCampus().then((response) => {
-                    //TODO: valahogy a Promise-ba definiálni
-                    let projectList: Project[] = response as Project[];
-                    dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList });
-                });
-        },
+        //TODO: hibakezelés
+        projectServices.listActiveProjectInCurrentCampus().then((response) => {
+            //TODO: valahogy a Promise-ba definiálni
+            let projectList: Project[] = response as Project[];
+            console.log(projectList);
+            dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList });
+        });
+    },
     //TODO: hozzáfűzés ne a Component-ben legyen, hanem itt!
     //TODO: ahhoz itt is (dispatch, getState) -t kell használni!
     modifyEditedProject: ({
@@ -244,9 +273,22 @@ export const actionCreators = {
         });
     },
 
+    subscribeProject: (projectCampusId): AppThunkAction<KnownAction> => (dispatch, getState) => {
+
+        let { session } = getState();
+        projectServices.subscribeProject(projectCampusId, session.xsrfToken).then(
+            (response) => {
+               console.log(response);
+            }
+        );
+    }
+
 };
-const initialState: ProjectState = { projectList: [], projectDialog: { 
-    open: false, mode: '', campusList: [], projectList:[] } };
+const initialState: ProjectState = {
+    projectList: [], projectDialog: {
+        open: false, mode: '', campusList: [], projectList: []
+    }
+};
 
 export const reducer: Reducer<ProjectState> = (state = initialState, incomingAction: Action) => {
     const action = incomingAction as KnownAction;

@@ -305,7 +305,7 @@ namespace EvoManager.Controllers
 	   
        private Task<User> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
-       [Authorize(Roles = "User")]
+       [Authorize(Roles = "User, Student, Mentor")]
 	   [HttpPost("[action]")]
 	   [ValidateAntiForgeryToken]
 	   public async Task<IActionResult> Apply([FromBody][Bind("CampusId","Role")] CampusApplyViewModel campus) {
