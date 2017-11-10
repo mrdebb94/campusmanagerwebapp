@@ -11,9 +11,10 @@ using System;
 namespace EvoManager.Migrations
 {
     [DbContext(typeof(EvoDbContext))]
-    partial class EvoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171028115129_JoinDateProjectLeader")]
+    partial class JoinDateProjectLeader
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -303,8 +304,6 @@ namespace EvoManager.Migrations
                     b.Property<string>("SubscribedMentorId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<bool>("Deleted");
-
                     b.Property<string>("MentorId");
 
                     b.Property<string>("ProjectCampusId");
@@ -324,8 +323,6 @@ namespace EvoManager.Migrations
                 {
                     b.Property<string>("SubscribedStudentId")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<bool>("Deleted");
 
                     b.Property<string>("ProjectCampusId");
 

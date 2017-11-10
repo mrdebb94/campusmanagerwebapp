@@ -5,6 +5,7 @@ import * as Campus from './Campus';
 import * as CampusParticipation from './CampusParticipation';
 import * as Session from './Session';
 import * as Project from './Project';
+import * as ProjectDetails from './ProjectDetails';
 
 import { fetch, addTask } from 'domain-task';
 
@@ -18,6 +19,7 @@ export interface ApplicationState {
     session: Session.SettingsState;
     campusParticipation: CampusParticipation.CampusParticipationState;
     project: Project.ProjectState;
+    projectDetails: ProjectDetails.ProjectDetailsState;
 }
 
 // Whenever an action is dispatched, Redux will update each top-level application state property using
@@ -30,8 +32,9 @@ export const reducers = {
     campus: Campus.reducer,
     session: Session.reducer,
     campusParticipation: CampusParticipation.reducer,
-    project: Project.reducer
-};
+    project: Project.reducer,
+    projectDetails: ProjectDetails.reducer
+}
 
 // This type can be used as a hint on action creators so that its 'dispatch' and 'getState' params are
 // correctly typed to match your store.

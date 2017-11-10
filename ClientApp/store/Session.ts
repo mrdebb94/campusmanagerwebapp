@@ -7,6 +7,7 @@ export interface SettingsState {
     //id: string;
     xsrfToken?: string;
     authenticated?: boolean;
+    roles?: string[];
 };
 
 interface InitConfigAction {
@@ -159,8 +160,9 @@ const DefaultSettings: SettingsState = { xsrfToken: undefined, authenticated: un
 export const reducer: Reducer<SettingsState> = (state: SettingsState, incomingAction: Action) => {
     const action = incomingAction as KnownAction;
     switch (action.type) {
-        case INIT_SESSION:
+        case INIT_SESSION: {
             return action.payload;
+        }
         case 'SetAuthenticationAction': {
             return { ...state, authenticated: action.authenticated };
         }

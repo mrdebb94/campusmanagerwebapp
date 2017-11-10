@@ -1,0 +1,47 @@
+2017-10-29 00:43:45.316 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-10-29 00:44:55.671 +02:00 [Information] Path /
+2017-10-29 00:44:55.943 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEizahCsYcQemgNUdMHqQwwAtlyhh8vywOidbg3ycfXv_JLdtnQWcU04YRvOJ8LHNA_TlSbnWt92elD71frBkKRkGwJDSVOzBtegmR2zTggITeNGbATWegJ9bVhzDO6q1Y
+2017-10-29 00:46:59.315 +02:00 [Information] Path /
+2017-10-29 00:46:59.353 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFZxdcsCU2-XBnRzgvv7cytM70XWc81yUInxzk0k7sItiO6ZG1dhRBVgQd_8vhlbTlQV2NeichtLpZ8Z-I25p6gAHnZZ7NyOzJN4P4ZIn-Q0ALdGPN8tBZBaiS0yLKAXJk
+2017-10-29 00:47:30.037 +02:00 [Information] Path /
+2017-10-29 00:47:30.445 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yGCxU9DlcFNIhxmUqIR3fV5FCXYpXiJQLQmka8NMJJwsDrGMiV52Jc6_xg3KjVF-2QuuwK6psFzIkVvKEGrF0QkIJCsSwW350oXUIKt54wqDUqnJXeseZYu1b-QEtrgOv8
+2017-10-29 00:49:07.752 +02:00 [Information] Path /
+2017-10-29 00:49:08.841 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHGRdMjFBBLAOntGckESmPb4P3-pLGvZxHLjVzLv_SUqzn-2ZoOkAoNW1ZG4mrWbVD1wSZMMkA3XRGSJNpPHITEQhSIOmxp-wJjcuUbwRGFJuzRz8l2vrU2MKbXmZ0_Q4k
+2017-10-29 10:41:23.278 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-10-29 10:46:04.504 +01:00 [Information] Path /
+2017-10-29 10:46:04.621 +01:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yH9l0r_sQel2udjCUsYwslqjEd8pqYo90xZ1VXywi00BtWFphdxY6ZhgJHyMi9ZBzJnJv9FJqRAIT3nA8ZC-xj_MLAsrVuX4K0bS-Dc0odF6lT7Lo2EMEm5grUEcgY-f1A
+2017-10-29 10:55:18.058 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-10-29 11:03:14.909 +01:00 [Information] Path /
+2017-10-29 11:03:15.116 +01:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yFFckJ_RfeJlUMGpIJEHXfLNvy3EEZVqm9lZkTFpRgaXVrxgSgPOtThCka86zGmL3zFFluOJofRIKoq9IH-LrvjGajIC836mZcYTKaUEeswdcVP5QRLk0uyQLVmla4yzBQ
+2017-10-29 11:08:37.200 +01:00 [Information] Path /api/user/list
+2017-10-29 11:08:37.826 +01:00 [Information] Supporting role True
+2017-10-29 11:10:28.054 +01:00 [Information] Path /api/user/login
+2017-10-29 11:10:31.817 +01:00 [Information] Belepes: False
+2017-10-29 11:10:32.098 +01:00 [Information] Path /api/xsrftoken/get
+2017-10-29 11:11:54.468 +01:00 [Information] Path /subscribe/list
+2017-10-29 11:12:43.623 +01:00 [Information] Path /api/project/current/active/list
+2017-10-29 11:13:13.380 +01:00 [Information] Path /api/project/current/list
+2017-10-29 11:13:15.494 +01:00 [Information] Path /api/campus/list
+2017-10-29 11:13:18.432 +01:00 [Information] Path /api/project/continuable/list
+2017-10-29 11:14:30.153 +01:00 [Information] Path /api/project/add
+2017-10-29 11:14:34.249 +01:00 [Information] Path /api/project/current/list
+2017-10-29 11:14:53.412 +01:00 [Information] Path /api/project/current/active/list
+2017-10-29 11:15:25.112 +01:00 [Information] Path /api/project/current/list
+2017-10-29 11:15:30.443 +01:00 [Information] Path /api/project/current/active/list
+2017-10-29 13:00:31.250 +01:00 [Information] Path /subscribe/list
+2017-10-29 13:01:15.962 +01:00 [Information] Path /api/project/current/list
+2017-10-29 13:01:20.236 +01:00 [Information] Path /api/project/current/active/list
+2017-10-29 15:47:15.219 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-10-29 16:23:29.497 +01:00 [Information] Path /subscribe/list
+2017-10-29 16:27:23.836 +01:00 [Information] Path /
+2017-10-29 16:27:23.982 +01:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yG3edmRpJnci1U8yOAP8Qejkg7ck8rvXgfcrLWkligVrgwTxjH-fBFAjA0084ZttmLSjNYM0IagyNVmfq7URnfs0NO1kBcoVdPYkTuxsd_MRAq-e4sJa2C9RFv6KmUydXsvooI1SqZN3yqgDGReGAhFJCoTg7T4LA11yH9_zO3uqA
+2017-10-29 16:50:11.884 +01:00 [Information] Path /subscribe/list
+2017-10-29 16:51:05.847 +01:00 [Information] Path /api/project/subscriber/list
+2017-10-29 16:56:27.125 +01:00 [Information] Path /subscribe/list
+2017-10-29 16:56:49.839 +01:00 [Information] Path /api/project/subscriber/list
+2017-10-29 17:58:59.445 +01:00 [Information] Path /subscribe/list
+2017-10-29 17:59:10.584 +01:00 [Information] Path /api/project/subscriber/list
+2017-10-29 18:08:54.095 +01:00 [Information] Path /subscribe/list
+2017-10-29 18:09:03.208 +01:00 [Information] Path /api/project/subscriber/list
+2017-10-29 18:11:39.333 +01:00 [Information] Path /api/project/current/list
+2017-10-29 18:11:43.655 +01:00 [Information] Path /api/project/subscriber/list

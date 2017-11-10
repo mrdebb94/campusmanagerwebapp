@@ -44,29 +44,31 @@ class ProjectSubscribe extends React.Component<ProjectProps,any> {
         return (
             <div> {
             this.props.activeProjectList&&this.props.activeProjectList.map( (project) =>(
-            <Card containerStyle={{marginBottom:10}}>
+            <Card key={ project.projectCampusId! } containerStyle={{marginBottom:10}}>
             <CardTitle title={project.name} subtitle="Információk" />
             <CardText>
                 <p>{project.description}</p>
                 <div style={styles.container}>
                     <div>
-                    {project.subscribedMentors?project.subscribedMentors.map( mentor=>(
+                    {project.subscribedMentors?project.subscribedMentors.map( ({mentor})=>(
                     <Chip key={mentor.mentorId}
                       style={styles.chip}
                     >
-                    <Avatar icon={
-                        <FileCloudDownload />} />
+                    {/*<Avatar icon={
+                        <FileCloudDownload />} />*/}
+                    <Avatar>M</Avatar>
                     {mentor.name}
                     </Chip>
                     )):<span>Nem ismert</span>
                     }
                     </div>
                     <div>
-                    {project.subscribedStudents?project.subscribedStudents.map( student=>(
+                    {project.subscribedStudents?project.subscribedStudents.map( ({student})=>(
                     <Chip key={student.studentId}
                       style={styles.chip}
                     >
-                    <Avatar icon={<SvgIconFace />} />
+                   {/* <Avatar icon={<SvgIconFace />} /> */}
+                   <Avatar>T</Avatar>
                     {student.name}
                     </Chip>
                     )):<span>Nem ismert</span>

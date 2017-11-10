@@ -5,25 +5,36 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Antiforgery;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Http.Authentication;
+using Microsoft.AspNetCore.Http;
+using EvoManager.Models;
 
 using Serilog;
 
 namespace EvoManager.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IAntiforgery _antiForgeryService;
+        private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
  
-        public HomeController(IAntiforgery antiForgeryService, RoleManager<IdentityRole> roleManager)
+        public HomeController(IAntiforgery antiForgeryService,
+         UserManager<User> userManager,
+         RoleManager<IdentityRole> roleManager)
         {
             _antiForgeryService = antiForgeryService;
+            _userManager = userManager;
             _roleManager =  roleManager;
         }
     
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             /*var token = _antiForgeryService.GetAndStoreTokens(HttpContext).RequestToken;
@@ -77,7 +88,17 @@ namespace EvoManager.Controllers
 		
 			}
 
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            
+            if(user!=null) {
+                IList<String>  roles = await _userManager.GetRolesAsync(user);
+                this.ViewBag.Roles = roles;
+            } else {
+                this.ViewBag.Roles = new List<String>();
+            }
+
             this.ViewBag.IsAuthenticated = this.User.Identity.IsAuthenticated;
+            
 
             return View();
         }

@@ -14,6 +14,8 @@ namespace EvoManager.Models {
 		public virtual Student Student { get; set; }
 		
 		public DateTime SubscribedDate { get; set; }
+
+		public bool Deleted { get; set; }
 		
 	}
 	

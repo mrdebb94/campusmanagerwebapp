@@ -1,0 +1,194 @@
+2017-10-28 13:50:10.080 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-10-28 13:59:37.741 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-10-28 15:17:51.710 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-10-28 15:26:15.256 +02:00 [Information] Path /
+2017-10-28 15:26:15.511 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yHjCpb65Hi_x1ZtJdjYWjWJS7LqX6seWWII1BqOW36p7V2RBzMhciONUz29NTAGcML-vB_-h6hmtDWby3jIBoVScbeOXoRpYhh3WAnq2vveJxG5bi2QGqZMC8kMW5GozZA
+2017-10-28 15:29:25.920 +02:00 [Information] Path /
+2017-10-28 15:29:26.244 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yF2HYLNPrKXDO-F7VdYOXkOZAjJ9Ymc7AIc3Bvx5sHmuzhRF3eDQbSlhGqbZKWvgDNxUV1I9MXhzfMfoiQ63TqT99c03cRhZ6k24Cnxvjio-eJVDCM8Ft7pUr0hEcxn4LI
+2017-10-28 15:29:55.509 +02:00 [Information] Path /api/user/login
+2017-10-28 15:29:58.424 +02:00 [Information] Belepes: False
+2017-10-28 15:29:58.558 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:30:04.618 +02:00 [Information] Path /api/campus/current/participations
+2017-10-28 15:30:23.424 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 15:34:51.200 +02:00 [Information] Path /api/user/logout
+2017-10-28 15:34:51.384 +02:00 [Information] Kilepes: True
+2017-10-28 15:34:51.508 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:35:33.010 +02:00 [Information] Path /api/user/login
+2017-10-28 15:35:33.705 +02:00 [Information] Belepes: False
+2017-10-28 15:35:33.753 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:35:40.475 +02:00 [Information] Path /api/user/list
+2017-10-28 15:35:40.773 +02:00 [Information] Supporting role True
+2017-10-28 15:36:54.149 +02:00 [Information] Path /api/user/add
+2017-10-28 15:36:56.755 +02:00 [Information] Path /api/user/list
+2017-10-28 15:36:56.773 +02:00 [Information] Supporting role True
+2017-10-28 15:37:16.333 +02:00 [Information] Path /api/user/logout
+2017-10-28 15:37:16.417 +02:00 [Information] Kilepes: True
+2017-10-28 15:37:16.525 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:37:24.347 +02:00 [Information] Path /api/user/login
+2017-10-28 15:37:24.792 +02:00 [Information] Belepes: False
+2017-10-28 15:37:24.833 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:37:28.700 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 15:37:28.980 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:37:38.733 +02:00 [Information] Path /subscribe
+2017-10-28 15:37:43.897 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 15:37:45.683 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:37:56.300 +02:00 [Information] Path /api/project/current/list
+2017-10-28 15:37:56.509 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:37:59.675 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 15:37:59.798 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:38:04.681 +02:00 [Information] Path /subscribe
+2017-10-28 15:38:10.121 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 15:38:10.850 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:38:36.007 +02:00 [Information] Path /api/user/logout
+2017-10-28 15:38:36.111 +02:00 [Information] Kilepes: True
+2017-10-28 15:38:36.168 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:38:48.775 +02:00 [Information] Path /api/user/login
+2017-10-28 15:38:48.980 +02:00 [Information] Belepes: False
+2017-10-28 15:38:49.084 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:38:51.084 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 15:38:51.187 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:38:54.208 +02:00 [Information] Path /api/campus/current
+2017-10-28 15:39:01.303 +02:00 [Information] Path /api/user/logout
+2017-10-28 15:39:01.350 +02:00 [Information] Kilepes: True
+2017-10-28 15:39:01.453 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:39:09.312 +02:00 [Information] Path /api/user/login
+2017-10-28 15:39:09.724 +02:00 [Information] Belepes: False
+2017-10-28 15:39:09.847 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:39:14.463 +02:00 [Information] Path /api/campus/list
+2017-10-28 15:40:16.301 +02:00 [Information] Path /api/campus/edit
+2017-10-28 15:40:17.441 +02:00 [Information] Path /api/campus/list
+2017-10-28 15:40:22.843 +02:00 [Information] Path /api/campus/current
+2017-10-28 15:40:27.198 +02:00 [Information] Path /api/user/logout
+2017-10-28 15:40:27.385 +02:00 [Information] Kilepes: True
+2017-10-28 15:40:27.439 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:41:10.576 +02:00 [Information] Path /api/user/login
+2017-10-28 15:41:10.879 +02:00 [Information] Belepes: False
+2017-10-28 15:41:11.003 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:41:12.712 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 15:41:12.812 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:41:16.247 +02:00 [Information] Path /api/campus/current
+2017-10-28 15:41:18.593 +02:00 [Information] Path /api/campus/apply
+2017-10-28 15:41:22.703 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 15:41:22.779 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:41:26.779 +02:00 [Information] Path /api/project/current/list
+2017-10-28 15:41:26.980 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:41:27.645 +02:00 [Information] Path /api/campus/current
+2017-10-28 15:41:32.970 +02:00 [Information] Path /api/user/list
+2017-10-28 15:41:33.121 +02:00 [Information] Supporting role True
+2017-10-28 15:41:39.510 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 15:41:39.566 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:41:43.075 +02:00 [Information] Path /subscribe
+2017-10-28 15:41:48.639 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 15:41:49.591 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:42:06.925 +02:00 [Information] Path /api/project/current/list
+2017-10-28 15:42:07.096 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:42:11.048 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 15:42:11.286 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:42:22.111 +02:00 [Information] Path /api/user/logout
+2017-10-28 15:42:22.353 +02:00 [Information] Kilepes: True
+2017-10-28 15:42:22.434 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:42:25.813 +02:00 [Information] Path /login
+2017-10-28 15:42:42.388 +02:00 [Information] Path /api/user/login
+2017-10-28 15:42:43.315 +02:00 [Information] Belepes: False
+2017-10-28 15:42:43.394 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 15:42:45.727 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 15:42:50.325 +02:00 [Information] Path /api/project/subscribe
+2017-10-28 15:42:54.602 +02:00 [Information] Path /api/project/current/list
+2017-10-28 15:42:54.752 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 15:42:58.677 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 16:22:17.057 +02:00 [Information] Path /api/campus/current/participations
+2017-10-28 16:22:28.693 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 16:22:39.120 +02:00 [Information] Path /api/project/current/list
+2017-10-28 16:22:39.486 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 16:22:43.052 +02:00 [Information] Path /api/campus/current/participations
+2017-10-28 16:22:55.120 +02:00 [Information] Path /api/project/current/list
+2017-10-28 16:22:55.293 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 16:22:59.759 +02:00 [Information] Path /api/campus/current/participations
+2017-10-28 16:23:00.532 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 16:23:04.217 +02:00 [Information] Path /api/project/current/list
+2017-10-28 16:23:04.445 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 16:23:07.772 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 16:23:13.911 +02:00 [Information] Path /api/campus/current/participations
+2017-10-28 16:23:27.670 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 16:34:27.215 +02:00 [Information] Path /subscribe
+2017-10-28 16:34:52.024 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 16:35:11.785 +02:00 [Information] Path /api/project/subscribe
+2017-10-28 16:49:06.223 +02:00 [Information] Path /api/campus/current/participations
+2017-10-28 16:49:18.674 +02:00 [Information] Path /api/campus/current
+2017-10-28 16:49:24.889 +02:00 [Information] Path /api/project/current/list
+2017-10-28 16:49:25.018 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 16:49:29.555 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 16:57:24.554 +02:00 [Information] Path /api/user/logout
+2017-10-28 16:57:24.789 +02:00 [Information] Kilepes: True
+2017-10-28 16:57:24.886 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 16:57:32.063 +02:00 [Information] Path /api/user/login
+2017-10-28 16:57:32.618 +02:00 [Information] Belepes: False
+2017-10-28 16:57:32.687 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 16:57:38.856 +02:00 [Information] Path /api/project/current/list
+2017-10-28 16:58:03.062 +02:00 [Information] Path /api/campus/list
+2017-10-28 16:58:03.849 +02:00 [Information] Path /api/project/continuable/list
+2017-10-28 16:58:25.987 +02:00 [Information] Path /api/campus/list
+2017-10-28 16:58:26.703 +02:00 [Information] Path /api/project/continuable/list
+2017-10-28 16:59:48.892 +02:00 [Information] Path /api/campus/list
+2017-10-28 16:59:49.639 +02:00 [Information] Path /api/project/continuable/list
+2017-10-28 17:01:10.283 +02:00 [Information] Path /api/campus/list
+2017-10-28 17:01:10.725 +02:00 [Information] Path /api/project/continuable/list
+2017-10-28 17:01:14.600 +02:00 [Information] Path /projects
+2017-10-28 17:01:21.447 +02:00 [Information] Path /api/project/current/list
+2017-10-28 17:01:29.341 +02:00 [Information] Path /api/campus/list
+2017-10-28 17:01:30.085 +02:00 [Information] Path /api/project/continuable/list
+2017-10-28 17:01:56.494 +02:00 [Information] Path /api/project/add
+2017-10-28 17:01:59.534 +02:00 [Information] Path /api/project/current/list
+2017-10-28 17:02:05.783 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 17:07:34.377 +02:00 [Information] Path /api/project/current/list
+2017-10-28 17:07:38.904 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 17:09:22.863 +02:00 [Information] Path /api/campus/current/participations
+2017-10-28 17:13:00.757 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 17:13:15.446 +02:00 [Information] Path /api/campus/current/participations
+2017-10-28 17:13:21.130 +02:00 [Information] Path /api/user/logout
+2017-10-28 17:13:21.399 +02:00 [Information] Kilepes: True
+2017-10-28 17:13:21.702 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 17:13:30.703 +02:00 [Information] Path /api/user/login
+2017-10-28 17:13:31.572 +02:00 [Information] Belepes: False
+2017-10-28 17:13:31.619 +02:00 [Information] Path /api/xsrftoken/get
+2017-10-28 17:13:34.110 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 17:13:38.891 +02:00 [Information] Path /api/project/subscribe
+2017-10-28 17:13:43.070 +02:00 [Information] Path /api/project/current/list
+2017-10-28 17:13:43.715 +02:00 [Information] Path /Account/AccessDenied
+2017-10-28 17:13:44.532 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 18:48:26.646 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-10-28 18:53:41.342 +02:00 [Information] Path /subscribe
+2017-10-28 18:54:46.853 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 18:55:40.536 +02:00 [Information] Path /subscribe
+2017-10-28 18:55:48.424 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 19:05:10.814 +02:00 [Information] Path /subscribe
+2017-10-28 19:05:37.846 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 19:13:31.593 +02:00 [Information] Path /subscribe
+2017-10-28 19:13:54.758 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 19:14:11.470 +02:00 [Information] Path /
+2017-10-28 19:14:13.000 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yEhOwmI-JIuffbUDP3p1DwqdwFI3C50_Lj-dQ_JAHk9dhCC_2ZdxjBjOhc4WbCJpDwIeYk-uNje27XkMjM3hdE9kpXyF_jt94lhIwF9SdRMRnzPVAG76xjxZnaYTbTq9NExJaprbn8tcEzmpNx5WMt5AgrHTm3lXqNyg1MuDK0tgQ
+2017-10-28 19:17:08.689 +02:00 [Information] Path /
+2017-10-28 19:17:08.698 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE-wTvxQQIz6H86rIb_4PmH-vQQp-vpUD0jMVbXWhKJIqOn3Yj9zdFMn5cuZe1hj6ZZ9F57X6XNovpYKs2V3J4FGsicGZGnYJa4qYLoCLDyuC6gSFFypj0xz7Qqn09UmWRae6wXNrUrufiXuVHYLqZ96rb41HT3ywZs-58KXCAheQ
+2017-10-28 19:17:53.728 +02:00 [Information] Path /
+2017-10-28 19:17:53.739 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE8IwJA6Uv4DkuDVAqfeUpAdFL1eLGdfU4poCPNhE9TH6494xdoNO3ZJ5j2rbixzBr59CVdrVvc2OwX-IsrJ8xW9pqjdi8X35NRydaEq5XhSlRIZYLBFLaMH_sXETWImZ5JMcBuNem7BU7icBWXGjkQe9urt2mzJFbEkqtL_sz-vg
+2017-10-28 19:18:15.396 +02:00 [Information] Path /api/campus/list
+2017-10-28 19:20:56.393 +02:00 [Information] Path /campus
+2017-10-28 19:21:52.789 +02:00 [Information] Path /api/campus/list
+2017-10-28 19:26:25.901 +02:00 [Information] Path /api/user/list
+2017-10-28 19:26:26.310 +02:00 [Information] Supporting role True
+2017-10-28 19:36:07.454 +02:00 [Information] Path /users
+2017-10-28 19:36:26.379 +02:00 [Information] Path /api/user/list
+2017-10-28 19:36:26.770 +02:00 [Information] Supporting role True
+2017-10-28 19:40:14.999 +02:00 [Information] Path /users
+2017-10-28 19:40:31.748 +02:00 [Information] Path /api/user/list
+2017-10-28 19:40:33.676 +02:00 [Information] Supporting role True
+2017-10-28 20:06:06.100 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 20:18:34.153 +02:00 [Information] Path /subscribe
+2017-10-28 20:18:59.550 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 20:21:14.903 +02:00 [Information] Path /api/campus/current/participations
+2017-10-28 20:21:23.460 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 21:08:14.820 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-10-28 21:41:14.195 +02:00 [Information] Path /
+2017-10-28 21:41:14.293 +02:00 [Information] New Token CfDJ8Ny3EdM3ZS5LtWSy5cml2yE4gch8OVV7QhszuAv1EdsOkpTlcYNX9cl3lun7PfSedFbhz8Az_77V8bKHwDGqRVfCJtaTQHJcpw4ZsCOlBgm3Po_hYt1qNn3N7YsWMP27EThDJWiO46eLVQ8ArJ38d2DsBmoqyiQGZbkXt1OpHPE1CokRDC1myiwz46Zy4xyqsg
+2017-10-28 21:42:44.009 +02:00 [Information] Path /api/project/current/active/list
+2017-10-28 22:41:00.041 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;

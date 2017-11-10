@@ -4,9 +4,7 @@ import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as ProjectStore from '../store/Project';
 import * as CampusStore from '../store/Campus';
-import { RaisedButton } from 'material-ui';
 import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
-import { Tabs, Tab } from 'material-ui/Tabs';
 import Checkbox from 'material-ui/Checkbox';
 import {
     Table,
@@ -17,11 +15,12 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 import { Dialog } from 'material-ui';
-import { FlatButton } from 'material-ui';
 import { TextField } from 'material-ui';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import AutoComplete from 'material-ui/AutoComplete';
+
+import { FlatButton } from 'material-ui';
 
 
 const styles = {
@@ -32,6 +31,19 @@ const styles = {
         marginBottom: 16,
     }
 };
+
+/*const styles = theme => ({
+    button: {
+      margin: theme.spacing.unit,
+    },
+    block: {
+        maxWidth: 250,
+    },
+    checkbox: {
+        marginBottom: 16,
+    }
+  });*/
+  
 
 const dataSourceConfig = {
     text: 'name',
@@ -76,8 +88,12 @@ export class ProjectDialog extends React.Component<ProjectProps, ProjectDialogSt
             open={this.props.projectDialog.open}
             autoScrollBodyContent={false}
             autoDetectWindowHeight={true}
-            actions={[<FlatButton label="Hozzádás" primary={true} onClick={() => { this.props.addProject(); }} />,
-            <FlatButton label="Mégse" primary={true} onClick={() => { this.props.toggleProjectDialog(false, ''); }} />]}
+            actions={[ 
+               
+                <FlatButton label={"Létrehozás"} primary={true}  onClick={(event) => { this.props.addProject(); }}/>,
+            
+                <FlatButton label={"Mégse"} onClick={() => { this.props.toggleProjectDialog(false, ''); }}/>
+            ]}
         >
             <div>
                 {/*

@@ -1,7 +1,8 @@
 @{
     ViewData["Title"] = "Home Page";
      dynamic data = new { /*xsrfToken = ViewBag.AntiForgeryRequestToken,*/
-     authenticated = ViewBag.IsAuthenticated };
+     authenticated = ViewBag.IsAuthenticated,
+     roles = ViewBag.Roles };
 }
 
 <div id="xsrf-token" data-xsrf-token="@ViewBag.AntiForgeryRequestToken"></div>

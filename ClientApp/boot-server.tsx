@@ -26,15 +26,17 @@ export default createServerRenderer(params => {
         const urlAfterBasename = params.url.substring(basename.length);
         const store = configureStore(createMemoryHistory());
         store.dispatch(replace(urlAfterBasename));
+
+        //itt nem kéne beállítani az xsrf tokent?
         store.dispatch({
             type: INIT_SESSION, payload: {
                 authenticated: params.data.authenticated,
                 xsrfToken: '',
-                id: params.data.sessionId
+                id: params.data.sessionId,
+                roles: params.data.roles
             }
         });
-
-
+      
         // Prepare an instance of the application and perform an inital render that will
         // cause any async tasks (e.g., data access) to begin
         const routerContext: any = {};

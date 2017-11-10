@@ -11,6 +11,9 @@ import CampusApply from './components/CampusApply';
 import CurrentParticipants from './components/CurrentParticipants';
 import Project from './components/Projects';
 import ProjectSubscribe from './components/ProjectSubscribe';
+import ProjectSubscribeList from './components/ProjectSubscribeList';
+import ProjectMeetingsList from './components/ProjectMeetingsList';
+import ProjectMeetingDetails from './components/ProjectMeetingDetails';
 
 export const routes = <Layout>
     <Route exact path='/' component={ Home } />
@@ -22,5 +25,8 @@ export const routes = <Layout>
     <Route path='/currentcampus' component={ CampusApply } />
     <Route path='/currentparticipants' component={ CurrentParticipants } />
     <Route path='/projects' component={ Project } />
-    <Route path='/subscribe' component={ ProjectSubscribe } />
+    <Route path='/subscribe/add' component={ ProjectSubscribe } />
+    <Route path='/subscribe/list' component={ ProjectSubscribeList } />
+    <Route path='/projectmeetings/list' component={ ProjectMeetingsList } />
+    <Route path='/projectmeetings/details/:id' component={ ProjectMeetingDetails } />
 </Layout>;

@@ -15,6 +15,8 @@ namespace EvoManager.Models {
 		
 		
 		public DateTime SubscribedDate { get; set; }
+
+		public bool Deleted { get; set; }
 	}
 	
 }

@@ -12,6 +12,9 @@ namespace EvoManager.Models {
 		
 		public string MentorId { get; set; }
 		public virtual Mentor Mentor { get; set; }
+
+		public DateTime JoinDate { get; set; }
+
 		public virtual ICollection<ProjectLeaderParticipationMeeting> ProjectLeaderParticipationMeetings { get; set; }
 		
 	}

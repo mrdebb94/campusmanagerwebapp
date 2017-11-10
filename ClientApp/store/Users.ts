@@ -110,13 +110,14 @@ export const actionCreators = {
 
 	},
 	setUsersList: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
-
+        console.log(getState());
 		userServices.listUsers().then((response) => {
 			dispatch({ type: 'SET_USERS_LIST', usersList: response });
 		});
 	},
 
-	modifyEditedUser: ({ id = '', name = '', email = '', password = '', type = '' }: { id?: string, name?: string, email?: string, password?: string, type?: string }): AppThunkAction<KnownAction> => (dispatch, getState) => {
+	modifyEditedUser: ({ id = '', name = '', email = '', password = '', type = '' }: 
+	{ id?: string, name?: string, email?: string, password?: string, type?: string }): AppThunkAction<KnownAction> => (dispatch, getState) => {
 		dispatch({ type: 'MODIFY_EDITED_USER', user: { id, name, email, password, type } });
 	},
 

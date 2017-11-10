@@ -55,15 +55,19 @@ namespace EvoManager.Controllers
                  EndDate = m.Campus.EndDate
              },
              SubscribedStudents = m.SubscribedStudents.Select(
-                 s=>new Student {
-                     StudentId=s.Student.StudentId,
-                     Name=s.Student.Name
+                 s=>new SubscribedStudentViewModel {
+                     Student = new Student {
+                         StudentId=s.Student.StudentId,
+                         Name=s.Student.Name
+                     }
                  }
              ).ToList(),
              SubscribedMentors = m.SubscribedMentors.Select(
-                 s=>new Mentor {
-                     MentorId = s.Mentor.MentorId,
-                     Name=s.Mentor.Name
+                 s=> new SubscribedMentorViewModel {
+                     Mentor = new Mentor {
+                        MentorId = s.Mentor.MentorId,
+                        Name=s.Mentor.Name
+                     }
                  }
              ).ToList()
          })
@@ -268,6 +272,38 @@ namespace EvoManager.Controllers
          
         return Ok();
 
+      }
+
+      [Authorize(Roles = "Admin, Mentor")]
+      [HttpGet("subscriber/list")]
+      public IList<ProjectViewModel> ListProjectSubscribersInCurrentCampus() {
+          return _context.ProjectCampus
+         .Include(m=>m.SubscribedStudents)
+         .Where(m=>m.Campus.Active&&
+                m.ProjectStatus.Value=="Active")
+         .Select(m=>new ProjectViewModel {
+             ProjectCampusId = m.ProjectCampusId,
+             Name = m.Project.Name,
+             SubscribedStudents = m.SubscribedStudents.Select(
+                 s=>new SubscribedStudentViewModel {
+                     SubscribedStudentId = s.SubscribedStudentId,
+                     Student = new Student {
+                         StudentId=s.Student.StudentId,
+                         Name=s.Student.Name
+                     }
+                 }
+             ).ToList(),
+             SubscribedMentors = m.SubscribedMentors.Select(
+                 s=> new SubscribedMentorViewModel {
+                     SubscribedMentorId = s.SubscribedMentorId,
+                     Mentor = new Mentor {
+                        MentorId = s.Mentor.MentorId,
+                        Name=s.Mentor.Name
+                     }
+                 }
+             ).ToList()
+         }).ToList();
+ 
       }
 
     }

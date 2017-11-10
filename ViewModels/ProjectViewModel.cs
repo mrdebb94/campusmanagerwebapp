@@ -14,7 +14,7 @@ namespace EvoManager.ViewModels
 		public ProjectStatus ProjectStatus { get; set; }
 	    public Campus Campus { get; set; }
 		
-		public List<Student> SubscribedStudents { get; set; }
-		public List<Mentor> SubscribedMentors { get; set; }
+		public List<SubscribedStudentViewModel> SubscribedStudents { get; set; }
+		public List<SubscribedMentorViewModel> SubscribedMentors { get; set; }
 	}
 }

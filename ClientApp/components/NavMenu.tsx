@@ -46,8 +46,14 @@ export class NavMenu extends React.Component<any, {}> {
                     <NavLink to={'/projects'} activeClassName='active'>
                         <MenuItem primaryText="Projektek" />
                     </NavLink>
-                    <NavLink to={'/subscribe'} activeClassName='active'>
+                    <NavLink to={'/subscribe/add'} activeClassName='active'>
                         <MenuItem primaryText="Projekt jelentkezés" />
+                    </NavLink>
+                    <NavLink to={'/subscribe/list'} activeClassName='active'>
+                        <MenuItem primaryText="Projekt jelentkezések" />
+                    </NavLink>
+                    <NavLink to={'/projectmeetings/list'} activeClassName='active'>
+                        <MenuItem primaryText="Megbeszélések" />
                     </NavLink>
                 </Menu>
                 </Drawer>
