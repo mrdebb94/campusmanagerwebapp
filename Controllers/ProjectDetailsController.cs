@@ -48,67 +48,70 @@ namespace EvoManager.Controllers
            var user = await _userManager.GetUserAsync(HttpContext.User);
            IList<String>  roles = await _userManager.GetRolesAsync(user);
 
+           SubscribedStudent student = null;
            if(roles.Contains("Mentor"))
            {
-              var projectCampus = _context.SubscribedStudents
+              student = _context.SubscribedStudents
                        .Include(m=>m.ProjectCampus.ProjectLeaders)
                        .Include(m=>m.ProjectCampus.TeamMembers)
                        .Where(m=>m.SubscribedStudentId ==  subscribedStudent.SubscribedStudentId
                        && m.ProjectCampus.Campus.Active
                        && m.ProjectCampus.ProjectLeaders.Count(s=>s.Mentor.UserId == user.Id)==1
                        && m.ProjectCampus.TeamMembers.Count(s=>s.StudentId == m.StudentId)==0)
-                       .Select( m => new {
+                       .Select( m => new SubscribedStudent {
                            ProjectCampusId = m.ProjectCampusId,
                            StudentId = m.StudentId
                        })
                        .FirstOrDefault();
-              
-              if(projectCampus!=null)
-              {
-                  TeamMember teamMember = new TeamMember {
-                      StudentId = projectCampus.StudentId,
-                      ProjectCampusId = projectCampus.ProjectCampusId,
-                      JoinDate = DateTime.Now
-                  };
-
-                  _context.TeamMembers.Add(teamMember);
-                  _context.SaveChanges();
-
-              } else {
-                
-                   return Ok(Json("Nem hagyhatja jóvá a jelentkezést!"));
-              }
-                       
-           } 
-           else 
-           {
-               var projectCampus = _context.SubscribedStudents
+           } else if(roles.Contains("Admin")) {
+               student = _context.SubscribedStudents
                        .Include(m=>m.ProjectCampus.ProjectLeaders)
                        .Where(m=>m.SubscribedStudentId ==  subscribedStudent.SubscribedStudentId
                        && m.ProjectCampus.Campus.Active
                        && m.ProjectCampus.TeamMembers.Count(s=>s.StudentId == m.StudentId)==0)
-                       .Select( m => new {
+                       .Select( m => new SubscribedStudent {
                            ProjectCampusId = m.ProjectCampusId,
                            StudentId = m.StudentId
                        })
                        .FirstOrDefault();
-              
-              if(projectCampus!=null)
+           }
+              if(student!=null)
               {
                   TeamMember teamMember = new TeamMember {
-                      StudentId = projectCampus.StudentId,
-                      ProjectCampusId = projectCampus.ProjectCampusId,
+                      StudentId = student.StudentId,
+                      ProjectCampusId = student.ProjectCampusId,
                       JoinDate = DateTime.Now
                   };
 
                   _context.TeamMembers.Add(teamMember);
                   _context.SaveChanges();
 
+                  /*
+                  Ha vannak már a projekthez megbeszélések rendelve, rendeljük hozzá ezt
+                  az új csapattagot is
+                  */
+                 var projectMeetings = _context
+                 .ProjectMeetings
+                 .Where(m=>m.ProjectCampusId == student.ProjectCampusId);
+
+                 foreach(var projectMeeting in projectMeetings)
+                 {
+                    TeamMemberParticipationMeeting  teamMemberParticipationMeeting = 
+                        new TeamMemberParticipationMeeting {
+                            TeamMemberId = teamMember.TeamMemberId,
+                            ProjectMeetingId = projectMeeting.ProjectMeetingId
+                        };
+
+                    _context.TeamMemberParticipationMeetings.Add(teamMemberParticipationMeeting);
+                 }
+                 
+                 _context.SaveChanges();
+
               } else {
                 
                    return Ok(Json("Nem hagyhatja jóvá a jelentkezést!"));
               }
-           }
+
              return Ok(Json("Sikeres jóváhagyás!"));
       }
 
@@ -120,74 +123,79 @@ namespace EvoManager.Controllers
       {
        //Csak akkor fogadhatja el a jelentkezést, ha 
        //ha annak a projektnek a mentora, amire a jelentkezés történt
-       //még nem csapattag a diák ebbe a projektbe (és másikba se??)
+       //és nem mentor másik projektbe
            var user = await _userManager.GetUserAsync(HttpContext.User);
            IList<String>  roles = await _userManager.GetRolesAsync(user);
 
+           SubscribedMentor mentor = null;
+
            if(roles.Contains("Mentor"))
            {
-              var projectCampus = _context.SubscribedMentors
+                     mentor = _context.SubscribedMentors
                        .Include(m=>m.ProjectCampus.ProjectLeaders)
                        .Where(m=>m.SubscribedMentorId ==  subscribedMentor.SubscribedMentorId
                        && m.ProjectCampus.Campus.Active
                        && m.ProjectCampus.ProjectLeaders.Count(s=>s.Mentor.UserId == user.Id)==1
                        && m.ProjectCampus.ProjectLeaders.Count(s=>s.MentorId == m.MentorId)==0)
-                       .Select( m => new {
+                       .Select( m => new SubscribedMentor {
                            ProjectCampusId = m.ProjectCampusId,
                            MentorId = m.MentorId
                        })
                        .FirstOrDefault();
-              
-              if(projectCampus!=null)
-              {
-                  ProjectLeader projectLeader = new ProjectLeader {
-                      MentorId = projectCampus.MentorId,
-                      ProjectCampusId = projectCampus.ProjectCampusId,
-                      JoinDate = DateTime.Now
-                  };
-
-                  _context.ProjectLeaders.Add(projectLeader);
-                  _context.SaveChanges();
-
-              } else {
-                
-                   return Ok(Json("Nem hagyhatja jóvá a jelentkezést!"));
-              }
-                       
-           } 
-           else 
-           {
-            var projectCampus = _context.SubscribedMentors
+            } else if(roles.Contains("Admin"))
+            {
+                    mentor = _context.SubscribedMentors
                        .Include(m=>m.ProjectCampus.ProjectLeaders)
                        .Where(m=>m.SubscribedMentorId ==  subscribedMentor.SubscribedMentorId
                        && m.ProjectCampus.Campus.Active
                        && m.ProjectCampus.ProjectLeaders.Count(s=>s.MentorId == m.MentorId)==0)
-                       .Select( m => new {
+                       .Select( m => new SubscribedMentor {
                            ProjectCampusId = m.ProjectCampusId,
                            MentorId = m.MentorId
                        })
                        .FirstOrDefault();
+            }
               
-              if(projectCampus!=null)
+              if(mentor!=null)
               {
                   ProjectLeader projectLeader = new ProjectLeader {
-                      MentorId = projectCampus.MentorId,
-                      ProjectCampusId = projectCampus.ProjectCampusId,
+                      MentorId = mentor.MentorId,
+                      ProjectCampusId = mentor.ProjectCampusId,
                       JoinDate = DateTime.Now
                   };
 
                   _context.ProjectLeaders.Add(projectLeader);
                   _context.SaveChanges();
 
-              } else {
+                  /*
+                  Ha vannak már a projekthez megbeszélések rendelve, rendeljük hozzá ezt
+                  az új mentort is
+                  */
+                 var projectMeetings = _context
+                 .ProjectMeetings
+                 .Where(m=>m.ProjectCampusId == mentor.ProjectCampusId);
+
+                 foreach(var projectMeeting in projectMeetings)
+                 {
+                   ProjectLeaderParticipationMeeting  projectLeaderParticipationMeeting = 
+                        new ProjectLeaderParticipationMeeting {
+                            ProjectLeaderId = projectLeader.ProjectLeaderId,
+                            ProjectMeetingId = projectMeeting.ProjectMeetingId
+                        };
+
+                    _context.ProjectLeaderParticipationMeetings.Add(projectLeaderParticipationMeeting);
+                 }
+                 
+                 _context.SaveChanges();
+
+              } else
+              {
                 
                    return Ok(Json("Nem hagyhatja jóvá a jelentkezést!"));
               }
                           
-           }
              return Ok(Json("Sikeres jóváhagyás!"));
       }
-
 
     [Authorize(Roles = "Student, Mentor")]
     [HttpGet("projectmeetings/list")]
@@ -339,23 +347,17 @@ namespace EvoManager.Controllers
             StartTime = m.StartTime,
             EndTime = m.EndTime,
             TeamMemberParticipationMeetings = m.TeamMemberParticipationMeetings
-            .Select(s=>new TeamMemberParticipationMeeting {
-                TeamMember = new TeamMember {
-                    TeamMemberId = s.TeamMemberId,
-                    Student = new Student {
-                        Name = s.TeamMember.Student.Name
-                    }
-                },
+            .Select(s=>new TeamMemberParticipationMeetingViewModel {
+                TeamMemberParticipationMeetingId = s.TeamMemberParticipationMeetingId,
+                TeamMemberId = s.TeamMemberId,
+                TeamMemberName = s.TeamMember.Student.Name,
                 Checked = s.Checked
             }).ToList(),
             ProjectLeaderParticipationMeetings = m.ProjectLeaderParticipationMeetings
-            .Select(s=>new ProjectLeaderParticipationMeeting {
-                ProjectLeader = new ProjectLeader {
-                    ProjectLeaderId = s.ProjectLeaderId,
-                    Mentor = new Mentor {
-                        Name = s.ProjectLeader.Mentor.Name
-                    }
-                },
+            .Select(s=>new ProjectLeaderParticipationMeetingViewModel {
+                ProjectLeaderParticipationMeetingId = s.ProjectLeaderParticipationMeetingId,
+                ProjectLeaderId = s.ProjectLeaderId,
+                ProjectLeaderName = s.ProjectLeader.Mentor.Name,    
                 Checked = s.Checked
             }).ToList()
          }).First();

@@ -27,12 +27,14 @@ export interface ProjectLeader {
 }
 
 export interface TeamMemberParticipationMeeting {
-    teamMember: TeamMember;
+    teamMemberParticipationMeetingId?: string;
+    teamMemberName: string;
     checked:boolean;
 }
 
 export interface ProjectLeaderParticipationMeeting {
-    projectLeader: ProjectLeader;
+    projectLeaderParticipationMeetingId?: string;
+    projectLeaderName: string;
     checked:boolean;
 }
 
@@ -41,8 +43,6 @@ export interface ProjectMeetingDetails {
     projectMeeting: ProjectMeeting;
     teamMemberParticipationMeetings: TeamMemberParticipationMeeting[];
     projectLeaderParticipationMeetings: ProjectLeaderParticipationMeeting[];
-
-
 }
 
 export interface ProjectDetailsState {
@@ -83,20 +83,16 @@ export const projectDetailsServices = {
             credentials: 'same-origin'
         }).then(response => response.json())
             .then(projectMeeting => {
-                /*let projectMeetingList = projectMeetings.map(projectMeeting=>({
-                  ...projectMeeting,
-                  startTime: moment(projectMeeting.startTime),
-                  endTime: moment(projectMeeting.endTime)
-                }))*/
                 let projectMeetingDetail:ProjectMeetingDetails = {
                    projectMeeting: {
                        ...projectMeeting,
                        startTime: moment(projectMeeting.startTime),
                        endTime: moment(projectMeeting.endTime),
                    },
-                   teamMemberParticipationMeetings: projectMeeting.teamMemberParticipationMeeting,
-                   projectLeaderParticipationMeetings: projectMeeting.projectLeaderParticipationMeeting                
+                   teamMemberParticipationMeetings: projectMeeting.teamMemberParticipationMeetings,
+                   projectLeaderParticipationMeetings: projectMeeting.projectLeaderParticipationMeetings                
                 }
+        
                resolve(projectMeetingDetail);
             });
     }),
@@ -149,6 +145,7 @@ export const actionCreators = {
         projectDetailsServices.getProjectMeetingDetails(id).then((response) => {
 
             let projectMeetingDetails: ProjectMeetingDetails = response as ProjectMeetingDetails;
+            console.log(projectMeetingDetails);
             dispatch({ type: 'SET_PROJECT_MEETING_DETAILS', projectMeetingDetails });
         });
     },
@@ -172,6 +169,29 @@ export const actionCreators = {
     },
     toggleProjectMeetingDialog: (open: boolean, mode: string): AppThunkAction<KnownAction> => (dispatch, getState) => {
         dispatch({ type: 'TOGGLE_PROJECT_MEETING_DIALOG', status: { open, mode } });
+    },
+
+    editTeamMemberParticipationMeetings: (index:number, checked:boolean)
+    :AppThunkAction<KnownAction> => (dispatch, getState) => {
+       let { projectDetails: { projectMeetingDetails } }= getState();
+
+       if(projectMeetingDetails) {
+           let teamMemberParticipationMeetings =  [...projectMeetingDetails.teamMemberParticipationMeetings];
+           teamMemberParticipationMeetings[index].checked = checked;
+           projectMeetingDetails.teamMemberParticipationMeetings = teamMemberParticipationMeetings;
+           dispatch({ type: 'SET_PROJECT_MEETING_DETAILS', projectMeetingDetails });
+       }
+    },
+    editProjectLeaderParticipationMeetings: (index:number, checked:boolean)
+    :AppThunkAction<KnownAction> => (dispatch, getState) => {
+       let { projectDetails: { projectMeetingDetails } }= getState();
+
+       if(projectMeetingDetails) {
+           let projectLeaderParticipationMeetings =  [...projectMeetingDetails.projectLeaderParticipationMeetings];
+           projectLeaderParticipationMeetings[index].checked = checked;
+           projectMeetingDetails.projectLeaderParticipationMeetings = projectLeaderParticipationMeetings;
+           dispatch({ type: 'SET_PROJECT_MEETING_DETAILS', projectMeetingDetails });
+       }
     }
 
 }

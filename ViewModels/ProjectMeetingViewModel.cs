@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic; 
+using EvoManager.Models; 
 
-namespace EvoManager.Models 
+namespace EvoManager.ViewModels 
 {
 	public class ProjectMeetingViewModel
     {
@@ -19,7 +20,7 @@ namespace EvoManager.Models
 
         public bool HasWeekly { get; set; }
 
-		public List<TeamMemberParticipationMeeting> TeamMemberParticipationMeetings { get; set; }
-		public List<ProjectLeaderParticipationMeeting> ProjectLeaderParticipationMeetings { get; set; }
+		public List<TeamMemberParticipationMeetingViewModel> TeamMemberParticipationMeetings { get; set; }
+		public List<ProjectLeaderParticipationMeetingViewModel> ProjectLeaderParticipationMeetings { get; set; }
     }
 }
