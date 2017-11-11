@@ -352,6 +352,11 @@ namespace EvoManager.Controllers
 			  _context.SaveChanges();
 
 		}
+       
+         /*ez azért kell, mert változik a bejelentkezett felhasználó
+		  szerepköre (tanulóra), és emiatt a sütiket is frissíteni kell, hogy
+		  a tanuló szerepkörű url-ket elérje*/
+		 await _signInManager.RefreshSignInAsync(user);
 
 		 return Ok(Json("Sikeres jelentkezés!"));	  
 	  
