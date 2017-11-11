@@ -34,7 +34,7 @@ export interface Project {
 
 export interface ProjectState {
     projectList: Project[];
-    activeProjectList?: Project[];
+    activeProjectList: Project[];
     editedProject?: Project;
     projectDialog: {
         open: boolean,
@@ -388,7 +388,7 @@ export const actionCreators = {
 
 };
 const initialState: ProjectState = {
-    projectList: [], projectDialog: {
+    projectList: [], activeProjectList:[], projectDialog: {
         open: false, mode: '', campusList: [], projectList: []
     }
 };
