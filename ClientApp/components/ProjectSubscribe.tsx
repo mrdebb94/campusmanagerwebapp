@@ -77,9 +77,16 @@ class ProjectSubscribe extends React.Component<ProjectProps,any> {
                 </div>
             </CardText>
             <CardActions>
+                {(!project.subscribed)
+                ?(
                 <FlatButton label="Jelentkezés" onClick={()=>{
                     this.props.subscribeProject(project.projectCampusId);
-                }}/>
+                }}/>)
+                :(
+                <FlatButton label="Lejelentkezés" onClick={()=>{
+                    this.props.unSubscribeProject(project.projectCampusId);
+                }}/>)
+                }
             </CardActions>
         </Card>
         )

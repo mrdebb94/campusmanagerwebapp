@@ -125,7 +125,7 @@ class ProjectMeetingDetails extends React.Component<any, any> {
                 </CardText>
                 <CardActions>
                     <FlatButton label="Mentés" onClick={() => {
-
+                        this.props.saveProjectMeetingParticipations();
                     }} />
                 </CardActions>
             </Card>

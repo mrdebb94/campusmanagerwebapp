@@ -17,25 +17,25 @@ export interface ProjectMeeting {
 }
 
 export interface TeamMember {
-   teamMemberId:string;
-   student:Student;
+    teamMemberId: string;
+    student: Student;
 }
 
 export interface ProjectLeader {
     projectLeaderId: string;
-    mentor:Mentor;
+    mentor: Mentor;
 }
 
 export interface TeamMemberParticipationMeeting {
     teamMemberParticipationMeetingId?: string;
     teamMemberName: string;
-    checked:boolean;
+    checked: boolean;
 }
 
 export interface ProjectLeaderParticipationMeeting {
     projectLeaderParticipationMeetingId?: string;
     projectLeaderName: string;
-    checked:boolean;
+    checked: boolean;
 }
 
 
@@ -71,29 +71,29 @@ interface ToggleProjectMeetingDialogAction {
     status: { open: boolean, mode: string };
 }
 
-type KnownAction = SetProjectMeetingListAction | AddProjectMeetingAction 
-| ToggleProjectMeetingDialogAction | SetProjectMeetingDetailsAction;
+type KnownAction = SetProjectMeetingListAction | AddProjectMeetingAction
+    | ToggleProjectMeetingDialogAction | SetProjectMeetingDetailsAction;
 
 //services
 
 export const projectDetailsServices = {
-    getProjectMeetingDetails: (id:string): Promise<any> => new Promise<any>((resolve, reject) => {
+    getProjectMeetingDetails: (id: string): Promise<any> => new Promise<any>((resolve, reject) => {
         fetch(`api/projectdetails/projectmeetings/details/${id}`, {
             method: 'GET',
             credentials: 'same-origin'
         }).then(response => response.json())
             .then(projectMeeting => {
-                let projectMeetingDetail:ProjectMeetingDetails = {
-                   projectMeeting: {
-                       ...projectMeeting,
-                       startTime: moment(projectMeeting.startTime),
-                       endTime: moment(projectMeeting.endTime),
-                   },
-                   teamMemberParticipationMeetings: projectMeeting.teamMemberParticipationMeetings,
-                   projectLeaderParticipationMeetings: projectMeeting.projectLeaderParticipationMeetings                
+                let projectMeetingDetail: ProjectMeetingDetails = {
+                    projectMeeting: {
+                        ...projectMeeting,
+                        startTime: moment(projectMeeting.startTime),
+                        endTime: moment(projectMeeting.endTime),
+                    },
+                    teamMemberParticipationMeetings: projectMeeting.teamMemberParticipationMeetings,
+                    projectLeaderParticipationMeetings: projectMeeting.projectLeaderParticipationMeetings
                 }
-        
-               resolve(projectMeetingDetail);
+
+                resolve(projectMeetingDetail);
             });
     }),
     listProjectMeetings: (): Promise<any> => new Promise<any>((resolve, reject) => {
@@ -102,10 +102,10 @@ export const projectDetailsServices = {
             credentials: 'same-origin'
         }).then(response => response.json())
             .then(projectMeetings => {
-                let projectMeetingList = projectMeetings.map(projectMeeting=>({
-                  ...projectMeeting,
-                  startTime: moment(projectMeeting.startTime),
-                  endTime: moment(projectMeeting.endTime)
+                let projectMeetingList = projectMeetings.map(projectMeeting => ({
+                    ...projectMeeting,
+                    startTime: moment(projectMeeting.startTime),
+                    endTime: moment(projectMeeting.endTime)
                 }))
                 resolve(projectMeetingList);
             });
@@ -135,13 +135,38 @@ export const projectDetailsServices = {
                 credentials: 'same-origin'
             }).then(response => { resolve(response) });
 
+        }),
+
+    saveProjectMeetingParticipations:
+    (projectMeetingDetails: ProjectMeetingDetails, xsrfToken: string): Promise<any> =>
+        new Promise<any>((resolve, reject) => {
+
+            let data = JSON.stringify({
+                ProjectMeetingId: projectMeetingDetails.projectMeeting.projectMeetingId,
+                TeamMemberParticipationMeetings: projectMeetingDetails.teamMemberParticipationMeetings,
+                ProjectLeaderParticipationMeetings: projectMeetingDetails.projectLeaderParticipationMeetings
+            });
+
+            let headers = {};
+
+            headers['Content-Type'] = 'application/json';
+            headers['X-XSRF-TOKEN'] = xsrfToken;
+
+            fetch('api/projectdetails/projectmeetings/participations/save', {
+                method: 'POST',
+                headers,
+                body: data,
+                credentials: 'same-origin'
+            }).then(response => { resolve(response) });
+
+
         })
 };
 
 //actioncreators
 export const actionCreators = {
 
-    getProjectMeetingDetails: (id:string): AppThunkAction<KnownAction> => (dispatch, getState) => {
+    getProjectMeetingDetails: (id: string): AppThunkAction<KnownAction> => (dispatch, getState) => {
         projectDetailsServices.getProjectMeetingDetails(id).then((response) => {
 
             let projectMeetingDetails: ProjectMeetingDetails = response as ProjectMeetingDetails;
@@ -171,28 +196,47 @@ export const actionCreators = {
         dispatch({ type: 'TOGGLE_PROJECT_MEETING_DIALOG', status: { open, mode } });
     },
 
-    editTeamMemberParticipationMeetings: (index:number, checked:boolean)
-    :AppThunkAction<KnownAction> => (dispatch, getState) => {
-       let { projectDetails: { projectMeetingDetails } }= getState();
+    editTeamMemberParticipationMeetings: (index: number, checked: boolean)
+        : AppThunkAction<KnownAction> => (dispatch, getState) => {
+            let { projectDetails: { projectMeetingDetails } } = getState();
 
-       if(projectMeetingDetails) {
-           let teamMemberParticipationMeetings =  [...projectMeetingDetails.teamMemberParticipationMeetings];
-           teamMemberParticipationMeetings[index].checked = checked;
-           projectMeetingDetails.teamMemberParticipationMeetings = teamMemberParticipationMeetings;
-           dispatch({ type: 'SET_PROJECT_MEETING_DETAILS', projectMeetingDetails });
-       }
-    },
-    editProjectLeaderParticipationMeetings: (index:number, checked:boolean)
-    :AppThunkAction<KnownAction> => (dispatch, getState) => {
-       let { projectDetails: { projectMeetingDetails } }= getState();
+            if (projectMeetingDetails) {
+                let teamMemberParticipationMeetings = [...projectMeetingDetails.teamMemberParticipationMeetings];
+                teamMemberParticipationMeetings[index].checked = checked;
+                projectMeetingDetails.teamMemberParticipationMeetings = teamMemberParticipationMeetings;
+                dispatch({ type: 'SET_PROJECT_MEETING_DETAILS', projectMeetingDetails });
+            }
+        },
+    editProjectLeaderParticipationMeetings: (index: number, checked: boolean)
+        : AppThunkAction<KnownAction> => (dispatch, getState) => {
+            let { projectDetails: { projectMeetingDetails } } = getState();
 
-       if(projectMeetingDetails) {
-           let projectLeaderParticipationMeetings =  [...projectMeetingDetails.projectLeaderParticipationMeetings];
-           projectLeaderParticipationMeetings[index].checked = checked;
-           projectMeetingDetails.projectLeaderParticipationMeetings = projectLeaderParticipationMeetings;
-           dispatch({ type: 'SET_PROJECT_MEETING_DETAILS', projectMeetingDetails });
-       }
-    }
+            if (projectMeetingDetails) {
+                let projectLeaderParticipationMeetings = [...projectMeetingDetails.projectLeaderParticipationMeetings];
+                projectLeaderParticipationMeetings[index].checked = checked;
+                projectMeetingDetails.projectLeaderParticipationMeetings = projectLeaderParticipationMeetings;
+                dispatch({ type: 'SET_PROJECT_MEETING_DETAILS', projectMeetingDetails });
+            }
+        },
+    saveProjectMeetingParticipations: ()
+        : AppThunkAction<KnownAction> => (dispatch, getState) => {
+            let { projectDetails: { projectMeetingDetails } } = getState();
+            let { session } = getState();
+
+            projectDetailsServices.saveProjectMeetingParticipations(projectMeetingDetails!,
+                session.xsrfToken!).then(
+                (response) => {
+                    /*projectDetailsServices
+                    .getProjectMeetingDetails(projectMeetingDetails!.projectMeeting.projectMeetingId!)
+                    .then((response) => {
+                        let projectMeetingDetails: ProjectMeetingDetails = response as ProjectMeetingDetails;
+                        console.log(projectMeetingDetails);
+                        dispatch({ type: 'SET_PROJECT_MEETING_DETAILS', projectMeetingDetails });
+                    });*/
+                }
+                )
+
+        }
 
 }
 

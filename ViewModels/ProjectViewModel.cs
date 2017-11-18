@@ -16,5 +16,7 @@ namespace EvoManager.ViewModels
 		
 		public List<SubscribedStudentViewModel> SubscribedStudents { get; set; }
 		public List<SubscribedMentorViewModel> SubscribedMentors { get; set; }
+
+		public bool Subscribed { get; set;}
 	}
 }

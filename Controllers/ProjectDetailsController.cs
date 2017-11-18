@@ -335,6 +335,51 @@ namespace EvoManager.Controllers
       }
 
       [Authorize(Roles = "Student, Mentor, Admin")]
+      [HttpPost("projectmeetings/participations/save")]
+      [ValidateAntiForgeryToken]
+      public ActionResult SaveProjectMeetingParticipations([FromBody][Bind("ProjectMeetingId", 
+      "TeamMemberParticipationMeetings", "ProjectLeaderParticipationMeetings")]
+        ProjectMeetingViewModel projectMeetingViewModel) 
+      {
+         var teamMemberParticipationMeetings = _context
+         .TeamMemberParticipationMeetings
+         .Where(m=>m.ProjectMeetingId == projectMeetingViewModel.ProjectMeetingId);
+
+         foreach(var teamMemberParticipationMeeting in teamMemberParticipationMeetings)
+         {
+            var savingTeamMemberParticipationMeeting = projectMeetingViewModel
+            .TeamMemberParticipationMeetings
+            .FirstOrDefault(m=>m.TeamMemberParticipationMeetingId ==
+            teamMemberParticipationMeeting.TeamMemberParticipationMeetingId);
+
+            if(savingTeamMemberParticipationMeeting!=null)
+            {
+                teamMemberParticipationMeeting.Checked = savingTeamMemberParticipationMeeting.Checked;
+            }
+         }
+
+         var projectLeaderParticipationMeetings = _context
+         .ProjectLeaderParticipationMeetings
+         .Where(m=>m.ProjectMeetingId == projectMeetingViewModel.ProjectMeetingId);
+
+         foreach(var projectLeaderParticipationMeeting in projectLeaderParticipationMeetings)
+         {
+            var savingProjectLeaderParticipationMeeting = projectMeetingViewModel
+            .ProjectLeaderParticipationMeetings
+            .FirstOrDefault(m=>m.ProjectLeaderParticipationMeetingId ==
+            projectLeaderParticipationMeeting.ProjectLeaderParticipationMeetingId);
+
+            if(savingProjectLeaderParticipationMeeting!=null)
+            {
+                projectLeaderParticipationMeeting.Checked = savingProjectLeaderParticipationMeeting.Checked;
+            }
+         }
+
+         _context.SaveChanges();
+         return Ok(Json("Sikeres módosítás!"));
+      }
+
+      [Authorize(Roles = "Student, Mentor, Admin")]
       [HttpGet("projectmeetings/details/{id}")]
       public ProjectMeetingViewModel ProjectMeetingDetails(string id) 
       {
@@ -344,6 +389,7 @@ namespace EvoManager.Controllers
          .Include(m=>m.TeamMemberParticipationMeetings)
          .Where(m=>m.ProjectMeetingId ==  id)
          .Select(m=> new ProjectMeetingViewModel {
+            ProjectMeetingId = m.ProjectMeetingId, 
             StartTime = m.StartTime,
             EndTime = m.EndTime,
             TeamMemberParticipationMeetings = m.TeamMemberParticipationMeetings

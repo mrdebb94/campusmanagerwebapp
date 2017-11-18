@@ -38,7 +38,21 @@ namespace EvoManager.Controllers
 
       [Authorize(Roles = "Admin, Mentor, Student")]
       [HttpGet("current/active/list")]
-      public IList<ProjectViewModel> ListActiveProjectsInCurrentCampus() {
+      public async Task<IList<ProjectViewModel>> ListActiveProjectsInCurrentCampus() {
+
+           var user = await _userManager.GetUserAsync(HttpContext.User);
+           IList<String>  roles = await _userManager.GetRolesAsync(user);
+
+           //Be van-e iratkozva a félévre
+           var campusParticipation = _context.CampusParticipations
+           .Include(m=>m.Student)
+           .Include(m=>m.Mentor)
+           .Where(m=>m.Campus.Active &&
+                     ( (roles.Contains("Student")&&m.StudentId!=null&&m.Student.UserId==user.Id) ||
+                       (roles.Contains("Mentor")&&m.MentorId!=null&&m.Mentor.UserId==user.Id) )
+
+           ).FirstOrDefault();
+
           return _context.ProjectCampus
          .Include(m=>m.SubscribedStudents)
          .Where(m=>m.Campus.Active&&
@@ -54,7 +68,9 @@ namespace EvoManager.Controllers
                  StartDate = m.Campus.StartDate,
                  EndDate = m.Campus.EndDate
              },
-             SubscribedStudents = m.SubscribedStudents.Select(
+             SubscribedStudents = m.SubscribedStudents
+             .Where( s=>s.Deleted == false)
+             .Select(
                  s=>new SubscribedStudentViewModel {
                      Student = new Student {
                          StudentId=s.Student.StudentId,
@@ -62,16 +78,157 @@ namespace EvoManager.Controllers
                      }
                  }
              ).ToList(),
-             SubscribedMentors = m.SubscribedMentors.Select(
+             SubscribedMentors = m.SubscribedMentors
+             .Where( s=>s.Deleted == false)
+             .Select(
                  s=> new SubscribedMentorViewModel {
                      Mentor = new Mentor {
                         MentorId = s.Mentor.MentorId,
                         Name=s.Mentor.Name
                      }
                  }
-             ).ToList()
+             ).ToList(),
+             Subscribed = ((campusParticipation.StudentId!=null
+                        &&m.SubscribedStudents
+                        .Count(s=>s.ProjectCampusId == m.ProjectCampusId
+                        && s.StudentId == campusParticipation.StudentId
+                        && s.Deleted == false)!=0) 
+                        || (campusParticipation.MentorId!=null
+                        && m.SubscribedMentors
+                        .Count(s=>s.ProjectCampusId == m.ProjectCampusId
+                        && s.MentorId == campusParticipation.MentorId
+                        && s.Deleted == false)!=0))
          })
          .ToList();
+      }
+
+      [Authorize(Roles = "Mentor, Student")]
+      [HttpPost("unsubscribe")]
+      [ValidateAntiForgeryToken]
+      public async Task<ActionResult> UnSubscribeProject(
+          [FromBody][Bind("ProjectCampusId")] ProjectViewModel project) 
+      {
+           String returnMessage="";
+           DateTime currentDate = DateTime.Now;
+            
+           var user = await _userManager.GetUserAsync(HttpContext.User);
+           IList<String>  roles = await _userManager.GetRolesAsync(user);
+
+           //Be van-e iratkozva a félévre
+           var campusParticipation = _context.CampusParticipations
+           .Include(m=>m.Student)
+           .Include(m=>m.Mentor)
+           .Where(m=>m.Campus.Active &&
+                     ( (roles.Contains("Student")&&m.StudentId!=null&&m.Student.UserId==user.Id) ||
+                       (roles.Contains("Mentor")&&m.MentorId!=null&&m.Mentor.UserId==user.Id) )
+
+           ).FirstOrDefault();
+
+           if(campusParticipation!=null)
+           {
+                //Létezik-e ilyen azonosítójú, 
+                var projectCampus = _context.ProjectCampus
+                   .FirstOrDefault(m=>m.ProjectCampusId == project.ProjectCampusId &&
+                   m.ProjectStatus.Value=="Active");
+              //TODO: jelentkezési időszak !!!!
+                   
+                //ha létező projektre jelentkeztünk, és a projekt aktív félévben van
+                //TODO: és aktív státuszú
+                if(projectCampus!=null) 
+                {
+                    if(campusParticipation.StudentId!=null) 
+                    { 
+                        var subscribedStudent =_context.SubscribedStudents
+                        .FirstOrDefault(m=>m.ProjectCampusId == project.ProjectCampusId
+                        && m.StudentId == campusParticipation.StudentId
+                        && m.Deleted == false);
+
+                        if(subscribedStudent!=null) 
+                        {
+                            subscribedStudent.Deleted = true;
+                            _context.SaveChanges();
+                        }
+                        else
+                        {
+                            returnMessage="Érvénytelen leiratkozás!";
+                        }
+    
+                    } else if(campusParticipation.MentorId!=null)
+                    {
+                        var subscribedMentor =_context.SubscribedMentors
+                        .FirstOrDefault(m=>m.ProjectCampusId == project.ProjectCampusId
+                        && m.MentorId == campusParticipation.MentorId
+                        && m.Deleted == false);
+                        if(subscribedMentor!=null)
+                        {
+                            subscribedMentor.Deleted = true;
+                            _context.SaveChanges();
+                        } else
+                        {
+                             returnMessage="Érvénytelen leiratkozás!";
+                        }
+                    }
+                
+                } else {
+                    //return Ok(Json("Nem lehet erre a projektre jelentkezni!"));	
+                    returnMessage="Nem lehet erre a projektre jelentkezni!";
+                }
+
+
+           }
+           else {
+               //return Ok(Json("Nincs beiratkozva a félévre!"));	
+               returnMessage="Nincs beiratkozva a félévre!";
+           }
+
+           return Ok(Json(returnMessage));
+      }
+
+      [Authorize(Roles = "Mentor, Admin")]
+      [HttpPost("subscribes/mentor/modify")]
+      [ValidateAntiForgeryToken]
+       public ActionResult ModifyMentorProjectSubscribing(
+          [FromBody][Bind("ProjectCampusId", "SubscribedMentorId")] SubscribedMentorViewModel subscribedMentor) 
+      {
+          var currentDate = DateTime.Now;
+          var existingSubscribedMentor =_context.SubscribedMentors
+                        .FirstOrDefault(m=>m.SubscribedMentorId == subscribedMentor.SubscribedMentorId);
+          if(existingSubscribedMentor!=null)
+          {
+              existingSubscribedMentor.Deleted = true;
+              SubscribedMentor modifiedSubscribedMentor = new SubscribedMentor();
+              modifiedSubscribedMentor.MentorId = existingSubscribedMentor.Mentor.MentorId;
+              //új projektre feliratkozás
+              modifiedSubscribedMentor.ProjectCampusId = subscribedMentor.ProjectCampusId;
+              modifiedSubscribedMentor.SubscribedDate = currentDate;
+              _context.SubscribedMentors.Add(modifiedSubscribedMentor);
+              _context.SaveChanges();
+
+          }
+          return Ok();
+      }
+
+      [Authorize(Roles = "Mentor, Admin")]
+      [HttpPost("subscribes/student/modify")]
+      [ValidateAntiForgeryToken]
+       public ActionResult ModifyStudentProjectSubscribing(
+          [FromBody][Bind("ProjectCampusId", "SubscribedStudentId")] SubscribedStudentViewModel subscribedStudent) 
+      {
+          var currentDate = DateTime.Now;
+          var existingSubscribedStudent =_context.SubscribedStudents
+                        .FirstOrDefault(m=>m.SubscribedStudentId == subscribedStudent.SubscribedStudentId);
+          if(existingSubscribedStudent!=null)
+          {
+              existingSubscribedStudent.Deleted = true;
+              SubscribedStudent modifiedSubscribedStudent = new SubscribedStudent();
+              modifiedSubscribedStudent.StudentId = existingSubscribedStudent.Student.StudentId;
+              modifiedSubscribedStudent.ProjectCampusId = subscribedStudent.ProjectCampusId;
+              modifiedSubscribedStudent.SubscribedDate = currentDate;
+              _context.SubscribedStudents.Add(modifiedSubscribedStudent);
+              _context.SaveChanges();
+
+          }
+          return Ok();
       }
 
       [Authorize(Roles = "Mentor, Student")]
@@ -80,6 +237,7 @@ namespace EvoManager.Controllers
       public async Task<ActionResult> SubscribeProject(
           [FromBody][Bind("ProjectCampusId")] ProjectViewModel project) 
       {
+           String returnMessage="";
            DateTime currentDate = DateTime.Now;
             
            var user = await _userManager.GetUserAsync(HttpContext.User);
@@ -109,10 +267,15 @@ namespace EvoManager.Controllers
                 {
                      if(campusParticipation.StudentId!=null) 
                      {
-                        //jelentkezetett-e már erre a projektre
-                        var existingSubscribedStudent =_context.SubscribedStudents
+                        //jelentkezetett-e már erre az aktív félévbe projektre
+                        /*var existingSubscribedStudent =_context.SubscribedStudents
                         .FirstOrDefault(m=>m.ProjectCampusId == project.ProjectCampusId &&
-                        m.StudentId == campusParticipation.StudentId);
+                        m.StudentId == campusParticipation.StudentId);*/
+
+                        var existingSubscribedStudent =_context.SubscribedStudents
+                        .FirstOrDefault(m=>m.ProjectCampus.Campus.Active &&
+                        m.StudentId == campusParticipation.StudentId &&
+                        m.Deleted==false);
 
                         if(existingSubscribedStudent==null) {
                             SubscribedStudent subscribedStudent = new SubscribedStudent();
@@ -122,18 +285,25 @@ namespace EvoManager.Controllers
                             _context.SubscribedStudents.Add(subscribedStudent);
                             _context.SaveChanges();
 
-                            return Ok(Json("Sikeres jelentkezés!"));
+                            //return Ok(Json("Sikeres jelentkezés!"));
+                            returnMessage="Sikeres jelentkezés!";
                         } else {
-                            return Ok(Json("Már jelentkezett erre a projektre!"));	
+                            //return Ok(Json("Már jelentkezett erre a projektre!"));
+                            returnMessage="Már jelentkezett egy projektre!";
                         }
                                 
                      } 
                      else if(campusParticipation.MentorId!=null)
                      {
                           //jelentkezetett-e már erre a projektre
-                        var existingSubscribedMentor =_context.SubscribedMentors
+                        /*var existingSubscribedMentor =_context.SubscribedMentors
                         .FirstOrDefault(m=>m.ProjectCampusId == project.ProjectCampusId &&
-                        m.MentorId == campusParticipation.MentorId);
+                        m.MentorId == campusParticipation.MentorId);*/
+
+                        var existingSubscribedMentor =_context.SubscribedMentors
+                        .FirstOrDefault(m=>m.ProjectCampus.Campus.Active
+                        && m.MentorId == campusParticipation.MentorId
+                        && m.Deleted==false);
 
                         if(existingSubscribedMentor==null) {
                             SubscribedMentor subscribedMentor = new SubscribedMentor();
@@ -143,21 +313,25 @@ namespace EvoManager.Controllers
                             _context.SubscribedMentors.Add(subscribedMentor);
                             _context.SaveChanges();
 
-                             return Ok(Json("Sikeres jelentkezés!"));
+                             //return Ok(Json("Sikeres jelentkezés!"));
+                            returnMessage="Sikeres jelentkezés!";
                         } else {
-                            return Ok(Json("Már jelentkezett erre a projektre!"));
+                            //return Ok(Json("Már jelentkezett erre a projektre!"));
+                            returnMessage="Már jelentkezett egy";
                         }
 
                      }
                 } else {
-                    return Ok(Json("Nem lehet erre a projektre jelentkezni!"));	
+                    //return Ok(Json("Nem lehet erre a projektre jelentkezni!"));	
+                    returnMessage="Nem lehet erre a projektre jelentkezni!";
                 }
                
            } else {
-               return Ok(Json("Nincs beiratkozva a félévre!"));	
+               //return Ok(Json("Nincs beiratkozva a félévre!"));	
+               returnMessage="Nincs beiratkozva a félévre!";
            }
 
-           return Ok();
+           return Ok(Json(returnMessage));
 
       }
       
@@ -284,7 +458,9 @@ namespace EvoManager.Controllers
          .Select(m=>new ProjectViewModel {
              ProjectCampusId = m.ProjectCampusId,
              Name = m.Project.Name,
-             SubscribedStudents = m.SubscribedStudents.Select(
+             SubscribedStudents = m.SubscribedStudents
+             .Where( s=>s.Deleted == false )
+             .Select(
                  s=>new SubscribedStudentViewModel {
                      SubscribedStudentId = s.SubscribedStudentId,
                      Student = new Student {
@@ -293,7 +469,9 @@ namespace EvoManager.Controllers
                      }
                  }
              ).ToList(),
-             SubscribedMentors = m.SubscribedMentors.Select(
+             SubscribedMentors = m.SubscribedMentors
+             .Where( s=>s.Deleted == false )
+             .Select(
                  s=> new SubscribedMentorViewModel {
                      SubscribedMentorId = s.SubscribedMentorId,
                      Mentor = new Mentor {
