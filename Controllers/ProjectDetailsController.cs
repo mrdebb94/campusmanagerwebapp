@@ -77,35 +77,53 @@ namespace EvoManager.Controllers
            }
               if(student!=null)
               {
-                  TeamMember teamMember = new TeamMember {
-                      StudentId = student.StudentId,
-                      ProjectCampusId = student.ProjectCampusId,
-                      JoinDate = DateTime.Now
-                  };
+                  using (var transaction = _context.Database.BeginTransaction())
+                  {
+                    TeamMember teamMember = new TeamMember {
+                        StudentId = student.StudentId,
+                        ProjectCampusId = student.ProjectCampusId,
+                        JoinDate = DateTime.Now
+                    };
 
-                  _context.TeamMembers.Add(teamMember);
-                  _context.SaveChanges();
+                    _context.TeamMembers.Add(teamMember);
+                    _context.SaveChanges();
 
-                  /*
-                  Ha vannak már a projekthez megbeszélések rendelve, rendeljük hozzá ezt
-                  az új csapattagot is
-                  */
-                 var projectMeetings = _context
-                 .ProjectMeetings
-                 .Where(m=>m.ProjectCampusId == student.ProjectCampusId);
+                    /*
+                    Ha vannak már a projekthez megbeszélések rendelve, rendeljük hozzá ezt
+                    az új csapattagot is
+                    */
 
-                 foreach(var projectMeeting in projectMeetings)
-                 {
-                    TeamMemberParticipationMeeting  teamMemberParticipationMeeting = 
-                        new TeamMemberParticipationMeeting {
-                            TeamMemberId = teamMember.TeamMemberId,
-                            ProjectMeetingId = projectMeeting.ProjectMeetingId
-                        };
+                    
+                    var projectMeetings = _context
+                    .ProjectMeetings
+                    .Include(m=>m.ProjectCampus.ProjectLeaders)
+                    .Where(m=>m.ProjectCampusId == student.ProjectCampusId).ToList();
 
-                    _context.TeamMemberParticipationMeetings.Add(teamMemberParticipationMeeting);
-                 }
-                 
-                 _context.SaveChanges();
+                    foreach(var projectMeeting in projectMeetings)
+                    {
+                        TeamMemberParticipationMeeting  teamMemberParticipationMeeting = 
+                            new TeamMemberParticipationMeeting {
+                                TeamMemberId = teamMember.TeamMemberId,
+                                ProjectMeetingId = projectMeeting.ProjectMeetingId
+                            };
+
+                        _context.TeamMemberParticipationMeetings.Add(teamMemberParticipationMeeting);
+                        _context.SaveChanges();
+
+                        foreach(var projectLeader in projectMeeting.ProjectCampus.ProjectLeaders) {
+                                TeamMemberRating teamMemberRating = new TeamMemberRating {
+                                    TeamMemberParticipationMeetingId= 
+                                    teamMemberParticipationMeeting.TeamMemberParticipationMeetingId,
+                                    ProjectLeaderId = projectLeader.ProjectLeaderId
+                                };
+                                _context.TeamMemberRatings.Add(teamMemberRating);
+                        }
+
+                        _context.SaveChanges();
+                    }
+                    
+                    transaction.Commit(); 
+                }               
 
               } else {
                 
@@ -158,35 +176,52 @@ namespace EvoManager.Controllers
               
               if(mentor!=null)
               {
-                  ProjectLeader projectLeader = new ProjectLeader {
-                      MentorId = mentor.MentorId,
-                      ProjectCampusId = mentor.ProjectCampusId,
-                      JoinDate = DateTime.Now
-                  };
+                  using (var transaction = _context.Database.BeginTransaction())
+                  {
+                    ProjectLeader projectLeader = new ProjectLeader {
+                        MentorId = mentor.MentorId,
+                        ProjectCampusId = mentor.ProjectCampusId,
+                        JoinDate = DateTime.Now
+                    };
 
-                  _context.ProjectLeaders.Add(projectLeader);
-                  _context.SaveChanges();
+                    _context.ProjectLeaders.Add(projectLeader);
+                    _context.SaveChanges();
 
-                  /*
-                  Ha vannak már a projekthez megbeszélések rendelve, rendeljük hozzá ezt
-                  az új mentort is
-                  */
-                 var projectMeetings = _context
-                 .ProjectMeetings
-                 .Where(m=>m.ProjectCampusId == mentor.ProjectCampusId);
+                    /*
+                    Ha vannak már a projekthez megbeszélések rendelve, rendeljük hozzá ezt
+                    az új mentort is
+                    */
+                    var projectMeetings = _context
+                    .ProjectMeetings
+                    .Include(m=>m.TeamMemberParticipationMeetings)
+                    .Where(m=>m.ProjectCampusId == mentor.ProjectCampusId);
 
-                 foreach(var projectMeeting in projectMeetings)
-                 {
-                   ProjectLeaderParticipationMeeting  projectLeaderParticipationMeeting = 
-                        new ProjectLeaderParticipationMeeting {
-                            ProjectLeaderId = projectLeader.ProjectLeaderId,
-                            ProjectMeetingId = projectMeeting.ProjectMeetingId
-                        };
+                    foreach(var projectMeeting in projectMeetings)
+                    {
+                    ProjectLeaderParticipationMeeting  projectLeaderParticipationMeeting = 
+                            new ProjectLeaderParticipationMeeting {
+                                ProjectLeaderId = projectLeader.ProjectLeaderId,
+                                ProjectMeetingId = projectMeeting.ProjectMeetingId
+                            };
 
-                    _context.ProjectLeaderParticipationMeetings.Add(projectLeaderParticipationMeeting);
-                 }
-                 
-                 _context.SaveChanges();
+                        _context.ProjectLeaderParticipationMeetings.Add(projectLeaderParticipationMeeting);
+
+                        foreach(var teamMemberParticipationMeeting in projectMeeting.TeamMemberParticipationMeetings)
+                        {
+
+                                TeamMemberRating teamMemberRating = new TeamMemberRating {
+                                    TeamMemberParticipationMeetingId= 
+                                    teamMemberParticipationMeeting.TeamMemberParticipationMeetingId,
+                                    ProjectLeaderId = projectLeader.ProjectLeaderId
+                                };
+
+                                _context.TeamMemberRatings.Add(teamMemberRating);
+                        }
+                    }
+                    
+                    _context.SaveChanges();
+                    transaction.Commit();
+                  }
 
               } else
               {
@@ -272,46 +307,69 @@ namespace EvoManager.Controllers
 
               if(projectCampus!=null) {
 
-                ProjectMeeting projectMeeting = new ProjectMeeting {
-                  ProjectCampusId = projectCampus.ProjectCampusId,
-                  StartTime =  projectMeetingViewModel.StartTime,
-                  EndTime = projectMeetingViewModel.EndTime,
-                  Description =  projectMeetingViewModel.Description,
-                  Room = projectMeetingViewModel.Room
-                };
+                using (var transaction = _context.Database.BeginTransaction())
+                {
+
+                    ProjectMeeting projectMeeting = new ProjectMeeting {
+                    ProjectCampusId = projectCampus.ProjectCampusId,
+                    StartTime =  projectMeetingViewModel.StartTime,
+                    EndTime = projectMeetingViewModel.EndTime,
+                    Description =  projectMeetingViewModel.Description,
+                    Room = projectMeetingViewModel.Room
+                    };
+                    
+                    _context.ProjectMeetings.Add(projectMeeting);
+                    _context.SaveChanges();
+
+                    var teamMembers = _context
+                    .TeamMembers
+                    .Where(m=>m.ProjectCampusId ==  projectCampus.ProjectCampusId).ToList();
+
+                    var projectLeaders = _context
+                    .ProjectLeaders
+                    .Where(m=>m.ProjectCampusId ==  projectCampus.ProjectCampusId).ToList();
+
+                    foreach(var teamMember in teamMembers) {
+                        TeamMemberParticipationMeeting  teamMemberParticipationMeeting = 
+                        new TeamMemberParticipationMeeting {
+                            TeamMemberId = teamMember.TeamMemberId,
+                            ProjectMeetingId = projectMeeting.ProjectMeetingId
+                        };
+
+                        _context.TeamMemberParticipationMeetings.Add(teamMemberParticipationMeeting);
+                        _context.SaveChanges();
+
+                        foreach(var projectLeader in projectLeaders) {
+                                TeamMemberRating teamMemberRating = new TeamMemberRating {
+                                    TeamMemberParticipationMeetingId= 
+                                    teamMemberParticipationMeeting.TeamMemberParticipationMeetingId,
+                                    ProjectLeaderId = projectLeader.ProjectLeaderId
+                                };
+                                _context.TeamMemberRatings.Add(teamMemberRating);
+                        }
+                        _context.SaveChanges();
+                    }
                 
-                _context.ProjectMeetings.Add(projectMeeting);
-                _context.SaveChanges();
+                // _context.SaveChanges();
 
-                var teamMembers = _context
-                .TeamMembers
-                .Where(m=>m.ProjectCampusId ==  projectCampus.ProjectCampusId);
+                /* var projectLeaders = _context
+                    .ProjectLeaders
+                    .Where(m=>m.ProjectCampusId ==  projectCampus.ProjectCampusId);
+                */
 
-                foreach(var teamMember in teamMembers) {
-                    TeamMemberParticipationMeeting  teamMemberParticipationMeeting = 
-                    new TeamMemberParticipationMeeting {
-                        TeamMemberId = teamMember.TeamMemberId,
-                        ProjectMeetingId = projectMeeting.ProjectMeetingId
-                    };
+                    foreach(var projectLeader in projectLeaders) {
+                        ProjectLeaderParticipationMeeting  projectLeaderParticipationMeeting = 
+                        new ProjectLeaderParticipationMeeting {
+                            ProjectLeaderId = projectLeader.ProjectLeaderId,
+                            ProjectMeetingId = projectMeeting.ProjectMeetingId
+                        };
 
-                    _context.TeamMemberParticipationMeetings.Add(teamMemberParticipationMeeting);
-                }
+                        _context.ProjectLeaderParticipationMeetings.Add(projectLeaderParticipationMeeting);
+                        _context.SaveChanges();
+                    }
 
-                var projectLeaders = _context
-                .ProjectLeaders
-                .Where(m=>m.ProjectCampusId ==  projectCampus.ProjectCampusId);
-
-                foreach(var projectLeader in projectLeaders) {
-                    ProjectLeaderParticipationMeeting  projectLeaderParticipationMeeting = 
-                    new ProjectLeaderParticipationMeeting {
-                        ProjectLeaderId = projectLeader.ProjectLeaderId,
-                        ProjectMeetingId = projectMeeting.ProjectMeetingId
-                    };
-
-                    _context.ProjectLeaderParticipationMeetings.Add(projectLeaderParticipationMeeting);
-                }
-
-                 _context.SaveChanges();
+                  transaction.Commit();
+                }    
 
                 /* 
                 if(projectMeetingViewModel.HasWeekly) 
@@ -328,7 +386,7 @@ namespace EvoManager.Controllers
 
                */
             
-              }
+            }
            
 
          return Ok(Json("Sikeres hozzáadás!"));
@@ -379,10 +437,63 @@ namespace EvoManager.Controllers
          return Ok(Json("Sikeres módosítás!"));
       }
 
+
+      [Authorize(Roles = "Mentor")]
+      [HttpPost("projectmeetings/ratings/save")]
+      [ValidateAntiForgeryToken]
+      public async Task<ActionResult> SaveTeamMemberProjectMeetingRating([FromBody][Bind("TeamMemberRatingId", 
+      "Text")]
+        TeamMemberRatingViewModel teamMemberRating) 
+      {
+
+        //TODO: ellenőrzés, hogy az értékelés aktív campusbeli projektből van!
+        var user = await _userManager.GetUserAsync(HttpContext.User);
+        IList<String>  roles = await _userManager.GetRolesAsync(user);
+
+        ProjectLeader projectLeader = null;
+
+        if(roles.Contains("Mentor"))
+        {
+             projectLeader =  _context
+              .ProjectLeaders
+              .FirstOrDefault(s=>s.Mentor.UserId == user.Id);
+             
+             if(projectLeader!=null)
+             {
+                  var existingTeamMemberRating = _context.TeamMemberRatings
+                    .FirstOrDefault(m=>m.TeamMemberRatingId==teamMemberRating.TeamMemberRatingId
+                    && m.ProjectLeaderId == projectLeader.ProjectLeaderId );
+
+                    if(existingTeamMemberRating!=null)
+                    {
+                        existingTeamMemberRating.Text = teamMemberRating.Text;
+                        _context.SaveChanges();
+                    }
+             }
+         
+
+        }
+         return Ok();
+      }
+
+
       [Authorize(Roles = "Student, Mentor, Admin")]
       [HttpGet("projectmeetings/details/{id}")]
-      public ProjectMeetingViewModel ProjectMeetingDetails(string id) 
+      public async Task<ProjectMeetingViewModel> ProjectMeetingDetails(string id) 
       {
+
+        var user = await _userManager.GetUserAsync(HttpContext.User);
+        IList<String>  roles = await _userManager.GetRolesAsync(user);
+
+        ProjectLeader projectLeader = null;
+
+        if(roles.Contains("Mentor"))
+        {
+             projectLeader =  _context
+              .ProjectLeaders
+              .FirstOrDefault(s=>s.Mentor.UserId == user.Id);
+        }
+
         return _context
          .ProjectMeetings
          .Include(m=>m.ProjectLeaderParticipationMeetings)
@@ -397,7 +508,14 @@ namespace EvoManager.Controllers
                 TeamMemberParticipationMeetingId = s.TeamMemberParticipationMeetingId,
                 TeamMemberId = s.TeamMemberId,
                 TeamMemberName = s.TeamMember.Student.Name,
-                Checked = s.Checked
+                Checked = s.Checked,
+                TeamMemberRatings = s.TeamMemberRatings.Select(
+                     teamMemberRating => new TeamMemberRatingViewModel {
+                         TeamMemberRatingId = teamMemberRating.TeamMemberRatingId,
+                         Text = teamMemberRating.Text,
+                         Editable = (projectLeader!=null
+                                &&teamMemberRating.ProjectLeaderId == projectLeader.ProjectLeaderId)
+                     }).ToList()
             }).ToList(),
             ProjectLeaderParticipationMeetings = m.ProjectLeaderParticipationMeetings
             .Select(s=>new ProjectLeaderParticipationMeetingViewModel {

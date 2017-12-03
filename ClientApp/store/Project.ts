@@ -13,13 +13,24 @@ export interface ProjectStatus {
 export interface SubscribedMentor {
     subscribedMentorId: string,
     projectCampusId: string,
-    mentor: Mentor
+   
+}
+
+export interface SubscribedMentorData extends SubscribedMentor {
+    subscribedMentorId: string,
+    projectCampusId: string,
+    mentor: Mentor;
 }
 
 export interface SubscribedStudent {
     subscribedStudentId: string,
+    projectCampusId: string
+}
+
+export interface SubscribedStudentData extends SubscribedStudent{
+    subscribedStudentId: string,
     projectCampusId: string,
-    student: Student
+    student: Student;
 }
 
 //TODO: ProjectDetails status
@@ -30,8 +41,8 @@ export interface Project {
     description: string;
     campus?: Campus;
     projectStatus?: ProjectStatus;
-    subscribedMentors: SubscribedMentor[];
-    subscribedStudents: SubscribedStudent[];
+    subscribedMentors: SubscribedMentorData[];
+    subscribedStudents: SubscribedStudentData[];
 }
 
 //tárolja, hogy a bejelentkezett felhasználó melyikre jelentkezett már
@@ -53,8 +64,8 @@ export interface ProjectState {
     projectSubscribeDialog: {
         open: boolean,
         mode: string,
-        subscribedMentor?: SubscribedMentor,
-        subscribedStudent?: SubscribedStudent,
+        subscribedMentor?: SubscribedMentorData,
+        subscribedStudent?: SubscribedStudentData,
         projectList: ActiveProject[];
     };
 }
@@ -87,8 +98,8 @@ interface ToggleProjectDialog {
 interface ToggleProjectSubscribeDialog {
     type: 'TOGGLE_PROJECT_SUBSCRIBE_DIALOG';
     status: {
-        open: boolean, mode: string, projectList: ActiveProject[], subscribedMentor?: SubscribedMentor,
-        subscribedStudent?: SubscribedStudent
+        open: boolean, mode: string, projectList: ActiveProject[], subscribedMentor?: SubscribedMentorData,
+        subscribedStudent?: SubscribedStudentData
     };
 }
 
@@ -305,13 +316,34 @@ export const projectServices = {
                 SubscribedMentorId: subscribedMentor.subscribedMentorId,
                 ProjectCampusId: subscribedMentor.projectCampusId
             });
-    
+
             let headers = {};
-    
+
             headers['Content-Type'] = 'application/json';
             headers['X-XSRF-TOKEN'] = xsrfToken;
-    
-            fetch('api/projectdetails/projectleaders/add', {
+
+            fetch('api/project/subscribes/mentor/modify', {
+                method: 'POST',
+                headers,
+                body: data,
+                credentials: 'same-origin'
+            }).then((response) => {
+                resolve(response);
+            });
+        }),
+    modifyStudentProjectSubscribe: (subscribedStudent: SubscribedStudent, xsrfToken: string): Promise<any> =>
+        new Promise((resolve, reject) => {
+            let data = JSON.stringify({
+                SubscribedStudentId: subscribedStudent.subscribedStudentId,
+                ProjectCampusId: subscribedStudent.projectCampusId
+            });
+
+            let headers = {};
+
+            headers['Content-Type'] = 'application/json';
+            headers['X-XSRF-TOKEN'] = xsrfToken;
+
+            fetch('api/project/subscribes/student/modify', {
                 method: 'POST',
                 headers,
                 body: data,
@@ -405,8 +437,8 @@ export const actionCreators = {
             description?: string,
             campus?: Campus,
             projectStatus?: ProjectStatus,
-            subscribedMentors?: SubscribedMentor[];
-            subscribedStudents?: SubscribedStudent[];
+            subscribedMentors?: SubscribedMentorData[];
+            subscribedStudents?: SubscribedStudentData[];
 
         }): AppThunkAction<KnownAction> => (dispatch, getState) => {
             dispatch({
@@ -426,7 +458,7 @@ export const actionCreators = {
     },
 
     toggleProjectSubscribeDialog: (open: boolean, { subscribedMentor, subscribedStudent }
-        : { subscribedMentor?: SubscribedMentor, subscribedStudent?: SubscribedStudent }):
+        : { subscribedMentor?: SubscribedMentorData, subscribedStudent?: SubscribedStudentData }):
         AppThunkAction<KnownAction> => (dispatch, getState) => {
 
             if (open) {
@@ -444,7 +476,7 @@ export const actionCreators = {
             } else {
                 dispatch({
                     type: 'TOGGLE_PROJECT_SUBSCRIBE_DIALOG', status: {
-                        open, mode: "", projectList:[], subscribedMentor:undefined, subscribedStudent:undefined
+                        open, mode: "", projectList: [], subscribedMentor: undefined, subscribedStudent: undefined
                     }
                 });
             }
@@ -491,14 +523,47 @@ export const actionCreators = {
         )
     },
 
-    approveMentorProjectSubscribe: (subscribedMentorId): AppThunkAction<KnownAction> => (dispatch, getState) => {
-        let { session } = getState();
-        projectServices.approveMentorProjectSubscribe(subscribedMentorId, session.xsrfToken).then(
-            (response) => {
-                console.log(response);
-            }
-        )
-    }
+    approveMentorProjectSubscribe: (subscribedMentorId): AppThunkAction<KnownAction> =>
+        (dispatch, getState) => {
+            let { session } = getState();
+            projectServices.approveMentorProjectSubscribe(subscribedMentorId, session.xsrfToken).then(
+                (response) => {
+                    console.log(response);
+                }
+            )
+        },
+
+    modifyMentorProjectSubscribe: (subscribedMentor: SubscribedMentor): AppThunkAction<KnownAction> =>
+        (dispatch, getState) => {
+            let { session } = getState();
+
+            projectServices.modifyMentorProjectSubscribe(subscribedMentor, session.xsrfToken!).then(
+                (response) => {
+                    console.log(response);
+                    dispatch({
+                        type: 'TOGGLE_PROJECT_SUBSCRIBE_DIALOG', status: {
+                            open:false, mode: "", projectList:[], subscribedMentor:undefined, subscribedStudent:undefined
+                        }
+                    });
+                }
+            );
+        },
+
+    modifyStudentProjectSubscribe: (subscribedStudent: SubscribedStudent): AppThunkAction<KnownAction> =>
+        (dispatch, getState) => {
+            let { session } = getState();
+
+            projectServices.modifyStudentProjectSubscribe(subscribedStudent, session.xsrfToken!).then(
+                (response) => {
+                    console.log(response);
+                    dispatch({
+                        type: 'TOGGLE_PROJECT_SUBSCRIBE_DIALOG', status: {
+                            open:false, mode: "", projectList:[], subscribedMentor:undefined, subscribedStudent:undefined
+                        }
+                    });
+                }
+            );
+        }
 
 };
 const initialState: ProjectState = {

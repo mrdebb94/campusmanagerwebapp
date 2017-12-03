@@ -10,5 +10,8 @@ namespace EvoManager.ViewModels
        public bool Checked { get; set; }
        public string TeamMemberId { get; set; }
        public string TeamMemberName { get; set; }
+
+       public List<TeamMemberRatingViewModel> TeamMemberRatings { get; set; }
+
     }
 }

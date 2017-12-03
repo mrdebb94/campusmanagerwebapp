@@ -1,2 +1,0 @@
-2017-09-12 00:17:57.284 +02:00 [Information] Inaktív 0
-2017-09-12 00:17:58.186 +02:00 [Information] Aktív, de még nem indult el 1

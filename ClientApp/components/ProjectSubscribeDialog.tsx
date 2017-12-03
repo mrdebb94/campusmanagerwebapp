@@ -18,9 +18,13 @@ ProjectStore.ProjectState        // ... state we've requested from the Redux sto
 & typeof ProjectStore.actionCreators      // ... plus action creators we've requested
 & RouteComponentProps<{}>
 
+interface ProjectSubscribeType {
+    selectedProjectId: string | null;
+}
+
 export class ProjectSubscribeDialog extends React.Component<ProjectProps, any> {
 
-    state={
+    state:ProjectSubscribeType={
         selectedProjectId: null
     }
     componentDidMount() {
@@ -57,6 +61,7 @@ export class ProjectSubscribeDialog extends React.Component<ProjectProps, any> {
 
     public render() {
        
+        const { projectSubscribeDialog : { subscribedMentor, subscribedStudent } } = this.props;
         return <div>
             <Dialog
                 title="Projekt jelentkezés módosítása"
@@ -65,24 +70,37 @@ export class ProjectSubscribeDialog extends React.Component<ProjectProps, any> {
                 autoScrollBodyContent={false}
                 autoDetectWindowHeight={true}
                 actions={[<FlatButton label="Módosítás" primary={true} onClick={
-                    () => { }} />,
+                    () => { 
+                        if(subscribedMentor) { 
+                            this.props.modifyMentorProjectSubscribe( { 
+                                subscribedMentorId: subscribedMentor.subscribedMentorId,
+                                projectCampusId: this.state.selectedProjectId!
+                                });
+                        } else if(subscribedStudent) {
+                            this.props.modifyStudentProjectSubscribe( { 
+                                subscribedStudentId: subscribedStudent.subscribedStudentId,
+                                projectCampusId: this.state.selectedProjectId!
+                                });
+                        }
+                    
+                    }} />,
                 <FlatButton label="Mégse" primary={true} onClick={
                     () => { this.props.toggleProjectSubscribeDialog(false, {})}} />]}
             >
-              { this.props.projectSubscribeDialog.subscribedMentor&&
+              { (subscribedMentor&&subscribedMentor.mentor)&&
                 <TextField
                     floatingLabelText="Név:"
                     floatingLabelFixed={true}
-                    value={ this.props.projectSubscribeDialog.subscribedMentor.mentor.name }
+                    value={ subscribedMentor.mentor.name }
                     disabled={true}
                 />
                 
               }
-              { this.props.projectSubscribeDialog.subscribedStudent&&
+              { (subscribedStudent&&subscribedStudent.student)&&
                 <TextField
                     floatingLabelText="Név:"
                     floatingLabelFixed={true}
-                    value={ this.props.projectSubscribeDialog.subscribedStudent.student.name }
+                    value={ subscribedStudent.student.name }
                     disabled={true}
                 />
                 

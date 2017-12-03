@@ -12,6 +12,9 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import FlatButton from 'material-ui/FlatButton';
 import Checkbox from 'material-ui/Checkbox';
 
+import AppBar from 'material-ui/AppBar';
+import TextField from 'material-ui/TextField';
+
 import {
     Table,
     TableBody,
@@ -28,24 +31,89 @@ type ProjectDetailsProps =
     & typeof ProjectDetailsStore.actionCreators
     & RouteComponentProps<{}>
 
+interface ProjectMeetingState {
+    filterMenuValue: number;
+    editableTeamMemberRatings: ProjectDetailsStore.TeamMemberRating[];
+    editedTeamMemberRatingIndex: number,
+    editedTeamMemberRatingText: string
+}
+
+const styles = {
+    container: {
+        display: "flex",
+        flexDirection: "column"
+    } as React.CSSProperties,
+    button: {
+        alignSelf: "flex-end"
+    } as React.CSSProperties
+}
 
 class ProjectMeetingDetails extends React.Component<any, any> {
 
-    state = {
-        filterMenuValue: 0
+    state: ProjectMeetingState = {
+        filterMenuValue: 0,
+        editableTeamMemberRatings: [],
+        editedTeamMemberRatingIndex: -1,
+        editedTeamMemberRatingText: ""
     }
 
+    textboxes: any[4]
     componentDidMount() {
         this.props.getProjectMeetingDetails(this.props.match.params.id);
+    }
+
+    constructor(props) {
+        super(props);
+
+    } 
+
+    componentWillUnmount() {
+        this.props.unSetProjectMeetingDetails();
+    }
+
+    componentWillReceiveProps(nextProps) {
+
+        //fel fog nyílni a dialógusablak
+
+        if (((!this.props.projectMeetingDetails) || (this.props.projectMeetingDetails &&
+            this.props.projectMeetingDetails.teamMemberParticipationMeetings.length == 0))
+            && nextProps.projectMeetingDetails 
+            && nextProps.projectMeetingDetails.teamMemberParticipationMeetings.length != 0) {
+
+            let editableTeamMemberRatings =
+                nextProps.projectMeetingDetails.teamMemberParticipationMeetings.map(meeting => {
+                    let editableRatings = meeting.teamMemberRatings.filter(
+                        rating => rating.editable
+                    );
+                    console.log(editableRatings.length);
+                    if(editableRatings.length>0) {
+                        editableRatings[0].teamMemberName = meeting.teamMemberName;
+                        return editableRatings[0];
+                    } else {
+                        return null;
+                    }
+                }
+                );
+            this.setState({
+                editableTeamMemberRatings: [...editableTeamMemberRatings]
+            });
+
+        }
+
+
     }
 
     handleFilterChange = (event, index, value) => this.setState({ filterMenuValue: value });
 
     render() {
         return (<div>
+            <AppBar
+                title="Jelenléti ív"
+                showMenuIconButton={false}
+            />
             <Card containerStyle={{ marginBottom: 10 }}>
                 <CardTitle title={"Megbeszélés"} subtitle={this.props.projectMeetingDetails
-                    ? `${this.props.projectMeetingDetails.projectMeeting.startTime!.format("YYYY-DD-MM HH:mm")}
+                    ? `${this.props.projectMeetingDetails.projectMeeting.startTime!.format("YYYY-MM-DD HH:mm")}
                      - ${this.props.projectMeetingDetails.projectMeeting.endTime!.format("HH:mm")}`
                     : `Ismeretlen`} />
                 <CardText>
@@ -73,9 +141,9 @@ class ProjectMeetingDetails extends React.Component<any, any> {
                                         (this.state.filterMenuValue == 0 || this.state.filterMenuValue == 1) &&
                                         this.props.projectMeetingDetails.
                                             teamMemberParticipationMeetings.map(
-                                                (teamMemberParticipationMeeting, index) => (
+                                            (teamMemberParticipationMeeting, index) => (
                                                 <TableRow
-                                                  key={teamMemberParticipationMeeting.teamMemberParticipationMeetingId!}>
+                                                    key={teamMemberParticipationMeeting.teamMemberParticipationMeetingId!}>
                                                     <TableRowColumn>
                                                         {teamMemberParticipationMeeting.teamMemberName}
                                                     </TableRowColumn>
@@ -84,8 +152,8 @@ class ProjectMeetingDetails extends React.Component<any, any> {
                                                             checked={teamMemberParticipationMeeting.checked}
                                                             disabled={false}
                                                             onCheck={
-                                                                (event, value)=>{
-                                                                this.props.editTeamMemberParticipationMeetings(index,value);
+                                                                (event, value) => {
+                                                                    this.props.editTeamMemberParticipationMeetings(index, value);
                                                                 }
                                                             }
                                                         />
@@ -97,26 +165,26 @@ class ProjectMeetingDetails extends React.Component<any, any> {
                                         (this.state.filterMenuValue == 0 || this.state.filterMenuValue == 2) &&
                                         this.props.projectMeetingDetails.
                                             projectLeaderParticipationMeetings.map(
-                                                (projectLeaderParticipationMeeting, index) => 
-                                            (
-                                                <TableRow
-                                                    key={projectLeaderParticipationMeeting.projectLeaderParticipationMeetingId!}>
-                                                    <TableRowColumn>
-                                                        {projectLeaderParticipationMeeting.projectLeaderName}
-                                                    </TableRowColumn>
-                                                    <TableRowColumn>
-                                                        <Checkbox
-                                                            checked={projectLeaderParticipationMeeting.checked}
-                                                            disabled={false}
-                                                            onCheck={
-                                                                (event, value)=>{
-                                                                this.props.editProjectLeaderParticipationMeetings(index,value);
+                                            (projectLeaderParticipationMeeting, index) =>
+                                                (
+                                                    <TableRow
+                                                        key={projectLeaderParticipationMeeting.projectLeaderParticipationMeetingId!}>
+                                                        <TableRowColumn>
+                                                            {projectLeaderParticipationMeeting.projectLeaderName}
+                                                        </TableRowColumn>
+                                                        <TableRowColumn>
+                                                            <Checkbox
+                                                                checked={projectLeaderParticipationMeeting.checked}
+                                                                disabled={false}
+                                                                onCheck={
+                                                                    (event, value) => {
+                                                                        this.props.editProjectLeaderParticipationMeetings(index, value);
+                                                                    }
                                                                 }
-                                                            }
-                                                        />
-                                                    </TableRowColumn>
-                                                </TableRow>
-                                            ))
+                                                            />
+                                                        </TableRowColumn>
+                                                    </TableRow>
+                                                ))
                                     }
                                 </TableBody>
                             </Table>
@@ -125,9 +193,69 @@ class ProjectMeetingDetails extends React.Component<any, any> {
                 </CardText>
                 <CardActions>
                     <FlatButton label="Mentés" onClick={() => {
+                        console.log("Katt");
                         this.props.saveProjectMeetingParticipations();
                     }} />
                 </CardActions>
+            </Card>
+            <AppBar
+                title="Értékelések"
+                showMenuIconButton={false}
+            />
+            <Card containerStyle={{ marginBottom: 10 }}>
+                <CardTitle title={"Megbeszélés"} subtitle={this.props.projectMeetingDetails
+                    ? `${this.props.projectMeetingDetails.projectMeeting.startTime!.format("YYYY-MM-DD HH:mm")}
+                     - ${this.props.projectMeetingDetails.projectMeeting.endTime!.format("HH:mm")}`
+                    : `Ismeretlen`} />
+                <CardText>
+                    {
+                        this.state.editableTeamMemberRatings
+                        .filter(teamMemberRating=>teamMemberRating!=null)
+                        .map((teamMemberRating, index) => (
+                            <div style={styles.container}>
+                                <h3>{teamMemberRating.teamMemberName}</h3>
+                                <TextField
+                                    id={teamMemberRating.teamMemberRatingId}
+                                    style={{ "width": "100%" }}
+                                    hintText={!this.state.editableTeamMemberRatings[index].text
+                                    ?"Értékelés hozzáadása"
+                                    :undefined}
+                                    multiLine={true}
+                                    rows={2}
+                                    rowsMax={8}
+                                    value={this.state.editedTeamMemberRatingIndex==index
+                                        ? undefined
+                                        : teamMemberRating.text
+                                    }
+                                    onBlur={(event) => {
+                                        //console.log("Fokusz elhagy");
+                                        let target = event.target as HTMLInputElement;
+                                        let teamMemberRatings = [...this.state.editableTeamMemberRatings];
+                                        teamMemberRatings[index].text = target.value;
+                                        console.log(teamMemberRatings);
+                                        this.setState({
+                                            editedTeamMemberRatingIndex: -1,
+                                            teamMemberRatings: teamMemberRatings
+                                        });
+                                    }
+                                    }
+                                    onFocus={(event) => {
+                                        let target = event.target as HTMLInputElement
+                                        this.setState({
+                                            editedTeamMemberRatingIndex: index,
+                                            editedTeamMemberRatingText:
+                                            this.state.editableTeamMemberRatings[index].text
+                                        });
+                                    }}
+                                    />
+                                <FlatButton style={styles.button} label="Értékelés mentése" onClick={() => {
+                                   this.props.saveTeamMemberRating(this.state.editableTeamMemberRatings[index]);
+                                }}
+                                />
+                            </div>
+                        ))
+                    }
+                </CardText>
             </Card>
         </div>)
     }

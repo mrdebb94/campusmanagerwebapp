@@ -1,6 +1,0 @@
-2017-09-13 18:14:18.837 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
-2017-09-13 18:29:37.719 +02:00 [Information] Inaktív 0
-2017-09-13 18:29:37.796 +02:00 [Information] Aktív, de még nem indult el 1
-2017-09-13 22:30:31.596 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
-2017-09-13 22:33:54.671 +02:00 [Information] Supporting role True
-2017-09-13 23:05:02.688 +02:00 [Information] Supporting role True

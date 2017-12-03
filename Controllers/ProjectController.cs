@@ -197,7 +197,7 @@ namespace EvoManager.Controllers
           {
               existingSubscribedMentor.Deleted = true;
               SubscribedMentor modifiedSubscribedMentor = new SubscribedMentor();
-              modifiedSubscribedMentor.MentorId = existingSubscribedMentor.Mentor.MentorId;
+              modifiedSubscribedMentor.MentorId = existingSubscribedMentor.MentorId;
               //új projektre feliratkozás
               modifiedSubscribedMentor.ProjectCampusId = subscribedMentor.ProjectCampusId;
               modifiedSubscribedMentor.SubscribedDate = currentDate;
@@ -221,7 +221,7 @@ namespace EvoManager.Controllers
           {
               existingSubscribedStudent.Deleted = true;
               SubscribedStudent modifiedSubscribedStudent = new SubscribedStudent();
-              modifiedSubscribedStudent.StudentId = existingSubscribedStudent.Student.StudentId;
+              modifiedSubscribedStudent.StudentId = existingSubscribedStudent.StudentId;
               modifiedSubscribedStudent.ProjectCampusId = subscribedStudent.ProjectCampusId;
               modifiedSubscribedStudent.SubscribedDate = currentDate;
               _context.SubscribedStudents.Add(modifiedSubscribedStudent);
@@ -448,6 +448,9 @@ namespace EvoManager.Controllers
 
       }
 
+       /// <summary>
+       /// Aktív projektek listázása a még nem elfogadott jelentkezésekkel
+       /// </summary>
       [Authorize(Roles = "Admin, Mentor")]
       [HttpGet("subscriber/list")]
       public IList<ProjectViewModel> ListProjectSubscribersInCurrentCampus() {
@@ -459,7 +462,10 @@ namespace EvoManager.Controllers
              ProjectCampusId = m.ProjectCampusId,
              Name = m.Project.Name,
              SubscribedStudents = m.SubscribedStudents
-             .Where( s=>s.Deleted == false )
+             .Where( s=>s.Deleted == false
+             && s.Student.TeamMembers
+                 .Count(teammember=>teammember.ProjectCampusId == m.ProjectCampusId ) == 0
+             )
              .Select(
                  s=>new SubscribedStudentViewModel {
                      SubscribedStudentId = s.SubscribedStudentId,
@@ -470,7 +476,10 @@ namespace EvoManager.Controllers
                  }
              ).ToList(),
              SubscribedMentors = m.SubscribedMentors
-             .Where( s=>s.Deleted == false )
+             .Where( s=>s.Deleted == false
+                && s.Mentor.ProjectLeaders
+                    .Count(projectleader=>projectleader.ProjectCampusId == m.ProjectCampusId ) == 0
+             )
              .Select(
                  s=> new SubscribedMentorViewModel {
                      SubscribedMentorId = s.SubscribedMentorId,

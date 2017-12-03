@@ -85,9 +85,9 @@ export const userServices = {
 }
 
 export const actionCreators = {
-	addUser: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
+	addUser: (editedUser:User): AppThunkAction<KnownAction> => (dispatch, getState) => {
 
-		let { users: { editedUser } } = getState();
+		//let { users: { editedUser } } = getState();
 		let { session } = getState();
 
 		if (editedUser) {

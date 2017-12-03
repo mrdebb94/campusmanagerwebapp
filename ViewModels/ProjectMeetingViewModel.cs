@@ -22,5 +22,6 @@ namespace EvoManager.ViewModels
 
 		public List<TeamMemberParticipationMeetingViewModel> TeamMemberParticipationMeetings { get; set; }
 		public List<ProjectLeaderParticipationMeetingViewModel> ProjectLeaderParticipationMeetings { get; set; }
+
     }
 }

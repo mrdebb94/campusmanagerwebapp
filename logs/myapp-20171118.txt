@@ -147,3 +147,9 @@
 2017-11-18 17:56:31.865 +01:00 [Information] Path /api/project/current/active/list
 2017-11-18 17:56:41.202 +01:00 [Information] Path /api/project/current/active/list
 2017-11-18 17:56:47.658 +01:00 [Information] Path /api/project/current/active/list
+2017-11-18 21:55:18.371 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2017-11-18 22:00:31.275 +01:00 [Information] Path /subscribe/list
+2017-11-18 22:02:19.607 +01:00 [Information] Path /api/project/subscriber/list
+2017-11-18 22:02:32.321 +01:00 [Information] Path /api/user/list
+2017-11-18 22:02:32.990 +01:00 [Information] Supporting role True
+2017-11-18 22:07:07.395 +01:00 [Information] Path /api/campus/list

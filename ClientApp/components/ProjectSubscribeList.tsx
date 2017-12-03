@@ -94,7 +94,7 @@ class ProjectSubscribeList extends React.Component<ProjectProps, any> {
                         {(this.props.activeProjectList.length > this.state.tabValue
                             && (this.state.menuValue == 0 || this.state.menuValue == 2)
                         ) && this.props.activeProjectList[this.state.tabValue].subscribedStudents.
-                            map(({ subscribedStudentId, student: { name } }
+                            map(({ subscribedStudentId, student: {name} }
                                 , index) => (
                                     <TableRow>
                                         <TableRowColumn>{name}</TableRowColumn>
@@ -127,7 +127,7 @@ class ProjectSubscribeList extends React.Component<ProjectProps, any> {
                         {(this.props.activeProjectList.length > this.state.tabValue
                             && (this.state.menuValue == 0 || this.state.menuValue == 1)
                         ) && this.props.activeProjectList[this.state.tabValue].subscribedMentors.
-                            map(({ subscribedMentorId, mentor: { name } }
+                            map(({ subscribedMentorId, mentor: {name} }
                                 , index) => (
                                     <TableRow>
                                         <TableRowColumn>{name}</TableRowColumn>

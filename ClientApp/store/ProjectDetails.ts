@@ -21,6 +21,14 @@ export interface TeamMember {
     student: Student;
 }
 
+export interface TeamMemberRating { 
+   teamMemberRatingId: string;
+   text:string;
+   editable:boolean;
+   projectLeaderName:string; 
+   teamMemberName:string;  
+}
+
 export interface ProjectLeader {
     projectLeaderId: string;
     mentor: Mentor;
@@ -30,6 +38,7 @@ export interface TeamMemberParticipationMeeting {
     teamMemberParticipationMeetingId?: string;
     teamMemberName: string;
     checked: boolean;
+    teamMemberRating:TeamMemberRating[];
 }
 
 export interface ProjectLeaderParticipationMeeting {
@@ -61,6 +70,11 @@ interface SetProjectMeetingDetailsAction {
     projectMeetingDetails: ProjectMeetingDetails;
 }
 
+interface UnSetProjectMeetingDetailsAction {
+    type: 'UNSET_PROJECT_MEETING_DETAILS';
+}
+
+
 interface AddProjectMeetingAction {
     type: 'ADD_PROJECT_MEETING';
     projectMeeting: ProjectMeeting;
@@ -72,7 +86,7 @@ interface ToggleProjectMeetingDialogAction {
 }
 
 type KnownAction = SetProjectMeetingListAction | AddProjectMeetingAction
-    | ToggleProjectMeetingDialogAction | SetProjectMeetingDetailsAction;
+    | ToggleProjectMeetingDialogAction | SetProjectMeetingDetailsAction | UnSetProjectMeetingDetailsAction;
 
 //services
 
@@ -160,7 +174,30 @@ export const projectDetailsServices = {
             }).then(response => { resolve(response) });
 
 
-        })
+        }),
+
+        //projectmeetings/ratings/save
+        saveTeamMemberRating:
+        (teamMemberRating: TeamMemberRating, xsrfToken: string): Promise<any> =>
+            new Promise<any>((resolve, reject) => {
+                let data = JSON.stringify({
+                    TeamMemberRatingId: teamMemberRating.teamMemberRatingId,
+                    Text: teamMemberRating.text
+                });
+    
+                let headers = {};
+    
+                headers['Content-Type'] = 'application/json';
+                headers['X-XSRF-TOKEN'] = xsrfToken;
+    
+                fetch('api/projectdetails/projectmeetings/ratings/save', {
+                    method: 'POST',
+                    headers,
+                    body: data,
+                    credentials: 'same-origin'
+                }).then(response => { resolve(response) });
+    
+            })
 };
 
 //actioncreators
@@ -173,6 +210,10 @@ export const actionCreators = {
             console.log(projectMeetingDetails);
             dispatch({ type: 'SET_PROJECT_MEETING_DETAILS', projectMeetingDetails });
         });
+    },
+
+    unSetProjectMeetingDetails: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
+            dispatch({ type: 'UNSET_PROJECT_MEETING_DETAILS' });
     },
 
     setProjectMeetingList: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
@@ -236,6 +277,24 @@ export const actionCreators = {
                 }
                 )
 
+        },
+        saveTeamMemberRating: (teamMemberRating: TeamMemberRating)
+        : AppThunkAction<KnownAction> => (dispatch, getState) => {
+            let { session } = getState();
+
+            projectDetailsServices.saveTeamMemberRating(teamMemberRating,
+                session.xsrfToken!).then(
+                (response) => {
+                    /*projectDetailsServices
+                    .getProjectMeetingDetails(projectMeetingDetails!.projectMeeting.projectMeetingId!)
+                    .then((response) => {
+                        let projectMeetingDetails: ProjectMeetingDetails = response as ProjectMeetingDetails;
+                        console.log(projectMeetingDetails);
+                        dispatch({ type: 'SET_PROJECT_MEETING_DETAILS', projectMeetingDetails });
+                    });*/
+                }
+                )
+
         }
 
 }
@@ -265,6 +324,12 @@ export const reducer: Reducer<ProjectDetailsState> = (state = initialState, inco
             return {
                 ...state,
                 projectMeetingDetails: { ...action.projectMeetingDetails }
+            };
+        }
+        case 'UNSET_PROJECT_MEETING_DETAILS': {
+            return {
+                ...state,
+                projectMeetingDetails:undefined
             };
         }
         default:
