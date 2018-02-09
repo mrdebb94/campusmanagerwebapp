@@ -1,24 +1,20 @@
 import * as React from 'react';
 
-import { RaisedButton } from 'material-ui';
-import { FlatButton } from 'material-ui';
-
+import  Button  from 'material-ui/Button';
 import { Link, RouteComponentProps } from 'react-router-dom';
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
-import {
-    Table,
+import Toolbar from 'material-ui/Toolbar';
+import Table, {
     TableBody,
-    TableHeader,
-    TableHeaderColumn,
+    TableHead,
     TableRow,
-    TableRowColumn,
+    TableCell
 } from 'material-ui/Table';
 import { connect } from 'react-redux';
 
 import * as ProjectDetailsStore from '../store/ProjectDetails';
 import { ApplicationState } from '../store';
 
-import { ProjectMeetingDialog } from './ProjectMeetingDialog'
+import ProjectMeetingDialog from './ProjectMeetingDialog'
 
 type ProjectDetailsProps =
     ProjectDetailsStore.ProjectDetailsState
@@ -33,39 +29,45 @@ class ProjectMeetingsList extends React.Component<ProjectDetailsProps,any> {
 	
    render() {
 	   return (<div>
-	    <ProjectMeetingDialog {...this.props}/>
-	  
+	   <ProjectMeetingDialog />
 	    <Toolbar>
-             <ToolbarGroup lastChild={true}>
-                 <RaisedButton label="Módosítás" primary={true} onClick={() => {
+       
+                 <Button  color="primary" onClick={() => {
                       this.props.toggleProjectMeetingDialog(true, "edit");
-                   }} />
-                  <RaisedButton label="Új megbeszélés" primary={true} onClick={() => {
+                   }}>
+                   Módosítás
+                   </Button>
+                  <Button color="primary" onClick={() => {
                       this.props.toggleProjectMeetingDialog(true, "create");
-                   }} />
-                 </ToolbarGroup>
+                   }} >
+                   Új megbeszélés
+                   </Button>
+                
          </Toolbar>
 	    <Table>
-            <TableHeader>
+            <TableHead>
                 <TableRow>
-                     <TableHeaderColumn>Kezdés</TableHeaderColumn>
-                     <TableHeaderColumn>Végzés</TableHeaderColumn>
-                     <TableHeaderColumn>Státusz</TableHeaderColumn>
+                     <TableCell>Kezdés</TableCell>
+                     <TableCell>Végzés</TableCell>
+                     <TableCell>Státusz</TableCell>
                  </TableRow>
-             </TableHeader>
+             </TableHead>
              <TableBody>
 			   {
 				   this.props.projectMeetingList.map((projectMeeting, i) => (
 				       <TableRow>
-					      <TableRowColumn>{projectMeeting.startTime!.format()}</TableRowColumn>
-						  <TableRowColumn>{projectMeeting.endTime!.format()}</TableRowColumn>
-						  <TableRowColumn> {/*
+					      <TableCell>{projectMeeting.startTime!.format("YYYY-MM-DD HH:mm")}</TableCell>
+						  <TableCell>{projectMeeting.endTime!.format("YYYY-MM-DD HH:mm")}</TableCell>
+						  <TableCell> {/*
                               <FlatButton label="Lebonyolítás" primary={true} onClick={() => {
                               }}/> */}
                               <Link to={`/projectmeetings/details/${projectMeeting.projectMeetingId!}`}>
-                                 <FlatButton label="Lebonyolítás" primary={true}/>
+                                 <Button 
+                                   color="primary">
+                                 Lebonyolítás
+                                 </Button>
                               </Link>
-                            </TableRowColumn>
+                            </TableCell>
 					   </TableRow>
 				   ))
 			   }

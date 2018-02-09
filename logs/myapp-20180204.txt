@@ -1,0 +1,4 @@
+2018-02-04 22:03:18.649 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-04 22:08:33.487 +01:00 [Information] Path /api/report/campus
+2018-02-04 23:59:00.194 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-04 23:59:57.986 +01:00 [Information] Path /api/report/campus

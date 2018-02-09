@@ -11,9 +11,10 @@ using System;
 namespace evomanager_next.Migrations
 {
     [DbContext(typeof(EvoDbContext))]
-    partial class EvoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180202102600_ReportModel")]
+    partial class ReportModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -4,20 +4,18 @@ import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as ProjectStore from '../store/Project';
 import * as CampusStore from '../store/Campus';
-import { RaisedButton } from 'material-ui';
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
-import { Tabs, Tab } from 'material-ui/Tabs';
+import Button from 'material-ui/Button';
 import Checkbox from 'material-ui/Checkbox';
-import {
-    Table,
+import  Table, {
     TableBody,
-    TableHeader,
-    TableHeaderColumn,
+    TableHead,
     TableRow,
-    TableRowColumn,
-} from 'material-ui/Table';
+    TableCell
+  } from 'material-ui/Table';
+  import Toolbar from 'material-ui/Toolbar';
+  import Paper from 'material-ui/Paper';
 
-import {ProjectDialog} from './ProjectDialog';
+//import {ProjectDialog} from './ProjectDialog';
 
 type ProjectProps =
 ProjectStore.ProjectState        // ... state we've requested from the Redux store
@@ -25,7 +23,7 @@ ProjectStore.ProjectState        // ... state we've requested from the Redux sto
 & RouteComponentProps<{}>
 
 interface ProjectListState {
-    selectedRows: number[] | string;
+    selectedRows: string| null;
 }
 
 class Project extends React.Component<ProjectProps, ProjectListState> {
@@ -33,55 +31,78 @@ class Project extends React.Component<ProjectProps, ProjectListState> {
     constructor(props) {
         super(props);
         this.state = {
-            selectedRows: []
+            selectedRows: null
         };
     }
 
     componentDidMount() {
         this.props.setProjectList();
     }
+
+    handleClick = (event, project) => {
+        if(this.state.selectedRows==project.projectCampusId) {
+            this.setState({ selectedRows: null });
+            this.props.modifyEditedProject({});
+
+        } else {
+            this.setState({ selectedRows: project.projectCampusId });
+            this.props.modifyEditedProject({ ...project });
+        }
+    }
     
     public render() {
         return <div>
-            <ProjectDialog {...this.props}/>
+            {/*<ProjectDialog {...this.props}/>*/}
             <Toolbar>
-                        <ToolbarGroup lastChild={true}>
-                            <RaisedButton label="Módosítás" primary={true} onClick={() => {
-                                this.props.toggleProjectDialog(true, "edit");
-                            }} />
-                            <RaisedButton label="Új projekt" primary={true} onClick={() => {
+                <Button  
+                    color="primary"
+                    onClick={() => {
+                        this.props.toggleProjectDialog(true, "edit");
+                    }}>
+                Módosítás
+                </Button>
+                <Button color="primary" 
+                onClick={() => {
                                 this.props.toggleProjectDialog(true, "create");
-                            }} />
-                        </ToolbarGroup>
-                    </Toolbar>
-                    <Table
-                        onRowSelection={(selectedRows) => {
-                            console.log(selectedRows);
-                            this.setState({ selectedRows });
-                            this.props.modifyEditedProject({ ...this.props.projectList[selectedRows[0]] });
-                        }}
-                    >
-                        <TableHeader>
+                }} 
+                >
+                Új projekt
+                </Button>
+            </Toolbar>
+                    <Table>
+                        <TableHead>
                             <TableRow>
-                                <TableHeaderColumn>Project azonosító</TableHeaderColumn>
-                                <TableHeaderColumn>Project neve</TableHeaderColumn>
-                                <TableHeaderColumn>Campus időszak</TableHeaderColumn>
-                                <TableHeaderColumn>Projekt státusz</TableHeaderColumn>
+                            <TableCell padding="checkbox">
+                                    <Checkbox disabled />
+                                </TableCell>
+                                <TableCell>Project azonosító</TableCell>
+                                <TableCell>Project neve</TableCell>
+                                <TableCell>Campus időszak</TableCell>
+                                <TableCell>Projekt státusz</TableCell>
                             </TableRow>
-                        </TableHeader>
-                        <TableBody
-                            deselectOnClickaway={false}>
+                        </TableHead>
+                        <TableBody>
                             {this.props.projectList.map((project, i) =>
                                 <TableRow
+                                    hover
                                     key={project.projectCampusId!}
-                                    selected={(this.state.selectedRows as number[]).indexOf(i) !== -1}>
-                                    <TableRowColumn>{project.projectCampusId}</TableRowColumn>
-                                    <TableRowColumn>{project.name}</TableRowColumn>
-                                    <TableRowColumn>
+                                    selected={this.state.selectedRows == project.projectCampusId}
+                                    onClick={event => this.handleClick(event, project)}
+                                    >
+                                     <TableCell
+                                        padding="checkbox"
+                                    >
+                                        <Checkbox
+                                            checked={this.state.selectedRows == project.projectCampusId}
+                                        />
+                                    </TableCell>
+                                    <TableCell>{project.projectCampusId}</TableCell>
+                                    <TableCell>{project.name}</TableCell>
+                                    <TableCell>
                                         {project.campus?project.campus.startDate.format('YYYY.MM.DD'):''}-
                                         {project.campus?project.campus.endDate.format('YYYY.MM.DD'):''}
-                                    </TableRowColumn>
-                                    <TableRowColumn>{project.projectStatus!.value}</TableRowColumn>
+                                    </TableCell>
+                                    <TableCell>{project.projectStatus!.value}</TableCell>
                                 </TableRow>
                             )}
                         </TableBody>

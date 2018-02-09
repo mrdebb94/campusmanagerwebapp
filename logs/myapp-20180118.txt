@@ -1,0 +1,3 @@
+2018-01-18 11:29:25.277 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-01-18 11:40:00.163 +01:00 [Information] Path /
+2018-01-18 11:40:00.232 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vihju0x_e2-a0UDau_Q16AcA0JTKpMfX8EZuEcDsWpX2UAC4OYlikwl__0PCJmFeiR2nYwi3g30TtUeCuvKdA94RsKzv6w34_p9jq1veDNk1MtrpLRw-LMQgxno-Ic9raw

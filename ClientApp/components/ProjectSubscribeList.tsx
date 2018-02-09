@@ -4,26 +4,23 @@ import { connect } from 'react-redux';
 
 import { ApplicationState } from '../store';
 import * as ProjectStore from '../store/Project';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
-import ActionDone from 'material-ui/svg-icons/action/done';
+import AppBar from 'material-ui/AppBar';
+import Button from 'material-ui/Button';
+import DoneIcon from 'material-ui-icons/Done';
 
-import { Tabs, Tab } from 'material-ui/Tabs';
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
+import Tabs, { Tab } from 'material-ui/Tabs';
+import Toolbar from 'material-ui/Toolbar';
 
-import {
-    Table,
+import Table, {
     TableBody,
-    TableHeader,
-    TableHeaderColumn,
+    TableHead,
     TableRow,
-    TableRowColumn,
+    TableCell
 } from 'material-ui/Table';
 
-import MenuItem from 'material-ui/MenuItem';
-import DropDownMenu from 'material-ui/DropDownMenu';
+import Menu, { MenuItem } from 'material-ui/Menu';
 
-import { ProjectSubscribeDialog } from './ProjectSubscribeDialog'
+import ProjectSubscribeDialog from './ProjectSubscribeDialog'
 
 type ProjectProps =
     ProjectStore.ProjectState        // ... state we've requested from the Redux store
@@ -34,27 +31,39 @@ class ProjectSubscribeList extends React.Component<ProjectProps, any> {
 
     state = {
         menuValue: 0,
-        tabValue: 0
+        tabValue: 0,
+        openMenu: false
     }
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     componentDidMount() {
         this.props.setProjectSubscriberList();
     }
 
-    handleTabChange = (value) => {
+    openMenu = () => {
+        this.setState((prevState,props) => ({
+            openMenu:!prevState.openMenu
+        }));
+    }
+
+    handleClose = () => {
+        this.setState({ openMenu: false });
+    };
+
+    handleTabChange = (event,value) => {
         //console.log(value);
         this.setState({ tabValue: value });
     };
 
-    handleMenuChange = (event, index, value) => this.setState({ menuValue: value });
+    handleMenuChange = (value) => this.setState({ openMenu: false, menuValue: value });
 
     public render() {
         return (
             <div>
+                 <AppBar position="static">
                 {
                     this.props.activeProjectList && (
                         <Tabs
@@ -68,93 +77,112 @@ class ProjectSubscribeList extends React.Component<ProjectProps, any> {
                             }
                         </Tabs>)
                 }
-                <ProjectSubscribeDialog {...this.props }/>
+                </AppBar>
+                <ProjectSubscribeDialog />
                 <Toolbar>
-                    <ToolbarGroup firstChild={true}>
-                        <DropDownMenu value={this.state.menuValue} onChange={this.handleMenuChange}>
-                            <MenuItem value={0} primaryText="Minden jelentkező" />
-                            <MenuItem value={1} primaryText="Mentor jelentkezők" />
-                            <MenuItem value={2} primaryText="Csapattag jelentkezők" />
-                        </DropDownMenu>
-                    </ToolbarGroup>
-                    <ToolbarGroup>
-                        { /* Több jelentkező kijelöléséhez jóváhagyás, módosítás gomb */}
+                    <div>
+                        <Button
+                            aria-owns={this.state.openMenu ? 'simple-menu' : null}
+                            aria-haspopup="true"
+                            onClick={this.openMenu}
+                        >
+                            Szűrés
+                        </Button>
+                        <Menu
+                            id="simple-menu"
+                            open={this.state.openMenu}
+                            onClose={this.handleClose}
+                        >
+                            <MenuItem onClick={event=>this.handleMenuChange(0)}>Minden jelentkező</MenuItem>
+                            <MenuItem onClick={event=>this.handleMenuChange(1)}>Mentor jelentkezők</MenuItem>
+                            <MenuItem onClick={event=>this.handleMenuChange(2)}>Csapattag jelentkezők</MenuItem>
+                        </Menu>
+                    </div>
+                   
+                    { /* Több jelentkező kijelöléséhez jóváhagyás, módosítás gomb 
                         <RaisedButton label="Módosítás" primary={true} />
-                    </ToolbarGroup>
+                        */}
                 </Toolbar>
                 <Table>
-                    <TableHeader>
+                    <TableHead>
                         <TableRow>
-                            <TableHeaderColumn>Jelentkező neve</TableHeaderColumn>
-                            <TableHeaderColumn>Típus</TableHeaderColumn>
-                            <TableHeaderColumn>Jóváhagyás</TableHeaderColumn>
+                            <TableCell>Jelentkező neve</TableCell>
+                            <TableCell>Típus</TableCell>
+                            <TableCell>Jóváhagyás</TableCell>
                         </TableRow>
-                    </TableHeader>
+                    </TableHead>
                     <TableBody>
                         {(this.props.activeProjectList.length > this.state.tabValue
                             && (this.state.menuValue == 0 || this.state.menuValue == 2)
                         ) && this.props.activeProjectList[this.state.tabValue].subscribedStudents.
-                            map(({ subscribedStudentId, student: {name} }
+                            map(({ subscribedStudentId, student: { name } }
                                 , index) => (
                                     <TableRow>
-                                        <TableRowColumn>{name}</TableRowColumn>
-                                        <TableRowColumn>Tanuló</TableRowColumn>
-                                        <TableRowColumn>
-                                            <FlatButton
-                                                label="Elfogad"
-                                                labelPosition="before"
-                                                primary={true}
+                                        <TableCell>{name}</TableCell>
+                                        <TableCell>Tanuló</TableCell>
+                                        <TableCell>
+                                            <Button
+                                                
+                                                color="primary"
                                                 onClick={() => this.props.approveStudentProjectSubscribe(subscribedStudentId)}
-                                                icon={<ActionDone />}
-                                            />
-                                            <FlatButton
-                                                label="Módosít"
-                                                labelPosition="before"
-                                                primary={true}
+                                            >
+                                              <DoneIcon/>
+                                            </Button>
+                                            <Button
+                                                color="primary"
                                                 onClick={() =>
                                                     this.props.toggleProjectSubscribeDialog(
-                                                        true, { subscribedStudent: { 
-                                                            subscribedStudentId, 
-                                                            projectCampusId: this.props.activeProjectList[this.state.tabValue].projectCampusId!,              
-                                                            student: { name, phone: "" } } }
+                                                        true, {
+                                                            subscribedStudent: {
+                                                                subscribedStudentId,
+                                                                projectCampusId: this.props.activeProjectList[this.state.tabValue].projectCampusId!,
+                                                                student: { name, phone: "" }
+                                                            }
+                                                        }
                                                     )}
-                                                icon={<ActionDone />}
-                                            />
-                                        </TableRowColumn>
+                                               
+                                            >
+                                            Módosít
+                                        </Button>
+                                        </TableCell>
                                     </TableRow>
                                 ))
                         }
                         {(this.props.activeProjectList.length > this.state.tabValue
                             && (this.state.menuValue == 0 || this.state.menuValue == 1)
                         ) && this.props.activeProjectList[this.state.tabValue].subscribedMentors.
-                            map(({ subscribedMentorId, mentor: {name} }
+                            map(({ subscribedMentorId, mentor: { name } }
                                 , index) => (
                                     <TableRow>
-                                        <TableRowColumn>{name}</TableRowColumn>
-                                        <TableRowColumn>Mentor</TableRowColumn>
-                                        <TableRowColumn>
-                                            <FlatButton
-                                                label="Elfogad"
-                                                labelPosition="before"
-                                                primary={true}
+                                        <TableCell>{name}</TableCell>
+                                        <TableCell>Mentor</TableCell>
+                                        <TableCell>
+                                            <Button
+                                                color="primary"
                                                 onClick={() => this.props.approveMentorProjectSubscribe(subscribedMentorId)}
-                                                icon={<ActionDone />}
-                                            />
-                                            <FlatButton
-                                                label="Módosít"
-                                                labelPosition="before"
-                                                primary={true}
+                                              
+                                            >
+                                              <DoneIcon/>
+                                            </Button>
+                                            <Button
+                                                color="primary"
                                                 onClick={() =>
                                                     this.props.toggleProjectSubscribeDialog(
-                                                        true, { subscribedMentor: 
-                                                        { subscribedMentorId,
-                                                          projectCampusId: this.props.activeProjectList[this.state.tabValue].projectCampusId!, 
-                                                          mentor: { name, phone: "" } } }
+                                                        true, {
+                                                            subscribedMentor:
+                                                                {
+                                                                    subscribedMentorId,
+                                                                    projectCampusId: this.props.activeProjectList[this.state.tabValue].projectCampusId!,
+                                                                    mentor: { name, phone: "" }
+                                                                }
+                                                        }
                                                     )}
-                                                icon={<ActionDone />}
-                                            />
+                                               
+                                            >
+                                            Módosít
+                                            </Button>
 
-                                        </TableRowColumn>
+                                        </TableCell>
                                     </TableRow>
 
                                 ))

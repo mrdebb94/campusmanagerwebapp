@@ -3,107 +3,135 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as CampusStore from '../store/Campus';
-import { RaisedButton } from 'material-ui';
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
-import { Tabs, Tab } from 'material-ui/Tabs';
+import Button from 'material-ui/Button';
+import Toolbar from 'material-ui/Toolbar';
 import Checkbox from 'material-ui/Checkbox';
-import {
-    Table,
+import Table, {
     TableBody,
-    TableHeader,
-    TableHeaderColumn,
+    TableHead,
     TableRow,
-    TableRowColumn,
+    TableCell
 } from 'material-ui/Table';
+import Paper from 'material-ui/Paper';
+import { StyledComponentProps, WithStyles, withStyles } from 'material-ui/styles';
 import CampusDialog from './CampusDialog';
+
+const styles = theme => ({
+    root: {
+        width: '100%',
+        marginTop: theme.spacing.unit * 3,
+    },
+    tableWrapper: {
+        overflowX: 'auto',
+    } as React.CSSProperties
+});
 
 // At runtime, Redux will merge together...
 type CampusProps =
     CampusStore.CampusState        // ... state we've requested from the Redux store
     & typeof CampusStore.actionCreators      // ... plus action creators we've requested
     & RouteComponentProps<{}>
+    & StyledComponentProps<'root' | 'tableWrapper'>;
 
 interface CampusTabState {
-    slideIndex: number;
-    selectedRows: number[] | string;
+    //slideIndex: number;
+    selected: string | null;
+
 }
 
 class Campus extends React.Component<CampusProps, CampusTabState> {
 
+    state = {
+        selected:null
+    };
     constructor(props) {
         super(props);
-        this.state = {
-            slideIndex: 0,
-            selectedRows: []
-        };
+        /*this.setState({
+            selected:null
+        });*/
     }
-
-    handleChange = (value) => {
-        this.setState({
-            slideIndex: value,
-        });
-    };
 
     componentDidMount() {
         this.props.setCampusList();
     }
 
+    //isSelected = id => this.state.selected == id;
+
+    handleClick = (event, campus) => {
+        if(this.state.selected==campus.campusId) {
+            this.setState({ selected: null });
+            this.props.modifyEditedCampus({});
+
+        } else {
+            this.setState({ selected: campus.campusId });
+            this.props.modifyEditedCampus({ ...campus });
+        }
+    }
+
     public render() {
+        const { classes } = this.props;
         return <div>
-            {/*<CreateUserDialog {...this.props}/>*/}
-            <Tabs
-                value={this.state.slideIndex}
-                onChange={this.handleChange}
-            >
-                <Tab label="Campus szemeszterek" value={0} >
-                    <CampusDialog {...this.props} />
-                    <Toolbar>
-                        <ToolbarGroup lastChild={true}>
-                            <RaisedButton label="Módosítás" primary={true} onClick={() => {
-                                this.props.toggleCampusDialog(true, "edit");
-                            }} />
-                            <RaisedButton label="Új campus" primary={true} onClick={() => {
-                                this.props.modifyEditedCampus({});
-                                this.props.toggleCampusDialog(true, "create");
-                            }} />
-                        </ToolbarGroup>
-                    </Toolbar>
-                    <Table
-                        onRowSelection={(selectedRows) => {
-                            console.log(selectedRows);
-                            this.setState({ selectedRows });
-                            this.props.modifyEditedCampus({ ...this.props.campusList[selectedRows[0]] });
-                        }}
-                    >
-                        <TableHeader>
+
+            <CampusDialog />
+            <Paper className={classes!.root}>
+                <Toolbar>
+                    <Button color="primary" onClick={() => {
+                        this.props.toggleCampusDialog(true, "edit");
+                    }} >
+                        Módosítás
+                            </Button>
+                    <Button color="primary" onClick={() => {
+                        this.props.modifyEditedCampus({});
+                        this.props.toggleCampusDialog(true, "create");
+                    }}>
+                        Új campus
+                            </Button>
+
+                </Toolbar>
+                <div className={classes!.tableWrapper}>
+                    <Table>
+                        <TableHead>
                             <TableRow>
-                                <TableHeaderColumn>Campus kezdete</TableHeaderColumn>
-                                <TableHeaderColumn>Campus vége</TableHeaderColumn>
-                                <TableHeaderColumn>Aktív</TableHeaderColumn>
+                                <TableCell padding="checkbox">
+                                    <Checkbox disabled />
+                                </TableCell>
+                                <TableCell>Campus kezdete</TableCell>
+                                <TableCell>Campus vége</TableCell>
+                                <TableCell>Aktív</TableCell>
                             </TableRow>
-                        </TableHeader>
-                        <TableBody
-                            deselectOnClickaway={false}>
-                            {this.props.campusList.map((campus, i) =>
-                                <TableRow
+                        </TableHead>
+                        <TableBody>
+                            {this.props.campusList.map((campus, i) => {
+                                const isSelected = this.state.selected == campus.campusId;
+                                return (<TableRow
+                                    hover
                                     key={campus.campusId}
-                                    selected={(this.state.selectedRows as number[]).indexOf(i) !== -1}>
-                                    <TableRowColumn>{campus.startDate.format('YYYY-MM-DD')}</TableRowColumn>
-                                    <TableRowColumn>{campus.endDate.format('YYYY-MM-DD')}</TableRowColumn>
-                                    <TableRowColumn>
+                                    selected={isSelected}
+                                    onClick={event => this.handleClick(event, campus)}
+                                    role="checkbox"
+                                >
+                                    <TableCell
+                                        padding="checkbox"
+                                    >
+                                        <Checkbox
+                                            checked={isSelected}
+                                        />
+                                    </TableCell>
+                                    <TableCell>{campus.startDate.format('YYYY-MM-DD')}</TableCell>
+                                    <TableCell>{campus.endDate.format('YYYY-MM-DD')}</TableCell>
+                                    <TableCell>
                                         <Checkbox
                                             checked={campus.active}
                                             disabled={true}
                                         />
-                                    </TableRowColumn>
-                                </TableRow>
+                                    </TableCell>
+                                </TableRow>)
+                            }
                             )}
                         </TableBody>
                     </Table>
-                </Tab>
-                <Tab label="Jelentkezett diákok" value={1} />
-                <Tab label="Jelentkezett mentorok" value={2} />
-            </Tabs>
+                </div>
+            </Paper>
         </div>
     }
 }
@@ -112,4 +140,4 @@ class Campus extends React.Component<CampusProps, CampusTabState> {
 export default connect(
     (state: ApplicationState) => state.campus, // Selects which state properties are merged into the component's props
     CampusStore.actionCreators                 // Selects which action creators are merged into the component's props
-)(Campus) as typeof Campus;
+)(withStyles(styles)(Campus)) as typeof Campus;

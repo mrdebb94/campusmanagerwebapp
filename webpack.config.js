@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+//const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+//const CheckerPlugin = require('ts-loader').CheckerPlugin;
 const merge = require('webpack-merge');
 
 module.exports = (env) => {
@@ -17,24 +18,24 @@ module.exports = (env) => {
         },
         module: {
             rules: [
-                { test: /\.tsx?$/, include: /ClientApp/, use: 'awesome-typescript-loader?silent=true' },
-                { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
+			    { test: /\.css$/,loader: 'css-loader'},
+                //{ test: /\.tsx?$/, include: /ClientApp/, use: 'awesome-typescript-loader?silent=true' },
+				{ test: /\.tsx?$/, include: /ClientApp/, use: 'ts-loader?silent=true' },
+                { test: /\.(png|woff|woff2|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
             ]
         },
-        plugins: [new CheckerPlugin()]
+        //plugins: [new CheckerPlugin()]
     });
 
     // Configuration for client-side bundle suitable for running in browsers
     const clientBundleOutputDir = './wwwroot/dist';
     const clientBundleConfig = merge(sharedConfig(), {
         entry: { 'main-client': './ClientApp/boot-client.tsx' },
-        module: {
+        /*module: {
             rules: [
-                { test: /\.css$/, use: ExtractTextPlugin.extract({ use: isDevBuild ?  'css-loader' : 'css-loader?minimize' }) },
-                //{ test: /\.css$/, use:[{ loader: 'css-loader'}, { loader: 'style-loader'}] },
-				{ test: /\.(eot|woff2?|ttf)$/, use: [{ loader: 'file-loader', options: { name: '[name].[ext]'} }] }
+                { test: /\.css$/, use: ExtractTextPlugin.extract({ use: isDevBuild ? 'css-loader' : 'css-loader?minimize' }) }
             ]
-        },
+        },*/
         output: { path: path.join(__dirname, clientBundleOutputDir) },
         plugins: [
             new ExtractTextPlugin('site.css'),

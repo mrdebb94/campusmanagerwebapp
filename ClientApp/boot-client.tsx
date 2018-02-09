@@ -1,5 +1,5 @@
 import './css/site.css';
-import 'bootstrap';
+import 'typeface-roboto';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
@@ -9,10 +9,10 @@ import { createBrowserHistory } from 'history';
 import configureStore from './configureStore';
 import { ApplicationState }  from './store';
 import * as RoutesModule from './routes';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import * as injectTapEventPluginAll from 'react-tap-event-plugin';
-import { CookiesProvider, withCookies, Cookies } from 'react-cookie';
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
+const theme = createMuiTheme();
+  
 let routes = RoutesModule.routes;
 
 // Create browser history to use in the Redux store
@@ -23,25 +23,20 @@ const history = createBrowserHistory({ basename: baseUrl });
 const initialState = (window as any).initialReduxState as ApplicationState;
 const store = configureStore(history, initialState);
 
+//set xsrftoken
+var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+store.dispatch({type:'SetXsrfTokenAction', xsrfToken: cookieValue});
+
 function renderApp() {
-	injectTapEventPluginAll();
     // This code starts up the React app when it runs in a browser. It sets up the routing configuration
     // and injects the app into a DOM element.
-
-    var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-
-    //console.log("Kapott token " +  cookieValue);
-    store.dispatch({type:'SetXsrfTokenAction', xsrfToken: cookieValue});
-
     ReactDOM.render(
         <AppContainer>
-        <CookiesProvider>
-		 <MuiThemeProvider>
+            <MuiThemeProvider theme={theme}>
             <Provider store={ store }>
                 <ConnectedRouter history={ history } children={ routes } />
             </Provider>
-		 </MuiThemeProvider>
-         </CookiesProvider>
+            </MuiThemeProvider>
         </AppContainer>,
         document.getElementById('react-app')
     );

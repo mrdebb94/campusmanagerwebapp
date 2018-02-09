@@ -1,0 +1,24 @@
+2018-01-27 12:55:50.737 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-01-27 12:58:16.922 +01:00 [Information] Path /
+2018-01-27 12:58:16.981 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vgDDn9ylat_OzbcDJr-bM-yHEWuc4ntFPkFUHd4bThU4q_dgqmGk4NfrlzSV6-9koCR9BmjlAHkBbXOQN66kI3rEMGgdEZZUlyAppEaco8oEhl-nwD6Y_2e6HRsPNLu_oY
+2018-01-27 13:01:21.071 +01:00 [Information] Path /
+2018-01-27 13:01:21.103 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vjVc96LW65tUpyEUPF4HvG_uikHm3JBUT35oB8YKdL8qeEX3YvAL0P72ikqlraAj-Lo4CKn72UYsiu8QsgMMa76ho4OubX3bJxBYy8Zs4zVD6zsLOQIgNwAYL3BVUMQm08
+2018-01-27 13:05:23.051 +01:00 [Information] Path /
+2018-01-27 13:05:23.057 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vi46tfmih3iRJs01KDzYLSasYl64ibN7xpyxo0gCO4b7EZOsEt0RUm5wGvr7B5kyr6bStYxXNpbFQRiG1TiTEDD53q9jC5OUvx_qBGnINQ7D_3dzqytiDF3ID_cz7QNDfY
+2018-01-27 13:07:43.828 +01:00 [Information] Path /api/user/list
+2018-01-27 13:07:44.174 +01:00 [Information] Supporting role True
+2018-01-27 13:48:44.877 +01:00 [Information] Path /users
+2018-01-27 13:48:58.419 +01:00 [Information] Path /api/user/list
+2018-01-27 13:48:58.642 +01:00 [Information] Supporting role True
+2018-01-27 14:07:24.916 +01:00 [Information] Path /api/user/list
+2018-01-27 14:07:24.962 +01:00 [Information] Supporting role True
+2018-01-27 14:07:50.665 +01:00 [Information] Path /users
+2018-01-27 14:08:31.695 +01:00 [Information] Path /api/user/list
+2018-01-27 14:08:31.700 +01:00 [Information] Supporting role True
+2018-01-27 14:46:25.742 +01:00 [Information] Path /users
+2018-01-27 14:53:38.747 +01:00 [Information] Path /users
+2018-01-27 14:53:52.000 +01:00 [Information] Path /api/user/list
+2018-01-27 14:53:52.085 +01:00 [Information] Supporting role True
+2018-01-27 15:33:33.036 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-01-27 15:37:02.630 +01:00 [Information] Path /dist/1b9e182bb4042458ea05.hot-update.json
+2018-01-27 15:52:20.378 +01:00 [Information] Path /dist/1b9e182bb4042458ea05.hot-update.json

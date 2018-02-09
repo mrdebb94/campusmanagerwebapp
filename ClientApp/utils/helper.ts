@@ -11,7 +11,9 @@ export function isEmpty(obj:any):boolean {
 
 export function transformDateRangeToUtc(dateRange: DateRange) : any {
    return {
-       startDate: dateRange.startDate?dateRange.startDate.utc().format():null,
-       endDate: dateRange.endDate?dateRange.endDate.utc().format():null
+       //HTML5 date-time form dont require this.(Material pickers required this)
+       //TODO: delete utc
+       startDate: dateRange.startDate?dateRange.startDate/*.utc()*/.format():null,
+       endDate: dateRange.endDate?dateRange.endDate/*.utc()*/.format():null
    }
 }

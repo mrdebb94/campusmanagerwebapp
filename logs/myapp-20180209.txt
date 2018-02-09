@@ -1,0 +1,1 @@
+2018-02-09 14:05:20.256 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;

@@ -1,0 +1,27 @@
+2018-01-17 20:25:30.260 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-01-17 20:34:52.458 +01:00 [Information] Path /
+2018-01-17 20:34:52.496 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vjkcsZ4ER7KLkgdFreKVSf8RdQLvC6GoRr-VnF-PnF6iKBvP_4-sZrzYGyqFHYTRB-aFIuf2iF_62sV5QQv9PAlNh4xCDyJW5PBrs_u3prvNgrZJSjyjq6cdH9xbuadIOs
+2018-01-17 21:17:53.688 +01:00 [Information] Path /
+2018-01-17 21:17:53.792 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vhdl8fKpYKquhQkUy81lRG7Rw7uXVeuOLLsUlS2O6Dg_uJMMykFXhI2CbakGgeWSq6RuscDzFl5BzFrmExb_JcJTTEw9YxzVa3imGPpPOFYJn0GZ9HF90h6G68J4Fq1EJc
+2018-01-17 21:26:21.929 +01:00 [Information] Path /
+2018-01-17 21:26:22.131 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vidngxIxNMCu5FX-oHkgaycarDaXmNE_I2t8M9vHeeAF4xfvFm0qaNQfAUH-mE0I1E9llDR-60FU7qgbj3qKzSp3aaFuuFo-pNL5ECVC3QmT5XgcCc9cph_Fb22oxaDH00
+2018-01-17 21:27:24.660 +01:00 [Information] Path /
+2018-01-17 21:27:24.674 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vhQaIs4pnZ5j9SbT9kSWCgz5_NUgm3J_8FXAMjAs_bZ7TROdDi4WYhqUw0iopmjCmo1-A2w5FXMyeIOYgsNZfyIUtRHIRsvHE0LCIXY5GQ4k9KRHmADPdSJMODqvOz8ozA
+2018-01-17 21:30:19.269 +01:00 [Information] Path /
+2018-01-17 21:30:19.359 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3viUxW4axfyBeGGvS5Axs35ch4AnNe4UA1tSXnijn3a6ngpuAjc4gZhltvvJOwMoXDPre1vzEJfv2_z2EN50DFElRsAqqL1DzWUz0xgTq5npZVibUC1lblLfCy-eWIiaqi0
+2018-01-17 21:31:25.747 +01:00 [Information] Path /
+2018-01-17 21:31:25.752 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vhMvY-77g0obTVvT3YQdc6iHbv00a3PTmLki068XKdLKYQUNI6mdku1KbH-049LItAgvmma-LItqmMyZJ7ekzP_uH4Q9aWJycdzzI3Y0RBiOP7ArVCBofmumaXIQrRzqKQ
+2018-01-17 21:40:09.366 +01:00 [Information] Path /
+2018-01-17 21:40:09.376 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vgK9HGdGTLIji6ME2iOxOYuhf_cNrr9B5a9BZRa7aLDoLKqa6cUSRvySGOerTVMkxSiJPREGVuArZ2DCrIBez6TrV4PiKiSxCMVckQVd38Yj2ukch7DiJmOtEVKH3a3nZ4
+2018-01-17 23:18:20.361 +01:00 [Information] Path /
+2018-01-17 23:18:21.564 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vjICFGHwvIv_nbcuNYbtePj9Ovj8AMC1p3MkcK-S9RUU7Q_FmxGHfyaj5uIJXQ84vZCmZvghvMh1pNnj_KdWbyiq0umCb7k0l1t2A0PBHCCIE26KqJ32-C-NalUlMI1Qew
+2018-01-17 23:19:39.129 +01:00 [Information] Path /
+2018-01-17 23:19:39.186 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vhd-l_NdGxewLa4QRbnhS2Rkm1MKVPfr33wdeYfu287bKCXtDggHVTcch4CCefSfe74bSnUsFwU23dFPXgSrxTmwPiBp5xhf9ua9EUYWLZ9KwsfwliSOt_B_LmJ-jEyeKY
+2018-01-17 23:22:56.757 +01:00 [Information] Path /
+2018-01-17 23:22:56.798 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vixBlhgGriMx4JubL24UH-UPIBmuKiKA0M43JanQqdioeYiuoO9SJTfegxNPSTzXQD06EHsz7GJ5I_Len9OJ_84wNplCH7dXptEWLRBYezE2uhycYu6BTjEm6HoNVvsrmo
+2018-01-17 23:27:49.413 +01:00 [Information] Path /api/user/login
+2018-01-17 23:28:18.356 +01:00 [Information] Belepes: False
+2018-01-17 23:28:19.204 +01:00 [Information] Path /api/xsrftoken/get
+2018-01-17 23:28:24.662 +01:00 [Information] Path /api/user/logout
+2018-01-17 23:28:25.462 +01:00 [Information] Kilepes: True
+2018-01-17 23:28:25.563 +01:00 [Information] Path /api/xsrftoken/get

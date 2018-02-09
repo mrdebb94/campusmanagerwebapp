@@ -3,24 +3,33 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as UsersState from '../store/Users';
-import { Dialog } from 'material-ui';
-import { FlatButton } from 'material-ui';
-import { TextField } from 'material-ui';
-import { CookiesProvider, withCookies, Cookies } from 'react-cookie';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+import Dialog, {
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+} from 'material-ui/Dialog';
+import Button from 'material-ui/Button';
+import TextField from 'material-ui/TextField';
+import { WithStyles, StyledComponentProps, withStyles } from 'material-ui/styles';
+import { MenuItem } from 'material-ui/Menu';
+import Input, { InputLabel } from 'material-ui/Input';
+import Select from 'material-ui/Select';
 
 
-// At runtime, Redux will merge together...
 type UsersProps =
-    UsersState.UsersState       // ... state we've requested from the Redux store
-    & typeof UsersState.actionCreators      // ... plus action creators we've requested
-    & { cookies: Cookies }
-const styles = {
+    UsersState.UsersState
+    & typeof UsersState.actionCreators
+    & StyledComponentProps<'dialog' | 'button'>;
+
+const styles = theme => ({
     dialog: {
         height: 500
-    }
-}
+    },
+    button: {
+        margin: theme.spacing.unit,
+    },
+});
 
 interface CreateUserDialogState {
     editedUser: UsersState.User | null;
@@ -31,89 +40,130 @@ class CreateUserDialog extends React.Component<UsersProps, CreateUserDialogState
     constructor(props) {
         super(props);
         this.state = {
-            editedUser:null
+            editedUser: null
         }
     }
 
     componentWillReceiveProps(nextProps) {
-        
-         //fel fog nyílni a dialógusablak
-         if(this.props.openUserDialog==false
-             &&nextProps.openUserDialog==true) {
-             /*let key;
-             if(nextProps.projectSubscribeDialog.subscribedMentor) {
-                 key = nextProps.projectSubscribeDialog.subscribedMentor.projectCampusId;
-             } else if(nextProps.projectSubscribeDialog.subscribedStudent) {
-                 key = nextProps.projectSubscribeDialog.subscribedStudent.projectCampusId;
-             }*/
-             this.setState({
-                 editedUser: { ...this.props.editedUser! }
-             });
-         //be fog záródni a dialógusablak
-         } else if(this.props.openUserDialog==true
-             &&nextProps.openUserDialog==false) {
-             this.setState({
-                 editedUser: null
-             });
-         }
-         
-     }
+
+        //fel fog nyílni a dialógusablak
+        if (this.props.openUserDialog == false
+            && nextProps.openUserDialog == true) {
+                //van kijelölve felhasználó
+            if (nextProps.editedUser != null) {
+                this.setState({
+                    editedUser: { ...nextProps.editedUser! }
+                });
+            } else {
+                //nincs kijelölve felhasználó
+                this.setState({
+                    editedUser: { name: '', email:'', password:'', type:'User'}
+                });
+            }
+            //be fog záródni a dialógusablak
+        } else if (this.props.openUserDialog == true
+            && nextProps.openUserDialog == false) {
+            this.setState({
+                editedUser: null
+            });
+        }
+
+
+
+    }
 
     public render() {
+        const { classes } = this.props;
+    
         return <div>
             <Dialog
-                title="Új felhasználó létrehozása"
-                modal={false}
-                bodyStyle={styles.dialog}
+                aria-labelledby="user-dialog-title"
                 open={this.props.openUserDialog}
-                autoScrollBodyContent={false}
-                autoDetectWindowHeight={true}
-                actions={[<FlatButton label="Hozzádás" primary={true} onClick={() => { this.props.addUser(this.state.editedUser!); }} />,
-                <FlatButton label="Mégse" primary={true} onClick={() => { this.props.toggleUserDialog(false); }} />]}
+                maxWidth="sm"
+                fullWidth
             >
-                <TextField
-                    floatingLabelText="Felhasználónév"
-                    floatingLabelFixed={true}
-                    value={this.state.editedUser ? this.state.editedUser.name : ''}
-                    onChange={(event) => { let target = event.target as HTMLInputElement; this.setState({ 
-                        editedUser: { ...this.state.editedUser!, name: target.value }
-                    }); 
-                  }}
-                /><br />
-                <TextField
-                    floatingLabelText="Jelszó"
-                    floatingLabelFixed={true}
-                    value={this.state.editedUser ? this.state.editedUser.password : ''}
-                    onChange={(event) => { let target = event.target as HTMLInputElement; this.setState({ 
-                        editedUser: { ...this.state.editedUser!, password: target.value }
-                    });
-                    }}
-                /><br />
-                <TextField
-                    floatingLabelText="E-mail"
-                    floatingLabelFixed={true}
-                    value={this.state.editedUser ? this.state.editedUser.email : ''}
-                    onChange={(event) => { let target = event.target as HTMLInputElement; this.setState({ 
-                        editedUser: { ...this.state.editedUser!, email: target.value }
-                    });
-                    }}
-                /><br />
-                <SelectField
-                    floatingLabelText="Típus"
-                    value={this.state.editedUser ? this.state.editedUser.type : ''}
-                    onChange={(event, index, value) => {
-                
-                        //this.props.modifyEditedUser({ ...this.props.editedUser, type: value });
-                        this.setState({ 
-                        editedUser: { ...this.state.editedUser!, type: value }
-                    });
-                    }}
-                >
-                    <MenuItem value={"User"} primaryText="Felhasználó" />
-                    <MenuItem value={"Admin"} primaryText="Adminisztrátor" />
-                    <MenuItem value={"Student"} primaryText="Tanuló" />
-                    <MenuItem value={"Mentor"} primaryText="Mentor" />
-                </SelectField>
+                <DialogTitle id="user-dialog-title">Új felhasználó létrehozása</DialogTitle>
+                <DialogContent>
+                    <form noValidate autoComplete="off">
+                        <div>
+                            <TextField
+                                label="Felhasználónév"
+                                value={this.state.editedUser!=null ? this.state.editedUser.name : ''}
+                                onChange={(event) => {
+                                    let target = event.target as HTMLInputElement; this.setState({
+                                        editedUser: { ...this.state.editedUser!, name: target.value }
+                                    });
+                                }}
+                            />
+                        </div>
+                        <div>
+                            <TextField
+                                label="Jelszó"
+                                value={this.state.editedUser!=null ? this.state.editedUser.password : ''}
+                                onChange={(event) => {
+                                    let target = event.target as HTMLInputElement; this.setState({
+                                        editedUser: { ...this.state.editedUser!, password: target.value }
+                                    });
+                                }}
+                            />
+                        </div>
+                        <div>
+                            <TextField
+                                label="E-mail"
+                                value={this.state.editedUser!=null ? this.state.editedUser.email : ''}
+                                onChange={(event) => {
+                                    let target = event.target as HTMLInputElement; this.setState({
+                                        editedUser: { ...this.state.editedUser!, email: target.value }
+                                    });
+                                }}
+                            />
+                        </div>
+                        <div>
+
+                            <InputLabel htmlFor="role-helper">Típus</InputLabel>
+                            <Select
+                                value={this.state.editedUser != null ? this.state.editedUser.type : 'User'}
+                                onChange={(event) => {
+                                    this.setState({
+                                        editedUser: { ...this.state.editedUser!, type: event.target.value }
+                                    });
+                                }
+                                }
+                                inputProps={{
+                                    name: 'role',
+                                    id: 'role-helper',
+                                }}
+                            >
+                                <MenuItem value={"User"}>Felhasználó</MenuItem>
+                                <MenuItem value={"Admin"}>Adminisztrátor</MenuItem>
+                            </Select>
+
+                        </div>
+                    </form>
+                </DialogContent>
+                <DialogActions>
+                    <Button
+                        color="primary"
+                        className={classes!.button}
+                        onClick={() => {
+                            this.props.addUser(this.state.editedUser!);
+                        }
+                        }
+                    >
+                        Hozzáadás
+                    </Button>,
+                    <Button
+                        color="primary"
+                        className={classes!.button}
+                        onClick={() => {
+                            this.props.toggleUserDialog(false);
+                        }
+                        }
+
+                    >
+                        Mégse
+                    </Button>
+                </DialogActions>
             </Dialog>
         </div>;
     }
@@ -123,4 +173,4 @@ class CreateUserDialog extends React.Component<UsersProps, CreateUserDialogState
 export default connect(
     (state: ApplicationState) => state.users, // Selects which state properties are merged into the component's props
     UsersState.actionCreators                 // Selects which action creators are merged into the component's props
-)(CreateUserDialog) as typeof CreateUserDialog;
+)(withStyles(styles)(CreateUserDialog)) as React.ComponentClass<{}>;

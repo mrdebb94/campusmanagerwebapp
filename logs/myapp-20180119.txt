@@ -1,0 +1,35 @@
+2018-01-19 11:04:08.414 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-01-19 13:30:52.895 +01:00 [Information] Path /
+2018-01-19 13:30:54.426 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vgiWCuQhYXW_t-mvhS1vDuxF2rpO_67RNL-_39W2418xZQEgm7h_WdO_amlPJb8n_nZ96U2g0iC6Ba_hLykSAcUF-kDU5RfxyJKH6khSabQzFlUmmXWTqhZrjPar6FpM64
+2018-01-19 13:35:51.154 +01:00 [Information] Path /
+2018-01-19 13:35:51.328 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3viCPwks2P3oFtE--mfRTtm-Syrf8e8A-UC6BRHGSSQ3qBZcOav0D4RuR5rOI78J9Yo-NxInzo8XqVYHSPi7ek8_7ZkkhfdEbdxAuZnA_ActQhiGPsRJAp439eSAxfLEjjg
+2018-01-19 20:01:49.757 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-01-19 20:28:32.015 +01:00 [Information] Path /
+2018-01-19 20:28:32.205 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vgBcdVZbTurbJe8uNQfzDaXoSXQXXt0mpuO-c6vnMbB_uP0tyLL3nENoOgFVe88NEWUSxcuZcCdT8zVH9q3HqiZIkhDw8VthgIW9n4GdDoQlVM_Bv65Yh2lhG218rnAx44
+2018-01-19 20:39:30.137 +01:00 [Information] Path /
+2018-01-19 20:39:30.375 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vjh0JArgptRJSXwlmDw-PtzJ1zKRUAHrDJ4WkOYoQ6JQ76rY4-rRQK6QScHF-HeFopU5gIRLCCp6qfUNcI-XQU1ZUzgfZT1eXYK6DVL-PUIUf-xqzDkyE9nRU9OWn_eqBA
+2018-01-19 20:42:38.936 +01:00 [Information] Path /
+2018-01-19 20:42:39.014 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vjzrR5mQITlamWSTnUfyCwwi4JMQVTukXpm9vQfPBdYXDsN5VD9-8GmtDX_PIhWjTJ5pZbaqylUr5rebAgPjVmZ8LhuBPQzOmJBJB6WYI8Vv1CbRAlJQ84rItZqWl3Qkjs
+2018-01-19 20:43:00.467 +01:00 [Information] Path /api/user/list
+2018-01-19 20:43:00.653 +01:00 [Information] Supporting role True
+2018-01-19 20:46:52.358 +01:00 [Information] Path /users
+2018-01-19 20:47:37.506 +01:00 [Information] Path /api/user/list
+2018-01-19 20:47:37.576 +01:00 [Information] Supporting role True
+2018-01-19 21:32:07.193 +01:00 [Information] Path /users
+2018-01-19 21:32:35.662 +01:00 [Information] Path /api/user/list
+2018-01-19 21:32:36.124 +01:00 [Information] Supporting role True
+2018-01-19 22:40:45.975 +01:00 [Information] Path /users
+2018-01-19 22:41:26.716 +01:00 [Information] Path /users
+2018-01-19 22:41:58.952 +01:00 [Information] Path /users
+2018-01-19 23:15:36.025 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-01-19 23:19:37.919 +01:00 [Information] Path /users
+2018-01-19 23:20:20.865 +01:00 [Information] Path /
+2018-01-19 23:20:20.887 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vgSxTQQtQQKZnwzXwhRCnEq4dIBTSgRtF1KF--dXrCl0MbVUQPjMqSH_ScjCbOkLBYcZMsIZRF1X6tX8AlYoC5dQTns3IqVWqCuHwGLP-xw-Tw_1V8BfbJF55B93EfMIbI
+2018-01-19 23:28:50.894 +01:00 [Information] Path /users
+2018-01-19 23:29:04.156 +01:00 [Information] Path /api/user/list
+2018-01-19 23:29:04.288 +01:00 [Information] Supporting role True
+2018-01-19 23:39:35.984 +01:00 [Information] Path /users
+2018-01-19 23:39:44.345 +01:00 [Information] Path /api/user/list
+2018-01-19 23:39:45.483 +01:00 [Information] Supporting role True
+2018-01-19 23:42:20.982 +01:00 [Information] Path /api/user/list
+2018-01-19 23:42:21.311 +01:00 [Information] Supporting role True

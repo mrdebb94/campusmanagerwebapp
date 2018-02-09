@@ -1,0 +1,3 @@
+http://javasampleapproach.com/spring-framework/spring-boot/how-to-get-streaming-results-with-spring-jpa-java-8-stream-and-postgresql-spring-boot
+
+https://stackoverflow.com/questions/483091/render-a-view-as-a-string

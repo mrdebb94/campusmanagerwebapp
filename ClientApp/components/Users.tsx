@@ -4,18 +4,18 @@ import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as UsersStore from '../store/Users';
 import * as SessionStore from '../store/Session';
-import { RaisedButton } from 'material-ui';
+import Button from 'material-ui/Button';
 import CreateUserDialog from './CreateUserDialog';
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
-import {
-  Table,
+import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
+import  Table, {
   TableBody,
-  TableHeader,
-  TableHeaderColumn,
+  TableHead,
   TableRow,
-  TableRowColumn,
+  TableCell
 } from 'material-ui/Table';
-import { CookiesProvider, withCookies, Cookies } from 'react-cookie';
+import Toolbar from 'material-ui/Toolbar';
+import Paper from 'material-ui/Paper';
+import { StyledComponentProps, WithStyles, withStyles } from 'material-ui/styles';
 
 // At runtime, Redux will merge together...
 type UsersProps =
@@ -23,12 +23,22 @@ type UsersProps =
   & typeof UsersStore.actionCreators      // ... plus action creators we've requested
   & typeof SessionStore.actionCreators 
   & RouteComponentProps<{}>
-  & {cookies:Cookies}
+  & StyledComponentProps<'root'|'tableWrapper'>;
+
+  const styles = theme => ({
+    root: {
+      width: '100%',
+      marginTop: theme.spacing.unit * 3,
+    },
+    tableWrapper: {
+      overflowX: 'auto',
+    } as React.CSSProperties
+  });
 
 class Users extends React.Component<UsersProps, {}> {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     //this.props.setUsersList();
     //this.openUserDialog.bind(this);
   }
@@ -37,48 +47,58 @@ class Users extends React.Component<UsersProps, {}> {
     this.props.toggleUserDialog(true);
   }
 
+
   componentDidMount() {
-    const { cookies } = this.props;
-    console.log("TOKEN " +cookies.get('XSRF-TOKEN'));
-    //this.props.setXsrfToken(cookies.get('XSRF-TOKEN'));
     this.props.setUsersList();
-  
   }
 
   public render() {
+	const { classes } = this.props;
     return <div>
-        <CreateUserDialog {...this.props} />
+      <Paper className={classes!.root}>
       <Toolbar>
-        <ToolbarGroup>
-          <RaisedButton label="Új felhasználó" primary={true} onClick={() => { this.props.toggleUserDialog(true); }} />
-        </ToolbarGroup>
+        <div>
+        <Button
+                color="primary" 
+                onClick={() => { this.props.toggleUserDialog(true); }}
+        >
+        Új felhasználó
+        </Button>
+        <Button
+                color="primary" 
+        >
+        Törlés
+        </Button>
+        </div>
       </Toolbar>
+      <div className={classes!.tableWrapper}>
       <Table>
-        <TableHeader>
+        <TableHead>
           <TableRow>
-            <TableHeaderColumn>Felhasználónév</TableHeaderColumn>
-            <TableHeaderColumn>Jelszó</TableHeaderColumn>
-            <TableHeaderColumn>E-mail</TableHeaderColumn>
-            <TableHeaderColumn>Típus</TableHeaderColumn>
+            <TableCell>Felhasználónév</TableCell>
+            <TableCell>Jelszó</TableCell>
+            <TableCell>E-mail</TableCell>
+            <TableCell>Típus</TableCell>
           </TableRow>
-        </TableHeader>
+        </TableHead>
         <TableBody>
           {this.props.usersList.map((user) =>
             <TableRow key={user.userId}>
-              <TableRowColumn>{user.name}</TableRowColumn>
-              <TableRowColumn>{user.password}</TableRowColumn>
-              <TableRowColumn>{user.email}</TableRowColumn>
-              <TableRowColumn>{user.type}</TableRowColumn>
+              <TableCell>{user.name}</TableCell>
+              <TableCell>{user.password}</TableCell>
+              <TableCell>{user.email}</TableCell>
+              <TableCell>{user.type}</TableCell>
             </TableRow>
           )}
         </TableBody>
       </Table>
+      </div>
+      </Paper>
     </div>
   }
 }
 
-// Wire up the React component to the Redux store
 export default connect(
   (state: ApplicationState) => (state.users), // Selects which state properties are merged into the component's props
   {...UsersStore.actionCreators, ...SessionStore.actionCreators }                // Selects which action creators are merged into the component's props
-)(withCookies(Users)) as typeof Users;
+)(withStyles(styles)(Users)) as typeof Users;

@@ -2,25 +2,42 @@ import * as React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import * as SessionStore from '../store/Session';
 import { ApplicationState } from '../store';
+import { StyledComponentProps, WithStyles, withStyles } from 'material-ui/styles';
 
 const style = {
-  button: {
-    margin: 12
-  },
-  component: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
-  } as React.CSSProperties
+    button: {
+        margin: 12
+    },
+    component: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    } as React.CSSProperties
 };
 
-class Login extends React.Component<any, any> {
-    constructor() {
-        super();
+const styles = theme => ({
+    button: {
+        margin: theme.spacing.unit,
+    },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+    },
+});
+
+type LoginType = SessionStore.SettingsState &
+    StyledComponentProps<'button' | 'textField'> &
+    typeof SessionStore.actionCreators & 
+    RouteComponentProps<{}>
+
+class Login extends React.Component<LoginType, any> {
+    constructor(props) {
+        super(props);
         this.state = {
             userName: '',
             password: ''
@@ -28,32 +45,57 @@ class Login extends React.Component<any, any> {
     }
 
     public render() {
+        const { classes } = this.props;
+
         return (<div style={style.component}>
-          {!this.props.authenticated&&<div><TextField
-                hintText={''}
-                floatingLabelText={'Felhasználónév'}
+            {!this.props.authenticated &&
+            <div>
+            <div>
+            <TextField
+                label={'Felhasználónév'}
                 value={this.state.userName}
+                className={classes!.textField}
                 onChange={(event) => {
                     let target = event.target as HTMLInputElement;
                     this.setState({ userName: target.value });
                 }}
-            /><br />
-            <TextField
-                hintText=""
-                floatingLabelText="Jelszó"
-                type="password"
-                value={this.state.password}
-                onChange={(event) => {
-                    let target = event.target as HTMLInputElement;
-                    this.setState({ password: target.value });
-                }}
-            /><br />
-            <RaisedButton label="Belépés" primary={true} style={style.button} onClick={ (event) => {
-                this.props.login(this.state.userName, this.state.password);} } />
-          </div>}
-          {this.props.authenticated&&
-              <div><RaisedButton label="Kilépés" primary={true} style={style.button} onClick={ (event) => {
-                this.props.logout(); } } /></div>}
+            /></div>
+            <div>
+                <TextField
+                    label="Jelszó"
+                    type="password"
+                    className={classes!.textField}
+                    value={this.state.password}
+                    onChange={(event) => {
+                        let target = event.target as HTMLInputElement;
+                        this.setState({ password: target.value });
+                    }}
+                /></div>
+                <div>
+                <Button
+                    raised
+                    color="primary"
+                    className={classes!.button}
+                    onClick={(event) => {
+                        this.props.login(this.state.userName, this.state.password);
+                    }}>
+                    Belépés
+                </Button>
+                </div>
+            </div>
+            }
+            {this.props.authenticated &&
+                <div>
+                    <Button
+                        raised
+                        color="primary"
+                        className={classes!.button}
+                        onClick={(event) => {
+                            this.props.logout();
+                        }}>
+                        Kilépés
+                    </Button>
+                </div>}
         </div>)
     }
 }
@@ -62,4 +104,4 @@ class Login extends React.Component<any, any> {
 export default connect(
     (state: ApplicationState) => state.session, // Selects which state properties are merged into the component's props
     SessionStore.actionCreators                 // Selects which action creators are merged into the component's props
-)(Login) as typeof Login;
+)(withStyles(styles)(Login)) as typeof Login;

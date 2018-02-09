@@ -3,25 +3,25 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
+import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
+import Toolbar  from 'material-ui/Toolbar';
 
+/*
 import MenuItem from 'material-ui/MenuItem';
 import DropDownMenu from 'material-ui/DropDownMenu';
+*/
 
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 import Checkbox from 'material-ui/Checkbox';
 
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
 
-import {
-    Table,
+import Table, {
     TableBody,
-    TableHeader,
-    TableHeaderColumn,
+    TableHead,
     TableRow,
-    TableRowColumn,
+    TableCell
 } from 'material-ui/Table';
 
 import * as ProjectDetailsStore from '../store/ProjectDetails';
@@ -29,7 +29,8 @@ import * as ProjectDetailsStore from '../store/ProjectDetails';
 type ProjectDetailsProps =
     ProjectDetailsStore.ProjectDetailsState
     & typeof ProjectDetailsStore.actionCreators
-    & RouteComponentProps<{}>
+    & RouteComponentProps<{id:string}>
+    
 
 interface ProjectMeetingState {
     filterMenuValue: number;
@@ -48,7 +49,7 @@ const styles = {
     } as React.CSSProperties
 }
 
-class ProjectMeetingDetails extends React.Component<any, any> {
+class ProjectMeetingDetails extends React.Component< ProjectDetailsProps, any> {
 
     state: ProjectMeetingState = {
         filterMenuValue: 0,
@@ -108,18 +109,27 @@ class ProjectMeetingDetails extends React.Component<any, any> {
     render() {
         return (<div>
             <AppBar
-                title="Jelenléti ív"
-                showMenuIconButton={false}
-            />
-            <Card containerStyle={{ marginBottom: 10 }}>
-                <CardTitle title={"Megbeszélés"} subtitle={this.props.projectMeetingDetails
-                    ? `${this.props.projectMeetingDetails.projectMeeting.startTime!.format("YYYY-MM-DD HH:mm")}
-                     - ${this.props.projectMeetingDetails.projectMeeting.endTime!.format("HH:mm")}`
-                    : `Ismeretlen`} />
-                <CardText>
+                
+                position="static"
+            >
+            <Toolbar>
+               Jelenléti ív
+            </Toolbar>
+            </AppBar>
+            <Card style={{ marginBottom: 10 }}>
+            <CardHeader
+               title={"Megbeszélés"}
+               subheader={this.props.projectMeetingDetails
+                ? `${this.props.projectMeetingDetails.projectMeeting.startTime!.format("YYYY-MM-DD HH:mm")}
+                 - ${this.props.projectMeetingDetails.projectMeeting.endTime!.format("HH:mm")}`
+                : `Ismeretlen`} />
+            
+            <CardContent>
                     {this.props.projectMeetingDetails ? (
                         <div>
+                            {/*
                             <Toolbar>
+                                
                                 <ToolbarGroup firstChild={true}>
                                     <DropDownMenu value={this.state.filterMenuValue} onChange={this.handleFilterChange}>
                                         <MenuItem value={0} primaryText="Mindenki" />
@@ -127,15 +137,16 @@ class ProjectMeetingDetails extends React.Component<any, any> {
                                         <MenuItem value={2} primaryText="Mentorok" />
                                     </DropDownMenu>
                                 </ToolbarGroup>
-
+                            
                             </Toolbar>
+                            */}
                             <Table>
-                                <TableHeader>
+                                <TableHead>
                                     <TableRow>
-                                        <TableHeaderColumn>Név</TableHeaderColumn>
-                                        <TableHeaderColumn>Megjelent</TableHeaderColumn>
+                                        <TableCell>Név</TableCell>
+                                        <TableCell>Megjelent</TableCell>
                                     </TableRow>
-                                </TableHeader>
+                                </TableHead>
                                 <TableBody>
                                     {
                                         (this.state.filterMenuValue == 0 || this.state.filterMenuValue == 1) &&
@@ -144,20 +155,20 @@ class ProjectMeetingDetails extends React.Component<any, any> {
                                             (teamMemberParticipationMeeting, index) => (
                                                 <TableRow
                                                     key={teamMemberParticipationMeeting.teamMemberParticipationMeetingId!}>
-                                                    <TableRowColumn>
+                                                    <TableCell>
                                                         {teamMemberParticipationMeeting.teamMemberName}
-                                                    </TableRowColumn>
-                                                    <TableRowColumn>
+                                                    </TableCell>
+                                                    <TableCell>
                                                         <Checkbox
                                                             checked={teamMemberParticipationMeeting.checked}
                                                             disabled={false}
-                                                            onCheck={
-                                                                (event, value) => {
-                                                                    this.props.editTeamMemberParticipationMeetings(index, value);
+                                                            onChange={
+                                                                (event) => {
+                                                                    this.props.editTeamMemberParticipationMeetings(index, event.target.checked);
                                                                 }
                                                             }
                                                         />
-                                                    </TableRowColumn>
+                                                    </TableCell>
                                                 </TableRow>
                                             ))
                                     }
@@ -169,20 +180,20 @@ class ProjectMeetingDetails extends React.Component<any, any> {
                                                 (
                                                     <TableRow
                                                         key={projectLeaderParticipationMeeting.projectLeaderParticipationMeetingId!}>
-                                                        <TableRowColumn>
+                                                        <TableCell>
                                                             {projectLeaderParticipationMeeting.projectLeaderName}
-                                                        </TableRowColumn>
-                                                        <TableRowColumn>
+                                                        </TableCell>
+                                                        <TableCell>
                                                             <Checkbox
                                                                 checked={projectLeaderParticipationMeeting.checked}
                                                                 disabled={false}
-                                                                onCheck={
-                                                                    (event, value) => {
-                                                                        this.props.editProjectLeaderParticipationMeetings(index, value);
+                                                                onChange={
+                                                                    (event) => {
+                                                                        this.props.editProjectLeaderParticipationMeetings(index, event.target.checked);
                                                                     }
                                                                 }
                                                             />
-                                                        </TableRowColumn>
+                                                        </TableCell>
                                                     </TableRow>
                                                 ))
                                     }
@@ -190,24 +201,30 @@ class ProjectMeetingDetails extends React.Component<any, any> {
                             </Table>
                         </div>) : (<div>Nem jeleníthető meg</div>)
                     }
-                </CardText>
+                </CardContent>
                 <CardActions>
-                    <FlatButton label="Mentés" onClick={() => {
+                    <Button  onClick={() => {
                         console.log("Katt");
                         this.props.saveProjectMeetingParticipations();
-                    }} />
+                    }} >
+                     Mentés
+                    </Button>
                 </CardActions>
             </Card>
             <AppBar
-                title="Értékelések"
-                showMenuIconButton={false}
-            />
-            <Card containerStyle={{ marginBottom: 10 }}>
-                <CardTitle title={"Megbeszélés"} subtitle={this.props.projectMeetingDetails
+                
+                position="static"
+            >
+            <Toolbar>
+               Értékelések
+            </Toolbar>
+            </AppBar>
+            <Card style={{ marginBottom: 10 }}>
+                <CardHeader title={"Megbeszélés"} subheader={this.props.projectMeetingDetails
                     ? `${this.props.projectMeetingDetails.projectMeeting.startTime!.format("YYYY-MM-DD HH:mm")}
                      - ${this.props.projectMeetingDetails.projectMeeting.endTime!.format("HH:mm")}`
                     : `Ismeretlen`} />
-                <CardText>
+                <CardContent>
                     {
                         this.state.editableTeamMemberRatings
                         .filter(teamMemberRating=>teamMemberRating!=null)
@@ -217,10 +234,7 @@ class ProjectMeetingDetails extends React.Component<any, any> {
                                 <TextField
                                     id={teamMemberRating.teamMemberRatingId}
                                     style={{ "width": "100%" }}
-                                    hintText={!this.state.editableTeamMemberRatings[index].text
-                                    ?"Értékelés hozzáadása"
-                                    :undefined}
-                                    multiLine={true}
+                                    multiline={true}
                                     rows={2}
                                     rowsMax={8}
                                     value={this.state.editedTeamMemberRatingIndex==index
@@ -248,14 +262,16 @@ class ProjectMeetingDetails extends React.Component<any, any> {
                                         });
                                     }}
                                     />
-                                <FlatButton style={styles.button} label="Értékelés mentése" onClick={() => {
+                                <Button style={styles.button} onClick={() => {
                                    this.props.saveTeamMemberRating(this.state.editableTeamMemberRatings[index]);
                                 }}
-                                />
+                                >
+                                  Értékelés mentése
+                                </Button>
                             </div>
                         ))
                     }
-                </CardText>
+                </CardContent>
             </Card>
         </div>)
     }

@@ -38,6 +38,7 @@ namespace EvoManager {
 		//public DbSet<User> Users { get; set; }
 		public DbSet<SubscribedStudent> SubscribedStudents { get; set; }
 		public DbSet<SubscribedMentor> SubscribedMentors { get; set; }
+		public DbSet<ReportResult> ReportResults { get; set; }
     }
 	
 }

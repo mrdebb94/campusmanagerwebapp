@@ -1,0 +1,69 @@
+2018-02-02 11:24:59.816 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-02 11:34:45.736 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-02 11:47:56.587 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-02 11:53:41.657 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-02 11:54:05.746 +01:00 [Information] Path /
+2018-02-02 11:54:05.785 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vhK8cq38t70PiFVR9CMLlZsG2S5mZm1NUrbPtdRMaCtaDSTpkSjEnb0y5SHAkqmFv_coMIQXBY70iNuewLWkNgCEuEqr_hGs0RlWO8s9FxqHtgj4dppEOVTviGt_Zlyfhs
+2018-02-02 11:54:08.209 +01:00 [Information] Path /
+2018-02-02 11:54:08.584 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vhi1NHV0Ue2vGxwHxmv-2JGgS9Qax8X0vYe_Q0yqznBcjEyX5mY3ekzDp7IKjVjM6NOOlML9M8gYGnKQemWIUoH76ggafKZX3xvBJMCUX3kdi9J9Yhkfw9f3MDP6GIUoC8
+2018-02-02 11:57:16.560 +01:00 [Information] Path /
+2018-02-02 11:57:18.057 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vhqrrNPJY8QxTYreYtv9rY7g0e7_2B_4__Iw35v2qj1Iq86xBu-oJ9g0S6iX5wpDTCP-XWdjErDlEz8ec2aS8lsGUvWpmxz-X-UztFelvBQBNqkjBP6Mhxhh1t3XK4P9rU
+2018-02-02 11:58:20.730 +01:00 [Information] Path /api/report/campus
+2018-02-02 12:00:47.218 +01:00 [Information] Path /api/report/campus
+2018-02-02 14:46:07.370 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-02 14:46:44.669 +01:00 [Information] Path /
+2018-02-02 14:46:44.701 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vhS4BlFTVWfjh6QEryAsKwubAPzTsGAsbsYY8i_F-atkVP7CZDRrzah2wACouGriXco-1QpibWQfJN7ZtuelZjlWhHHL9yJl0FPySOEmPoJzIkvCiSVbyDSRQbagqy1zWo
+2018-02-02 14:48:55.640 +01:00 [Information] Path /
+2018-02-02 14:48:55.847 +01:00 [Information] New Token CfDJ8IrF9M25U-tEjTLd1rxV3vjVzHZdOiewspkiHtTST32OYAge65l_oBYCjDpEUn5sFmFRjgDoujq39pWtDCkdZPaOkiB0Fg1RwDoAHPLCujDmsIvyRGxEwh_4PW5DJrEpkBTh8cNptn5KFH3Pm4u_D6w
+2018-02-02 14:51:03.615 +01:00 [Information] Path /api/user/list
+2018-02-02 14:51:03.677 +01:00 [Information] Supporting role True
+2018-02-02 14:51:29.690 +01:00 [Information] Path /api/user/add
+2018-02-02 14:51:33.671 +01:00 [Information] Path /api/user/list
+2018-02-02 14:51:33.725 +01:00 [Information] Supporting role True
+2018-02-02 14:52:06.636 +01:00 [Information] Path /api/user/login
+2018-02-02 14:52:07.539 +01:00 [Information] Belepes: False
+2018-02-02 14:52:07.569 +01:00 [Information] Path /api/xsrftoken/get
+2018-02-02 14:52:23.194 +01:00 [Information] Path /api/project/current/active/list
+2018-02-02 14:52:23.595 +01:00 [Information] Path /Account/AccessDenied
+2018-02-02 14:52:26.386 +01:00 [Information] Path /api/campus/current
+2018-02-02 14:52:31.555 +01:00 [Information] Path /api/campus/apply
+2018-02-02 14:52:35.709 +01:00 [Information] Path /api/project/current/active/list
+2018-02-02 14:52:43.797 +01:00 [Information] Path /api/project/subscribe
+2018-02-02 14:52:44.937 +01:00 [Information] Path /api/project/current/active/list
+2018-02-02 14:52:48.976 +01:00 [Information] Path /api/user/logout
+2018-02-02 14:52:49.240 +01:00 [Information] Kilepes: True
+2018-02-02 14:52:49.289 +01:00 [Information] Path /api/xsrftoken/get
+2018-02-02 14:52:57.120 +01:00 [Information] Path /api/user/login
+2018-02-02 14:52:57.724 +01:00 [Information] Belepes: False
+2018-02-02 14:52:57.752 +01:00 [Information] Path /api/xsrftoken/get
+2018-02-02 14:53:01.162 +01:00 [Information] Path /api/project/subscriber/list
+2018-02-02 14:53:06.162 +01:00 [Information] Path /api/projectdetails/teammembers/add
+2018-02-02 14:53:12.058 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-02 14:53:18.115 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/f6c72694-9e6d-41cf-ab88-9850e37718e7
+2018-02-02 14:53:49.168 +01:00 [Information] Path /api/projectdetails/projectmeetings/ratings/save
+2018-02-02 14:53:51.310 +01:00 [Information] Path /api/projectdetails/projectmeetings/ratings/save
+2018-02-02 14:54:00.142 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-02 14:54:03.275 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/83114fc9-e2c0-4668-8b99-6d0dfaa70163
+2018-02-02 14:54:08.052 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-02 14:54:11.512 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/f6c72694-9e6d-41cf-ab88-9850e37718e7
+2018-02-02 15:00:41.852 +01:00 [Information] Path /api/campus/list
+2018-02-02 15:02:56.620 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-02 15:14:28.737 +01:00 [Information] Path /api/project/current/list
+2018-02-02 15:21:16.626 +01:00 [Information] Path /api/report/campus
+2018-02-02 15:28:06.869 +01:00 [Information] Path /api/user/list
+2018-02-02 15:28:06.888 +01:00 [Information] Supporting role True
+2018-02-02 15:49:12.031 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-02 15:49:50.980 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/d2486570-56bf-4b41-b6fe-bee5021a3590
+2018-02-02 15:50:09.993 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-02 15:50:14.314 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/83114fc9-e2c0-4668-8b99-6d0dfaa70163
+2018-02-02 15:50:45.702 +01:00 [Information] Path /api/projectdetails/projectmeetings/participations/save
+2018-02-02 15:51:09.417 +01:00 [Information] Path /api/projectdetails/projectmeetings/ratings/save
+2018-02-02 15:51:16.025 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-02 15:51:19.268 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/6d8a03e1-c3c6-4581-8073-1470c9db134c
+2018-02-02 15:51:24.731 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-02 15:51:27.854 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/83114fc9-e2c0-4668-8b99-6d0dfaa70163
+2018-02-02 15:53:07.248 +01:00 [Information] Path /api/report/campus
+2018-02-02 15:57:35.791 +01:00 [Information] Path /api/campus/list
+2018-02-02 15:57:59.131 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-02 15:58:53.566 +01:00 [Information] Path /api/user/list
+2018-02-02 15:58:53.582 +01:00 [Information] Supporting role True

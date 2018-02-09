@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.NodeServices;
 
 using Serilog;
 
@@ -49,6 +50,9 @@ namespace EvoManager
             services.AddAntiforgery(x => x.HeaderName = "X-XSRF-TOKEN");
             //services.AddAntiforgery(opts => opts.Cookie.Name = "MyAntiforgeryCookie");
             services.AddMvc();
+			
+			//node.js service because of pdf generator
+			services.AddNodeServices();
 
             // Configure Identity
             services.Configure<IdentityOptions>(options =>

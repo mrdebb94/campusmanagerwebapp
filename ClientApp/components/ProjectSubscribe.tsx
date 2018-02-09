@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
+import Button from 'material-ui/Button';
 import { ApplicationState } from '../store';
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
-import SvgIconFace from 'material-ui/svg-icons/action/face';
-import FileCloudDownload from 'material-ui/svg-icons/file/cloud-download';
 import * as ProjectStore from '../store/Project';
 
 
@@ -32,8 +30,8 @@ ProjectStore.ProjectState        // ... state we've requested from the Redux sto
 
 class ProjectSubscribe extends React.Component<ProjectProps,any> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         //this.props.setActiveProjectList();
     }
     componentDidMount() {
@@ -44,21 +42,26 @@ class ProjectSubscribe extends React.Component<ProjectProps,any> {
         return (
             <div> {
             this.props.activeProjectList&&this.props.activeProjectList.map( (project) =>(
-            <Card key={ project.projectCampusId! } containerStyle={{marginBottom:10}}>
-            <CardTitle title={project.name} subtitle="Információk" />
-            <CardText>
+            <Card 
+               key={ project.projectCampusId! }
+               style={{marginBottom:10}}
+              
+            >
+            <CardHeader
+             title={project.name}
+             subheader={"Információk"}
+            />
+                
+            <CardContent>
                 <p>{project.description}</p>
                 <div style={styles.container}>
                     <div>
                     {project.subscribedMentors?project.subscribedMentors.map( ({mentor})=>(
                     <Chip key={mentor.mentorId}
                       style={styles.chip}
-                    >
-                    {/*<Avatar icon={
-                        <FileCloudDownload />} />*/}
-                    <Avatar>M</Avatar>
-                    {mentor.name}
-                    </Chip>
+                      avatar={<Avatar>M</Avatar>}
+                      label= {mentor.name}
+                    />
                     )):<span>Nem ismert</span>
                     }
                     </div>
@@ -66,26 +69,30 @@ class ProjectSubscribe extends React.Component<ProjectProps,any> {
                     {project.subscribedStudents?project.subscribedStudents.map( ({student})=>(
                     <Chip key={student.studentId}
                       style={styles.chip}
-                    >
-                   {/* <Avatar icon={<SvgIconFace />} /> */}
-                   <Avatar>T</Avatar>
-                    {student.name}
-                    </Chip>
+                      avatar={<Avatar>T</Avatar>}
+                      label= {student.name}
+                    />
                     )):<span>Nem ismert</span>
                     }
                     </div>
                 </div>
-            </CardText>
+            </CardContent>
             <CardActions>
                 {(!project.subscribed)
                 ?(
-                <FlatButton label="Jelentkezés" onClick={()=>{
+                <Button 
+                   onClick={()=>{
                     this.props.subscribeProject(project.projectCampusId);
-                }}/>)
+                }}>
+                Jelentkezés
+                </Button>
+                )
                 :(
-                <FlatButton label="Lejelentkezés" onClick={()=>{
+                <Button onClick={()=>{
                     this.props.unSubscribeProject(project.projectCampusId);
-                }}/>)
+                }}>
+                Lejelentkezés
+                </Button>)
                 }
             </CardActions>
         </Card>

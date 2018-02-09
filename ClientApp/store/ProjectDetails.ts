@@ -127,9 +127,17 @@ export const projectDetailsServices = {
     addProjectMeeting: (projectMeeting: ProjectMeeting, xsrfToken: string): Promise<any> =>
         new Promise<any>((resolve, reject) => {
 
-            let data = JSON.stringify({
+            /*let data = JSON.stringify({
                 StartTime: projectMeeting.startTime!.utc().format(),
                 EndTime: projectMeeting.endTime!.utc().format(),
+                HasWeekly: projectMeeting.hasWeekly,
+                Description: projectMeeting.description,
+                Room: projectMeeting.room
+            });*/
+
+            let data = JSON.stringify({
+                StartTime: projectMeeting.startTime!.format(),
+                EndTime: projectMeeting.endTime!.format(),
                 HasWeekly: projectMeeting.hasWeekly,
                 Description: projectMeeting.description,
                 Room: projectMeeting.room

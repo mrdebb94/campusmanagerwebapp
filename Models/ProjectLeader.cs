@@ -17,6 +17,7 @@ namespace EvoManager.Models {
 
 		public virtual ICollection<ProjectLeaderParticipationMeeting> ProjectLeaderParticipationMeetings { get; set; }
 		
+		public virtual ICollection<Task> Tasks { get; set; }
 	}
 	
 }

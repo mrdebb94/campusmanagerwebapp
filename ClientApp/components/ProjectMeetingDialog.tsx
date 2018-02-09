@@ -2,13 +2,15 @@ import * as React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
-import { FlatButton } from 'material-ui';
-import { TextField } from 'material-ui';
+import Button  from 'material-ui/Button';
+import TextField from 'material-ui/TextField';
 
-import DatePicker from 'material-ui/DatePicker';
-import TimePicker from 'material-ui/TimePicker';
-
-import { Dialog } from 'material-ui';
+import Dialog, {
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+} from 'material-ui/Dialog';
 
 import * as ProjectDetailsStore from '../store/ProjectDetails';
 import * as moment from 'moment';
@@ -22,7 +24,7 @@ interface ProjectMeetingForm extends ProjectDetailsStore.ProjectMeeting {
 	startDate?: moment.Moment;
 }
 
-export class ProjectMeetingDialog extends React.Component<any , ProjectMeetingForm> {
+export class ProjectMeetingDialog extends React.Component<ProjectDetailsProps , ProjectMeetingForm> {
    
    state:ProjectMeetingForm = {
 
@@ -33,13 +35,13 @@ export class ProjectMeetingDialog extends React.Component<any , ProjectMeetingFo
 	   hasWeekly: false
    }
    
-   constructor() {
-	   super();
+   constructor(props) {
+	   super(props);
    }
   
   
-   setProjectMeetingDate = (event, date) => {
-     
+   setProjectMeetingDate = (event) => {
+	let date = moment(event.target.value);
 	 this.setState((prevState, props) => 
 	 {
 		let newState : {
@@ -56,9 +58,9 @@ export class ProjectMeetingDialog extends React.Component<any , ProjectMeetingFo
 		
 		  
 		   newState.startTime = moment({ 
-		   year : date.getFullYear(), 
-		   month :date.getMonth(), 
-		   day : date.getDate(), 
+		   year : date.year(), 
+		   month :date.month(), 
+		   day : date.date(), 
 		   hour : prevState.startTime.hour(), 
 		   minute :  prevState.startTime.minute()
 		  });
@@ -67,9 +69,9 @@ export class ProjectMeetingDialog extends React.Component<any , ProjectMeetingFo
 
        if(prevState.endTime) {
 		   newState.endTime =  moment({ 
-		   year : date.getFullYear(), 
-		   month :date.getMonth(), 
-		   day : date.getDate(), 
+		   year : date.year(), 
+		   month :date.month(), 
+		   day : date.date(), 
 		   hour : prevState.endTime.hour(), 
 		   minute : prevState.endTime.minute()
 		  })
@@ -83,82 +85,140 @@ export class ProjectMeetingDialog extends React.Component<any , ProjectMeetingFo
     
    };
    
-   setProjectMeetingStartTime = (event, date) => {
-         this.setState((prevState, props) => {
-			if(prevState.startDate) {
-			   return {
-				   startTime: moment({ 
-				   year : prevState.startDate.year(), 
-				   month : prevState.startDate.month(), 
-				   day :  prevState.startDate.date(), 
-				   hour : date.getHours(), 
-				   minute : date.getMinutes() 
-				 })
-			  }
-		    }
+   setProjectMeetingStartTime = (event) => {
+		const pattern = /([0-9]{1,2}):([0-9]{1,2})/g;
+		const match = pattern.exec(event.target.value);
 		
-	    else {
-		   return {
-			  startTime: moment(date)
-		   }
-	   }
-	 });
+		if(match&&match.length>=3) {
+			const hours = parseInt(match[1]);
+			const minutes = parseInt(match[2]);
+			let date = moment();
+			date.hours(hours);
+			date.minutes(minutes);
+			this.setState((prevState, props) => {
+				if(prevState.startDate) {
+				return {
+					startTime: moment({ 
+					year : prevState.startDate.year(), 
+					month : prevState.startDate.month(), 
+					day :  prevState.startDate.date(), 
+					hour : date.hours(), 
+					minute : date.minutes() 
+					})
+				}
+				}
+			
+			else {
+			return {
+				startTime: moment(date)
+			}
+		}
+		});
+
+	}
    };
    
-   setProjectMeetingEndTime = (event, date) => {
-       
-	  this.setState((prevState, props) => {
-			if(prevState.startDate) {
-			   return {
-				   endTime: moment({ 
-				   year : prevState.startDate.year(), 
-				   month : prevState.startDate.month(), 
-				   day :  prevState.startDate.date(), 
-				   hour : date.getHours(), 
-				   minute : date.getMinutes() 
-				 })
-			  }
-		    }
+   setProjectMeetingEndTime = (event) => {
+	const pattern = /([0-9]{1,2}):([0-9]{1,2})/g;
+	const match = pattern.exec(event.target.value);
+
+    if(match&&match.length>=3) {
+
+		const hours = parseInt(match[1]);
+		const minutes = parseInt(match[2]);
+		let date = moment();
+		date.hours(hours);
+		date.minutes(minutes);
 		
-	    else {
-		   return {
-			  endTime: moment(date)
-		   }
-	   }
-	 });
-   
+		this.setState((prevState, props) => {
+				if(prevState.startDate) {
+				return {
+					endTime: moment({ 
+					year : prevState.startDate.year(), 
+					month : prevState.startDate.month(), 
+					day :  prevState.startDate.date(), 
+					hour : date.hours(), 
+					minute : date.minutes() 
+					})
+				}
+				}
+			
+			else {
+			return {
+				endTime: moment(date)
+			}
+			}
+		});
+	}
    };
  
   render() {
       return (
           <Dialog
+		  maxWidth="sm"
+        fullWidth
           title={
               "Megbeszélés létrehozása"
 			  }
-                modal={false}
+               
                 open={this.props.projectMeetingDialog.open}
-                autoScrollBodyContent={false}
-                autoDetectWindowHeight={true}
-                actions={[<FlatButton label={this.props.projectMeetingDialog.mode == 'create' ? "Hozzáadás" : "Módosítás"}
-                    primary={true} onClick={() => {
-                        if (this.props.projectMeetingDialog.mode == 'create') {
-                            this.props.addProjectMeeting(this.state);
-                        } else {
-                            //this.props.editProjectMeeting(this.state);
-                        }
-                    }
-                    } />,
-                <FlatButton label="Mégse" primary={true} onClick={() => { this.props.toggleProjectMeetingDialog(false, ''); }} />]
-				}
+
           >
+		  <DialogTitle>
+		 </DialogTitle>
+		 <DialogContent>
            <div>
+			   {/*
 		  <DatePicker
 		            floatingLabelText="Megbeszélés napja"
                     hintText="Megbeszélés napja"
                     onChange={this.setProjectMeetingDate}
-                    value={ this.state.startDate ? this.state.startDate.toDate() : undefined} />
+					value={ this.state.startDate ? this.state.startDate.toDate() : undefined} />
+			   */}
+			   <TextField
+                            id="startDate"
+                            label="Campus kezdete"
+                            type="date"
+                            onBlur={this.setProjectMeetingDate}
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            value={
+								this.state.startDate ? this.state.startDate.format('YYYY-MM-DD') : undefined
+							
+                            }
+                        />
 		  </div>      
 		  <div>
+
+		  <TextField
+        id="time1"
+        label="Kezdő időpont"
+        type="time"
+		onBlur={this.setProjectMeetingStartTime}
+		value={this.state.startTime ? this.state.startTime.format("HH:mm") : undefined}
+        InputLabelProps={{
+          shrink: true,
+        }}
+        inputProps={{
+          step: 300, // 5 min
+        }}
+      />
+	  <TextField
+        id="time3"
+        label="Végzés időpont"
+        type="time"
+		onBlur={this.setProjectMeetingEndTime}
+		value={this.state.endTime ? this.state.endTime.format("HH:mm") : undefined}
+        InputLabelProps={{
+          shrink: true,
+        }}
+        inputProps={{
+          step: 300, // 5 min
+        }}
+      />
+
+			  {/*
 		  <TimePicker
             format="24hr"
             hintText="Kezdő időpont"
@@ -174,9 +234,34 @@ export class ProjectMeetingDialog extends React.Component<any , ProjectMeetingFo
             value={this.state.endTime?this.state.endTime.toDate():undefined}
             onChange={this.setProjectMeetingEndTime}
 			/>
+			  */}
 		  </div>
-		   
+		  </DialogContent>
+		  <DialogActions>
+		  <Button 
+				color="primary" 
+				onClick={() => {
+                        if (this.props.projectMeetingDialog.mode == 'create') {
+                            this.props.addProjectMeeting(this.state);
+                        } else {
+                            //this.props.editProjectMeeting(this.state);
+                        }
+                    }
+                    }>
+					{this.props.projectMeetingDialog.mode == 'create' ? "Hozzáadás" : "Módosítás"}
+					</Button>
+				<Button 
+				color="primary" 
+				onClick={() => { this.props.toggleProjectMeetingDialog(false, ''); }}>
+				Mégse
+				</Button>
+		  </DialogActions>
           </Dialog>
       )
   }
 }
+
+export default connect(
+    (state: ApplicationState) => state.projectDetails,
+    ProjectDetailsStore.actionCreators)
+    (ProjectMeetingDialog) as React.ComponentClass<{}>;
