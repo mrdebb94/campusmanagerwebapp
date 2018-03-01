@@ -36,7 +36,7 @@ export interface SubscribedStudentData extends SubscribedStudent{
 //TODO: ProjectDetails status
 export interface Project {
     projectCampusId: string | null;
-    projectId: string | null;
+    projectId: string;
     name: string;
     description: string;
     campus?: Campus;
@@ -356,9 +356,9 @@ export const projectServices = {
 
 export const actionCreators = {
 
-    addProject: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
+    addProject: (editedProject:Project): AppThunkAction<KnownAction> => (dispatch, getState) => {
 
-        let { project: { editedProject } } = getState();
+        //let { project: { editedProject } } = getState();
         let { session } = getState();
 
         if (editedProject) {
@@ -422,7 +422,7 @@ export const actionCreators = {
     //TODO: ahhoz itt is (dispatch, getState) -t kell használni!
     modifyEditedProject: ({
         projectCampusId = null,
-        projectId = null,
+        projectId = '',
         name = '',
         description = '',
         campus,
@@ -432,7 +432,7 @@ export const actionCreators = {
         }:
         {
             projectCampusId?: string | null,
-            projectId?: string | null,
+            projectId?: string,
             name?: string,
             description?: string,
             campus?: Campus,

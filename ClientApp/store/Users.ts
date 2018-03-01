@@ -42,6 +42,17 @@ type KnownAction = SetUsersListAction | AddUserAction | ToggleUserDialog | Modif
 
 export const userServices = {
 
+   reportUserInPdf: (userId): Promise<any> => new Promise<any>((resolve) => {
+		//TODO: hibakezelés
+		fetch(`api/report/user?userId=${userId}`, {
+			method: 'GET',
+			credentials: 'same-origin'
+		}).then(response => response.blob())
+          .then((response) => {
+			resolve(response);
+		});
+	}),
+
 	//credentials: 'include' 
 	listUsers: (): Promise<any> => new Promise<any>((resolve) => {
 		//TODO: hibakezelés

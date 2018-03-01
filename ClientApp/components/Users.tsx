@@ -37,6 +37,9 @@ type UsersProps =
 
 class Users extends React.Component<UsersProps, {}> {
 
+  reportData:string = ''; 
+  anchorEl:HTMLAnchorElement | null = null;
+
   constructor(props) {
     super(props);
     //this.props.setUsersList();
@@ -51,6 +54,32 @@ class Users extends React.Component<UsersProps, {}> {
   componentDidMount() {
     this.props.setUsersList();
   }
+
+  getUserReportPdf(userId:string){
+      UsersStore.userServices.reportUserInPdf(userId).then(blob=>{
+      let newBlob = new Blob([blob], {type: "application/pdf"});
+
+      // IE doesn't allow using a blob object directly as link href
+	  // instead it is necessary to use msSaveOrOpenBlob
+	  if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+		window.navigator.msSaveOrOpenBlob(newBlob);
+		return;
+	  }
+      
+      const data = window.URL.createObjectURL(newBlob);
+	  //var link = document.createElement('a');
+	  //link.href = data;
+	  //link.download="file.pdf";
+      this.reportData=data;
+      this.anchorEl!.href = data;
+      this.anchorEl!.click();
+	  //link.click();
+	  setTimeout(function(){
+		// For Firefox it is necessary to delay revoking the ObjectURL
+		window.URL.revokeObjectURL(data);
+      },100);
+  });
+}
 
   public render() {
 	const { classes } = this.props;
@@ -79,6 +108,7 @@ class Users extends React.Component<UsersProps, {}> {
             <TableCell>Jelszó</TableCell>
             <TableCell>E-mail</TableCell>
             <TableCell>Típus</TableCell>
+            <TableCell></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -88,6 +118,16 @@ class Users extends React.Component<UsersProps, {}> {
               <TableCell>{user.password}</TableCell>
               <TableCell>{user.email}</TableCell>
               <TableCell>{user.type}</TableCell>
+              <TableCell>
+              <Button
+                color="primary" 
+                onClick={() => { this.getUserReportPdf(user.userId!); }}
+               > 
+                Exportálás
+              </Button>
+              <a target="_blank" ref={(anchorEl) => { this.anchorEl = anchorEl; }}>
+              </a>
+              </TableCell>
             </TableRow>
           )}
         </TableBody>

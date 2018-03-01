@@ -15,7 +15,7 @@ import  Table, {
   import Toolbar from 'material-ui/Toolbar';
   import Paper from 'material-ui/Paper';
 
-//import {ProjectDialog} from './ProjectDialog';
+import ProjectDialog from './ProjectDialog';
 
 type ProjectProps =
 ProjectStore.ProjectState        // ... state we've requested from the Redux store
@@ -52,7 +52,7 @@ class Project extends React.Component<ProjectProps, ProjectListState> {
     
     public render() {
         return <div>
-            {/*<ProjectDialog {...this.props}/>*/}
+            <ProjectDialog />
             <Toolbar>
                 <Button  
                     color="primary"

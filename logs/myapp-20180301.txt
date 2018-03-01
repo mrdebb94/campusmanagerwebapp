@@ -1,0 +1,48 @@
+2018-03-01 00:00:27.536 +01:00 [Information] Path /users
+2018-03-01 00:00:57.461 +01:00 [Information] Path /users
+2018-03-01 00:01:27.312 +01:00 [Information] Path /users
+2018-03-01 00:02:36.167 +01:00 [Information] Path /users
+2018-03-01 00:03:29.879 +01:00 [Information] Path /users
+2018-03-01 00:05:36.325 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 00:06:39.791 +01:00 [Information] Path /users
+2018-03-01 00:10:01.688 +01:00 [Information] Path /users
+2018-03-01 00:10:05.315 +01:00 [Information] Path /users
+2018-03-01 00:33:49.042 +01:00 [Information] Path /users
+2018-03-01 00:34:04.160 +01:00 [Information] Path /api/user/list
+2018-03-01 00:34:04.250 +01:00 [Information] Supporting role True
+2018-03-01 00:35:37.034 +01:00 [Information] Path /api/user/login
+2018-03-01 00:35:38.749 +01:00 [Information] Belepes: False
+2018-03-01 00:35:38.993 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-01 00:35:56.428 +01:00 [Information] Path /api/project/current/list
+2018-03-01 00:36:01.471 +01:00 [Information] Path /api/project/current/active/list
+2018-03-01 00:36:15.505 +01:00 [Information] Path /api/user/logout
+2018-03-01 00:36:16.103 +01:00 [Information] Kilepes: True
+2018-03-01 00:36:16.135 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-01 00:36:26.962 +01:00 [Information] Path /api/user/login
+2018-03-01 00:36:27.388 +01:00 [Information] Belepes: False
+2018-03-01 00:36:27.475 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-01 00:36:29.912 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-03-01 00:36:34.609 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/6d8a03e1-c3c6-4581-8073-1470c9db134c
+2018-03-01 00:37:17.708 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-03-01 00:37:20.821 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/83114fc9-e2c0-4668-8b99-6d0dfaa70163
+2018-03-01 00:37:39.625 +01:00 [Information] Path /api/user/list
+2018-03-01 00:37:39.845 +01:00 [Information] Supporting role True
+2018-03-01 00:37:50.411 +01:00 [Information] Path /api/report/user
+2018-03-01 00:58:36.659 +01:00 [Information] Path /api/report/user
+2018-03-01 00:59:38.494 +01:00 [Information] Path /api/report/user
+2018-03-01 01:00:27.059 +01:00 [Information] Path /api/report/user
+2018-03-01 01:14:50.866 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 01:16:32.654 +01:00 [Information] Path /users
+2018-03-01 01:19:08.927 +01:00 [Information] Path /users
+2018-03-01 01:19:26.481 +01:00 [Information] Path /api/user/list
+2018-03-01 01:19:27.454 +01:00 [Information] Supporting role True
+2018-03-01 01:19:38.277 +01:00 [Information] Path /api/report/user
+2018-03-01 01:23:53.212 +01:00 [Information] Path /users
+2018-03-01 01:24:47.750 +01:00 [Information] Path /api/user/list
+2018-03-01 01:24:48.631 +01:00 [Information] Supporting role True
+2018-03-01 01:24:54.368 +01:00 [Information] Path /api/report/user
+2018-03-01 01:25:26.643 +01:00 [Information] Path /api/report/user
+2018-03-01 01:25:47.703 +01:00 [Information] Path /api/project/current/active/list
+2018-03-01 01:26:08.627 +01:00 [Information] Path /api/user/list
+2018-03-01 01:26:08.862 +01:00 [Information] Supporting role True
+2018-03-01 01:26:17.223 +01:00 [Information] Path /api/report/user

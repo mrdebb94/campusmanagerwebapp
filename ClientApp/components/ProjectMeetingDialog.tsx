@@ -22,6 +22,9 @@ type ProjectDetailsProps =
 
 interface ProjectMeetingForm extends ProjectDetailsStore.ProjectMeeting {
 	startDate?: moment.Moment;
+	startDateText: string;
+	startTimeText: string;
+	endTimeText: string;
 }
 
 export class ProjectMeetingDialog extends React.Component<ProjectDetailsProps , ProjectMeetingForm> {
@@ -30,7 +33,9 @@ export class ProjectMeetingDialog extends React.Component<ProjectDetailsProps , 
 
 	   description:'',
 	   room: '',
-	 
+	   startDateText:'',
+	   startTimeText:'',
+	   endTimeText:'',
 	   isCancelled: false,
 	   hasWeekly: false
    }
@@ -41,22 +46,28 @@ export class ProjectMeetingDialog extends React.Component<ProjectDetailsProps , 
   
   
    setProjectMeetingDate = (event) => {
-	let date = moment(event.target.value);
+	//let date = moment(event.target.value);
+	const pattern = /([0-9]{4})-([0-9]{2})-([0-9]{2})/g;
+	const match = pattern.exec(event.target.value);
+	console.log(event.target.value);
+	if(match&&match.length>=4) {
+	 let dateText=event.target.value;
+	 let date = moment(event.target.value);
 	 this.setState((prevState, props) => 
 	 {
 		let newState : {
 			startDate: moment.Moment;
-			startTime: moment.Moment | null;
-			endTime: moment.Moment | null;
+			startTime?: moment.Moment;
+			endTime?: moment.Moment;
+			startDateText:string;
 			
 		}= {
 			 startDate: moment(date),
-			 startTime:  null,
-			 endTime: null
+			 startDateText:dateText
+			 /*startTime:  null,
+			 endTime: null*/
 		};
 	    if(prevState.startTime) {
-		
-		  
 		   newState.startTime = moment({ 
 		   year : date.year(), 
 		   month :date.month(), 
@@ -82,13 +93,18 @@ export class ProjectMeetingDialog extends React.Component<ProjectDetailsProps , 
 	    
 	 });
 
+   } else {
+	  this.setState({
+		startDateText:''
+	  });
+   }
     
    };
    
    setProjectMeetingStartTime = (event) => {
 		const pattern = /([0-9]{1,2}):([0-9]{1,2})/g;
 		const match = pattern.exec(event.target.value);
-		
+		 let timeText=event.target.value;
 		if(match&&match.length>=3) {
 			const hours = parseInt(match[1]);
 			const minutes = parseInt(match[2]);
@@ -104,24 +120,30 @@ export class ProjectMeetingDialog extends React.Component<ProjectDetailsProps , 
 					day :  prevState.startDate.date(), 
 					hour : date.hours(), 
 					minute : date.minutes() 
-					})
+					}),
+					startTimeText:timeText
 				}
 				}
 			
 			else {
 			return {
-				startTime: moment(date)
+				startTime: moment(date),
+				startTimeText:timeText
 			}
 		}
 		});
 
+	}  else {
+	   this.setState({
+		   startTimeText:''
+	   });
 	}
    };
    
    setProjectMeetingEndTime = (event) => {
 	const pattern = /([0-9]{1,2}):([0-9]{1,2})/g;
 	const match = pattern.exec(event.target.value);
-
+     let timeText=event.target.value;
     if(match&&match.length>=3) {
 
 		const hours = parseInt(match[1]);
@@ -139,54 +161,51 @@ export class ProjectMeetingDialog extends React.Component<ProjectDetailsProps , 
 					day :  prevState.startDate.date(), 
 					hour : date.hours(), 
 					minute : date.minutes() 
-					})
+					}),
+					endTimeText:timeText
 				}
 				}
 			
 			else {
 			return {
-				endTime: moment(date)
+				endTime: moment(date),
+				endTimeText:timeText
 			}
 			}
 		});
+	} else {
+	   this.setState({
+		   endTimeText:''
+	   });
 	}
    };
  
   render() {
       return (
           <Dialog
-		  maxWidth="sm"
-        fullWidth
-          title={
-              "Megbeszélés létrehozása"
-			  }
-               
-                open={this.props.projectMeetingDialog.open}
-
+		    maxWidth="sm"
+            fullWidth  
+            open={this.props.projectMeetingDialog.open}
           >
 		  <DialogTitle>
+		  Megbeszélés létrehozása
 		 </DialogTitle>
 		 <DialogContent>
            <div>
-			   {/*
-		  <DatePicker
-		            floatingLabelText="Megbeszélés napja"
-                    hintText="Megbeszélés napja"
-                    onChange={this.setProjectMeetingDate}
-					value={ this.state.startDate ? this.state.startDate.toDate() : undefined} />
-			   */}
 			   <TextField
                             id="startDate"
                             label="Campus kezdete"
                             type="date"
+							onChange={ (event)=> {
+								this.setState({
+								  startDateText:event.target.value
+								});
+							}}
                             onBlur={this.setProjectMeetingDate}
                             InputLabelProps={{
                                 shrink: true,
                             }}
-                            value={
-								this.state.startDate ? this.state.startDate.format('YYYY-MM-DD') : undefined
-							
-                            }
+                            value={this.state.startDateText}
                         />
 		  </div>      
 		  <div>
@@ -195,8 +214,13 @@ export class ProjectMeetingDialog extends React.Component<ProjectDetailsProps , 
         id="time1"
         label="Kezdő időpont"
         type="time"
+		onChange={ (event)=> {
+								this.setState({
+								  startTimeText:event.target.value
+								});
+							}}
 		onBlur={this.setProjectMeetingStartTime}
-		value={this.state.startTime ? this.state.startTime.format("HH:mm") : undefined}
+		value={this.state.startTimeText}
         InputLabelProps={{
           shrink: true,
         }}
@@ -208,8 +232,13 @@ export class ProjectMeetingDialog extends React.Component<ProjectDetailsProps , 
         id="time3"
         label="Végzés időpont"
         type="time"
+		onChange={ (event)=> {
+								this.setState({
+								  endTimeText:event.target.value
+								});
+							}}
 		onBlur={this.setProjectMeetingEndTime}
-		value={this.state.endTime ? this.state.endTime.format("HH:mm") : undefined}
+		value={this.state.endTimeText}
         InputLabelProps={{
           shrink: true,
         }}
@@ -217,24 +246,6 @@ export class ProjectMeetingDialog extends React.Component<ProjectDetailsProps , 
           step: 300, // 5 min
         }}
       />
-
-			  {/*
-		  <TimePicker
-            format="24hr"
-            hintText="Kezdő időpont"
-			floatingLabelText="Kezdés időpont"
-			onChange={this.setProjectMeetingStartTime}
-            value={this.state.startTime ? this.state.startTime.toDate() : undefined} />
-		  </div>
-		  <div>
-		  <TimePicker
-            format="24hr"
-            hintText="Végzés időpont"
-			floatingLabelText="Végzés időpont"
-            value={this.state.endTime?this.state.endTime.toDate():undefined}
-            onChange={this.setProjectMeetingEndTime}
-			/>
-			  */}
 		  </div>
 		  </DialogContent>
 		  <DialogActions>

@@ -1,0 +1,58 @@
+2018-02-28 09:12:16.135 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-28 09:16:45.696 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-28 09:22:23.625 +01:00 [Information] Path /currentcampus
+2018-02-28 09:24:43.869 +01:00 [Information] Path /api/campus/current
+2018-02-28 09:26:53.566 +01:00 [Information] Path /api/project/subscriber/list
+2018-02-28 09:27:14.132 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 09:30:06.464 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 09:30:53.985 +01:00 [Information] Path /api/project/current/active/list
+2018-02-28 09:56:18.998 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 09:56:34.395 +01:00 [Information] Path /projectmeetings/list
+2018-02-28 09:57:06.673 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 10:07:06.411 +01:00 [Information] Path /projectmeetings/list
+2018-02-28 10:07:23.605 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 10:10:46.765 +01:00 [Information] Path /projectmeetings/list
+2018-02-28 10:12:39.795 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 10:14:47.616 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 10:21:08.893 +01:00 [Information] Path /projectmeetings/list
+2018-02-28 10:21:26.104 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 10:25:44.454 +01:00 [Information] Path /projectmeetings/list
+2018-02-28 10:26:12.382 +01:00 [Information] Path /projectmeetings/list
+2018-02-28 10:31:58.290 +01:00 [Information] Path /projectmeetings/list
+2018-02-28 10:32:22.564 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 10:33:08.082 +01:00 [Information] Path /api/projectdetails/projectmeetings/add
+2018-02-28 10:33:17.559 +01:00 [Information] Path /api/project/current/list
+2018-02-28 10:33:22.468 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 10:33:28.930 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/4de8c0fb-4e25-4b08-8809-db34565a9908
+2018-02-28 10:33:54.589 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 10:33:57.758 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/bb350761-d85f-4141-8e89-e9782f1f1ba4
+2018-02-28 10:34:23.055 +01:00 [Information] Path /api/project/current/list
+2018-02-28 10:34:26.977 +01:00 [Information] Path /api/campus/current/participations
+2018-02-28 10:34:32.318 +01:00 [Information] Path /api/project/current/list
+2018-02-28 10:35:36.281 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 10:35:39.047 +01:00 [Information] Path /api/project/subscriber/list
+2018-02-28 10:35:44.452 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-28 10:36:56.003 +01:00 [Information] Path /api/campus/list
+2018-02-28 11:57:01.357 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-28 11:59:33.262 +01:00 [Information] Path /api/report/campus
+2018-02-28 12:01:05.047 +01:00 [Information] Path /api/report/campus
+2018-02-28 12:03:07.817 +01:00 [Information] Path /dist/7b2e19e16017b157b075.hot-update.json
+2018-02-28 12:35:22.371 +01:00 [Information] Path /report/campus
+2018-02-28 14:08:23.484 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-28 14:10:15.119 +01:00 [Information] Path /api/report/campus
+2018-02-28 14:18:48.409 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-28 14:19:09.516 +01:00 [Information] Path /api/report/campus
+2018-02-28 22:34:45.827 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-28 22:37:51.160 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-28 22:50:18.282 +01:00 [Information] Path /
+2018-02-28 22:50:18.325 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0Hr2kJ7qygPlsPcIVcphuNTScpByu4xhJlp30v8shklb5WsRn5xUkEIUYcvEmWFhGVu_K4bhOh-i4K10JMFm2HvW5LBxSpMZ9GnI6tIn2eFzl8cMVeKv-73yMApNd7wZUno3P5Ak_th0fmiV0OCG_J5LIytsVfLKmJUaPZWs2tyLAA
+2018-02-28 22:53:06.238 +01:00 [Information] Path /api/user/logout
+2018-02-28 22:53:06.671 +01:00 [Information] Kilepes: True
+2018-02-28 22:53:06.731 +01:00 [Information] Path /api/xsrftoken/get
+2018-02-28 22:53:24.075 +01:00 [Information] Path /api/user/list
+2018-02-28 22:53:24.259 +01:00 [Information] Supporting role True
+2018-02-28 22:53:59.170 +01:00 [Information] Path /api/campus/list
+2018-02-28 23:02:18.260 +01:00 [Information] Path /api/campus/list
+2018-02-28 23:41:39.204 +01:00 [Information] Path /api/user/list
+2018-02-28 23:41:39.323 +01:00 [Information] Supporting role True
+2018-02-28 23:58:02.105 +01:00 [Information] Path /users

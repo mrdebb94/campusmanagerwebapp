@@ -10,7 +10,7 @@ import ListSubheader from 'material-ui/List/ListSubheader';
 import { WithStyles, StyledComponentProps, withStyles } from 'material-ui/styles';
 
 const navMenuWidth: number = 300;
-const navMenuPaddingTop = 0;
+const navMenuPaddingTop = 64;
 
 const styles = theme => ({
     menuItem: {
@@ -27,12 +27,12 @@ const styles = theme => ({
         height: '100%',
         width: navMenuWidth,
         paddingTop: navMenuPaddingTop,
-        overflowY:'scroll'
+       
 
     } as React.CSSProperties,
     scrollDiv: {
       
-        height: '100%',
+        height: 'calc(100% - ' + navMenuPaddingTop + 'px)',
         overflowY:'scroll'
         
     } as React.CSSProperties,
@@ -57,9 +57,8 @@ class NavMenu extends React.Component<StyledComponentProps<'menuItem' | 'text' |
                     paper: classes!.drawerPaper,
                 }}
             >
-                <Paper>
-                    
-                    <MenuList subheader={<ListSubheader>Felhasználó</ListSubheader>}>
+                <div className={classes!.scrollDiv}>
+                    <MenuList subheader={<ListSubheader disableSticky={true}>Felhasználó</ListSubheader>}>
                         <MenuItem className={classes!.menuItem}>
                             <ListItemText classes={{ text: classes!.text }} inset primary="Home" />
                         </MenuItem>
@@ -70,7 +69,7 @@ class NavMenu extends React.Component<StyledComponentProps<'menuItem' | 'text' |
                         </MenuItem>
                     </MenuList>
                     <Divider />
-                    <MenuList subheader={<ListSubheader>Admin</ListSubheader>}>
+                    <MenuList subheader={<ListSubheader disableSticky={true}>Admin</ListSubheader>}>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/users'} activeClassName='active'>
                                 <ListItemText classes={{ text: classes!.text }} inset primary="Felhasználók" />
@@ -82,7 +81,8 @@ class NavMenu extends React.Component<StyledComponentProps<'menuItem' | 'text' |
                             </NavLink>
                         </MenuItem>
                     </MenuList>
-                    <MenuList subheader={<ListSubheader>Aktuális félév</ListSubheader>}>
+                    <Divider />
+                    <MenuList subheader={<ListSubheader disableSticky={true}>Aktuális félév</ListSubheader>}>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/currentcampus'} activeClassName='active'>
                                 <ListItemText classes={{ text: classes!.text }} inset
@@ -120,8 +120,7 @@ class NavMenu extends React.Component<StyledComponentProps<'menuItem' | 'text' |
                             </NavLink>
                         </MenuItem>
                     </MenuList>
-                    
-                </Paper>
+                </div>
 
                 {/*
              <Drawer width={this.props.width} open={true} containerStyle={{paddingTop: this.props.paddingTop}}>

@@ -52,7 +52,10 @@ namespace EvoManager
             services.AddMvc();
 			
 			//node.js service because of pdf generator
-			services.AddNodeServices();
+			services.AddNodeServices(
+			  options=> {
+				  options.InvocationTimeoutMilliseconds=120000;
+			  });
 
             // Configure Identity
             services.Configure<IdentityOptions>(options =>

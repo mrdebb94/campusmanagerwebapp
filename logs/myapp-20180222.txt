@@ -1,0 +1,11 @@
+2018-02-22 16:23:06.710 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-02-22 16:24:38.744 +01:00 [Information] Path /
+2018-02-22 16:24:38.801 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0HrdP-6yLK3dYhwHCX_8_HJ2l5uvdQge6Ar0jTXUPQYDDr8Qj40lNAOFoWxJEhzCHstIuHUbXNRhMvOdV0ildvHGTvLf-cnSZhY55qRfAcA5bmqF33YVU3CtEx5S9S_FR8Q
+2018-02-22 16:28:20.149 +01:00 [Information] Path /
+2018-02-22 16:28:20.172 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0HpSFMFW0LsEvGB4QTdEDiqi-AIxQq1bUP0uskWYW7m8b7KfLKhLF2cJxMKNXdwW-3AvMAnvZLxlQsvYgb_jos4skEl08B58iOzXaQqo87zb72n50Rqpd1XcVkhQaHGO8Ds
+2018-02-22 16:29:33.386 +01:00 [Information] Path /api/user/list
+2018-02-22 16:29:33.805 +01:00 [Information] Supporting role True
+2018-02-22 16:31:49.324 +01:00 [Information] Path /api/report/campus
+2018-02-22 16:50:52.137 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-02-22 16:50:52.542 +01:00 [Information] Path /Account/Login
+2018-02-22 16:50:56.211 +01:00 [Information] Path /api/campus/current
