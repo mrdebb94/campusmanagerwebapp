@@ -1,0 +1,153 @@
+2018-03-01 11:47:54.996 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 12:33:43.967 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 12:46:28.687 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 13:17:02.068 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 13:21:03.430 +01:00 [Information] Path /
+2018-03-01 13:21:03.472 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0Hp8LBR10_ZzDlNyc12cE1-Sl1812UCFCdiGATq3kuBd_Pr57h7jFY4SB7YjIIQw-223W0ybzXTmQlTevGFpAZG0iafhDjYeQ115RyQAqMQFXDh_lTSFwHeqbWdcMknHN3Y
+2018-03-01 13:21:06.179 +01:00 [Information] Path /dist/4b64fd3b2f78696b2227.hot-update.json
+2018-03-01 13:22:43.550 +01:00 [Information] Path /api/user/list
+2018-03-01 13:22:43.669 +01:00 [Information] Supporting role True
+2018-03-01 13:23:38.787 +01:00 [Information] Path /api/user/add
+2018-03-01 13:23:42.077 +01:00 [Information] Path /api/user/list
+2018-03-01 13:23:42.125 +01:00 [Information] Supporting role True
+2018-03-01 13:24:23.833 +01:00 [Information] Path /api/report/user
+2018-03-01 13:51:44.271 +01:00 [Information] Path /login
+2018-03-01 14:47:02.696 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 15:10:30.356 +01:00 [Information] Path /login
+2018-03-01 15:13:16.807 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 15:14:02.955 +01:00 [Information] Path /login
+2018-03-01 15:15:50.839 +01:00 [Information] Path /
+2018-03-01 15:15:52.950 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0Hp5efgB4QIq1WLl64YbXAc8g3LHVXYIVh8yIMhKE4OXl_1D11ZB5VjsUiMjngJGaxnkZA7mJsd2N7YcEgVTq8h49TGl-l8DZEQP5a4fwEj_mOoATGDns2APJlGqPvylm7A
+2018-03-01 15:18:16.574 +01:00 [Information] Path /
+2018-03-01 15:18:16.718 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0HoqUOGNenMW2s18E3PD5FSlvJ-EzHlqYy5BkvJxSxJ6QV4ulxPJv2w7jfM3bHGK6_jOrLiYtVTdfSQ1-dpb31ixFEKOXdsEK1u7HYOu7a_YpeeA4CepLwDZOxvlMYN0AP8
+2018-03-01 15:36:27.978 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 15:37:13.220 +01:00 [Information] Path /
+2018-03-01 15:37:13.251 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0HoND2brcB615PChC5dqWKFIVayXloZzkBf-4RGKOgm5pl2EaiLR2RISZBtmWrh2BXtZCNZwynAqh3aum7Cm4gmKsycbPxaEHRIDDs39-n8FMsJiEYMUhDQsx8Nw_moSaZE
+2018-03-01 15:40:53.772 +01:00 [Information] Path /
+2018-03-01 15:40:54.009 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0Hr4MIIh_HyMkketXKxK3UxGhDSOOtoui-EuXhi3zxHEi6KXAUtj1IFTk3dAamDPLNqKJ0MJhK3vzE_drnEdqNH35LPEVZ5T0Dfh0k5l1soCx0HjGOHlFqmdC0uYnJ0di-g
+2018-03-01 15:52:23.572 +01:00 [Information] Path /
+2018-03-01 15:52:23.593 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0Hq7EhEx-dH32eSnIKdWhoW8FUEe00Wlb2kdK74jRtUP6VrNcge399xp6Z9o1sYzwdbSYhzFl0SQIb6O4yYbcTqKg-rFkkUFfy1LBK5ZErIAZxvxbElcSi0ikS1DkywiMoM
+2018-03-01 15:58:54.619 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 16:02:14.680 +01:00 [Information] Path /
+2018-03-01 16:02:14.704 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0Hrf8znr6nKphK-wOoItdcozIxaM6QCFACMRDC55iNkVYncEEkB8jkwA9eHLy7WnmpwVbvpe91fuAmDcnxmreabcXTOXCxcjcEdUi4FB46XnjlZBOZfS-FaJa3ZBvleCNHo
+2018-03-01 16:03:54.116 +01:00 [Information] Path /api/user/list
+2018-03-01 16:03:54.320 +01:00 [Information] Supporting role True
+2018-03-01 16:04:53.396 +01:00 [Information] Path /api/user/add
+2018-03-01 16:04:54.186 +01:00 [Information] Hozzaadas: False
+2018-03-01 16:04:59.628 +01:00 [Information] Path /api/user/list
+2018-03-01 16:04:59.660 +01:00 [Information] Supporting role True
+2018-03-01 16:05:26.555 +01:00 [Information] Path /api/user/login
+2018-03-01 16:05:44.423 +01:00 [Information] Path /api/user/list
+2018-03-01 16:05:44.797 +01:00 [Information] Supporting role True
+2018-03-01 16:06:00.081 +01:00 [Information] Path /api/user/login
+2018-03-01 16:12:13.314 +01:00 [Information] Path /api/user/login
+2018-03-01 16:12:22.011 +01:00 [Information] Path /login
+2018-03-01 16:14:18.124 +01:00 [Information] Path /login
+2018-03-01 16:15:07.642 +01:00 [Information] Path /api/user/login
+2018-03-01 16:15:08.653 +01:00 [Information] Belepes: False
+2018-03-01 16:15:08.712 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-01 16:15:20.280 +01:00 [Information] Path /api/project/current/list
+2018-03-01 16:15:31.216 +01:00 [Information] Path /api/campus/list
+2018-03-01 16:15:32.062 +01:00 [Information] Path /api/project/continuable/list
+2018-03-01 16:16:10.792 +01:00 [Information] Path /api/campus/list
+2018-03-01 16:16:11.057 +01:00 [Information] Path /api/project/continuable/list
+2018-03-01 16:16:13.554 +01:00 [Information] Path /api/campus/list
+2018-03-01 16:16:13.701 +01:00 [Information] Path /api/project/continuable/list
+2018-03-01 16:16:17.223 +01:00 [Information] Path /api/campus/list
+2018-03-01 16:16:17.632 +01:00 [Information] Path /api/project/continuable/list
+2018-03-01 16:16:41.405 +01:00 [Information] Path /api/campus/list
+2018-03-01 16:16:41.832 +01:00 [Information] Path /api/campus/list
+2018-03-01 16:16:41.835 +01:00 [Information] Path /api/project/continuable/list
+2018-03-01 16:16:42.023 +01:00 [Information] Path /api/campus/list
+2018-03-01 16:16:42.245 +01:00 [Information] Path /api/project/continuable/list
+2018-03-01 16:16:42.501 +01:00 [Information] Path /api/project/continuable/list
+2018-03-01 16:16:42.855 +01:00 [Information] Path /api/campus/list
+2018-03-01 16:16:43.374 +01:00 [Information] Path /api/project/continuable/list
+2018-03-01 16:16:53.946 +01:00 [Information] Path /api/campus/current/participations
+2018-03-01 16:17:13.055 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-03-01 16:17:13.334 +01:00 [Information] Path /Account/AccessDenied
+2018-03-01 16:17:29.583 +01:00 [Information] Path /api/user/logout
+2018-03-01 16:17:29.833 +01:00 [Information] Kilepes: True
+2018-03-01 16:17:29.868 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-01 16:19:40.196 +01:00 [Information] Path /api/campus/current/participations
+2018-03-01 16:19:48.711 +01:00 [Information] Path /api/user/list
+2018-03-01 16:19:48.771 +01:00 [Information] Supporting role True
+2018-03-01 16:19:53.600 +01:00 [Information] Path /api/campus/list
+2018-03-01 16:27:53.907 +01:00 [Information] Path /api/user/login
+2018-03-01 17:32:27.105 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 17:36:12.780 +01:00 [Information] Path /login
+2018-03-01 17:46:04.596 +01:00 [Information] Path /login
+2018-03-01 18:28:54.540 +01:00 [Information] Path /api/user/login
+2018-03-01 18:29:18.487 +01:00 [Information] Path /api/user/login
+2018-03-01 18:29:21.828 +01:00 [Information] Belepes: False
+2018-03-01 18:29:21.928 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-01 18:29:24.268 +01:00 [Information] Path /api/user/logout
+2018-03-01 18:29:24.842 +01:00 [Information] Kilepes: True
+2018-03-01 18:29:24.901 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-01 18:31:40.534 +01:00 [Information] Path /login
+2018-03-01 18:32:07.246 +01:00 [Information] Path /api/user/login
+2018-03-01 18:46:32.391 +01:00 [Information] Path /api/user/list
+2018-03-01 18:46:32.962 +01:00 [Information] Supporting role True
+2018-03-01 19:25:57.859 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 19:27:18.977 +01:00 [Information] Path /users
+2018-03-01 19:29:57.300 +01:00 [Information] Path /users
+2018-03-01 19:32:19.881 +01:00 [Information] Path /api/user/list
+2018-03-01 19:32:20.432 +01:00 [Information] Supporting role True
+2018-03-01 19:33:27.566 +01:00 [Information] Path /api/user/add
+2018-03-01 19:33:28.289 +01:00 [Information] Hozzaadas: False
+2018-03-01 19:33:28.687 +01:00 [Information] DuplicateUserName User name 'admin' is already taken.
+2018-03-01 19:33:28.691 +01:00 [Information] DuplicateEmail Email 'admin@admin.com' is already taken.
+2018-03-01 19:33:28.736 +01:00 [Information] Path /api/user/list
+2018-03-01 19:33:28.745 +01:00 [Information] Supporting role True
+2018-03-01 19:42:33.741 +01:00 [Information] Path /users
+2018-03-01 19:42:47.749 +01:00 [Information] Path /api/user/list
+2018-03-01 19:42:47.891 +01:00 [Information] Supporting role True
+2018-03-01 19:44:33.811 +01:00 [Information] Path /api/user/add
+2018-03-01 19:44:34.006 +01:00 [Information] Hozzaadas: False
+2018-03-01 19:44:34.022 +01:00 [Information] PasswordTooShort Passwords must be at least 4 characters.
+2018-03-01 19:44:34.116 +01:00 [Information] Path /api/user/list
+2018-03-01 19:44:34.236 +01:00 [Information] Supporting role True
+2018-03-01 20:23:42.703 +01:00 [Information] Path /api/user/add
+2018-03-01 20:23:43.076 +01:00 [Information] Hozzaadas: False
+2018-03-01 20:23:44.847 +01:00 [Information] InvalidUserName User name '' is invalid, can only contain letters or digits.
+2018-03-01 20:23:44.947 +01:00 [Information] Path /api/user/list
+2018-03-01 20:23:44.989 +01:00 [Information] Supporting role True
+2018-03-01 21:31:05.301 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 21:32:36.957 +01:00 [Information] Path /users
+2018-03-01 21:35:17.585 +01:00 [Information] Path /api/user/list
+2018-03-01 21:35:18.298 +01:00 [Information] Supporting role True
+2018-03-01 21:35:26.173 +01:00 [Information] Path /users
+2018-03-01 21:35:42.389 +01:00 [Information] Path /api/user/list
+2018-03-01 21:35:42.999 +01:00 [Information] Supporting role True
+2018-03-01 21:36:00.616 +01:00 [Information] Path /api/user/add
+2018-03-01 21:36:01.215 +01:00 [Information] Hozzaadas: False
+2018-03-01 21:36:01.256 +01:00 [Information] PasswordTooShort Passwords must be at least 4 characters.
+2018-03-01 21:36:01.304 +01:00 [Information] Path /api/user/list
+2018-03-01 21:36:01.315 +01:00 [Information] Supporting role True
+2018-03-01 21:37:08.622 +01:00 [Information] Path /api/user/add
+2018-03-01 21:37:08.945 +01:00 [Information] Hozzaadas: False
+2018-03-01 21:37:09.105 +01:00 [Information] InvalidUserName User name '' is invalid, can only contain letters or digits.
+2018-03-01 21:37:09.129 +01:00 [Information] Path /api/user/list
+2018-03-01 21:37:09.205 +01:00 [Information] Supporting role True
+2018-03-01 21:57:18.969 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-01 21:58:40.795 +01:00 [Information] Path /users
+2018-03-01 22:02:32.856 +01:00 [Information] Path /users
+2018-03-01 22:02:45.582 +01:00 [Information] Path /api/user/list
+2018-03-01 22:02:46.754 +01:00 [Information] Supporting role True
+2018-03-01 22:02:59.932 +01:00 [Information] Path /api/user/add
+2018-03-01 22:03:00.713 +01:00 [Information] Hozzaadas: False
+2018-03-01 22:03:00.757 +01:00 [Information] PasswordTooShort Passwords must be at least 4 characters.
+2018-03-01 22:03:00.762 +01:00 [Information] PasswordRequiresUniqueChars Passwords must use at least 1 different characters.
+2018-03-01 22:03:00.812 +01:00 [Information] Path /api/user/list
+2018-03-01 22:03:00.879 +01:00 [Information] Supporting role True
+2018-03-01 23:40:44.763 +01:00 [Information] Path /users
+2018-03-01 23:41:10.407 +01:00 [Information] Path /api/user/list
+2018-03-01 23:41:10.445 +01:00 [Information] Supporting role True
+2018-03-01 23:41:47.759 +01:00 [Information] Path /api/user/add
+2018-03-01 23:41:48.045 +01:00 [Information] Hozzaadas: False
+2018-03-01 23:41:48.076 +01:00 [Information] PasswordTooShort Passwords must be at least 4 characters.
+2018-03-01 23:41:48.080 +01:00 [Information] PasswordRequiresUniqueChars Passwords must use at least 1 different characters.
+2018-03-01 23:42:06.371 +01:00 [Information] Path /api/user/add
+2018-03-01 23:42:06.495 +01:00 [Information] Hozzaadas: False
+2018-03-01 23:42:06.523 +01:00 [Information] PasswordTooShort Passwords must be at least 4 characters.
+2018-03-01 23:42:06.592 +01:00 [Information] PasswordRequiresUniqueChars Passwords must use at least 1 different characters.

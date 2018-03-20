@@ -4,7 +4,8 @@ import { AppThunkAction } from './';
 
 export interface User {
 	userId?: string;
-	name: string;
+	userName: string;
+    name: string;
 	password: string;
 	email: string;
 	type: string;
@@ -15,11 +16,17 @@ export interface UsersState {
 	usersList: User[];
 	selectedUser?: User;
 	openUserDialog: boolean;
+    userFormError: User;
 };
 
 interface SetUsersListAction {
 	type: 'SET_USERS_LIST';
 	usersList: User[];
+}
+
+interface SetUserFormErrorAction {
+	type: 'SET_USER_FORM_ERROR';
+	userFormError: User;
 }
 
 interface AddUserAction {
@@ -38,7 +45,8 @@ interface ToggleUserDialog {
 
 }
 
-type KnownAction = SetUsersListAction | AddUserAction | ToggleUserDialog | ModifyEditedUserAction;
+type KnownAction = SetUsersListAction | AddUserAction 
+                   | ToggleUserDialog | ModifyEditedUserAction | SetUserFormErrorAction;
 
 export const userServices = {
 
@@ -59,7 +67,8 @@ export const userServices = {
 		fetch('api/user/list', {
 			method: 'GET',
 			credentials: 'same-origin'
-		}).then(response => response.json()).then((response) => {
+		}).then(response => response.json())
+          .then((response) => {
 			resolve(response);
 		});
 	}),
@@ -67,6 +76,7 @@ export const userServices = {
 	addUser: (editedUser, xsrfToken): Promise<any> => new Promise<any>((resolve) => {
 		let data = JSON.stringify({
 			Name: editedUser.name,
+            UserName: editedUser.userName,
 			Password: editedUser.password,
 			Email: editedUser.email,
 			Type: editedUser.type
@@ -89,6 +99,7 @@ export const userServices = {
 			body: data,
 			credentials: 'same-origin'
 		})
+            .then(response => response.json())
 			.then((response) => {
 				resolve(response);
 			});
@@ -97,7 +108,13 @@ export const userServices = {
 
 export const actionCreators = {
 	addUser: (editedUser:User): AppThunkAction<KnownAction> => (dispatch, getState) => {
-
+        dispatch({ type: 'SET_USER_FORM_ERROR', userFormError: {
+									   userName:'',
+									   name:'',
+									   email:'',
+									   password:'',
+									   type:'' 
+                                   } });
 		//let { users: { editedUser } } = getState();
 		let { session } = getState();
 
@@ -109,13 +126,32 @@ export const actionCreators = {
 
 			//let data = new FormData();
 			//data.append("json", JSON.stringify({ Name: editedUser.name, Password: editedUser.password, Email: editedUser.email }));
-			let data = JSON.stringify({ Name: editedUser.name, Password: editedUser.password, Email: editedUser.email });
+			let data = JSON.stringify({ 
+				UserName: editedUser.userName, 
+                Name: editedUser.name,
+                Password: editedUser.password,
+                Email: editedUser.email
+            });
 			//TODO: hibakezelés
 			userServices.addUser(editedUser, session.xsrfToken).then((response) => {
-				userServices.listUsers().then((response) => {
-					dispatch({ type: 'SET_USERS_LIST', usersList: response });
-					dispatch({ type: 'TOGGLE_USER_DIALOG', open: false });
-				});
+                if(response.status=="success") {
+					userServices.listUsers().then((response) => {
+						dispatch({ type: 'SET_USERS_LIST', usersList: response });
+						dispatch({ type: 'TOGGLE_USER_DIALOG', open: false });
+					});
+				} else if(response.status=="fail") {
+
+                    /*       userName: response.data.userName?response.data.userName:''
+					   }*/
+                       dispatch({ type: 'SET_USER_FORM_ERROR', userFormError: {
+									   userName:response.data.userName?response.data.userName:'',
+									   name:response.data.name?response.data.name:'',
+									   email:response.data.email?response.data.email:'',
+									   password:response.data.password?response.data.password:'',
+									   type:'' 
+                                   }
+                       });
+                }
 			});
 		}
 
@@ -127,9 +163,9 @@ export const actionCreators = {
 		});
 	},
 
-	modifyEditedUser: ({ id = '', name = '', email = '', password = '', type = '' }: 
-	{ id?: string, name?: string, email?: string, password?: string, type?: string }): AppThunkAction<KnownAction> => (dispatch, getState) => {
-		dispatch({ type: 'MODIFY_EDITED_USER', user: { id, name, email, password, type } });
+	modifyEditedUser: ({ id = '', userName='', name = '', email = '', password = '', type = '' }: 
+	{ id?: string, userName?: string, name?: string, email?: string, password?: string, type?: string }): AppThunkAction<KnownAction> => (dispatch, getState) => {
+		dispatch({ type: 'MODIFY_EDITED_USER', user: { id, userName, name, email, password, type } });
 	},
 
 	toggleUserDialog: (open: boolean): AppThunkAction<KnownAction> => (dispatch, getState) => {
@@ -138,7 +174,16 @@ export const actionCreators = {
 
 };
 
-const initialState: UsersState = { usersList: [], openUserDialog: false };
+const initialState: UsersState = { usersList: [], 
+                                   openUserDialog: false, 
+                                   userFormError: {
+									   userName:'',
+									   name:'',
+									   email:'',
+									   password:'',
+									   type:'' 
+                                   }
+                                 };
 
 export const reducer: Reducer<UsersState> = (state = initialState, incomingAction: Action) => {
 	const action = incomingAction as KnownAction;
@@ -161,6 +206,14 @@ export const reducer: Reducer<UsersState> = (state = initialState, incomingActio
 				editedUser: { ...action.user }
 			};
 		}
+
+        case 'SET_USER_FORM_ERROR': {
+			return {
+				...state,
+				userFormError: { ...action.userFormError }
+			};
+		}
+
 		default: {
 			return state;
 		}

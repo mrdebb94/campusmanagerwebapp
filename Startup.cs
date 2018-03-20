@@ -43,9 +43,12 @@ namespace EvoManager
 			services.AddDbContext<EvoDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<EvoDbContext>()
-                .AddDefaultTokenProviders();
+            services.AddIdentity<User, IdentityRole>(options => {
+					// User settings
+					options.User.RequireUniqueEmail = true;
+			})
+            .AddEntityFrameworkStores<EvoDbContext>()
+            .AddDefaultTokenProviders();
                 
             services.AddAntiforgery(x => x.HeaderName = "X-XSRF-TOKEN");
             //services.AddAntiforgery(opts => opts.Cookie.Name = "MyAntiforgeryCookie");

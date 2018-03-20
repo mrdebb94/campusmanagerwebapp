@@ -46,3 +46,4 @@
 2018-03-01 01:26:08.627 +01:00 [Information] Path /api/user/list
 2018-03-01 01:26:08.862 +01:00 [Information] Supporting role True
 2018-03-01 01:26:17.223 +01:00 [Information] Path /api/report/user
+2018-03-01 11:44:51.770 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;

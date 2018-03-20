@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Security.Claims;
 using EvoManager.Models;
 using EvoManager.ViewModels;
+using EvoManager.Utils;
 using Serilog;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Http;
@@ -55,7 +56,8 @@ namespace EvoManager.Controllers
 
 		   resultUsers.Add( new UserViewModel {
 			UserId = user.Id, 
-	     	Name = user.UserName, 
+            UserName = user.UserName,
+	     	Name = user.Name, 
 	   		Password = user.PasswordHash, 
 	   		Email = user.Email,
 			Type = (roles.Count>0?roles[0]:"")
@@ -74,9 +76,9 @@ namespace EvoManager.Controllers
 	   [AllowAnonymous]
        [HttpPost("[action]")]
        [ValidateAntiForgeryToken]
-	   public async Task<IActionResult> LogIn([FromBody][Bind("Name", "Password")] UserViewModel userModel)
+	   public async Task<IActionResult> LogIn([FromBody][Bind("UserName", "Password")] UserViewModel userModel)
 	   {
-			var result = await _signInManager.PasswordSignInAsync(userModel.Name, 
+			var result = await _signInManager.PasswordSignInAsync(userModel.UserName, 
 			userModel.Password, false, lockoutOnFailure: false);
 			if (result.Succeeded)
 			{
@@ -91,8 +93,11 @@ namespace EvoManager.Controllers
                         new CookieOptions() { HttpOnly = false });
                 Log.Information("New Token LOGIN" + tokens.RequestToken);
 				*/
-				return Ok(Json("Sikeres belepes"));
+				var user =  _context.Users.FirstOrDefault(m=>m.UserName == userModel.UserName);
+				IList<String>  roles = await _userManager.GetRolesAsync(user);
+				return Ok(Json(roles));
 			} else {
+              
 				return NotFound();
 			}
 	    }
@@ -101,13 +106,26 @@ namespace EvoManager.Controllers
        [AllowAnonymous]
 	   [HttpPost("[action]")]
        [ValidateAntiForgeryToken]
-	   public async Task<IActionResult> Add([FromBody][Bind("Name", "Password","Email", "Type")] UserViewModel userModel)
+	   public async Task<JSendResponseType<UserForm>> Add([FromBody][Bind("UserName", "Name", "Password","Email", "Type")] 
+                              UserViewModel userModel)
 	   {
 
-		  User user = new User { UserName =userModel.Name, Email = userModel.Email };
+          JSendResponseType<UserForm> formResult = new JSendResponseType<UserForm>{ 
+                 Status="success"
+          };
+		  
+		  if(!this.User.Identity.IsAuthenticated) 
+		  {
+			  userModel.Type="User";
+		  }
+
+          Log.Information("Hozzaadas: " + this.User.Identity.IsAuthenticated);
+
+		  User user = new User { Name=userModel.Name, UserName = userModel.UserName, Email = userModel.Email };
           var result = await _userManager.CreateAsync(user, userModel.Password);
           if (result.Succeeded)
-          {
+          {	
+			  
 			bool existsRole = await _roleManager.RoleExistsAsync(userModel.Type);
 
 			if(!existsRole)
@@ -121,10 +139,75 @@ namespace EvoManager.Controllers
 			await _userManager.AddToRoleAsync(user,userModel.Type);
             //await _signInManager.SignInAsync(user, isPersistent: false);
             //Lob.Information("User created a new account with password.");
-            return Ok(Json("Successfully"));
+            formResult.Status="success";
+
+            return formResult;
+          } else {
+            formResult.Status="fail";
+            formResult.Data = new UserForm();
+
+			foreach(var error in result.Errors) {
+				Log.Information(error.Code + " " + error.Description);
+ 
+                if(error.Code=="InvalidUserName") {
+                   formResult.Data.UserName+="Felhasználónévnek tartalmaznia kell betűt és számot.";
+                }                
+
+                if(error.Code=="DuplicateUserName") {
+                   formResult.Data.UserName+="Ez a felhasználónév már foglalt.";
+                }
+
+                /*<data name="PasswordMismatch" xml:space="preserve">
+					<value>Incorrect password.</value>
+					<comment>Error when a password doesn't match</comment>
+				  </data>
+				  <data name="PasswordRequiresDigit" xml:space="preserve">
+					<value>Passwords must have at least one digit ('0'-'9').</value>
+					<comment>Error when passwords do not have a digit</comment>
+				  </data>
+				  <data name="PasswordRequiresLower" xml:space="preserve">
+					<value>Passwords must have at least one lowercase ('a'-'z').</value>
+					<comment>Error when passwords do not have a lowercase letter</comment>
+				  </data>
+				  <data name="PasswordRequiresNonAlphanumeric" xml:space="preserve">
+					<value>Passwords must have at least one non alphanumeric character.</value>
+					<comment>Error when password does not have enough non alphanumeric characters</comment>
+				  </data>
+				  <data name="PasswordRequiresUpper" xml:space="preserve">
+					<value>Passwords must have at least one uppercase ('A'-'Z').</value>
+					<comment>Error when passwords do not have an uppercase letter</comment>
+				  </data>
+				  <data name="PasswordTooShort" xml:space="preserve">
+					<value>Passwords must be at least {0} characters.</value>
+					<comment>Error message for passwords that are too short</comment>
+				  </data>
+                  <data name="PasswordRequiresUniqueChars" xml:space="preserve">
+					<value>Passwords must use at least {0} different characters.</value>
+					<comment>Error message for passwords that are based on similar characters</comment>
+				  </data>
+                  */
+
+                if(error.Code=="PasswordTooShort") {
+                   formResult.Data.Password+="A jelszónak legalább 4 karakterből kell állnia.";
+                }
+                
+                if(error.Code=="PasswordRequiresUniqueChars") {
+                   formResult.Data.Password+="Különböző karakterek száma legalább 1 legyen.";
+                }
+                if(error.Code=="InvalidEmail") {
+                   formResult.Data.Email+="Az e-mail formátuma nem megfelelő.";
+                }
+
+                if(error.Code=="DuplicateEmail") {
+				   formResult.Data.Email+="Ilyen e-mail címmel már van bejegyezve felhasználó.";
+                }
+            }
+
+            return formResult;
+
           }
 		     
-		 return Ok();	  
+		 return formResult;	  
 	  
 	  }
 	  

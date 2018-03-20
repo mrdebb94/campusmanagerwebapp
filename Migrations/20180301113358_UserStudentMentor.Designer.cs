@@ -11,8 +11,8 @@ using System;
 namespace evomanager_next.Migrations
 {
     [DbContext(typeof(EvoDbContext))]
-    [Migration("20180202102600_ReportModel")]
-    partial class ReportModel
+    [Migration("20180301113358_UserStudentMentor")]
+    partial class UserStudentMentor
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -111,10 +111,6 @@ namespace evomanager_next.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<bool>("IsDeleted");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Phone");
 
                     b.Property<string>("UserId");
 
@@ -269,10 +265,6 @@ namespace evomanager_next.Migrations
                     b.Property<bool>("HasScholarship");
 
                     b.Property<bool>("IsDeleted");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Phone");
 
                     b.Property<string>("UserId");
 
@@ -479,6 +471,8 @@ namespace evomanager_next.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
                     b.Property<string>("MentorId");
+
+                    b.Property<string>("Name");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);

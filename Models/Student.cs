@@ -11,8 +11,6 @@ namespace EvoManager.Models
 		}*/
 	
 		public string StudentId { get; set;}
-		public string Name { get; set; }
-		public string Phone { get; set; }
 		public bool HasScholarship { get; set; }
 		
 		[ForeignKey("User")]

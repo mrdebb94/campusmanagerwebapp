@@ -130,7 +130,7 @@ class CurrentParticipants extends React.Component<CampusParticipationProps, Stud
                                         />
                                     </TableCell>
                                         <TableCell>{campusParticipation.student.studentId!}</TableCell>
-                                        <TableCell>{campusParticipation.student.name}</TableCell>
+                                        <TableCell>{campusParticipation.student.user.name}</TableCell>
                                     </TableRow>
                                 ) : ''}
                         </TableBody>
@@ -179,7 +179,7 @@ class CurrentParticipants extends React.Component<CampusParticipationProps, Stud
                                         />
                                     </TableCell>
                                         <TableCell>{campusParticipation.mentor.mentorId}</TableCell>
-                                        <TableCell>{campusParticipation.mentor.name}</TableCell>
+                                        <TableCell>{campusParticipation.mentor.user.name}</TableCell>
                                     </TableRow>  
                                 ) : ''}
                             

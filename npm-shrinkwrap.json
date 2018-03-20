@@ -2018,6 +2018,11 @@
       "from": "math-expression-evaluator@>=1.2.14 <2.0.0",
       "resolved": "https://registry.npmjs.org/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz"
     },
+    "mediaquery": {
+      "version": "0.0.3",
+      "from": "mediaquery@0.0.3",
+      "resolved": "https://registry.npmjs.org/mediaquery/-/mediaquery-0.0.3.tgz"
+    },
     "memory-fs": {
       "version": "0.3.0",
       "from": "memory-fs@>=0.3.0 <0.4.0",
@@ -3467,6 +3472,11 @@
       "version": "3.7.1",
       "from": "redux@3.7.1",
       "resolved": "https://registry.npmjs.org/redux/-/redux-3.7.1.tgz"
+    },
+    "redux-responsive": {
+      "version": "4.3.5",
+      "from": "redux-responsive@latest",
+      "resolved": "https://registry.npmjs.org/redux-responsive/-/redux-responsive-4.3.5.tgz"
     },
     "redux-thunk": {
       "version": "2.2.0",

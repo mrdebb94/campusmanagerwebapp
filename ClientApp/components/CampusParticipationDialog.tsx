@@ -47,7 +47,7 @@ class CampusParticipationDialog extends React.Component<CampusProps, any> {
                 <DialogContent>
                     <TextField
                         label="Név"
-                        value={editedCampusParticipation ? (student ? student.name : (mentor ? mentor.name : '')) : ''}
+                        value={editedCampusParticipation ? (student ? student.user.name : (mentor ? mentor.user.name : '')) : ''}
                         disabled={true}
                     /><br />
                     <InputLabel htmlFor="role-change-helper">Új szerep</InputLabel>

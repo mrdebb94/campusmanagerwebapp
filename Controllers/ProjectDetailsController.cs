@@ -507,7 +507,7 @@ namespace EvoManager.Controllers
             .Select(s=>new TeamMemberParticipationMeetingViewModel {
                 TeamMemberParticipationMeetingId = s.TeamMemberParticipationMeetingId,
                 TeamMemberId = s.TeamMemberId,
-                TeamMemberName = s.TeamMember.Student.Name,
+                TeamMemberName = s.TeamMember.Student.User.Name,
                 Checked = s.Checked,
                 TeamMemberRatings = s.TeamMemberRatings.Select(
                      teamMemberRating => new TeamMemberRatingViewModel {
@@ -521,7 +521,7 @@ namespace EvoManager.Controllers
             .Select(s=>new ProjectLeaderParticipationMeetingViewModel {
                 ProjectLeaderParticipationMeetingId = s.ProjectLeaderParticipationMeetingId,
                 ProjectLeaderId = s.ProjectLeaderId,
-                ProjectLeaderName = s.ProjectLeader.Mentor.Name,    
+                ProjectLeaderName = s.ProjectLeader.Mentor.User.Name,    
                 Checked = s.Checked
             }).ToList()
          }).First();

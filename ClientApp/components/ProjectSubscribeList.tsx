@@ -115,9 +115,10 @@ class ProjectSubscribeList extends React.Component<ProjectProps, any> {
                         {(this.props.activeProjectList.length > this.state.tabValue
                             && (this.state.menuValue == 0 || this.state.menuValue == 2)
                         ) && this.props.activeProjectList[this.state.tabValue].subscribedStudents.
-                            map(({ subscribedStudentId, student: { name } }
-                                , index) => (
-                                    <TableRow>
+                            map(( subscribedStudent, index) => { 
+								let { subscribedStudentId, student: { user: { name } } } = subscribedStudent
+								return (
+                                    <TableRow key={subscribedStudentId}>
                                         <TableCell>{name}</TableCell>
                                         <TableCell>Tanuló</TableCell>
                                         <TableCell>
@@ -133,11 +134,11 @@ class ProjectSubscribeList extends React.Component<ProjectProps, any> {
                                                 onClick={() =>
                                                     this.props.toggleProjectSubscribeDialog(
                                                         true, {
-                                                            subscribedStudent: {
+                                                            subscribedStudent/*: {
                                                                 subscribedStudentId,
                                                                 projectCampusId: this.props.activeProjectList[this.state.tabValue].projectCampusId!,
-                                                                student: { name, phone: "" }
-                                                            }
+                                                                student: { user: { name } }
+                                                            }*/
                                                         }
                                                     )}
                                                
@@ -146,14 +147,15 @@ class ProjectSubscribeList extends React.Component<ProjectProps, any> {
                                         </Button>
                                         </TableCell>
                                     </TableRow>
-                                ))
+                                )})
                         }
                         {(this.props.activeProjectList.length > this.state.tabValue
                             && (this.state.menuValue == 0 || this.state.menuValue == 1)
                         ) && this.props.activeProjectList[this.state.tabValue].subscribedMentors.
-                            map(({ subscribedMentorId, mentor: { name } }
-                                , index) => (
-                                    <TableRow>
+                            map((subscribedMentor, index) => {
+									let { subscribedMentorId, mentor: { user: { name } } } = subscribedMentor;
+									return(
+                                    <TableRow key={subscribedMentorId}>
                                         <TableCell>{name}</TableCell>
                                         <TableCell>Mentor</TableCell>
                                         <TableCell>
@@ -169,12 +171,12 @@ class ProjectSubscribeList extends React.Component<ProjectProps, any> {
                                                 onClick={() =>
                                                     this.props.toggleProjectSubscribeDialog(
                                                         true, {
-                                                            subscribedMentor:
+                                                            subscribedMentor/*:
                                                                 {
                                                                     subscribedMentorId,
                                                                     projectCampusId: this.props.activeProjectList[this.state.tabValue].projectCampusId!,
-                                                                    mentor: { name, phone: "" }
-                                                                }
+                                                                    mentor: { user: { name } }
+                                                                }*/
                                                         }
                                                     )}
                                                
@@ -185,7 +187,7 @@ class ProjectSubscribeList extends React.Component<ProjectProps, any> {
                                         </TableCell>
                                     </TableRow>
 
-                                ))
+                                )})
                         }
                     </TableBody>
                 </Table>

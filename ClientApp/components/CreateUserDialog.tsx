@@ -45,7 +45,6 @@ class CreateUserDialog extends React.Component<UsersProps, CreateUserDialogState
     }
 
     componentWillReceiveProps(nextProps) {
-
         //fel fog nyílni a dialógusablak
         if (this.props.openUserDialog == false
             && nextProps.openUserDialog == true) {
@@ -57,19 +56,16 @@ class CreateUserDialog extends React.Component<UsersProps, CreateUserDialogState
             } else {
                 //nincs kijelölve felhasználó
                 this.setState({
-                    editedUser: { name: '', email:'', password:'', type:'User'}
+                    editedUser: { userName:'', name: '', email:'', password:'', type:'User'}
                 });
             }
-            //be fog záródni a dialógusablak
+        //be fog záródni a dialógusablak
         } else if (this.props.openUserDialog == true
             && nextProps.openUserDialog == false) {
             this.setState({
                 editedUser: null
             });
         }
-
-
-
     }
 
     public render() {
@@ -87,13 +83,29 @@ class CreateUserDialog extends React.Component<UsersProps, CreateUserDialogState
                     <form noValidate autoComplete="off">
                         <div>
                             <TextField
-                                label="Felhasználónév"
+                                label="Teljes név:"
                                 value={this.state.editedUser!=null ? this.state.editedUser.name : ''}
                                 onChange={(event) => {
                                     let target = event.target as HTMLInputElement; this.setState({
                                         editedUser: { ...this.state.editedUser!, name: target.value }
                                     });
                                 }}
+                                error={this.props.userFormError.name!=''}
+                                helperText={this.props.userFormError.name}
+                            />
+                        </div>
+                        <div>
+                            <TextField
+                                label="Felhasználónév"
+                                value={this.state.editedUser!=null ? this.state.editedUser.userName : ''}
+                                onChange={(event) => {
+                                    let target = event.target as HTMLInputElement;
+									this.setState({
+                                        editedUser: { ...this.state.editedUser!, userName: target.value }
+                                    });
+                                }}
+								error={this.props.userFormError.userName!=''}
+                                helperText={this.props.userFormError.userName}
                             />
                         </div>
                         <div>
@@ -105,6 +117,8 @@ class CreateUserDialog extends React.Component<UsersProps, CreateUserDialogState
                                         editedUser: { ...this.state.editedUser!, password: target.value }
                                     });
                                 }}
+								error={this.props.userFormError.password!=''}
+                                helperText={this.props.userFormError.password}
                             />
                         </div>
                         <div>
@@ -116,6 +130,8 @@ class CreateUserDialog extends React.Component<UsersProps, CreateUserDialogState
                                         editedUser: { ...this.state.editedUser!, email: target.value }
                                     });
                                 }}
+								error={this.props.userFormError.email!=''}
+                                helperText={this.props.userFormError.email}
                             />
                         </div>
                         <div>

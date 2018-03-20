@@ -1,0 +1,30 @@
+2018-03-06 10:40:10.491 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-06 10:43:20.802 +01:00 [Information] Path /
+2018-03-06 10:43:20.950 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0HqRNXQUz-Q4iOjDVhOcGKdwIA6BVTXXFZFWmzdGbvmxl2hxB5VWWdAK38ysm0nECvDiZyDu1wyiSyOokY0ffHd92nIqXrNavjy0WgjZw5oqC2CsRaBzj-JbcSiTD_9Fu-g
+2018-03-06 10:45:13.176 +01:00 [Information] Path /
+2018-03-06 10:45:13.197 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0HruqNLYs-WRdGqCJdWcNZd3rfZ7JOVnG_xgr_dQ1D4EdllFJgC19mDBFX0qqv06QamPB2Rfxt8giJ13xwwL_rAYpG1O1rIG-Q9GfWZSIz84r6ROhuIXZ6nztlQd-yFJbUw
+2018-03-06 10:53:39.810 +01:00 [Information] Path /
+2018-03-06 10:53:39.921 +01:00 [Information] New Token CfDJ8C_4mJ5qXr1IlcbiVl6k0HqGkWc7fDoAUw5ww08HKAMvqBn1p98_cnQpnrW4tP-TXSU74SIS0R1NDQSCkoP926oPjVE6ZM-jK97R9SxOnVot7IWhfrLGEFE8Q8BbETX9F-564oQy_Pu2nnSTqu1tXvk
+2018-03-06 10:56:50.969 +01:00 [Information] Path /api/user/login
+2018-03-06 10:57:14.948 +01:00 [Information] Path /api/user/login
+2018-03-06 10:57:21.112 +01:00 [Information] Path /api/user/login
+2018-03-06 10:57:23.128 +01:00 [Information] Belepes: False
+2018-03-06 10:57:23.197 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-06 10:57:25.594 +01:00 [Information] Path /api/user/logout
+2018-03-06 10:57:26.024 +01:00 [Information] Kilepes: True
+2018-03-06 10:57:26.066 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-06 10:57:57.126 +01:00 [Information] Path /api/user/login
+2018-03-06 10:57:57.572 +01:00 [Information] Belepes: False
+2018-03-06 10:57:57.637 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-06 10:58:02.565 +01:00 [Information] Path /api/campus/list
+2018-03-06 11:12:36.975 +01:00 [Information] Path /campus
+2018-03-06 11:13:21.244 +01:00 [Information] Path /api/campus/list
+2018-03-06 11:19:46.161 +01:00 [Information] Path /campus
+2018-03-06 11:19:58.675 +01:00 [Information] Path /api/campus/list
+2018-03-06 11:21:34.917 +01:00 [Information] Path /campus
+2018-03-06 11:22:24.860 +01:00 [Information] Path /api/campus/list
+2018-03-06 11:51:02.448 +01:00 [Information] Path /campus
+2018-03-06 11:51:15.337 +01:00 [Information] Path /api/campus/list
+2018-03-06 12:06:39.069 +01:00 [Information] Path /api/campus/list
+2018-03-06 13:18:42.938 +01:00 [Information] Path /campus
+2018-03-06 13:19:05.886 +01:00 [Information] Path /api/campus/list

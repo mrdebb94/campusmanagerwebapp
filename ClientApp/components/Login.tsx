@@ -26,6 +26,7 @@ const styles = theme => ({
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
+        marginBottom: 2*theme.spacing.unit,
         width: 200,
     },
 });
@@ -40,8 +41,32 @@ class Login extends React.Component<LoginType, any> {
         super(props);
         this.state = {
             userName: '',
-            password: ''
+            password: '',
+            error: false,
+            errorMessage:'' 
         };
+    }
+
+    componentWillReceiveProps(nextProps) {
+
+        //hiba történt bejelentkezés során
+        if (this.props.failedLogin == false
+            && nextProps.failedLogin== true) {
+            this.setState({
+                error:true,
+                errorMessage:'Hibás felhasználónév vagy jelszó'
+            });
+        
+        } else if (this.props.failedLogin == true
+            && nextProps.failedLogin == false) {
+             this.setState({
+                error:false,
+                errorMessage:''
+            });
+        }
+
+
+
     }
 
     public render() {
@@ -54,6 +79,8 @@ class Login extends React.Component<LoginType, any> {
             <TextField
                 label={'Felhasználónév'}
                 value={this.state.userName}
+                error={this.state.error}
+                helperText={this.state.errorMessage}
                 className={classes!.textField}
                 onChange={(event) => {
                     let target = event.target as HTMLInputElement;
@@ -66,6 +93,8 @@ class Login extends React.Component<LoginType, any> {
                     type="password"
                     className={classes!.textField}
                     value={this.state.password}
+                    error={this.state.error}
+                    helperText={this.state.errorMessage}
                     onChange={(event) => {
                         let target = event.target as HTMLInputElement;
                         this.setState({ password: target.value });

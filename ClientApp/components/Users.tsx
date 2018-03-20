@@ -105,6 +105,7 @@ class Users extends React.Component<UsersProps, {}> {
         <TableHead>
           <TableRow>
             <TableCell>Felhasználónév</TableCell>
+            <TableCell>Név</TableCell>
             <TableCell>Jelszó</TableCell>
             <TableCell>E-mail</TableCell>
             <TableCell>Típus</TableCell>
@@ -114,6 +115,7 @@ class Users extends React.Component<UsersProps, {}> {
         <TableBody>
           {this.props.usersList.map((user) =>
             <TableRow key={user.userId}>
+              <TableCell>{user.userName}</TableCell>
               <TableCell>{user.name}</TableCell>
               <TableCell>{user.password}</TableCell>
               <TableCell>{user.email}</TableCell>

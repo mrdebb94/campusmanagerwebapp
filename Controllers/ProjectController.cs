@@ -74,7 +74,7 @@ namespace EvoManager.Controllers
                  s=>new SubscribedStudentViewModel {
                      Student = new Student {
                          StudentId=s.Student.StudentId,
-                         Name=s.Student.Name
+                         User = new User { Name=s.Student.User.Name }
                      }
                  }
              ).ToList(),
@@ -84,7 +84,7 @@ namespace EvoManager.Controllers
                  s=> new SubscribedMentorViewModel {
                      Mentor = new Mentor {
                         MentorId = s.Mentor.MentorId,
-                        Name=s.Mentor.Name
+                        User=new User { Name = s.Mentor.User.Name }
                      }
                  }
              ).ToList(),
@@ -415,7 +415,7 @@ namespace EvoManager.Controllers
         Project newProject = null;
 
         //meglévő projektet folytatunk
-        if(project.ProjectId==null) {
+        if(project.ProjectId==null || project.ProjectId=="") {
             
             newProject = new Project {
                Name = project.Name,
@@ -471,7 +471,7 @@ namespace EvoManager.Controllers
                      SubscribedStudentId = s.SubscribedStudentId,
                      Student = new Student {
                          StudentId=s.Student.StudentId,
-                         Name=s.Student.Name
+                         User=new User { Name = s.Student.User.Name }
                      }
                  }
              ).ToList(),
@@ -485,7 +485,7 @@ namespace EvoManager.Controllers
                      SubscribedMentorId = s.SubscribedMentorId,
                      Mentor = new Mentor {
                         MentorId = s.Mentor.MentorId,
-                        Name=s.Mentor.Name
+                         User=new User { Name = s.Mentor.User.Name }
                      }
                  }
              ).ToList()

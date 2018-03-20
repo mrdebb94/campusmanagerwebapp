@@ -1,17 +1,18 @@
 import { fetch, addTask } from 'domain-task';
 import { Action, Reducer, ActionCreator } from 'redux';
 import { AppThunkAction } from './';
+import { User } from './Users';
 
 export interface Student {
     studentId?: string;
-    name: string;
-    phone: string;
+    user: User;
 }
 
 export interface Mentor {
     mentorId?: string;
-    name: string;
-    phone: string;
+    /*name: string;
+    phone: string;*/
+	user: User;
 }
 
 export interface CampusParticipation {
@@ -91,14 +92,12 @@ export const actionCreators = {
 
             campusParticipationServices.editCampusParticipation(editedCampusParticipation, session.xsrfToken).then((response) => {
 
-                /*campusServices.listCampus().then((response) => {
-                    //TODO: valahogy a Promise-ba definiálni
-                    let campusList: Campus[] = response as Campus[];
- 
-                    dispatch({ type: 'SET_CAMPUS_LIST', campusList });
-                    dispatch({ type: 'TOGGLE_CAMPUS_DIALOG', status: { open: false, mode: '' } });
-                });*/
-                dispatch({ type: 'TOGGLE_CAMPUS_PARTICIPATION_DIALOG', status: { open: false } });
+                 campusParticipationServices.getCampusParticipations().then(response => {
+                  //console.log(response);
+                    dispatch({ type: 'SET_CAMPUS_PARTICIPATIONS', campusParticipations: response });
+					dispatch({ type: 'TOGGLE_CAMPUS_PARTICIPATION_DIALOG', status: { open: false } });
+                });
+               // dispatch({ type: 'TOGGLE_CAMPUS_PARTICIPATION_DIALOG', status: { open: false } });
 
             });
         }

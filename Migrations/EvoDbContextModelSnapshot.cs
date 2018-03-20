@@ -111,10 +111,6 @@ namespace evomanager_next.Migrations
 
                     b.Property<bool>("IsDeleted");
 
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Phone");
-
                     b.Property<string>("UserId");
 
                     b.HasKey("MentorId");
@@ -268,10 +264,6 @@ namespace evomanager_next.Migrations
                     b.Property<bool>("HasScholarship");
 
                     b.Property<bool>("IsDeleted");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Phone");
 
                     b.Property<string>("UserId");
 
@@ -478,6 +470,8 @@ namespace evomanager_next.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
                     b.Property<string>("MentorId");
+
+                    b.Property<string>("Name");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);

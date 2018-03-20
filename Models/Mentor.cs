@@ -7,8 +7,6 @@ namespace EvoManager.Models
 	public class Mentor{
 
 		public string MentorId { get; set;}
-		public string Name { get; set; }
-		public string Phone { get; set; }
 		
         public bool IsDeleted { get; set; }
 

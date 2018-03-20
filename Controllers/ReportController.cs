@@ -89,8 +89,7 @@ namespace EvoManager.Controllers
 			               .Where(t=>t.UserId == userId)
 						   .Select(t=>new Student {
 								StudentId = t.StudentId,
-								Name = t.Name,
-								Phone = t.Phone,
+								User = new User { Name=t.User.Name, PhoneNumber = t.User.PhoneNumber },
 								HasScholarship = t.HasScholarship
 						   })
 						   .First();

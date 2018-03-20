@@ -8,6 +8,10 @@ import { MenuList, MenuItem } from 'material-ui/Menu';
 import { ListItemIcon, ListItemText } from 'material-ui/List';
 import ListSubheader from 'material-ui/List/ListSubheader';
 import { WithStyles, StyledComponentProps, withStyles } from 'material-ui/styles';
+import { connect } from 'react-redux';
+import { ApplicationState } from '../store';
+import * as UsersStore from '../store/Users';
+import * as SessionStore from '../store/Session';
 
 const navMenuWidth: number = 300;
 const navMenuPaddingTop = 64;
@@ -40,39 +44,48 @@ const styles = theme => ({
     icon: {},
 });
 
-class NavMenu extends React.Component<StyledComponentProps<'menuItem' | 'text' | 
-'icon' | 'drawerPaper'|'scrollDiv'>, {}> {
+type NavMenuProps =
+        // ... state we've requested from the Redux store
+  & SessionStore.SettingsState      // ... plus action creators we've requested
+  & typeof SessionStore.actionCreators 
+ 
+  & StyledComponentProps<'menuItem' | 'text' | 
+'icon' | 'drawerPaper'|'scrollDiv'>
+  & { open: boolean };
+
+class NavMenu extends React.Component<NavMenuProps, {}> {
     constructor(props) {
         super(props);
     }
     public render() {
         const { classes } = this.props;
-        //TODO: mobil n√©zetbe az open-t szab√°lyozni
+        //TODO: mobil nÈzetbe az open-t szab·lyozni
         return (
             <Drawer
                 anchor='left'
-                open={true}
+                open={this.props.open}
                 type='persistent'
                 classes={{
                     paper: classes!.drawerPaper,
                 }}
             >
                 <div className={classes!.scrollDiv}>
-                    <MenuList subheader={<ListSubheader disableSticky={true}>Felhaszn√°l√≥</ListSubheader>}>
+                    <MenuList subheader={<ListSubheader disableSticky={true}>Felhaszn·lÛ</ListSubheader>}>
                         <MenuItem className={classes!.menuItem}>
                             <ListItemText classes={{ text: classes!.text }} inset primary="Home" />
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/login'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset primary="Bejelentkez√©s" />
+                                <ListItemText classes={{ text: classes!.text }} inset primary="BejelentkezÈs" />
                             </NavLink>
                         </MenuItem>
                     </MenuList>
                     <Divider />
+					{ (this.props.roles&&this.props.roles.indexOf("Admin")!=-1)&&(
                     <MenuList subheader={<ListSubheader disableSticky={true}>Admin</ListSubheader>}>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/users'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset primary="Felhaszn√°l√≥k" />
+                                <ListItemText classes={{ text: classes!.text }} inset primary="Felhaszn·lÛk" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
@@ -80,25 +93,26 @@ class NavMenu extends React.Component<StyledComponentProps<'menuItem' | 'text' |
                                 <ListItemText classes={{ text: classes!.text }} inset primary="Szemeszterek" />
                             </NavLink>
                         </MenuItem>
-                    </MenuList>
+                    </MenuList> )
+					}
                     <Divider />
-                    <MenuList subheader={<ListSubheader disableSticky={true}>Aktu√°lis f√©l√©v</ListSubheader>}>
+                    <MenuList subheader={<ListSubheader disableSticky={true}>Aktu·lis fÈlÈv</ListSubheader>}>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/currentcampus'} activeClassName='active'>
                                 <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Szemeszter jelentkez√©s" />
+                                    primary="Szemeszter jelentkezÈs" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/currentparticipants'} activeClassName='active'>
                                 <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="R√©sztvev≈ëk" />
+                                    primary="RÈsztvevık" />
                             </NavLink>
                         </MenuItem>
                     <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/subscribe/add'} activeClassName='active'>
                                 <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Projekt jelentkez√©s" />
+                                    primary="Projekt jelentkezÈs" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
@@ -110,13 +124,13 @@ class NavMenu extends React.Component<StyledComponentProps<'menuItem' | 'text' |
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/subscribe/list'} activeClassName='active'>
                                 <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Projekt jelentkez√©sek" />
+                                    primary="Projekt jelentkezÈsek" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/projectmeetings/list'} activeClassName='active'>
                                 <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Megbesz√©l√©sek" />
+                                    primary="MegbeszÈlÈsek" />
                             </NavLink>
                         </MenuItem>
                     </MenuList>
@@ -130,7 +144,7 @@ class NavMenu extends React.Component<StyledComponentProps<'menuItem' | 'text' |
                         </MenuItem>
                     </NavLink>
                     <NavLink exact to={'/login'} activeClassName='active'>
-                        <MenuItem primaryText="Bejelentkez√©s">
+                        <MenuItem primaryText="BejelentkezÈs">
                         </MenuItem>
                     </NavLink>
                 </Menu>
@@ -138,7 +152,7 @@ class NavMenu extends React.Component<StyledComponentProps<'menuItem' | 'text' |
                 <Subheader inset={true}>Admin</Subheader>
                 <Menu  width={this.props.width} autoWidth={false}>
                     <NavLink to={'/users'} activeClassName='active'>
-                        <MenuItem primaryText="Felhaszn√°l√≥k">
+                        <MenuItem primaryText="Felhaszn·lÛk">
                         </MenuItem>
                     </NavLink>
                     <NavLink to={'/campus'} activeClassName='active'>
@@ -147,25 +161,25 @@ class NavMenu extends React.Component<StyledComponentProps<'menuItem' | 'text' |
                     </NavLink>
                 </Menu>
                 <Divider />
-                <Subheader inset={true}>Aktu√°lis f√©l√©v</Subheader>
+                <Subheader inset={true}>Aktu·lis fÈlÈv</Subheader>
                 <Menu  width={this.props.width} autoWidth={false}>
                     <NavLink to={'/currentcampus'} activeClassName='active'>
-                        <MenuItem primaryText="Szemeszter jelentkez√©s" />
+                        <MenuItem primaryText="Szemeszter jelentkezÈs" />
                     </NavLink>
                     <NavLink to={'/currentparticipants'} activeClassName='active'>
-                        <MenuItem primaryText="R√©sztvev≈ëk" />
+                        <MenuItem primaryText="RÈsztvevık" />
                     </NavLink>
                     <NavLink to={'/projects'} activeClassName='active'>
                         <MenuItem primaryText="Projektek" />
                     </NavLink>
                     <NavLink to={'/subscribe/add'} activeClassName='active'>
-                        <MenuItem primaryText="Projekt jelentkez√©s" />
+                        <MenuItem primaryText="Projekt jelentkezÈs" />
                     </NavLink>
                     <NavLink to={'/subscribe/list'} activeClassName='active'>
-                        <MenuItem primaryText="Projekt jelentkez√©sek" />
+                        <MenuItem primaryText="Projekt jelentkezÈsek" />
                     </NavLink>
                     <NavLink to={'/projectmeetings/list'} activeClassName='active'>
-                        <MenuItem primaryText="Megbesz√©l√©sek" />
+                        <MenuItem primaryText="MegbeszÈlÈsek" />
                     </NavLink>
                 </Menu>
                 </Drawer>
@@ -175,4 +189,10 @@ class NavMenu extends React.Component<StyledComponentProps<'menuItem' | 'text' |
     }
 }
 
-export default withStyles(styles)(NavMenu) as typeof NavMenu;
+//export default withStyles(styles)(NavMenu) as typeof NavMenu;
+
+
+export default connect(
+  (state: ApplicationState) => (state.session), // Selects which state properties are merged into the component's props
+  { ...SessionStore.actionCreators }                // Selects which action creators are merged into the component's props
+)(withStyles(styles)(NavMenu)) as React.ComponentClass<{open:boolean}>;

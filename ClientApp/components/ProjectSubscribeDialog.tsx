@@ -81,7 +81,7 @@ export class ProjectSubscribeDialog extends React.Component<ProjectProps, any> {
                     {(subscribedMentor && subscribedMentor.mentor) &&
                         <TextField
                             label="Név"
-                            value={subscribedMentor.mentor.name}
+                            value={subscribedMentor.mentor.user.name}
                             disabled={true}
                         />
 
@@ -89,7 +89,7 @@ export class ProjectSubscribeDialog extends React.Component<ProjectProps, any> {
                     {(subscribedStudent && subscribedStudent.student) &&
                         <TextField
                             label="Név:"
-                            value={subscribedStudent.student.name}
+                            value={subscribedStudent.student.user.name}
                             disabled={true}
                         />
 

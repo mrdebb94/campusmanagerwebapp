@@ -1,0 +1,17 @@
+2018-03-07 09:51:25.252 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-07 10:28:41.136 +01:00 [Information] Path /campus
+2018-03-07 10:29:56.541 +01:00 [Information] Path /api/campus/list
+2018-03-07 10:41:41.694 +01:00 [Information] Path /campus
+2018-03-07 10:42:20.536 +01:00 [Information] Path /api/campus/list
+2018-03-07 10:51:29.695 +01:00 [Information] Path /api/campus/list
+2018-03-07 10:57:20.532 +01:00 [Information] Path /campus
+2018-03-07 10:57:38.279 +01:00 [Information] Path /api/campus/list
+2018-03-07 11:13:30.047 +01:00 [Information] Path /api/campus/list
+2018-03-07 11:13:55.954 +01:00 [Information] Path /campus
+2018-03-07 11:14:09.330 +01:00 [Information] Path /api/campus/list
+2018-03-07 17:30:01.999 +01:00 [Information] Path /campus
+2018-03-07 17:30:24.223 +01:00 [Information] Path /api/campus/list
+2018-03-07 22:21:46.822 +01:00 [Information] Path /campus
+2018-03-07 22:22:16.919 +01:00 [Information] Path /api/campus/list
+2018-03-07 22:40:55.048 +01:00 [Information] Path /campus
+2018-03-07 22:41:29.465 +01:00 [Information] Path /api/campus/list

@@ -124,12 +124,43 @@ export class ProjectDialog extends React.Component<ProjectProps, ProjectDialogSt
         });*/
     }
 
+    continueProject=(event) => {
+           
+        if(this.props.projectDialog.projectList.length>0) {                        
+			const checked=event.target.checked;
+			if (checked) {
+			   
+				this.setState((prevState, props) => ({
+					projectContinueChecked: checked,
+					editedProject: {
+						...prevState.editedProject,
+						projectId: props.projectDialog.projectList![0].projectId
+					}
+				}));
+
+			} else {
+		 
+				this.setState((prevState, props) => ({
+					projectContinueChecked: checked,
+					editedProject: {
+						...prevState.editedProject,
+						projectId: null
+					}
+				}));
+			}
+		}
+    }
+
     render() {
 
         return <Dialog
-            title="Új projekt létrehozása"
             open={this.props.projectDialog.open}
-        >
+            maxWidth="sm"
+            fullWidth
+        >   
+            <DialogTitle>
+             Új projekt létrehozása
+            </DialogTitle>
             <DialogContent>
                 <div>
 
@@ -139,36 +170,7 @@ export class ProjectDialog extends React.Component<ProjectProps, ProjectDialogSt
                                 control={
                                     <Checkbox
                                         style={styles.checkbox}
-                                        onChange={(event) => {
-                                            if (event.target.checked) {
-                                                /*this.props.modifyEditedProject({
-                                                    ...this.props.editedProject,
-                                                    projectId: this.state.selectedProject!.projectId
-                                                });*/
-                                                this.setState((prevState, props) => ({
-                                                    projectContinueChecked: event.target.checked,
-                                                    editedProject: {
-                                                        ...prevState.editedProject,
-                                                        projectId: props.projectDialog.projectList![0].projectId
-                                                    }
-                                                }));
-
-                                            } else {
-                                                /*this.props.modifyEditedProject({
-                                                    ...this.props.editedProject,
-                                                    projectId: null
-                                                });*/
-                                                this.setState((prevState, props) => ({
-                                                    projectContinueChecked: event.target.checked,
-                                                    editedProject: {
-                                                        ...prevState.editedProject,
-                                                        projectId: null
-                                                    }
-                                                }));
-                                            }
-
-
-                                        }}
+                                        onChange={this.continueProject}
                                         checked={this.state.projectContinueChecked}
                                     />
                                 }

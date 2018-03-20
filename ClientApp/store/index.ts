@@ -6,6 +6,8 @@ import * as CampusParticipation from './CampusParticipation';
 import * as Session from './Session';
 import * as Project from './Project';
 import * as ProjectDetails from './ProjectDetails';
+import * as SnackbarNotification from './SnackbarNotification';
+import { responsiveStateReducer } from 'redux-responsive';
 
 import { fetch, addTask } from 'domain-task';
 
@@ -20,6 +22,8 @@ export interface ApplicationState {
     campusParticipation: CampusParticipation.CampusParticipationState;
     project: Project.ProjectState;
     projectDetails: ProjectDetails.ProjectDetailsState;
+    snackbarNotification:  SnackbarNotification.SnackbarNotificationState;
+	browser:any;
 }
 
 // Whenever an action is dispatched, Redux will update each top-level application state property using
@@ -33,7 +37,10 @@ export const reducers = {
     session: Session.reducer,
     campusParticipation: CampusParticipation.reducer,
     project: Project.reducer,
-    projectDetails: ProjectDetails.reducer
+    projectDetails: ProjectDetails.reducer,
+    snackbarNotification: SnackbarNotification.reducer,
+	browser: responsiveStateReducer
+	
 }
 
 // This type can be used as a hint on action creators so that its 'dispatch' and 'getState' params are

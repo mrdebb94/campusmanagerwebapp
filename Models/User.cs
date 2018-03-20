@@ -11,6 +11,7 @@ namespace EvoManager.Models
 		public string Password { get; set; }
 		public string Email { get; set; }*/
 		
+        public string Name { get; set; }
 	
 		public string StudentId { get; set; }
 	    public virtual Student Student { get; set; }

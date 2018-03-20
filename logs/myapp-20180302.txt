@@ -1,0 +1,93 @@
+2018-03-02 00:10:12.936 +01:00 [Information] Path /users
+2018-03-02 00:10:28.057 +01:00 [Information] Path /api/user/list
+2018-03-02 00:10:28.081 +01:00 [Information] Supporting role True
+2018-03-02 00:10:46.883 +01:00 [Information] Path /api/user/add
+2018-03-02 00:10:47.059 +01:00 [Information] Hozzaadas: False
+2018-03-02 00:10:47.076 +01:00 [Information] PasswordTooShort Passwords must be at least 4 characters.
+2018-03-02 00:10:47.109 +01:00 [Information] PasswordRequiresUniqueChars Passwords must use at least 1 different characters.
+2018-03-02 00:18:30.987 +01:00 [Information] Path /users
+2018-03-02 00:18:47.250 +01:00 [Information] Path /api/user/list
+2018-03-02 00:18:47.802 +01:00 [Information] Supporting role True
+2018-03-02 00:18:54.704 +01:00 [Information] Path /api/user/add
+2018-03-02 00:18:54.967 +01:00 [Information] Hozzaadas: False
+2018-03-02 00:18:54.987 +01:00 [Information] PasswordTooShort Passwords must be at least 4 characters.
+2018-03-02 00:18:55.005 +01:00 [Information] PasswordRequiresUniqueChars Passwords must use at least 1 different characters.
+2018-03-02 00:19:03.932 +01:00 [Information] Path /api/user/add
+2018-03-02 00:19:04.297 +01:00 [Information] Hozzaadas: False
+2018-03-02 00:19:05.271 +01:00 [Information] InvalidUserName User name '' is invalid, can only contain letters or digits.
+2018-03-02 00:19:05.339 +01:00 [Information] InvalidEmail Email '' is invalid.
+2018-03-02 00:19:22.369 +01:00 [Information] Path /api/user/add
+2018-03-02 00:19:22.789 +01:00 [Information] Hozzaadas: False
+2018-03-02 00:19:22.987 +01:00 [Information] InvalidUserName User name '' is invalid, can only contain letters or digits.
+2018-03-02 00:19:23.259 +01:00 [Information] InvalidEmail Email '' is invalid.
+2018-03-02 00:19:51.170 +01:00 [Information] Path /api/user/add
+2018-03-02 00:19:51.187 +01:00 [Information] Hozzaadas: False
+2018-03-02 00:20:02.372 +01:00 [Information] Path /api/user/list
+2018-03-02 00:20:02.382 +01:00 [Information] Supporting role True
+2018-03-02 00:28:24.890 +01:00 [Information] Path /api/project/current/active/list
+2018-03-02 00:28:26.588 +01:00 [Information] Path /api/project/current/list
+2018-03-02 00:28:27.342 +01:00 [Information] Path /Account/Login
+2018-03-02 00:28:27.359 +01:00 [Information] Path /Account/Login
+2018-03-02 00:28:48.453 +01:00 [Information] Path /api/user/login
+2018-03-02 00:28:50.666 +01:00 [Information] Belepes: False
+2018-03-02 00:28:51.032 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-02 00:29:25.126 +01:00 [Information] Path /api/project/current/list
+2018-03-02 00:29:30.125 +01:00 [Information] Path /api/campus/list
+2018-03-02 00:29:31.157 +01:00 [Information] Path /api/project/continuable/list
+2018-03-02 00:34:37.406 +01:00 [Information] Path /api/project/current/list
+2018-03-02 00:35:52.266 +01:00 [Information] Path /projects
+2018-03-02 00:36:09.118 +01:00 [Information] Path /api/project/current/list
+2018-03-02 00:36:12.833 +01:00 [Information] Path /api/campus/list
+2018-03-02 00:36:13.278 +01:00 [Information] Path /api/project/continuable/list
+2018-03-02 00:36:31.149 +01:00 [Information] Path /api/campus/list
+2018-03-02 00:36:31.354 +01:00 [Information] Path /api/project/continuable/list
+2018-03-02 00:42:17.602 +01:00 [Information] Path /api/project/current/list
+2018-03-02 00:42:38.154 +01:00 [Information] Path /projects
+2018-03-02 00:43:11.261 +01:00 [Information] Path /api/project/current/list
+2018-03-02 00:46:33.252 +01:00 [Information] Path /api/campus/list
+2018-03-02 00:46:33.400 +01:00 [Information] Path /api/project/continuable/list
+2018-03-02 00:47:29.984 +01:00 [Information] Path /api/campus/list
+2018-03-02 00:47:30.107 +01:00 [Information] Path /api/project/continuable/list
+2018-03-02 00:50:02.074 +01:00 [Information] Path /api/campus/list
+2018-03-02 00:50:02.308 +01:00 [Information] Path /api/project/continuable/list
+2018-03-02 00:50:04.189 +01:00 [Information] Path /api/campus/list
+2018-03-02 00:50:04.348 +01:00 [Information] Path /api/project/continuable/list
+2018-03-02 00:50:06.106 +01:00 [Information] Path /projects
+2018-03-02 00:50:19.680 +01:00 [Information] Path /api/project/current/list
+2018-03-02 00:50:23.914 +01:00 [Information] Path /api/campus/list
+2018-03-02 00:50:24.066 +01:00 [Information] Path /api/project/continuable/list
+2018-03-02 00:51:36.897 +01:00 [Information] Path /api/campus/list
+2018-03-02 00:51:37.217 +01:00 [Information] Path /api/project/continuable/list
+2018-03-02 00:58:56.370 +01:00 [Information] Path /api/project/subscriber/list
+2018-03-02 00:59:05.780 +01:00 [Information] Path /api/user/list
+2018-03-02 00:59:06.127 +01:00 [Information] Supporting role True
+2018-03-02 11:27:21.052 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-02 11:29:22.698 +01:00 [Information] Path /users
+2018-03-02 11:47:10.126 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-02 11:49:25.681 +01:00 [Information] Path /users
+2018-03-02 11:51:38.822 +01:00 [Information] Path /api/user/list
+2018-03-02 11:51:39.510 +01:00 [Information] Supporting role True
+2018-03-02 11:57:54.959 +01:00 [Information] Path /campus
+2018-03-02 12:03:15.828 +01:00 [Information] Path /campus
+2018-03-02 12:03:40.715 +01:00 [Information] Path /api/campus/list
+2018-03-02 16:51:01.129 +01:00 [Information] Path /campus
+2018-03-02 16:51:14.809 +01:00 [Information] Path /api/campus/list
+2018-03-02 18:29:57.790 +01:00 [Information] Path /api/campus/list
+2018-03-02 18:51:25.499 +01:00 [Information] Path /campus
+2018-03-02 18:52:05.860 +01:00 [Information] Path /api/campus/list
+2018-03-02 19:26:43.783 +01:00 [Information] Path /api/campus/list
+2018-03-02 19:41:41.846 +01:00 [Information] Path /campus
+2018-03-02 19:42:01.306 +01:00 [Information] Path /api/campus/list
+2018-03-02 20:58:29.499 +01:00 [Information] Path /campus
+2018-03-02 20:58:52.505 +01:00 [Information] Path /api/campus/list
+2018-03-02 21:00:27.990 +01:00 [Information] Path /api/campus/add
+2018-03-02 21:00:46.800 +01:00 [Information] Path /api/campus/list
+2018-03-02 21:08:20.253 +01:00 [Information] Path /api/campus/add
+2018-03-02 21:08:29.532 +01:00 [Information] Inaktív 0
+2018-03-02 21:08:29.669 +01:00 [Information] Inaktív Start 2018.02.01. 0:00:00
+2018-03-02 21:08:29.674 +01:00 [Information] Inaktív End 2018.02.28. 0:00:00
+2018-03-02 21:08:30.234 +01:00 [Information] Aktív, de még nem indult el 1
+2018-03-02 21:08:32.311 +01:00 [Information] Path /api/campus/list
+2018-03-02 21:14:03.621 +01:00 [Information] Path /api/campus/list
+2018-03-02 21:50:28.075 +01:00 [Information] Path /campus
+2018-03-02 21:50:42.351 +01:00 [Information] Path /api/campus/list

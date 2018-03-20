@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace evomanager_next.Migrations
 {
-    public partial class ReportModel : Migration
+    public partial class UserStudentMentor : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -165,6 +165,7 @@ namespace evomanager_next.Migrations
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     MentorId = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
                     NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
                     PasswordHash = table.Column<string>(nullable: true),
@@ -284,8 +285,6 @@ namespace evomanager_next.Migrations
                 {
                     MentorId = table.Column<string>(nullable: false),
                     IsDeleted = table.Column<bool>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
-                    Phone = table.Column<string>(nullable: true),
                     UserId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -347,8 +346,6 @@ namespace evomanager_next.Migrations
                     StudentId = table.Column<string>(nullable: false),
                     HasScholarship = table.Column<bool>(nullable: false),
                     IsDeleted = table.Column<bool>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
-                    Phone = table.Column<string>(nullable: true),
                     UserId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

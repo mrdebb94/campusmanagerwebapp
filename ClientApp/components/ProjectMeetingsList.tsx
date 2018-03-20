@@ -55,7 +55,7 @@ class ProjectMeetingsList extends React.Component<ProjectDetailsProps,any> {
              <TableBody>
 			   {
 				   this.props.projectMeetingList.map((projectMeeting, i) => (
-				       <TableRow>
+				       <TableRow key={projectMeeting.projectMeetingId!}>
 					      <TableCell>{projectMeeting.startTime!.format("YYYY-MM-DD HH:mm")}</TableCell>
 						  <TableCell>{projectMeeting.endTime!.format("YYYY-MM-DD HH:mm")}</TableCell>
 						  <TableCell> {/*

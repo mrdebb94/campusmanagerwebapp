@@ -60,7 +60,7 @@ class ProjectSubscribe extends React.Component<ProjectProps,any> {
                     <Chip key={mentor.mentorId}
                       style={styles.chip}
                       avatar={<Avatar>M</Avatar>}
-                      label= {mentor.name}
+                      label= {mentor.user.name}
                     />
                     )):<span>Nem ismert</span>
                     }
@@ -70,7 +70,7 @@ class ProjectSubscribe extends React.Component<ProjectProps,any> {
                     <Chip key={student.studentId}
                       style={styles.chip}
                       avatar={<Avatar>T</Avatar>}
-                      label= {student.name}
+                      label= {student.user.name}
                     />
                     )):<span>Nem ismert</span>
                     }

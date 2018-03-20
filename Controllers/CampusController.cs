@@ -103,8 +103,8 @@ namespace EvoManager.Controllers
 		 .Select(s=>new CampusParticipation
 		 { 
             CampusParticipationId = s.CampusParticipationId,
-            Student = s.Student!=null?new Student { StudentId = s.Student.StudentId, Name = s.Student.Name}:null,
-			Mentor = s.Mentor!=null?new Mentor { MentorId = s.Mentor.MentorId, Name = s.Mentor.Name}:null
+            Student = s.Student!=null?new Student { StudentId = s.Student.StudentId, User = new User { Name = s.Student.User.Name} }:null,
+			Mentor = s.Mentor!=null?new Mentor { MentorId = s.Mentor.MentorId, User = new User { Name = s.Mentor.User.Name } }:null
 		 }).ToList();
 	  }	
 	   [AllowAnonymous]
@@ -321,7 +321,7 @@ namespace EvoManager.Controllers
 			  Student student = new Student();
 			  student.StudentId = guid;
 			  student.UserId = user.Id;
-			  student.Name = user.UserName;
+			  //student.Name = user.UserName;
 			  _context.Students.Add(student);
 			  _context.SaveChanges();
 
@@ -392,7 +392,7 @@ namespace EvoManager.Controllers
 				 Mentor mentor = new Mentor();
 			     mentor.MentorId = guid;
 			     mentor.UserId = editedCampusParticipation.Student.UserId;
-			     mentor.Name = editedCampusParticipation.Student.Name;
+			     //mentor.Name = editedCampusParticipation.Student.Name;
 			     _context.Mentors.Add(mentor);
 			     _context.SaveChanges();
 
@@ -416,7 +416,7 @@ namespace EvoManager.Controllers
 				 Student student = new Student();
 			     student.StudentId = guid;
 			     student.UserId = editedCampusParticipation.Mentor.UserId;
-			     student.Name = editedCampusParticipation.Mentor.Name;
+			     //student.Name = editedCampusParticipation.Mentor.Name;
 			     _context.Students.Add(student);
 			     _context.SaveChanges();
 

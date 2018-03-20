@@ -1,0 +1,375 @@
+2018-03-08 00:13:33.219 +01:00 [Information] Path /campus
+2018-03-08 00:14:43.605 +01:00 [Information] Path /api/campus/list
+2018-03-08 00:17:10.972 +01:00 [Information] Path /api/user/logout
+2018-03-08 00:17:17.065 +01:00 [Information] Kilepes: True
+2018-03-08 00:17:17.565 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 00:17:25.088 +01:00 [Information] Path /api/user/login
+2018-03-08 00:17:37.148 +01:00 [Information] Path /api/user/login
+2018-03-08 00:17:37.925 +01:00 [Information] Belepes: False
+2018-03-08 00:17:37.957 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 00:17:43.392 +01:00 [Information] Path /api/campus/current/participations
+2018-03-08 00:17:57.546 +01:00 [Information] Path /api/campus/list
+2018-03-08 00:20:54.039 +01:00 [Information] Path /api/campus/list
+2018-03-08 00:27:26.259 +01:00 [Information] Path /campus
+2018-03-08 00:27:42.804 +01:00 [Information] Path /api/campus/list
+2018-03-08 00:28:17.839 +01:00 [Information] Path /api/campus/edit
+2018-03-08 00:28:30.357 +01:00 [Information] Path /api/campus/list
+2018-03-08 00:28:40.726 +01:00 [Information] Path /api/user/list
+2018-03-08 00:28:41.045 +01:00 [Information] Supporting role True
+2018-03-08 00:29:40.222 +01:00 [Information] Path /api/user/add
+2018-03-08 00:29:40.430 +01:00 [Information] Hozzaadas: True
+2018-03-08 00:29:44.721 +01:00 [Information] Path /api/user/list
+2018-03-08 00:29:44.735 +01:00 [Information] Supporting role True
+2018-03-08 00:29:51.991 +01:00 [Information] Path /api/user/logout
+2018-03-08 00:29:52.200 +01:00 [Information] Kilepes: True
+2018-03-08 00:29:52.416 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 00:30:01.412 +01:00 [Information] Path /api/user/login
+2018-03-08 00:30:01.821 +01:00 [Information] Belepes: False
+2018-03-08 00:30:01.879 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 00:30:05.618 +01:00 [Information] Path /api/campus/current
+2018-03-08 00:30:16.762 +01:00 [Information] Path /api/campus/apply
+2018-03-08 00:31:04.002 +01:00 [Information] Path /api/user/logout
+2018-03-08 00:31:04.094 +01:00 [Information] Kilepes: True
+2018-03-08 00:31:04.223 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 00:31:10.138 +01:00 [Information] Path /api/user/login
+2018-03-08 00:31:12.166 +01:00 [Information] Belepes: False
+2018-03-08 00:31:12.451 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 00:31:16.792 +01:00 [Information] Path /api/campus/current/participations
+2018-03-08 00:31:42.972 +01:00 [Information] Path /api/project/current/list
+2018-03-08 00:32:00.133 +01:00 [Information] Path /api/user/logout
+2018-03-08 00:32:00.245 +01:00 [Information] Kilepes: True
+2018-03-08 00:32:00.316 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 01:06:01.594 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-08 01:28:37.101 +01:00 [Information] Path /login
+2018-03-08 01:31:14.177 +01:00 [Information] Path /api/user/list
+2018-03-08 01:31:15.946 +01:00 [Information] Supporting role True
+2018-03-08 01:33:58.122 +01:00 [Information] Path /api/user/list
+2018-03-08 01:33:58.131 +01:00 [Information] Supporting role True
+2018-03-08 01:40:23.748 +01:00 [Information] Path /users
+2018-03-08 02:05:17.674 +01:00 [Information] Path /users
+2018-03-08 02:05:40.463 +01:00 [Information] Path /api/user/list
+2018-03-08 02:05:41.696 +01:00 [Information] Supporting role True
+2018-03-08 02:08:36.322 +01:00 [Information] Path /api/user/list
+2018-03-08 02:08:36.326 +01:00 [Information] Supporting role True
+2018-03-08 02:14:28.002 +01:00 [Information] Path /users
+2018-03-08 02:14:43.049 +01:00 [Information] Path /api/user/list
+2018-03-08 02:14:44.275 +01:00 [Information] Supporting role True
+2018-03-08 02:18:35.441 +01:00 [Information] Path /api/campus/list
+2018-03-08 02:19:09.225 +01:00 [Information] Path /api/campus/current
+2018-03-08 02:32:30.076 +01:00 [Information] Path /api/campus/current
+2018-03-08 02:32:33.170 +01:00 [Information] Path /api/campus/current
+2018-03-08 02:32:37.487 +01:00 [Information] Path /currentcampus
+2018-03-08 02:32:56.165 +01:00 [Information] Path /api/campus/current
+2018-03-08 02:33:31.726 +01:00 [Information] Path /api/user/list
+2018-03-08 02:33:31.890 +01:00 [Information] Supporting role True
+2018-03-08 02:37:44.290 +01:00 [Information] Path /users
+2018-03-08 02:38:40.420 +01:00 [Information] Path /api/user/list
+2018-03-08 02:38:41.136 +01:00 [Information] Supporting role True
+2018-03-08 02:39:51.237 +01:00 [Information] Path /currentcampus
+2018-03-08 02:41:15.638 +01:00 [Information] Path /api/campus/current
+2018-03-08 02:41:21.443 +01:00 [Information] Path /api/user/list
+2018-03-08 02:41:21.622 +01:00 [Information] Supporting role True
+2018-03-08 02:41:25.668 +01:00 [Information] Path /api/campus/list
+2018-03-08 02:41:28.998 +01:00 [Information] Path /api/user/list
+2018-03-08 02:41:29.016 +01:00 [Information] Supporting role True
+2018-03-08 08:25:21.696 +01:00 [Information] Path /api/user/list
+2018-03-08 08:25:21.700 +01:00 [Information] Supporting role True
+2018-03-08 08:25:31.639 +01:00 [Information] Path /users
+2018-03-08 08:25:44.136 +01:00 [Information] Path /api/user/list
+2018-03-08 08:25:45.037 +01:00 [Information] Supporting role True
+2018-03-08 08:33:22.822 +01:00 [Information] Path /login
+2018-03-08 08:34:14.004 +01:00 [Information] Path /subscribe/add
+2018-03-08 08:34:19.516 +01:00 [Information] Path /login
+2018-03-08 08:36:13.765 +01:00 [Information] Path /campus
+2018-03-08 08:40:14.134 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-08 08:41:24.789 +01:00 [Information] Path /login
+2018-03-08 08:44:09.184 +01:00 [Information] Path /login
+2018-03-08 08:45:25.875 +01:00 [Information] Path /api/user/list
+2018-03-08 08:45:26.179 +01:00 [Information] Supporting role True
+2018-03-08 08:45:31.009 +01:00 [Information] Path /api/campus/list
+2018-03-08 08:50:40.151 +01:00 [Information] Path /campus
+2018-03-08 09:27:06.536 +01:00 [Information] Path /campus
+2018-03-08 09:27:25.873 +01:00 [Information] Path /api/campus/list
+2018-03-08 09:28:00.331 +01:00 [Information] Path /api/user/list
+2018-03-08 09:28:00.528 +01:00 [Information] Supporting role True
+2018-03-08 09:29:38.192 +01:00 [Information] Path /users
+2018-03-08 09:30:57.280 +01:00 [Information] Path /api/user/list
+2018-03-08 09:30:58.070 +01:00 [Information] Supporting role True
+2018-03-08 09:31:34.485 +01:00 [Information] Path /api/campus/list
+2018-03-08 09:32:51.709 +01:00 [Information] Path /campus
+2018-03-08 09:34:36.214 +01:00 [Information] Path /campus
+2018-03-08 09:37:28.258 +01:00 [Information] Path /campus
+2018-03-08 09:37:42.719 +01:00 [Information] Path /api/campus/list
+2018-03-08 09:37:54.709 +01:00 [Information] Path /api/user/list
+2018-03-08 09:37:54.949 +01:00 [Information] Supporting role True
+2018-03-08 09:37:58.366 +01:00 [Information] Path /api/campus/list
+2018-03-08 09:38:09.760 +01:00 [Information] Path /api/user/list
+2018-03-08 09:38:09.780 +01:00 [Information] Supporting role True
+2018-03-08 09:41:22.621 +01:00 [Information] Path /api/user/list
+2018-03-08 09:41:22.635 +01:00 [Information] Supporting role True
+2018-03-08 09:44:52.417 +01:00 [Information] Path /api/campus/current
+2018-03-08 09:46:37.303 +01:00 [Information] Path /api/user/login
+2018-03-08 09:46:41.895 +01:00 [Information] Belepes: False
+2018-03-08 09:46:42.242 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 09:46:53.384 +01:00 [Information] Path /api/project/current/list
+2018-03-08 09:47:02.155 +01:00 [Information] Path /api/campus/list
+2018-03-08 09:47:02.818 +01:00 [Information] Path /api/project/continuable/list
+2018-03-08 09:47:52.503 +01:00 [Information] Path /api/project/add
+2018-03-08 09:47:56.289 +01:00 [Information] Path /api/project/current/list
+2018-03-08 09:56:27.527 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-08 09:57:40.550 +01:00 [Information] Path /projects
+2018-03-08 10:03:33.833 +01:00 [Information] Path /projects
+2018-03-08 10:03:51.621 +01:00 [Information] Path /api/project/current/list
+2018-03-08 10:04:15.431 +01:00 [Information] Path /api/campus/list
+2018-03-08 10:04:16.745 +01:00 [Information] Path /api/project/continuable/list
+2018-03-08 10:04:51.197 +01:00 [Information] Path /api/project/add
+2018-03-08 10:04:55.408 +01:00 [Information] Path /api/project/current/list
+2018-03-08 10:05:04.197 +01:00 [Information] Path /api/user/list
+2018-03-08 10:05:04.447 +01:00 [Information] Supporting role True
+2018-03-08 10:05:11.780 +01:00 [Information] Path /api/user/logout
+2018-03-08 10:05:12.174 +01:00 [Information] Kilepes: True
+2018-03-08 10:05:12.241 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 10:05:29.244 +01:00 [Information] Path /api/user/login
+2018-03-08 10:05:30.089 +01:00 [Information] Belepes: False
+2018-03-08 10:05:30.133 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 10:05:35.116 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 10:05:35.432 +01:00 [Information] Path /Account/AccessDenied
+2018-03-08 10:05:41.452 +01:00 [Information] Path /api/campus/current
+2018-03-08 10:05:51.769 +01:00 [Information] Path /api/campus/current/participations
+2018-03-08 10:05:57.631 +01:00 [Information] Path /api/user/list
+2018-03-08 10:05:58.432 +01:00 [Information] Supporting role True
+2018-03-08 10:06:01.702 +01:00 [Information] Path /api/campus/current
+2018-03-08 10:06:06.609 +01:00 [Information] Path /api/campus/apply
+2018-03-08 10:06:20.113 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 10:06:25.731 +01:00 [Information] Path /api/project/subscribe
+2018-03-08 10:06:26.524 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 10:06:48.559 +01:00 [Information] Path /api/user/list
+2018-03-08 10:06:48.867 +01:00 [Information] Supporting role True
+2018-03-08 10:08:30.409 +01:00 [Information] Path /api/user/add
+2018-03-08 10:08:30.796 +01:00 [Information] Hozzaadas: True
+2018-03-08 10:08:33.393 +01:00 [Information] Path /api/user/list
+2018-03-08 10:08:33.418 +01:00 [Information] Supporting role True
+2018-03-08 10:08:38.640 +01:00 [Information] Path /api/user/logout
+2018-03-08 10:08:38.846 +01:00 [Information] Kilepes: True
+2018-03-08 10:08:38.878 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 10:08:46.547 +01:00 [Information] Path /api/user/login
+2018-03-08 10:08:47.033 +01:00 [Information] Belepes: False
+2018-03-08 10:08:47.110 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 10:08:51.468 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 10:08:51.833 +01:00 [Information] Path /Account/AccessDenied
+2018-03-08 10:08:59.159 +01:00 [Information] Path /api/campus/current
+2018-03-08 10:09:00.509 +01:00 [Information] Path /api/campus/apply
+2018-03-08 10:09:34.190 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 10:09:50.446 +01:00 [Information] Path /api/user/logout
+2018-03-08 10:09:50.479 +01:00 [Information] Kilepes: True
+2018-03-08 10:09:50.532 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 10:09:59.538 +01:00 [Information] Path /api/user/login
+2018-03-08 10:10:00.047 +01:00 [Information] Belepes: False
+2018-03-08 10:10:00.103 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 10:11:46.454 +01:00 [Information] Path /api/campus/current/participations
+2018-03-08 10:14:31.040 +01:00 [Information] Path /currentparticipants
+2018-03-08 10:15:11.405 +01:00 [Information] Path /api/campus/current/participations
+2018-03-08 10:15:28.947 +01:00 [Information] Path /api/campus/changeCampusParticipation
+2018-03-08 10:15:29.631 +01:00 [Information] Tanulo
+2018-03-08 10:15:29.635 +01:00 [Information] Tanulobol Mentor
+2018-03-08 10:19:17.515 +01:00 [Information] Path /currentparticipants
+2018-03-08 10:20:15.648 +01:00 [Information] Path /api/campus/current/participations
+2018-03-08 10:24:40.624 +01:00 [Information] Path /api/user/list
+2018-03-08 10:24:41.039 +01:00 [Information] Supporting role True
+2018-03-08 10:24:53.268 +01:00 [Information] Path /api/user/logout
+2018-03-08 10:24:53.653 +01:00 [Information] Kilepes: True
+2018-03-08 10:24:53.781 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 10:25:29.965 +01:00 [Information] Path /api/user/login
+2018-03-08 10:25:30.588 +01:00 [Information] Belepes: False
+2018-03-08 10:25:30.652 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 10:26:06.652 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 10:26:09.729 +01:00 [Information] Path /api/project/subscribe
+2018-03-08 10:26:10.879 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 10:26:28.846 +01:00 [Information] Path /api/user/logout
+2018-03-08 10:26:29.042 +01:00 [Information] Kilepes: True
+2018-03-08 10:26:29.233 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 10:26:35.566 +01:00 [Information] Path /api/user/login
+2018-03-08 10:26:36.093 +01:00 [Information] Belepes: False
+2018-03-08 10:26:36.137 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 10:34:41.467 +01:00 [Information] Path /api/project/subscriber/list
+2018-03-08 10:48:01.431 +01:00 [Information] Path /subscribe/list
+2018-03-08 10:48:24.745 +01:00 [Information] Path /api/project/subscriber/list
+2018-03-08 10:49:39.991 +01:00 [Information] Path /api/projectdetails/projectleaders/add
+2018-03-08 10:49:41.809 +01:00 [Information] Path /api/project/subscriber/list
+2018-03-08 10:49:53.207 +01:00 [Information] Path /api/projectdetails/teammembers/add
+2018-03-08 10:49:54.116 +01:00 [Information] Path /api/project/subscriber/list
+2018-03-08 10:50:01.116 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 10:50:11.684 +01:00 [Information] Path /api/user/logout
+2018-03-08 10:50:11.714 +01:00 [Information] Kilepes: True
+2018-03-08 10:50:11.794 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 10:50:19.164 +01:00 [Information] Path /api/user/login
+2018-03-08 10:50:19.749 +01:00 [Information] Belepes: False
+2018-03-08 10:50:19.789 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 10:50:34.597 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 10:50:45.439 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-03-08 10:51:07.672 +01:00 [Information] Path /api/projectdetails/projectmeetings/add
+2018-03-08 10:51:11.470 +01:00 [Information] Path /api/project/subscriber/list
+2018-03-08 10:51:14.256 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-03-08 10:57:20.777 +01:00 [Information] Path /projectmeetings/list
+2018-03-08 10:57:59.912 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-03-08 10:58:08.064 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/117cc1f4-0d56-46c9-8697-485974153244
+2018-03-08 11:07:58.581 +01:00 [Information] Path /api/user/list
+2018-03-08 11:07:58.944 +01:00 [Information] Supporting role True
+2018-03-08 11:08:11.442 +01:00 [Information] Path /api/report/user
+2018-03-08 11:10:49.674 +01:00 [Information] Path /api/user/list
+2018-03-08 11:10:50.291 +01:00 [Information] Supporting role True
+2018-03-08 11:44:30.045 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-08 11:46:20.267 +01:00 [Information] Path /users
+2018-03-08 11:49:40.135 +01:00 [Information] Path /users
+2018-03-08 11:50:25.694 +01:00 [Information] Path /api/user/list
+2018-03-08 11:50:25.818 +01:00 [Information] Supporting role True
+2018-03-08 11:53:08.078 +01:00 [Information] Path /api/user/list
+2018-03-08 11:53:08.112 +01:00 [Information] Supporting role True
+2018-03-08 11:54:24.909 +01:00 [Information] Path /api/user/logout
+2018-03-08 11:54:25.185 +01:00 [Information] Kilepes: True
+2018-03-08 11:54:25.232 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 11:54:33.216 +01:00 [Information] Path /api/user/login
+2018-03-08 11:54:34.185 +01:00 [Information] Belepes: False
+2018-03-08 11:54:35.169 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 12:07:44.501 +01:00 [Information] Path /api/user/logout
+2018-03-08 12:07:44.536 +01:00 [Information] Kilepes: True
+2018-03-08 12:07:44.677 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 12:07:51.140 +01:00 [Information] Path /login
+2018-03-08 12:08:20.155 +01:00 [Information] Path /api/user/login
+2018-03-08 12:08:20.635 +01:00 [Information] Belepes: False
+2018-03-08 12:08:20.757 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 12:08:23.171 +01:00 [Information] Path /api/user/logout
+2018-03-08 12:08:23.192 +01:00 [Information] Kilepes: True
+2018-03-08 12:08:23.321 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 12:26:25.459 +01:00 [Information] Path /login
+2018-03-08 12:29:26.939 +01:00 [Information] Path /login
+2018-03-08 12:44:14.490 +01:00 [Information] Path /login
+2018-03-08 12:44:36.969 +01:00 [Information] Path /api/user/login
+2018-03-08 12:44:37.678 +01:00 [Information] Belepes: False
+2018-03-08 12:44:37.769 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 12:44:45.074 +01:00 [Information] Path /api/user/list
+2018-03-08 12:44:45.267 +01:00 [Information] Supporting role True
+2018-03-08 12:44:47.130 +01:00 [Information] Path /api/campus/list
+2018-03-08 12:44:54.104 +01:00 [Information] Path /api/user/logout
+2018-03-08 12:44:54.245 +01:00 [Information] Kilepes: True
+2018-03-08 12:44:54.363 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 13:22:30.762 +01:00 [Information] Path /login
+2018-03-08 13:22:47.143 +01:00 [Information] Path /login
+2018-03-08 13:23:20.495 +01:00 [Information] Path /login
+2018-03-08 13:23:50.842 +01:00 [Information] Path /login
+2018-03-08 14:26:30.203 +01:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-03-08 14:27:57.875 +01:00 [Information] Path /login
+2018-03-08 14:30:39.961 +01:00 [Information] Path /login
+2018-03-08 14:31:58.614 +01:00 [Information] Path /api/user/login
+2018-03-08 14:32:43.105 +01:00 [Information] Path /api/user/login
+2018-03-08 14:32:46.173 +01:00 [Information] Belepes: False
+2018-03-08 14:32:47.544 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:32:54.256 +01:00 [Information] Path /api/user/list
+2018-03-08 14:32:54.603 +01:00 [Information] Supporting role True
+2018-03-08 14:33:54.519 +01:00 [Information] Path /api/project/subscriber/list
+2018-03-08 14:33:58.475 +01:00 [Information] Path /api/user/logout
+2018-03-08 14:33:58.894 +01:00 [Information] Kilepes: True
+2018-03-08 14:33:58.957 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:34:01.297 +01:00 [Information] Path /api/user/list
+2018-03-08 14:34:01.412 +01:00 [Information] Supporting role True
+2018-03-08 14:34:13.282 +01:00 [Information] Path /api/user/login
+2018-03-08 14:34:13.946 +01:00 [Information] Belepes: False
+2018-03-08 14:34:14.056 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:34:20.829 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:34:33.918 +01:00 [Information] Path /api/user/list
+2018-03-08 14:34:34.338 +01:00 [Information] Supporting role True
+2018-03-08 14:34:38.750 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:34:42.862 +01:00 [Information] Path /api/project/subscriber/list
+2018-03-08 14:34:45.287 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-03-08 14:34:49.454 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/117cc1f4-0d56-46c9-8697-485974153244
+2018-03-08 14:34:54.543 +01:00 [Information] Path /api/user/list
+2018-03-08 14:34:54.989 +01:00 [Information] Supporting role True
+2018-03-08 14:34:59.149 +01:00 [Information] Path /api/report/user
+2018-03-08 14:37:16.061 +01:00 [Information] Path /api/report/user
+2018-03-08 14:37:48.769 +01:00 [Information] Path /api/report/user
+2018-03-08 14:41:52.495 +01:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-03-08 14:41:54.127 +01:00 [Information] Path /api/projectdetails/projectmeetings/details/117cc1f4-0d56-46c9-8697-485974153244
+2018-03-08 14:42:13.277 +01:00 [Information] Path /api/project/current/list
+2018-03-08 14:42:15.338 +01:00 [Information] Path /api/campus/list
+2018-03-08 14:42:16.035 +01:00 [Information] Path /api/project/continuable/list
+2018-03-08 14:42:26.940 +01:00 [Information] Path /api/campus/list
+2018-03-08 14:42:27.314 +01:00 [Information] Path /api/project/continuable/list
+2018-03-08 14:42:33.064 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:43:00.456 +01:00 [Information] Path /api/campus/list
+2018-03-08 14:43:19.046 +01:00 [Information] Path /api/project/current/list
+2018-03-08 14:43:20.275 +01:00 [Information] Path /api/campus/list
+2018-03-08 14:43:20.549 +01:00 [Information] Path /api/project/continuable/list
+2018-03-08 14:44:07.708 +01:00 [Information] Path /api/campus/list
+2018-03-08 14:44:08.124 +01:00 [Information] Path /api/project/continuable/list
+2018-03-08 14:44:12.222 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:45:04.444 +01:00 [Information] Path /api/user/logout
+2018-03-08 14:45:04.597 +01:00 [Information] Kilepes: True
+2018-03-08 14:45:04.711 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:45:10.474 +01:00 [Information] Path /api/user/login
+2018-03-08 14:45:10.772 +01:00 [Information] Belepes: False
+2018-03-08 14:45:10.892 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:45:13.663 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:45:15.868 +01:00 [Information] Path /api/project/current/list
+2018-03-08 14:45:19.127 +01:00 [Information] Path /api/campus/list
+2018-03-08 14:45:19.430 +01:00 [Information] Path /api/project/continuable/list
+2018-03-08 14:45:42.706 +01:00 [Information] Path /api/campus/list
+2018-03-08 14:45:43.306 +01:00 [Information] Path /api/project/continuable/list
+2018-03-08 14:45:47.152 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:46:49.329 +01:00 [Information] Path /api/user/logout
+2018-03-08 14:46:49.477 +01:00 [Information] Kilepes: True
+2018-03-08 14:46:49.550 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:46:55.441 +01:00 [Information] Path /api/user/login
+2018-03-08 14:46:56.121 +01:00 [Information] Belepes: False
+2018-03-08 14:46:56.192 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:46:58.395 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:47:24.833 +01:00 [Information] Path /api/user/list
+2018-03-08 14:47:25.208 +01:00 [Information] Supporting role True
+2018-03-08 14:47:51.615 +01:00 [Information] Path /api/user/add
+2018-03-08 14:47:51.864 +01:00 [Information] Hozzaadas: True
+2018-03-08 14:47:55.557 +01:00 [Information] Path /api/user/list
+2018-03-08 14:47:55.565 +01:00 [Information] Supporting role True
+2018-03-08 14:48:01.087 +01:00 [Information] Path /api/user/logout
+2018-03-08 14:48:01.268 +01:00 [Information] Kilepes: True
+2018-03-08 14:48:01.396 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:48:08.374 +01:00 [Information] Path /api/user/login
+2018-03-08 14:48:08.763 +01:00 [Information] Belepes: False
+2018-03-08 14:48:08.855 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:48:11.170 +01:00 [Information] Path /api/campus/current
+2018-03-08 14:48:14.150 +01:00 [Information] Path /api/campus/apply
+2018-03-08 14:48:32.691 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:48:36.010 +01:00 [Information] Path /api/project/subscribe
+2018-03-08 14:48:36.851 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:48:48.568 +01:00 [Information] Path /api/project/unsubscribe
+2018-03-08 14:48:49.062 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:48:50.910 +01:00 [Information] Path /api/project/subscribe
+2018-03-08 14:48:51.169 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:49:25.011 +01:00 [Information] Path /api/project/current/list
+2018-03-08 14:49:25.284 +01:00 [Information] Path /Account/AccessDenied
+2018-03-08 14:49:27.058 +01:00 [Information] Path /api/campus/list
+2018-03-08 14:49:27.513 +01:00 [Information] Path /api/project/continuable/list
+2018-03-08 14:49:27.759 +01:00 [Information] Path /Account/AccessDenied
+2018-03-08 14:49:37.806 +01:00 [Information] Path /api/user/logout
+2018-03-08 14:49:37.937 +01:00 [Information] Kilepes: True
+2018-03-08 14:49:38.010 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:49:47.510 +01:00 [Information] Path /api/user/login
+2018-03-08 14:49:47.813 +01:00 [Information] Belepes: False
+2018-03-08 14:49:47.871 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:49:50.006 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:49:54.293 +01:00 [Information] Path /api/project/current/list
+2018-03-08 14:49:58.783 +01:00 [Information] Path /api/campus/list
+2018-03-08 14:49:59.185 +01:00 [Information] Path /api/project/continuable/list
+2018-03-08 14:50:10.596 +01:00 [Information] Path /api/project/add
+2018-03-08 14:50:11.296 +01:00 [Information] Path /api/project/current/list
+2018-03-08 14:50:18.756 +01:00 [Information] Path /api/user/logout
+2018-03-08 14:50:18.768 +01:00 [Information] Kilepes: True
+2018-03-08 14:50:19.025 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:50:27.919 +01:00 [Information] Path /api/user/login
+2018-03-08 14:50:28.234 +01:00 [Information] Belepes: False
+2018-03-08 14:50:28.277 +01:00 [Information] Path /api/xsrftoken/get
+2018-03-08 14:50:31.553 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:51:47.751 +01:00 [Information] Path /api/project/subscriber/list
+2018-03-08 14:51:53.216 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:52:00.304 +01:00 [Information] Path /api/project/subscribes/student/modify
+2018-03-08 14:52:00.702 +01:00 [Information] Path /api/project/subscriber/list
+2018-03-08 14:52:08.222 +01:00 [Information] Path /api/project/current/active/list
+2018-03-08 14:54:22.933 +01:00 [Information] Path /api/campus/list
