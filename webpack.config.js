@@ -18,9 +18,15 @@ module.exports = (env) => {
         },
         module: {
             rules: [
-			    { test: /\.css$/,loader: 'css-loader'},
+                /* {
+                     test: /\.css$/,
+                     use: ExtractTextPlugin.extract({
+                         fallback: "style-loader",
+                         use: "css-loader"
+                     })
+                 },*/
                 //{ test: /\.tsx?$/, include: /ClientApp/, use: 'awesome-typescript-loader?silent=true' },
-				{ test: /\.tsx?$/, include: /ClientApp/, use: 'ts-loader?silent=true' },
+                { test: /\.tsx?$/, include: /ClientApp/, use: 'ts-loader?silent=true' },
                 { test: /\.(png|woff|woff2|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
             ]
         },
@@ -30,12 +36,26 @@ module.exports = (env) => {
     // Configuration for client-side bundle suitable for running in browsers
     const clientBundleOutputDir = './wwwroot/dist';
     const clientBundleConfig = merge(sharedConfig(), {
-        entry: { 'main-client': './ClientApp/boot-client.tsx' },
+        entry: {
+            'main-client': './ClientApp/boot-client.tsx',
+            'styles': './ClientApp/css/site.css'
+        },
         /*module: {
             rules: [
                 { test: /\.css$/, use: ExtractTextPlugin.extract({ use: isDevBuild ? 'css-loader' : 'css-loader?minimize' }) }
             ]
         },*/
+        module: {
+            rules: [
+                {
+                    test: /\.css$/,
+                    use: ExtractTextPlugin.extract({
+                        fallback: "style-loader",
+                        use: "css-loader"
+                    })
+                }
+            ]
+        },
         output: { path: path.join(__dirname, clientBundleOutputDir) },
         plugins: [
             new ExtractTextPlugin('site.css'),
@@ -50,13 +70,19 @@ module.exports = (env) => {
                 moduleFilenameTemplate: path.relative(clientBundleOutputDir, '[resourcePath]') // Point sourcemap entries to the original file locations on disk
             })
         ] : [
-            // Plugins that apply in production builds only
-            new webpack.optimize.UglifyJsPlugin()
-        ])
+                // Plugins that apply in production builds only
+                new webpack.optimize.UglifyJsPlugin()
+            ])
     });
 
     // Configuration for server-side (prerendering) bundle suitable for running in Node
     const serverBundleConfig = merge(sharedConfig(), {
+        module: {
+            rules: [{
+                test: /\.css$/,
+                use: "css-loader"
+            }]
+        },
         resolve: { mainFields: ['main'] },
         entry: { 'main-server': './ClientApp/boot-server.tsx' },
         plugins: [
