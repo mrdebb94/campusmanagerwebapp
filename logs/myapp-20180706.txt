@@ -1,0 +1,29 @@
+2018-07-06 21:06:07.690 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-06 21:07:11.258 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-06 21:09:20.453 +02:00 [Information] Path /
+2018-07-06 21:09:20.467 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2NFxC_zgJDRJGhCnRPvC-DRDsQj5lx7gfXha8YLXv2llm7PFZEQ4AWXgf5RFOzB8-QPZgoT1TKIJ3-QMSUUdGUuS4Km7chNl-Z17kXzWoDYIwG4F2f_6wH3NNEAOaLKgJc
+2018-07-06 21:09:30.658 +02:00 [Information] Path /
+2018-07-06 21:09:30.659 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2NgwQZ6k_WWaqrRcC28GqvQnKtt2gsX_2OxAiVVM8cg_DY6u6YB7wZOy2pfqgI55mxZ1eLi01eD5DYKfqWvieLwDgFOVupaC7oFZ20HyoSG6QU7zePpNCqxXFRbHkBXyzM
+2018-07-06 21:09:45.934 +02:00 [Information] Path /api/user/login
+2018-07-06 21:09:46.125 +02:00 [Information] Belepes: False
+2018-07-06 21:09:46.160 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-06 21:09:50.653 +02:00 [Information] Path /api/user/list
+2018-07-06 21:09:50.662 +02:00 [Information] Supporting role True
+2018-07-06 21:10:03.035 +02:00 [Information] Path /api/campus/list
+2018-07-06 21:11:01.805 +02:00 [Information] Path /api/campus/edit
+2018-07-06 21:11:01.914 +02:00 [Information] Path /api/campus/list
+2018-07-06 21:11:14.391 +02:00 [Information] Path /api/user/logout
+2018-07-06 21:11:14.412 +02:00 [Information] Kilepes: True
+2018-07-06 21:11:14.415 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-06 21:11:23.808 +02:00 [Information] Path /api/user/login
+2018-07-06 21:11:23.824 +02:00 [Information] Belepes: False
+2018-07-06 21:11:23.831 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-06 21:11:25.679 +02:00 [Information] Path /api/user/list
+2018-07-06 21:11:25.681 +02:00 [Information] Supporting role True
+2018-07-06 21:11:32.246 +02:00 [Information] Path /api/user/logout
+2018-07-06 21:11:32.250 +02:00 [Information] Kilepes: True
+2018-07-06 21:11:32.254 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-06 21:11:38.350 +02:00 [Information] Path /api/user/login
+2018-07-06 21:11:38.365 +02:00 [Information] Belepes: False
+2018-07-06 21:11:38.372 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-06 21:11:43.205 +02:00 [Information] Path /api/project/current/active/list

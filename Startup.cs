@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.NodeServices;
 
 using Serilog;
+using evomanager_next.Hubs;
 
 namespace EvoManager
 {
@@ -24,12 +25,12 @@ namespace EvoManager
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
-			
-			 Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
-                .WriteTo.LiterateConsole()
-                .WriteTo.RollingFile("logs\\myapp.txt")
-                .CreateLogger();
+
+            Log.Logger = new LoggerConfiguration()
+               .MinimumLevel.Debug()
+               .WriteTo.LiterateConsole()
+               .WriteTo.RollingFile("logs\\myapp.txt")
+               .CreateLogger();
 
         }
 
@@ -38,27 +39,32 @@ namespace EvoManager
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-			Log.Information(Configuration.GetConnectionString("DefaultConnection"));
-			
-			services.AddDbContext<EvoDbContext>(options =>
+            Log.Information(Configuration.GetConnectionString("DefaultConnection"));
+
+            services.AddDbContext<EvoDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<User, IdentityRole>(options => {
-					// User settings
-					options.User.RequireUniqueEmail = true;
-			})
+            services.AddIdentity<User, IdentityRole>(options =>
+            {
+                // User settings
+                options.User.RequireUniqueEmail = true;
+            })
             .AddEntityFrameworkStores<EvoDbContext>()
             .AddDefaultTokenProviders();
-                
+
             services.AddAntiforgery(x => x.HeaderName = "X-XSRF-TOKEN");
             //services.AddAntiforgery(opts => opts.Cookie.Name = "MyAntiforgeryCookie");
             services.AddMvc();
-			
-			//node.js service because of pdf generator
-			services.AddNodeServices(
-			  options=> {
-				  options.InvocationTimeoutMilliseconds=120000;
-			  });
+
+            //add SignalR
+            services.AddSignalR();
+
+            //node.js service because of pdf generator
+            services.AddNodeServices(
+              options =>
+              {
+                  options.InvocationTimeoutMilliseconds = 120000;
+              });
 
             // Configure Identity
             services.Configure<IdentityOptions>(options =>
@@ -73,7 +79,7 @@ namespace EvoManager
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env,  IAntiforgery antiforgery)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IAntiforgery antiforgery)
         {
             if (env.IsDevelopment())
             {
@@ -93,31 +99,46 @@ namespace EvoManager
 
             //app.UseResponseCaching();
 
+            /*app.UseSignalR(routes =>
+            {
+                routes.MapHub<ProjectSubscribeHub>("/hub/projectsubscribe");
+            });*/
+
             app.UseAuthentication();
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ProjectSubscribeHub>("/hub/projectsubscribe");
+            });
 
             app.Use(next => context =>
             {
                 string path = context.Request.Path.Value;
                 Log.Information("Path " + path);
                 if (
-                    string.Equals(path, "/", StringComparison.OrdinalIgnoreCase) 
+                    string.Equals(path, "/", StringComparison.OrdinalIgnoreCase)
                    || string.Equals(path, "/index.html", StringComparison.OrdinalIgnoreCase)
-                   //|| string.Equals(path, "/api/user/logout", StringComparison.OrdinalIgnoreCase)
+                //|| string.Equals(path, "/api/user/logout", StringComparison.OrdinalIgnoreCase)
                 )
                 {
                     // We can send the request token as a JavaScript-readable cookie, 
                     // and Angular will use it by default.
                     //Log.Information("New Token " + tokens.RequestToken);
                     var tokens = antiforgery.GetAndStoreTokens(context);
-                    context.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken, 
+                    context.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken,
                         new CookieOptions() { HttpOnly = false });
 
                     Log.Information("New Token " + tokens.RequestToken);
-                                                
+
                 }
 
                 return next(context);
             });
+
+            /*app.UseSignalR(routes =>
+            {
+                routes.MapHub<ProjectSubscribeHub>("/hub/projectsubscribe");
+            });*/
 
             app.UseMvc(routes =>
             {

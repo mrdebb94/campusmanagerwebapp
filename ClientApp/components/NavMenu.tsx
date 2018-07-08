@@ -59,7 +59,7 @@ class NavMenu extends React.Component<NavMenuProps, {}> {
     }
     public render() {
         const { classes } = this.props;
-        //TODO: mobil nézetbe az open-t szabályozni
+        //TODO: mobil nÃ©zetbe az open-t szabÃ¡lyozni
         return (
             <Drawer
                 anchor='left'
@@ -70,13 +70,13 @@ class NavMenu extends React.Component<NavMenuProps, {}> {
                 }}
             >
                 <div className={classes!.scrollDiv}>
-                    <MenuList subheader={<ListSubheader disableSticky={true}>Felhasználó</ListSubheader>}>
+                    <MenuList subheader={<ListSubheader disableSticky={true}>FelhasznÃ¡lÃ³</ListSubheader>}>
                         <MenuItem className={classes!.menuItem}>
                             <ListItemText classes={{ text: classes!.text }} inset primary="Home" />
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/login'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset primary="Bejelentkezés" />
+                                <ListItemText classes={{ text: classes!.text }} inset primary="BejelentkezÃ©s" />
                             </NavLink>
                         </MenuItem>
                     </MenuList>
@@ -85,7 +85,7 @@ class NavMenu extends React.Component<NavMenuProps, {}> {
                     <MenuList subheader={<ListSubheader disableSticky={true}>Admin</ListSubheader>}>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/users'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset primary="Felhasználók" />
+                                <ListItemText classes={{ text: classes!.text }} inset primary="FelhasznÃ¡lÃ³k" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
@@ -93,26 +93,27 @@ class NavMenu extends React.Component<NavMenuProps, {}> {
                                 <ListItemText classes={{ text: classes!.text }} inset primary="Szemeszterek" />
                             </NavLink>
                         </MenuItem>
-                    </MenuList> )
+                    </MenuList> 
+                    )
 					}
                     <Divider />
-                    <MenuList subheader={<ListSubheader disableSticky={true}>Aktuális félév</ListSubheader>}>
+                    <MenuList subheader={<ListSubheader disableSticky={true}>AktuÃ¡lis fÃ©lÃ©v</ListSubheader>}>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/currentcampus'} activeClassName='active'>
                                 <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Szemeszter jelentkezés" />
+                                    primary="Szemeszter jelentkezÃ©s" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/currentparticipants'} activeClassName='active'>
                                 <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Résztvevõk" />
+                                    primary="RÃ©sztvevÅ‘k" />
                             </NavLink>
                         </MenuItem>
                     <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/subscribe/add'} activeClassName='active'>
                                 <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Projekt jelentkezés" />
+                                    primary="Projekt jelentkezÃ©s" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
@@ -124,13 +125,13 @@ class NavMenu extends React.Component<NavMenuProps, {}> {
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/subscribe/list'} activeClassName='active'>
                                 <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Projekt jelentkezések" />
+                                    primary="Projekt jelentkezÃ©sek" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/projectmeetings/list'} activeClassName='active'>
                                 <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Megbeszélések" />
+                                    primary="MegbeszÃ©lÃ©sek" />
                             </NavLink>
                         </MenuItem>
                     </MenuList>
@@ -144,7 +145,7 @@ class NavMenu extends React.Component<NavMenuProps, {}> {
                         </MenuItem>
                     </NavLink>
                     <NavLink exact to={'/login'} activeClassName='active'>
-                        <MenuItem primaryText="Bejelentkezés">
+                        <MenuItem primaryText="Bejelentkezï¿½s">
                         </MenuItem>
                     </NavLink>
                 </Menu>
@@ -152,7 +153,7 @@ class NavMenu extends React.Component<NavMenuProps, {}> {
                 <Subheader inset={true}>Admin</Subheader>
                 <Menu  width={this.props.width} autoWidth={false}>
                     <NavLink to={'/users'} activeClassName='active'>
-                        <MenuItem primaryText="Felhasználók">
+                        <MenuItem primaryText="Felhasznï¿½lï¿½k">
                         </MenuItem>
                     </NavLink>
                     <NavLink to={'/campus'} activeClassName='active'>
@@ -161,25 +162,25 @@ class NavMenu extends React.Component<NavMenuProps, {}> {
                     </NavLink>
                 </Menu>
                 <Divider />
-                <Subheader inset={true}>Aktuális félév</Subheader>
+                <Subheader inset={true}>Aktuï¿½lis fï¿½lï¿½v</Subheader>
                 <Menu  width={this.props.width} autoWidth={false}>
                     <NavLink to={'/currentcampus'} activeClassName='active'>
-                        <MenuItem primaryText="Szemeszter jelentkezés" />
+                        <MenuItem primaryText="Szemeszter jelentkezï¿½s" />
                     </NavLink>
                     <NavLink to={'/currentparticipants'} activeClassName='active'>
-                        <MenuItem primaryText="Résztvevõk" />
+                        <MenuItem primaryText="Rï¿½sztvevï¿½k" />
                     </NavLink>
                     <NavLink to={'/projects'} activeClassName='active'>
                         <MenuItem primaryText="Projektek" />
                     </NavLink>
                     <NavLink to={'/subscribe/add'} activeClassName='active'>
-                        <MenuItem primaryText="Projekt jelentkezés" />
+                        <MenuItem primaryText="Projekt jelentkezï¿½s" />
                     </NavLink>
                     <NavLink to={'/subscribe/list'} activeClassName='active'>
-                        <MenuItem primaryText="Projekt jelentkezések" />
+                        <MenuItem primaryText="Projekt jelentkezï¿½sek" />
                     </NavLink>
                     <NavLink to={'/projectmeetings/list'} activeClassName='active'>
-                        <MenuItem primaryText="Megbeszélések" />
+                        <MenuItem primaryText="Megbeszï¿½lï¿½sek" />
                     </NavLink>
                 </Menu>
                 </Drawer>

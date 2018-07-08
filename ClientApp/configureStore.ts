@@ -4,7 +4,37 @@ import { routerReducer, routerMiddleware } from 'react-router-redux';
 import * as StoreModule from './store';
 import { ApplicationState, reducers } from './store';
 import { History } from 'history';
-import {responsiveStoreEnhancer} from 'redux-responsive';
+import { responsiveStoreEnhancer } from 'redux-responsive';
+import * as signalR from "@aspnet/signalr";
+
+let signalrMiddleware = store => next => action => {
+    switch (action.type) {
+
+        case 'SET_PROJECT_SUBSCRIBE_CONNECTION':
+            console.log("CONNECTION MIDDLAWARE");
+            let hubConnection = action.projectSubscribeConnection;
+            hubConnection.on('ProjectSubscribeChange', (user, message) => {
+                //store.dispatch({ type: 'INCREMENT_COUNT' })
+                console.log("Jelentkezes tortent " + user + " " + message);
+            });
+            break;
+
+        case "SIGNALR_PROJECT_SUBSCRIBE":
+            //let connection:signalR.HubConnection
+            //TODO: check connection
+            let { signalRConnections: { projectSubscribeConnection } } = store.getState();
+            
+            if (projectSubscribeConnection) {
+                console.log(projectSubscribeConnection);
+                console.log("Kezd " + action.projectCampusId);
+                projectSubscribeConnection.invoke('SubscribeProject', action.projectCampusId);
+            } else {
+                console.log("FEL KELL IRATKOZNI");
+            }
+            break;
+    }
+    return next(action);
+};
 
 export default function configureStore(history: History, initialState?: ApplicationState) {
     // Build middleware. These are functions that can process the actions before they reach the store.
@@ -12,8 +42,8 @@ export default function configureStore(history: History, initialState?: Applicat
     // If devTools is installed, connect to it
     const devToolsExtension = windowIfDefined && windowIfDefined.devToolsExtension as () => GenericStoreEnhancer;
     const createStoreWithMiddleware = compose(
-	    responsiveStoreEnhancer,
-        applyMiddleware(thunk, routerMiddleware(history)),
+        responsiveStoreEnhancer,
+        applyMiddleware(thunk, routerMiddleware(history), signalrMiddleware),
         devToolsExtension ? devToolsExtension() : <S>(next: StoreEnhancerStoreCreator<S>) => next
     )(createStore);
 

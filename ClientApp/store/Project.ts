@@ -1,4 +1,4 @@
-import { fetch, addTask } from 'domain-task';
+import 'whatwg-fetch';
 import { Action, Reducer, ActionCreator } from 'redux';
 import { AppThunkAction } from './';
 import { isEmpty } from '../utils/helper'
@@ -103,8 +103,14 @@ interface ToggleProjectSubscribeDialog {
     };
 }
 
+interface SignalrProjectSubscribe {
+    type: 'SIGNALR_PROJECT_SUBSCRIBE';
+    projectCampusId: string;
+}
+
 type KnownAction = SetProjectListAction | AddProjectAction |
-    ToggleProjectDialog | ModifyEditedProjectAction | SetActiveProjectListAction | ToggleProjectSubscribeDialog;
+    ToggleProjectDialog | ModifyEditedProjectAction | SetActiveProjectListAction | ToggleProjectSubscribeDialog 
+    | SignalrProjectSubscribe;
 
 export const projectServices = {
 
@@ -594,7 +600,11 @@ export const actionCreators = {
                     });*/
                 }
             );
-        }
+        },
+        subscribeProjectSignalR: (projectCampusId:string): AppThunkAction<KnownAction> => (dispatch, getState) => {
+            dispatch({ type: 'SIGNALR_PROJECT_SUBSCRIBE', projectCampusId});
+            
+       },
 
 };
 const initialState: ProjectState = {

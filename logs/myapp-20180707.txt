@@ -1,0 +1,97 @@
+2018-07-07 10:21:26.892 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 10:21:34.968 +02:00 [Information] Path /
+2018-07-07 10:21:35.000 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2M8BsRutuvYOdzL1HDsCVU-qVXoKtC_Gd4CywGyvHR2z9kyNN3ppI3oCcFFTiKYLE_wRQjsU8nfIUP0ClS_-IYK8VQ7UFILoGh43pEfdGEVE1pA6NAVmaYpNOMVgb4LxII
+2018-07-07 10:22:36.695 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 10:22:44.145 +02:00 [Information] Path /
+2018-07-07 10:22:44.177 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2PSYkjmbZ42UkiD5lK5OS_hCRi2trtz27ZDXzh4myUb4HwuEq0Hy0OvdoYlqtRz4YPOHjdVNFUam8D8d6szVeLFcMoiDZXeZu_-48u3f61v4CkGTYlEkBGy0_G0tqUO76g
+2018-07-07 10:23:08.464 +02:00 [Information] Path /
+2018-07-07 10:23:08.465 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2NvMufPG3wmMZFqyRXfpqgqh129-vAuD44zL5CpnPic49MWBXt8EQ74kDodvbHzBg0R1k3pA00JmHL2PlCEOP9wwu7lS6jlGpHObzJ5iGoyA60QTH1SXml2NDmlFO1IKCs
+2018-07-07 10:23:15.450 +02:00 [Information] Path /home
+2018-07-07 10:23:15.531 +02:00 [Information] Path /home
+2018-07-07 10:48:55.938 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 10:48:59.699 +02:00 [Information] Path /
+2018-07-07 10:48:59.715 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2MWeMFsVI8UHIKL3KY3CTnPLDOkBfxaLqpUNPsbSrdBd9IOGPtEBeOOqhV1vqXjdM8aCNjlbBiTM_a3Z0p8nFRkbFa-IPhuH-vuZ9KgyGmkyOAIquydbwhtG5SwU4dH1gc
+2018-07-07 10:49:36.105 +02:00 [Information] Path /api/user/login
+2018-07-07 10:49:36.390 +02:00 [Information] Belepes: False
+2018-07-07 10:49:36.521 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-07 10:49:39.990 +02:00 [Information] Path /api/user/list
+2018-07-07 10:49:40.002 +02:00 [Information] Supporting role True
+2018-07-07 10:51:08.563 +02:00 [Information] Path /api/user/list
+2018-07-07 10:51:08.569 +02:00 [Information] Supporting role True
+2018-07-07 10:51:36.029 +02:00 [Information] Path /api/user/list
+2018-07-07 10:51:36.035 +02:00 [Information] Supporting role True
+2018-07-07 10:53:34.398 +02:00 [Information] Path /api/user/add
+2018-07-07 10:53:34.431 +02:00 [Information] Hozzaadas: True
+2018-07-07 10:53:34.694 +02:00 [Information] Path /api/user/list
+2018-07-07 10:53:34.719 +02:00 [Information] Supporting role True
+2018-07-07 10:53:40.957 +02:00 [Information] Path /api/user/logout
+2018-07-07 10:53:41.026 +02:00 [Information] Kilepes: True
+2018-07-07 10:53:41.068 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-07 10:53:50.815 +02:00 [Information] Path /api/user/login
+2018-07-07 10:53:50.911 +02:00 [Information] Belepes: False
+2018-07-07 10:53:51.016 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-07 10:53:55.487 +02:00 [Information] Path /api/project/current/active/list
+2018-07-07 10:53:55.612 +02:00 [Information] Path /Account/AccessDenied
+2018-07-07 10:53:57.286 +02:00 [Information] Path /api/campus/current
+2018-07-07 10:53:58.710 +02:00 [Information] Path /api/campus/apply
+2018-07-07 10:54:00.911 +02:00 [Information] Path /api/project/current/active/list
+2018-07-07 11:31:20.810 +02:00 [Information] Path /api/campus/current
+2018-07-07 11:31:25.723 +02:00 [Information] Path /api/campus/current/participations
+2018-07-07 11:31:40.662 +02:00 [Information] Path /api/campus/current
+2018-07-07 11:31:48.587 +02:00 [Information] Path /api/campus/current/participations
+2018-07-07 11:31:56.586 +02:00 [Information] Path /api/project/current/active/list
+2018-07-07 11:33:27.679 +02:00 [Information] Path /api/project/current/active/list
+2018-07-07 15:18:15.920 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 15:18:21.326 +02:00 [Information] Path /
+2018-07-07 15:18:21.342 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2P-dFZSaMSrIXRuuiGN6mu0QNGcRcwRM6nR0W2GgV41ZndrQasmYvJF5dOoNTNOAytvssu_ENqHVDrJS7F7wdTurUtZNn0w6_hSI4f28YvScUWpM6uTjtjZArEkkCTAeHMrXBhDp-3HfbIToehtIKAc7BJiaPwyOrINY0FQRbzhRQ
+2018-07-07 15:21:18.324 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 15:21:23.143 +02:00 [Information] Path /
+2018-07-07 15:21:23.153 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2Ne4ckz7TAgM_7GmQRDAUJP8FVMUOi5qm73yrFpyhlOA54nevsH5j7WWBXkR1uk8Cuz6JtD5Hg5CyKt03cHu5gZGKml0W7QN5Sy49wovIU0Oh00tNfZDQL4JqET-BXOVkdzSxBMdsAuX0OjyG9YdaOWRPnxn_HZ8peF1pWweG-W7g
+2018-07-07 15:27:05.879 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 15:30:01.208 +02:00 [Information] Path /
+2018-07-07 15:30:01.219 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2NCcYmKdWBh7iDNzXjs1vc4d1tN-E5xqnbkXkbSjFNOGpcloDokE7NkMAlhYYpRfh6XZo0Dom1GcWEwO2YMePVZ8fumdBCf7V4b_JXHPaRvjdht9yegoPX6tMpCPK1IjpGwSMuc41QACGw5A84iGXay3PsuIaLwRLz4CGEmVnP2bw
+2018-07-07 15:31:52.204 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 15:31:58.067 +02:00 [Information] Path /
+2018-07-07 15:31:58.079 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2NEFNVn3l_BNUF5ijS4zxldpg7Z9dsyvc5ESDO_8LdL6mHvxgP4CHaVHJPiENhydD6nowd_oEId_sHYngiqtznNrFBccrY5LQdecl4DE64KhXGAOaWMuVZ5hOYKvRjcCPKCEYimqHmEtqCxaEihBR2azxnB3e1aI-6WGaTpT0gn5Q
+2018-07-07 15:33:06.497 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 15:33:28.687 +02:00 [Information] Path /
+2018-07-07 15:33:28.700 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2Mu9lwYsQgmaMYxPGSPjxI3dpmqf9ODKeVDVDRBSCvT-tg7kt6iCORwpRn5ayax_o6-0dz-E9s2OdGsxitfYbGuriNW4PkOF_wP5CdCwHkW8jKFiaySJAxurEJ7udCdq-PTyAZShr5vqJYJIidgnVMEJCWFY8w34SQhg_ZrTmjZrw
+2018-07-07 15:34:01.196 +02:00 [Information] Path /
+2018-07-07 15:34:01.198 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2N5oLH8fEhfFl8ekz8C-_jgjIfeWxlPF6j54VwxMlAOM17KMdYlwHnSnYMOCAkh-QRukc13dcPB1-oc6ctok_-tWQmbsGKg3fria2dnZBXilmXsNtr7V7eZJZ50r62I0cf8f_C8btpaERtlG2k2DhXebkKtM2ZH5752D8QbaY0VPw
+2018-07-07 15:35:10.380 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 15:35:29.879 +02:00 [Information] Path /dist/af06b5cef8fb56817cc9.hot-update.json
+2018-07-07 15:35:48.693 +02:00 [Information] Path /
+2018-07-07 15:35:48.733 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2O6aS1VG9JTtO1T1q3uMrc9TYHNpkTX88aFnNpDevMUHtk-U2QhPSR3nZMgRB5SUAXIMy5KW11orXhtJaMRl9l-MPgrx6YUDWvnvi9nb7smziTnDfJ28C83zt6octVtEN56J-mc5ciKXkynM0qa4OxVfJ2RhrigxGkbrNZ6gE8ejQ
+2018-07-07 15:36:36.856 +02:00 [Information] Path /
+2018-07-07 15:36:36.858 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2MI6n64_t2bmxnN9w0vHkMrJxf5c0H5pvYI-Xkgv9Ti54RCjLczGKEwyMmS6M0XFZXOpi3EUTG-BV2le1mmxM2MUJdWtltru-Z1Efl8_6gl47qUsMRzLU_N9I5PUTpvwOePoDRXUH5WzLZd73r2JYCzte_JCSKBy14zBMP0PH08gw
+2018-07-07 16:00:58.643 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 16:06:01.716 +02:00 [Information] Path /
+2018-07-07 16:06:01.726 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2M01eBAa3CwYkiTgywUvgjvyIPhwFrf_cTAsmC-ATxoB6gWSG3yuejzbGb4Vx0a8JncwQUKPyyIhNr8Kfdx_OGn81fk0uYB81m0Rh2TRbMdi7ZMv1s7P8b4OEC-MqMhM49YAh1C7BWlvrt_rhCZUIKOycJ1fDIrTRUUjbN8_lTpIQ
+2018-07-07 16:07:43.664 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 16:16:35.353 +02:00 [Information] Path /
+2018-07-07 16:16:35.365 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2OKqyVkx0v4PtrPcZqhTDBxA-gKxBHnHtKnevl_IHCVEEcCDRU84vvDcHkTuT1vcJ4Umv1ifJqy81U_U5u0er_jpO7zED76vCvaq3NP1toZjAe7gphcWSKduQfLcn2WeiqmgSEmugux9BLuihusXap4okGYzqbfCxngk7A6jprjiA
+2018-07-07 16:25:54.905 +02:00 [Information] Path /dist/2212af26fc193763e367.hot-update.json
+2018-07-07 16:34:30.638 +02:00 [Information] Path /
+2018-07-07 16:34:30.641 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2OOgFkQxKbARCvxzyKdXKV91wsOzOBrDMX_-nJimN9PE2NFL1-VjMMXq5M_xDtLih1xYzAQjGrpmSZlWxUG44HvM760PSciVnQraSfqV-d8KSYVIQbfG3qOqaiKV9Y3fTPxhSMBr4jwVhmx1RLaVu4uLmI01bukyACRBH971lVAAQ
+2018-07-07 16:34:43.779 +02:00 [Information] Path /
+2018-07-07 16:34:43.781 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2ONKZcl84I3Et2V7uyWZSLSnx2_zI0udBOwojQ_weU8aiGcc4fsPX964PiJIoJjw0gGL2HJ6m6isO8heRmrEZC0j0CatD7M18DsMag9eiwFSNSJAeI9fdvVG_fOjQFJyw4HYcPMnkqa8Ggc-a1GNuhnDxBfOghD7lFfSYwl91Ftfg
+2018-07-07 16:36:35.057 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 16:37:00.491 +02:00 [Information] Path /dist/91e2a2a1d1fd115d9f5a.hot-update.json
+2018-07-07 16:40:50.832 +02:00 [Information] Path /
+2018-07-07 16:40:50.839 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2PqiPldqktGUdOHlSVeekDX7QiifaIZBC1yOaz_AVUAsfuQj7ocWggyswWVu1qMShkGqZu09dHHIZL4mjWh84kpg4OtVvOSHw_J5D3NvAYb2PRAOgVOZxarhapT5GLbnbOynjeWWhn9kc6g0n2UADLwP5Emu8tAkr9o7_xJwWLoGg
+2018-07-07 16:43:10.125 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 16:53:05.975 +02:00 [Information] Path /
+2018-07-07 16:53:05.987 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2NCfrhxS3uXfMl8CpbiMzb8UYHYSJ0Jp9vI9FvKw0ScBckKBnG-c4P4FGqlFSlFZpqLwDo8gHj4qq0Hht-LuVVcYaL3MZ8fCIpErHJmM9z14ggcEFbWYFqZZn9DwfNa0ekDXhQ2gY5EksmR89rHKnr7FiXT3cbhQYvFTopk_roO5Q
+2018-07-07 17:05:55.740 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-07 17:06:35.188 +02:00 [Information] Path /
+2018-07-07 17:06:35.203 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2N5E3Ir07t71cLaawA_DuqggbuyL8Kv9ZcxO0salqPdIips6djTvujM67l7XWyT6QknTz9EoiWE1sI5fcyVVCqORFzX1b3R8INB4J9Hzlntcc_IZinhEIETLJXanb0-XSugEU7Gudn75ttXve0-FR-9uOK-7sG8DIRmsnphERV6ZQ
+2018-07-07 18:15:42.365 +02:00 [Information] Path /api/campus/current
+2018-07-07 18:15:43.742 +02:00 [Information] Path /api/campus/current/participations
+2018-07-07 18:15:46.312 +02:00 [Information] Path /api/project/current/active/list
+2018-07-07 18:15:48.020 +02:00 [Information] Path /api/project/current/list
+2018-07-07 18:15:48.035 +02:00 [Information] Path /Account/AccessDenied
+2018-07-07 18:15:49.458 +02:00 [Information] Path /api/project/subscriber/list
+2018-07-07 18:15:49.472 +02:00 [Information] Path /Account/AccessDenied
+2018-07-07 18:15:51.415 +02:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-07-07 18:15:56.527 +02:00 [Information] Path /api/campus/current
+2018-07-07 18:15:59.481 +02:00 [Information] Path /api/campus/current/participations

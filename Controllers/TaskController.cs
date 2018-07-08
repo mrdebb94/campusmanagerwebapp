@@ -23,28 +23,28 @@ namespace EvoManager.Controllers
     [Route("api/[controller]")]
     public class TaskController : Controller
     {
-       private EvoDbContext _context;
-	   private readonly UserManager<User> _userManager;
-	   private readonly RoleManager<IdentityRole> _roleManager;
-  
-	   public TaskController(EvoDbContext context,  UserManager<User> userManager,
-          RoleManager<IdentityRole> roleManager,
-		  IAntiforgery antiForgeryService)
+        private EvoDbContext _context;
+        private readonly UserManager<User> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+
+        public TaskController(EvoDbContext context, UserManager<User> userManager,
+           RoleManager<IdentityRole> roleManager,
+           IAntiforgery antiForgeryService)
         {
-		  _context = context;  
-		  _userManager = userManager;
-		  _roleManager =  roleManager;
-	    }
-		
-	  [Authorize(Roles = "Mentor")]
-      [HttpPost("current/add")]
-      [ValidateAntiForgeryToken]
-      public async Task<ActionResult> AddTaskToCurrentProject([FromBody] 
-       EvoManager.Models.Task task) 
-      {
-		  
-		  return Ok();
-	  }
-		
-	}
+            _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
+        }
+
+        [Authorize(Roles = "Mentor")]
+        [HttpPost("current/add")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> AddTaskToCurrentProject([FromBody]
+       EvoManager.Models.Task task)
+        {
+
+            return Ok();
+        }
+
+    }
 }

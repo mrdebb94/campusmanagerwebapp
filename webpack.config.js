@@ -26,7 +26,16 @@ module.exports = (env) => {
                      })
                  },*/
                 //{ test: /\.tsx?$/, include: /ClientApp/, use: 'awesome-typescript-loader?silent=true' },
-                { test: /\.tsx?$/, include: /ClientApp/, use: 'ts-loader?silent=true' },
+                { test: /\.tsx?$/, include: /ClientApp/, 
+                    /*use: 'ts-loader?silent=true'*/ use: [
+                        {loader: 'babel-loader',
+                        options: {
+                            //presets: ['@babel/preset-env'],
+                            plugins: [require('babel-plugin-transform-object-assign')]
+                          } 
+                        },
+                        {loader: 'ts-loader'}
+                    ] },
                 { test: /\.(png|woff|woff2|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
             ]
         },

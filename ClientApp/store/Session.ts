@@ -1,3 +1,4 @@
+import 'whatwg-fetch';
 import { Action, Reducer, ActionCreator } from 'redux';
 import { AppThunkAction } from './';
 
@@ -44,7 +45,6 @@ export const sessionServices = {
     getXsrfToken: (): Promise<any> => new Promise<any>((resolve) => {
         fetch('api/xsrftoken/get', {
             method: 'GET',
-            body: {},
             credentials: 'same-origin'
         }).then(response => {
             if (!response.ok) {
@@ -100,7 +100,7 @@ export const sessionServices = {
         fetch('api/user/logout', {
             method: 'POST',
             headers,
-            body: {},
+         
             credentials: 'same-origin'
         }).then(response => {
             if (!response.ok) {

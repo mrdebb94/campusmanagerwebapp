@@ -7,9 +7,10 @@ import * as Session from './Session';
 import * as Project from './Project';
 import * as ProjectDetails from './ProjectDetails';
 import * as SnackbarNotification from './SnackbarNotification';
+import * as SignalRConnections from './SignalRConnections';
 import { responsiveStateReducer } from 'redux-responsive';
 
-import { fetch, addTask } from 'domain-task';
+import { addTask } from 'domain-task';
 
 
 // The top-level state object
@@ -23,6 +24,7 @@ export interface ApplicationState {
     project: Project.ProjectState;
     projectDetails: ProjectDetails.ProjectDetailsState;
     snackbarNotification:  SnackbarNotification.SnackbarNotificationState;
+    signalRConnections:SignalRConnections.SignalRConnectionsState;
 	browser:any;
 }
 
@@ -39,6 +41,7 @@ export const reducers = {
     project: Project.reducer,
     projectDetails: ProjectDetails.reducer,
     snackbarNotification: SnackbarNotification.reducer,
+    signalRConnections: SignalRConnections.reducer,
 	browser: responsiveStateReducer
 	
 }

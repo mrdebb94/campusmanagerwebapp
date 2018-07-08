@@ -1,5 +1,6 @@
 import './css/site.css';
 import 'typeface-roboto';
+import 'whatwg-fetch';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
@@ -10,6 +11,33 @@ import configureStore from './configureStore';
 import { ApplicationState }  from './store';
 import * as RoutesModule from './routes';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import * as signalR from "@aspnet/signalr";
+
+//signalR connection
+
+/*const connection = new signalR.HubConnectionBuilder()
+    .withUrl("/hub/projectsubscribe")
+    .build();
+
+connection.start().catch(err => document.write(err));
+
+connection.on("ProjectSubscribeChange", (username: string, message: string) => {
+    console.log("Jelentkezes tortent: " + username + " " + message);
+});
+*/
+
+
+/*let _hubConnection = new signalR.HubConnection('/hub/projectsubscribe');
+
+_hubConnection.start()
+  .then(() => console.log('Connection started!'))
+  .catch(err => console.log(err));
+
+_hubConnection.on("ProjectSubscribeChange", (username: string, message: string) => {
+    //this.msgs.push({severity: type, summary: payload});
+    console.log("Jelentkezes tortent: " + username + " " + message);
+  });
+*/
 
 const theme = createMuiTheme();
   

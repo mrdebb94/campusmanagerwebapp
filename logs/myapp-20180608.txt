@@ -1,0 +1,71 @@
+2018-06-08 17:36:35.926 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-06-08 17:36:55.483 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-06-08 17:44:33.636 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-06-08 17:45:37.908 +02:00 [Information] Path /
+2018-06-08 17:45:37.924 +02:00 [Information] New Token CfDJ8PE7b0qRk6VCuhTEcflVCCV0tA13z-h7ffCBGcJXhYjhD2knZD0vjPjKCFZh2XcBHiCFkBEyNQznXfBQOGa9IDG38_EoxNCS6KL6fEoS2-WXBrDtTUb0a7kL2kgN5A9nudnMZtYiz5qzDwmcr62qxUw
+2018-06-08 18:26:13.438 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-06-08 18:29:54.885 +02:00 [Information] Path /
+2018-06-08 18:29:54.900 +02:00 [Information] New Token CfDJ8PE7b0qRk6VCuhTEcflVCCXRGQ-9U68v4QFyzgMioJmJMSWp5PfQTCs2lYWcXNBzhGKd5N6EQTLk7V87sn5Cd2E-7STyZaKM-ZOP7oM1yPpm8RaD4OHvwQq0j86GBZD8h8KnV41ZA--9ddikBtkuYyo
+2018-06-08 18:30:27.304 +02:00 [Information] Path /api/user/login
+2018-06-08 18:30:27.499 +02:00 [Information] Belepes: False
+2018-06-08 18:30:27.534 +02:00 [Information] Path /api/xsrftoken/get
+2018-06-08 18:30:29.763 +02:00 [Information] Path /api/user/list
+2018-06-08 18:30:29.775 +02:00 [Information] Supporting role True
+2018-06-08 18:30:35.397 +02:00 [Information] Path /api/campus/current
+2018-06-08 18:30:37.420 +02:00 [Information] Path /api/campus/list
+2018-06-08 18:35:03.731 +02:00 [Information] Path /api/campus/edit
+2018-06-08 18:35:03.846 +02:00 [Information] Path /api/campus/list
+2018-06-08 18:35:09.737 +02:00 [Information] Path /api/campus/current
+2018-06-08 18:35:12.325 +02:00 [Information] Path /api/user/list
+2018-06-08 18:35:12.327 +02:00 [Information] Supporting role True
+2018-06-08 18:41:46.982 +02:00 [Information] Path /api/user/add
+2018-06-08 18:41:46.992 +02:00 [Information] Hozzaadas: True
+2018-06-08 18:41:47.146 +02:00 [Information] Path /api/user/list
+2018-06-08 18:41:47.150 +02:00 [Information] Supporting role True
+2018-06-08 18:41:56.672 +02:00 [Information] Path /api/user/logout
+2018-06-08 18:41:56.699 +02:00 [Information] Kilepes: True
+2018-06-08 18:41:56.706 +02:00 [Information] Path /api/xsrftoken/get
+2018-06-08 18:42:05.245 +02:00 [Information] Path /api/user/login
+2018-06-08 18:42:05.266 +02:00 [Information] Belepes: False
+2018-06-08 18:42:05.277 +02:00 [Information] Path /api/xsrftoken/get
+2018-06-08 18:45:36.127 +02:00 [Information] Path /login
+2018-06-08 18:46:26.384 +02:00 [Information] Path /login
+2018-06-08 18:46:32.458 +02:00 [Information] Path /api/campus/current
+2018-06-08 18:46:35.467 +02:00 [Information] Path /api/user/logout
+2018-06-08 18:46:35.471 +02:00 [Information] Kilepes: True
+2018-06-08 18:46:35.475 +02:00 [Information] Path /api/xsrftoken/get
+2018-06-08 18:46:44.856 +02:00 [Information] Path /api/user/login
+2018-06-08 18:46:44.873 +02:00 [Information] Belepes: False
+2018-06-08 18:46:44.884 +02:00 [Information] Path /api/xsrftoken/get
+2018-06-08 18:46:46.400 +02:00 [Information] Path /api/user/list
+2018-06-08 18:46:46.402 +02:00 [Information] Supporting role True
+2018-06-08 18:47:02.572 +02:00 [Information] Path /api/user/logout
+2018-06-08 18:47:02.577 +02:00 [Information] Kilepes: True
+2018-06-08 18:47:02.585 +02:00 [Information] Path /api/xsrftoken/get
+2018-06-08 18:47:10.417 +02:00 [Information] Path /api/user/login
+2018-06-08 18:47:10.433 +02:00 [Information] Belepes: False
+2018-06-08 18:47:10.445 +02:00 [Information] Path /api/xsrftoken/get
+2018-06-08 18:47:13.779 +02:00 [Information] Path /api/campus/current
+2018-06-08 18:47:16.312 +02:00 [Information] Path /api/campus/apply
+2018-06-08 18:47:18.926 +02:00 [Information] Path /api/project/current/active/list
+2018-06-08 18:49:52.783 +02:00 [Information] Path /api/project/subscribe
+2018-06-08 18:49:52.868 +02:00 [Information] Path /api/project/current/active/list
+2018-06-08 18:51:46.231 +02:00 [Information] Path /api/user/logout
+2018-06-08 18:51:46.233 +02:00 [Information] Kilepes: True
+2018-06-08 18:51:46.240 +02:00 [Information] Path /api/xsrftoken/get
+2018-06-08 18:51:52.608 +02:00 [Information] Path /api/user/login
+2018-06-08 18:51:52.622 +02:00 [Information] Belepes: False
+2018-06-08 18:51:52.630 +02:00 [Information] Path /api/xsrftoken/get
+2018-06-08 18:51:55.263 +02:00 [Information] Path /api/project/subscriber/list
+2018-06-08 18:53:35.437 +02:00 [Information] Path /api/projectdetails/teammembers/add
+2018-06-08 18:53:35.527 +02:00 [Information] Path /api/project/subscriber/list
+2018-06-08 18:53:39.039 +02:00 [Information] Path /api/user/logout
+2018-06-08 18:53:39.042 +02:00 [Information] Kilepes: True
+2018-06-08 18:53:39.047 +02:00 [Information] Path /api/xsrftoken/get
+2018-06-08 18:53:46.451 +02:00 [Information] Path /api/user/login
+2018-06-08 18:53:46.474 +02:00 [Information] Belepes: False
+2018-06-08 18:53:46.483 +02:00 [Information] Path /api/xsrftoken/get
+2018-06-08 18:53:52.848 +02:00 [Information] Path /api/project/current/active/list
+2018-06-08 19:06:02.103 +02:00 [Information] Path /subscribe/add
+2018-06-08 19:06:04.055 +02:00 [Information] Path /subscribe/add
+2018-06-08 19:06:04.639 +02:00 [Information] Path /api/project/current/active/list

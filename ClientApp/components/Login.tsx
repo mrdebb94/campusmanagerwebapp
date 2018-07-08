@@ -13,7 +13,6 @@ const style = {
     },
     component: {
         display: 'flex',
-        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
     } as React.CSSProperties
@@ -22,6 +21,9 @@ const style = {
 const styles = theme => ({
     button: {
         margin: theme.spacing.unit,
+    },
+    loginBox: {
+        height: 180,
     },
     textField: {
         marginLeft: theme.spacing.unit,
@@ -32,7 +34,7 @@ const styles = theme => ({
 });
 
 type LoginType = SessionStore.SettingsState &
-    StyledComponentProps<'button' | 'textField'> &
+    StyledComponentProps<'button' | 'textField' | 'loginBox'> &
     typeof SessionStore.actionCreators & 
     RouteComponentProps<{}>
 
@@ -74,7 +76,7 @@ class Login extends React.Component<LoginType, any> {
 
         return (<div style={style.component}>
             {!this.props.authenticated &&
-            <div>
+            <div className={classes!.loginBox}>
             <div>
             <TextField
                 label={'Felhasználónév'}

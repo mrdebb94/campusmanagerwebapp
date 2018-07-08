@@ -18,6 +18,7 @@ module.exports = (env) => {
         entry: {
             vendor: [
                 'domain-task',
+                'whatwg-fetch',
                 'event-source-polyfill',
                 'history',
                 'react',

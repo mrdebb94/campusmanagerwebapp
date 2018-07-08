@@ -1,0 +1,273 @@
+2018-07-08 10:27:17.105 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 10:36:42.085 +02:00 [Information] Path /
+2018-07-08 10:36:42.103 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2Mjb7i7jcjTP-GbOOHgO4-CBDgqaa2ZlP07rJ1YbiKL7mb5Hgdxbo-ESGoN-R33qeVdAqtruEx_ixCUB6kCZ_gqlVv-7H1Mh5IWPGCQAmem_MsTkfAxeLIQIhKctvWM1dU
+2018-07-08 10:37:42.046 +02:00 [Information] Path /dist/c4caaef092a9c76d83bf.hot-update.json
+2018-07-08 10:53:07.026 +02:00 [Information] Path /dist/c4caaef092a9c76d83bf.hot-update.json
+2018-07-08 11:07:29.110 +02:00 [Information] Path /dist/c4caaef092a9c76d83bf.hot-update.json
+2018-07-08 11:13:21.501 +02:00 [Information] Path /dist/c4caaef092a9c76d83bf.hot-update.json
+2018-07-08 11:35:36.176 +02:00 [Information] Path /dist/c4caaef092a9c76d83bf.hot-update.json
+2018-07-08 11:51:43.030 +02:00 [Information] Path /dist/c4caaef092a9c76d83bf.hot-update.json
+2018-07-08 11:52:48.085 +02:00 [Information] Path /dist/c4caaef092a9c76d83bf.hot-update.json
+2018-07-08 11:55:50.623 +02:00 [Information] Path /dist/c4caaef092a9c76d83bf.hot-update.json
+2018-07-08 12:01:51.467 +02:00 [Information] Path /dist/c4caaef092a9c76d83bf.hot-update.json
+2018-07-08 12:21:12.140 +02:00 [Information] Path /dist/c4caaef092a9c76d83bf.hot-update.json
+2018-07-08 12:33:33.535 +02:00 [Information] Path /dist/c4caaef092a9c76d83bf.hot-update.json
+2018-07-08 12:46:36.854 +02:00 [Information] Path /dist/c4caaef092a9c76d83bf.hot-update.json
+2018-07-08 13:17:18.458 +02:00 [Information] Path /
+2018-07-08 13:17:18.464 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2N1NPwhLW7teNr3mjcKwkcJH89QvF64DtqvQITf1fHO7-cIy9-YZ3y8IBGRafzaHZbCw2M1J7P2Xp5UHlpw1LwQQ7YmAQkM3EQHUh9OEF8JKaZEiaHY2bA32phi48lF3Cw
+2018-07-08 13:17:28.933 +02:00 [Information] Path /api/user/login
+2018-07-08 13:47:55.451 +02:00 [Information] Path /login
+2018-07-08 13:48:10.611 +02:00 [Information] Path /api/user/login
+2018-07-08 13:48:10.807 +02:00 [Information] Belepes: False
+2018-07-08 13:48:10.842 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 13:48:16.386 +02:00 [Information] Path /api/user/list
+2018-07-08 13:48:16.396 +02:00 [Information] Supporting role True
+2018-07-08 13:48:58.932 +02:00 [Information] Path /api/user/add
+2018-07-08 13:48:58.943 +02:00 [Information] Hozzaadas: True
+2018-07-08 13:48:59.103 +02:00 [Information] Path /api/user/list
+2018-07-08 13:48:59.104 +02:00 [Information] Supporting role True
+2018-07-08 13:49:29.385 +02:00 [Information] Path /api/user/add
+2018-07-08 13:49:29.388 +02:00 [Information] Hozzaadas: True
+2018-07-08 13:49:29.433 +02:00 [Information] Path /api/user/list
+2018-07-08 13:49:29.433 +02:00 [Information] Supporting role True
+2018-07-08 13:55:58.396 +02:00 [Information] Path /api/user/logout
+2018-07-08 13:55:58.421 +02:00 [Information] Kilepes: True
+2018-07-08 13:55:58.425 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 13:56:09.523 +02:00 [Information] Path /api/user/login
+2018-07-08 13:56:09.591 +02:00 [Information] Belepes: False
+2018-07-08 13:56:09.598 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 13:56:37.861 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 13:57:35.057 +02:00 [Information] Path /api/campus/current
+2018-07-08 13:57:45.854 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 13:58:07.671 +02:00 [Information] Path /subscribe/add
+2018-07-08 13:58:09.288 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 14:02:33.191 +02:00 [Information] Path /
+2018-07-08 14:02:33.193 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2P0ev7iJl2WCvmaoj9kKfV8z1qoD4moFaIbLd6ivi9eucXqCej6RpCkf0FnMxPe-xYzrAaYPaP3eDhBDjFHqCMnnjAtk3JUhSnRZHhGE-BdtxNSmmO-5xVm43fn9FCDFT4
+2018-07-08 14:02:37.430 +02:00 [Information] Path /
+2018-07-08 14:02:37.432 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2MD8SCYVIagH7gOTgbyG91ei88Z9yW_pbcSv_Qf1jY2XNmsPayLNOqfV0-rLmytKIrNiiceMBxSUUcOkmc4lDX4Ng10xAnkDCi0K_HNUDh7bdblKBBmfK0ZYlUVfncyHfc
+2018-07-08 14:06:51.232 +02:00 [Information] Path /dist/42791cea1c59daa35e92.hot-update.json
+2018-07-08 14:06:57.266 +02:00 [Information] Path /dist/42791cea1c59daa35e92.hot-update.json
+2018-07-08 14:25:00.670 +02:00 [Information] Path /login
+2018-07-08 14:25:00.683 +02:00 [Information] Path /login
+2018-07-08 14:25:02.651 +02:00 [Information] Path /dist/42791cea1c59daa35e92.hot-update.json
+2018-07-08 14:25:17.604 +02:00 [Information] Path /login
+2018-07-08 14:25:33.222 +02:00 [Information] Path /api/user/login
+2018-07-08 14:25:33.242 +02:00 [Information] Belepes: False
+2018-07-08 14:25:50.317 +02:00 [Information] Path /api/user/login
+2018-07-08 14:26:03.061 +02:00 [Information] Path /api/user/logout
+2018-07-08 14:26:03.064 +02:00 [Information] Kilepes: True
+2018-07-08 14:26:03.070 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 14:26:10.549 +02:00 [Information] Path /api/user/login
+2018-07-08 14:26:10.576 +02:00 [Information] Belepes: False
+2018-07-08 14:26:10.589 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 14:26:15.136 +02:00 [Information] Path /api/user/list
+2018-07-08 14:26:15.138 +02:00 [Information] Supporting role True
+2018-07-08 14:26:41.820 +02:00 [Information] Path /api/user/login
+2018-07-08 14:26:50.180 +02:00 [Information] Path /login
+2018-07-08 14:26:52.743 +02:00 [Information] Path /eval code (1773)
+2018-07-08 14:26:55.289 +02:00 [Information] Path /api/user/logout
+2018-07-08 14:26:59.735 +02:00 [Information] Path /api/user/logout
+2018-07-08 14:27:20.003 +02:00 [Information] Path /api/user/logout
+2018-07-08 14:27:32.743 +02:00 [Information] Path /login
+2018-07-08 14:27:35.331 +02:00 [Information] Path /eval code (2655)
+2018-07-08 14:28:00.810 +02:00 [Information] Path /login
+2018-07-08 14:28:07.137 +02:00 [Information] Path /login
+2018-07-08 14:28:27.192 +02:00 [Information] Path /login
+2018-07-08 14:28:30.792 +02:00 [Information] Path /
+2018-07-08 14:28:30.794 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2O8F5Lrki0uPatmeGQfgq4_IYyRoWiqVuYR3AcjoxNj7t9m8jJv_LGFoCH1LqV1U8SVeTfZ0MGN5rWYEpcDAgN6UaA9pm5a2J1Rr3ZF0w4hcMsQguO_SPdgpPUuMy6SSYA
+2018-07-08 14:28:35.438 +02:00 [Information] Path /
+2018-07-08 14:28:35.440 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2NScVjdfQbdBChQxv2WEz6jUNKKlzyIHMyh4ZeJFicDWkhdxA4i-Wi18R985a11fgAsXJ8x9FbtLMmjHLEfNNEQBwTISMAjnbNq22N8DMOL3-XBJ77_8vAJM2vfJBw2IlU
+2018-07-08 14:28:45.060 +02:00 [Information] Path /
+2018-07-08 14:28:45.063 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2MJwsmgjr7J68D_UNRvLsC1XINEkbtDVKgRiU1a-8cmhEbKSA51dluN0RfwimzapnuFp0GQcYwlELZtzCqTJ7Y0zjC-U_bQfY2ynBKoNIDgKfEcSQ0MUV5IhzsU3pO9P8Q
+2018-07-08 14:29:02.670 +02:00 [Information] Path /
+2018-07-08 14:29:02.673 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2MD0c5q3V3HPCGQQ0yBakPV-fB72Mvo-MRHaPX3XJcJlf2HuvCDFRqfkZFjVJFsyEotxKqEouFLsBAx4a7U6AePy0O6VrJZCjeMfxr6xeiX8C8P4MFBMlnukUvQlAJ905c
+2018-07-08 14:29:44.398 +02:00 [Information] Path /
+2018-07-08 14:29:44.400 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2O3MivQQ26dd1VD-j3XJjZnQMtu9K4mn7X6VlRtl6XWJCy7zYguoQ71ZV_hHs_fxfn_61H8qrohd1Kn6KUc1Emfc77ApZHSCvSNXTPzFTypXj6oA4iL-kQbYvOgOm7U9Ug
+2018-07-08 14:30:55.984 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 14:31:05.184 +02:00 [Information] Path /
+2018-07-08 14:31:05.196 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2NQUMaeTo3te___nP4vfFykpio-wMWxhfObGePeoJ3HfRjb14h5f9DsfLWciKEwS1tA83ndJzTmsPg9sNKnDcEwqi8iCd5f9MxlCKhmpRN3rP9LRrWxuG2Zt_aQ7pEo0qc
+2018-07-08 14:31:21.511 +02:00 [Information] Path /dist/7915469ecfec354afbbe.hot-update.json
+2018-07-08 14:35:33.101 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 14:35:58.310 +02:00 [Information] Path /dist/7915469ecfec354afbbe.hot-update.json
+2018-07-08 14:40:02.656 +02:00 [Information] Path /
+2018-07-08 14:40:02.679 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2Mgkir3pMdyKeAnE-3YHXwikDdisaG6a4YSkILpFGnkausfoX_GDONq6Smg2wYad8oPeSAADyA7oFMhBMcIJlMV86HVropJJh6skX_EejXM8xdX6d_GOUxZjTn-MSnfErE
+2018-07-08 14:47:36.433 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 14:48:07.869 +02:00 [Information] Path /
+2018-07-08 14:48:07.884 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2PBT1NVOKf0rKbr9U34WVAA8qEhwpDrzwdNCfS9w7VUnY5Kxby9CM5COrdnPZKMO5Nv-TI1g_ZIk66yyO18I4JWoWqsfDrSKJwi2QdTSqmzmJtadTawXe0xZE9Bd9I4mCY
+2018-07-08 14:49:34.592 +02:00 [Information] Path /api/user/list
+2018-07-08 14:49:34.605 +02:00 [Information] Supporting role True
+2018-07-08 17:19:40.686 +02:00 [Information] Path /api/campus/current
+2018-07-08 17:19:43.306 +02:00 [Information] Path /api/campus/list
+2018-07-08 17:20:56.758 +02:00 [Information] Path /api/user/list
+2018-07-08 17:20:56.759 +02:00 [Information] Supporting role True
+2018-07-08 17:21:21.120 +02:00 [Information] Path /api/projectdetails/projectmeetings/list
+2018-07-08 17:21:21.162 +02:00 [Information] Path /Account/AccessDenied
+2018-07-08 17:21:22.864 +02:00 [Information] Path /api/project/subscriber/list
+2018-07-08 17:21:25.881 +02:00 [Information] Path /api/project/current/list
+2018-07-08 17:21:33.029 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 17:21:34.853 +02:00 [Information] Path /api/campus/current/participations
+2018-07-08 17:21:37.544 +02:00 [Information] Path /api/user/logout
+2018-07-08 17:21:37.567 +02:00 [Information] Kilepes: True
+2018-07-08 17:21:37.572 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 17:28:00.210 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 17:28:44.655 +02:00 [Information] Path /login
+2018-07-08 17:28:56.860 +02:00 [Information] Path /api/user/login
+2018-07-08 17:28:57.058 +02:00 [Information] Belepes: False
+2018-07-08 17:28:57.093 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 17:29:05.798 +02:00 [Information] Path /
+2018-07-08 17:29:05.801 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2MAe8i4VgLotUxD_NwLGEmgv70bq4oUiIDPzN6nHv2PHfnuXw1bwBBLKSmcvDYo6LvbZzy_itBfnHo6iPdB3hP2cuc5QeI5RcmN6eFKDzWncvF3Z8iKQDsDFrvL5cNcmKc
+2018-07-08 17:29:27.799 +02:00 [Information] Path /
+2018-07-08 17:29:27.801 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2N9ZhgQaUsVyyzWt5F-_X9BnMcUuERo49W2OfSXOq4sPUeNXpok0EUjyrrL1CG8tYYiy-HrLe5mrOwQBcpnnK8QVt8scRUgLjUnz1IzWlW0kl9SSk70p0J-kx-saLYuUUs
+2018-07-08 17:38:42.826 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 17:38:51.567 +02:00 [Information] Path /login
+2018-07-08 17:38:53.637 +02:00 [Information] Path /login
+2018-07-08 17:39:07.197 +02:00 [Information] Path /login
+2018-07-08 17:39:07.367 +02:00 [Information] Path /
+2018-07-08 17:39:07.394 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2OtjzSDb00XS-i9KMxq7PkmG-wr6I9qSG_Nprb28yeu-gqsTyu0QhCR7w6Egbl7s37DGd6QKySOKVF-JUYDbjZkvMZc6U44LqxbRxrz08yHuHW0JKdtnQPysG7UPUEjenM
+2018-07-08 17:39:14.689 +02:00 [Information] Path /api/user/login
+2018-07-08 17:39:26.763 +02:00 [Information] Path /api/user/login
+2018-07-08 17:40:38.560 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 17:41:06.411 +02:00 [Information] Path /
+2018-07-08 17:41:06.425 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2NsOxAeYjmHe5TCGnsofR_pmLseTxjX1Z7aLEOKeEnijCZ3klReu8qAZdoebPijYhKWElK0d6sYlWvw8JkVSh20Qqyspw9v_2G0UGUMHjc4JL5G4J5iQl61Fg0NNxx6TiA
+2018-07-08 18:06:50.964 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 18:07:20.973 +02:00 [Information] Path /login
+2018-07-08 18:07:30.988 +02:00 [Information] Path /
+2018-07-08 18:07:30.994 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2NxGyWNjnSEi_9QGMGufK9JL1p92tbVupPyQcnEx-Yq6IOyW0qWQTWxBVGUUwq8L2kaqwTMSs9EJKFRxF0xW7FveD-itDUwnvV0V9683k88fhoCPnwCultKxNIiDx57PhY
+2018-07-08 18:30:18.410 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 18:31:01.903 +02:00 [Information] Path /
+2018-07-08 18:31:01.917 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2OIqhKySTBC1MbY8wfDDbzhLf3SWMi_ntiVHM0K5ha-kff_uG0ZvgsI7v_K0Yxdndgvb2twIXk2xrXYPVjakBeY4teuwiuaQJ6CePqs_dVwN4viy8hwxdqGSveYFOHpiZg
+2018-07-08 18:31:33.401 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 18:39:10.138 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 18:39:38.321 +02:00 [Information] Path /dist/6da764bd250494422663.hot-update.json
+2018-07-08 18:39:56.416 +02:00 [Information] Path /
+2018-07-08 18:39:56.434 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2Ptt8xU1G7bzC96SZLniDd3FIkXdO6m0zWl7KuNNfd5sIHC5cxDu7XtyRjQ97JdA8dmCYZxy43ta2cKZWSATC_iFF98fEZ_pNrEqhz89ITp1cllNBMma9TE3AQtnYcIb_Y
+2018-07-08 18:40:29.489 +02:00 [Information] Path /
+2018-07-08 18:40:29.493 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2M5X2NGbEEsw_WmY0HTAFYJK4MZPBcLMmb3MkAkFFLDy-AOvbrP6DR9f4sRQvn5qmMmF7e-uK-CawqEx00YbOOFfxrJauQwHFsfPNa_UTERhE-5e0Pd7dMvHCTiN-RDEwI
+2018-07-08 18:40:36.761 +02:00 [Information] Path /
+2018-07-08 18:40:36.764 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2M41p8MmPG93dgrc_duzJ1cFVpgg4iMd2c3CaX3q2SqbVZ-QBCL1HZ2ayQyN-uJUERXp9p8YVY2haNQaCwaEu1BwRVCTYKEP6HOWDl8tB9xaXYaJ2pY0RTnAFZvOHyNGEc
+2018-07-08 18:40:39.858 +02:00 [Information] Path /api/campus/current
+2018-07-08 18:40:42.504 +02:00 [Information] Path /api/campus/current/participations
+2018-07-08 18:41:09.196 +02:00 [Information] Path /
+2018-07-08 18:41:09.199 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2PsCYc7mD0C6Cd8SlCbNk80NbXFR18Fhq3VBKXY8PBVY8ZFvUT3H202FtlMj6Ls-qFkm4xAAgb8AR7DhYs-g2_246i21tZff0FLtYWByYwI7fzVbalyWTdAHjg_WxNr-aQ
+2018-07-08 18:41:20.949 +02:00 [Information] Path /
+2018-07-08 18:41:20.950 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2N0zmYMzzq7OicXttmbBW9puKNRPmHUjcnipGQHqkSefBfZ-1Aick0IqopnNUakYX2CbXL3ZvSaEdHZkia6upm2vsAszIzwbiE2gvhr_UPGgRweGfx-hblY9lstpaBLmVg
+2018-07-08 18:54:01.891 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 18:54:35.228 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 19:00:25.646 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 19:00:54.816 +02:00 [Information] Path /dist/79aa12bcd79829360b68.hot-update.json
+2018-07-08 19:00:54.816 +02:00 [Information] Path /dist/79aa12bcd79829360b68.hot-update.json
+2018-07-08 19:01:07.470 +02:00 [Information] Path /
+2018-07-08 19:01:07.486 +02:00 [Information] New Token CfDJ8AFKzeocfblAmKOiMHQHH2PVub-Y0JlPok6Wo0LRDtwoXd3_7lXww8oVxNfiLbaYOjQZ3jclnPnt7ebp6vVKPqL_TfrSZp5PUHwFQQ0Mtjn0dy3wBGg30ioDcarNfHrjdkKNVCZTyOZnszWSXPA1XIc
+2018-07-08 19:01:11.906 +02:00 [Information] Path /dist/79aa12bcd79829360b68.hot-update.json
+2018-07-08 19:01:36.240 +02:00 [Information] Path /api/user/login
+2018-07-08 19:01:36.451 +02:00 [Information] Belepes: False
+2018-07-08 19:01:36.497 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 19:01:39.145 +02:00 [Information] Path /api/user/list
+2018-07-08 19:01:39.156 +02:00 [Information] Supporting role True
+2018-07-08 19:01:54.837 +02:00 [Information] Path /api/user/logout
+2018-07-08 19:01:54.856 +02:00 [Information] Kilepes: True
+2018-07-08 19:01:54.861 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 19:04:38.912 +02:00 [Information] Path /api/user/login
+2018-07-08 19:04:38.935 +02:00 [Information] Belepes: False
+2018-07-08 19:04:38.944 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 19:04:41.332 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 19:04:41.351 +02:00 [Information] Path /Account/AccessDenied
+2018-07-08 19:04:44.822 +02:00 [Information] Path /api/campus/current/participations
+2018-07-08 19:04:47.801 +02:00 [Information] Path /api/campus/current
+2018-07-08 19:04:49.349 +02:00 [Information] Path /api/campus/apply
+2018-07-08 19:04:55.067 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 19:05:18.377 +02:00 [Information] Path /api/user/login
+2018-07-08 19:05:18.393 +02:00 [Information] Belepes: False
+2018-07-08 19:05:18.403 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 19:05:21.077 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 19:14:46.434 +02:00 [Information] Path /dist/79aa12bcd79829360b68.hot-update.json
+2018-07-08 19:17:08.865 +02:00 [Information] Path /subscribe/add
+2018-07-08 19:17:10.995 +02:00 [Information] Path /dist/79aa12bcd79829360b68.hot-update.json
+2018-07-08 19:17:28.653 +02:00 [Information] Path /subscribe/add
+2018-07-08 19:17:30.239 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 19:22:18.009 +02:00 [Information] Path /subscribe/add
+2018-07-08 19:22:20.741 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 19:36:57.357 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 19:37:27.558 +02:00 [Information] Path /dist/8058c9ff4c376f26a3b9.hot-update.json
+2018-07-08 19:37:27.558 +02:00 [Information] Path /dist/8058c9ff4c376f26a3b9.hot-update.json
+2018-07-08 19:37:45.688 +02:00 [Information] Path /subscribe/add
+2018-07-08 19:37:49.876 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 19:37:49.966 +02:00 [Information] Path /dist/8058c9ff4c376f26a3b9.hot-update.json
+2018-07-08 19:38:26.695 +02:00 [Information] Path /login
+2018-07-08 19:40:10.833 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 19:42:02.750 +02:00 [Information] Path /subscribe/add
+2018-07-08 19:42:07.288 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 19:43:15.341 +02:00 [Information] Path /subscribe/add
+2018-07-08 19:43:16.929 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 19:43:24.573 +02:00 [Information] Path /api/user/logout
+2018-07-08 19:43:24.596 +02:00 [Information] Kilepes: True
+2018-07-08 19:43:24.603 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 19:43:41.919 +02:00 [Information] Path /api/user/login
+2018-07-08 19:43:42.034 +02:00 [Information] Belepes: False
+2018-07-08 19:43:42.065 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 19:43:46.338 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 19:47:25.990 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 19:58:37.937 +02:00 [Information] Path /api/user/logout
+2018-07-08 19:58:37.939 +02:00 [Information] Kilepes: True
+2018-07-08 19:58:37.943 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 19:58:47.130 +02:00 [Information] Path /api/user/login
+2018-07-08 19:58:47.200 +02:00 [Information] Belepes: False
+2018-07-08 19:58:47.210 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 19:58:48.731 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 20:07:33.668 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 20:07:54.419 +02:00 [Information] Path /subscribe/add
+2018-07-08 20:08:04.836 +02:00 [Information] Path /dist/841af2e421f76bf41e34.hot-update.json
+2018-07-08 20:08:05.510 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 20:08:05.624 +02:00 [Information] Path /dist/841af2e421f76bf41e34.hot-update.json
+2018-07-08 20:08:25.762 +02:00 [Information] Path /subscribe/add
+2018-07-08 20:08:33.104 +02:00 [Information] Path /api/user/logout
+2018-07-08 20:08:33.135 +02:00 [Information] Kilepes: True
+2018-07-08 20:08:33.139 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 20:08:42.169 +02:00 [Information] Path /api/user/login
+2018-07-08 20:08:42.301 +02:00 [Information] Belepes: False
+2018-07-08 20:08:42.328 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 20:08:50.844 +02:00 [Information] Path /api/user/logout
+2018-07-08 20:08:50.846 +02:00 [Information] Kilepes: True
+2018-07-08 20:08:50.850 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 20:08:57.659 +02:00 [Information] Path /api/user/login
+2018-07-08 20:08:57.677 +02:00 [Information] Belepes: False
+2018-07-08 20:08:57.687 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 20:09:01.397 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 20:10:37.440 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 20:10:55.156 +02:00 [Information] Path /subscribe/add
+2018-07-08 20:11:01.713 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 20:12:05.074 +02:00 [Information] Path /api/user/logout
+2018-07-08 20:12:05.111 +02:00 [Information] Kilepes: True
+2018-07-08 20:12:05.120 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 20:12:12.896 +02:00 [Information] Path /api/user/login
+2018-07-08 20:12:13.032 +02:00 [Information] Belepes: False
+2018-07-08 20:12:13.054 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 20:12:16.051 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 20:14:48.511 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 20:15:14.741 +02:00 [Information] Path /subscribe/add
+2018-07-08 20:15:19.665 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 20:16:04.698 +02:00 [Information] Path /subscribe/add
+2018-07-08 20:17:04.664 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 20:17:33.026 +02:00 [Information] Path /subscribe/add
+2018-07-08 20:17:37.879 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 20:18:05.875 +02:00 [Information] Path /subscribe/add
+2018-07-08 20:19:41.695 +02:00 [Information] Server=localhost\SQLEXPRESS;Database=evomanagerdb;Trusted_Connection=True;
+2018-07-08 20:20:38.824 +02:00 [Information] Path /subscribe/add
+2018-07-08 20:20:43.725 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 20:21:56.001 +02:00 [Information] Path /api/user/logout
+2018-07-08 20:21:56.042 +02:00 [Information] Kilepes: True
+2018-07-08 20:21:56.047 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 20:22:00.609 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 20:22:00.626 +02:00 [Information] Path /Account/Login
+2018-07-08 20:22:07.357 +02:00 [Information] Path /subscribe/add
+2018-07-08 20:22:23.312 +02:00 [Information] Path /subscribe/add
+2018-07-08 20:22:24.920 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 20:22:24.949 +02:00 [Information] Path /Account/Login
+2018-07-08 20:22:56.193 +02:00 [Information] Path /subscribe/add
+2018-07-08 20:22:57.736 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 20:22:57.762 +02:00 [Information] Path /Account/Login
+2018-07-08 20:23:18.169 +02:00 [Information] Path /api/user/login
+2018-07-08 20:23:18.301 +02:00 [Information] Belepes: False
+2018-07-08 20:23:18.327 +02:00 [Information] Path /api/xsrftoken/get
+2018-07-08 20:23:21.405 +02:00 [Information] Path /api/project/current/active/list
+2018-07-08 20:34:06.642 +02:00 [Information] Path /api/project/current/active/list

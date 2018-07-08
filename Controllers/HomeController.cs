@@ -24,16 +24,16 @@ namespace EvoManager.Controllers
         private readonly IAntiforgery _antiForgeryService;
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
- 
+
         public HomeController(IAntiforgery antiForgeryService,
          UserManager<User> userManager,
          RoleManager<IdentityRole> roleManager)
         {
             _antiForgeryService = antiForgeryService;
             _userManager = userManager;
-            _roleManager =  roleManager;
+            _roleManager = roleManager;
         }
-    
+
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
@@ -43,62 +43,65 @@ namespace EvoManager.Controllers
             //var tokens =  _antiForgeryService.GetAndStoreTokens(this.HttpContext);
             //HttpContext.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken, new CookieOptions { HttpOnly = false });
             // Render this token in a div, so our javascript can read it and send it, and send it in the ajax request header where it can be validated against the XSRF-TOKEN cookie
-           
+
             //Log.Information("Token by first loading: " +  tokens.RequestToken);
             //this.ViewBag.AntiForgeryRequestToken = tokens.RequestToken;
 
             //TODO:máshová kellene
             bool existsRole = await _roleManager.RoleExistsAsync("User");
 
-			if(!existsRole)
-			{
-				var role = new IdentityRole();
+            if (!existsRole)
+            {
+                var role = new IdentityRole();
                 role.Name = "User";
                 await _roleManager.CreateAsync(role);
-				
-			}
+
+            }
 
             existsRole = await _roleManager.RoleExistsAsync("Admin");
 
-			if(!existsRole)
-			{
-				var role = new IdentityRole();
+            if (!existsRole)
+            {
+                var role = new IdentityRole();
                 role.Name = "Admin";
                 await _roleManager.CreateAsync(role);
-				
-			}
+
+            }
 
             existsRole = await _roleManager.RoleExistsAsync("Mentor");
 
-			if(!existsRole)
-			{
-				var role = new IdentityRole();
+            if (!existsRole)
+            {
+                var role = new IdentityRole();
                 role.Name = "Mentor";
                 await _roleManager.CreateAsync(role);
-				
-			}
+
+            }
 
             existsRole = await _roleManager.RoleExistsAsync("Student");
 
-			if(!existsRole)
-			{
-				var role = new IdentityRole();
+            if (!existsRole)
+            {
+                var role = new IdentityRole();
                 role.Name = "Student";
                 await _roleManager.CreateAsync(role);
-		
-			}
+
+            }
 
             var user = await _userManager.GetUserAsync(HttpContext.User);
-            
-            if(user!=null) {
-                IList<String>  roles = await _userManager.GetRolesAsync(user);
+
+            if (user != null)
+            {
+                IList<String> roles = await _userManager.GetRolesAsync(user);
                 this.ViewBag.Roles = roles;
-            } else {
+            }
+            else
+            {
                 this.ViewBag.Roles = new List<String>();
             }
 
             this.ViewBag.IsAuthenticated = this.User.Identity.IsAuthenticated;
-            
+
 
             return View();
         }

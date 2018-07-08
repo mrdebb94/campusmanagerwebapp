@@ -13,6 +13,9 @@
     "types": ["webpack-env"],
 	"noImplicitAny": false
   },
+  "include": [
+        "ClientApp/**/*"
+  ],
   "exclude": [
       "bin",
       "node_modules"

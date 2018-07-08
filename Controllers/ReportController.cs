@@ -32,106 +32,112 @@ using Serilog;
 namespace EvoManager.Controllers
 {
     [Authorize]
-	[Route("api/[controller]")]
+    [Route("api/[controller]")]
     public class ReportController : Controller
     {
-		private EvoDbContext _context;
+        private EvoDbContext _context;
         private readonly IAntiforgery _antiForgeryService;
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-		private ICompositeViewEngine _viewEngine;
- 
+        private ICompositeViewEngine _viewEngine;
+
         public ReportController(EvoDbContext context, IAntiforgery antiForgeryService,
          UserManager<User> userManager,
          RoleManager<IdentityRole> roleManager,
-		 ICompositeViewEngine viewEngine)
+         ICompositeViewEngine viewEngine)
         {
-			_context = context;
+            _context = context;
             _antiForgeryService = antiForgeryService;
             _userManager = userManager;
-            _roleManager =  roleManager;
-			_viewEngine = viewEngine;
+            _roleManager = roleManager;
+            _viewEngine = viewEngine;
         }
-		
-		private async Task<string> RenderPartialViewToString(string viewName, object model)
-		{
-			if (string.IsNullOrEmpty(viewName))
-				viewName = ControllerContext.ActionDescriptor.ActionName;
 
-			ViewData.Model = model;
+        private async Task<string> RenderPartialViewToString(string viewName, object model)
+        {
+            if (string.IsNullOrEmpty(viewName))
+                viewName = ControllerContext.ActionDescriptor.ActionName;
 
-			using (var writer = new StringWriter())
-			{
-				ViewEngineResult viewResult = 
-					_viewEngine.FindView(ControllerContext, viewName, false);
+            ViewData.Model = model;
 
-				ViewContext viewContext = new ViewContext(
-					ControllerContext, 
-					viewResult.View, 
-					ViewData, 
-					TempData, 
-					writer, 
-					new HtmlHelperOptions()
-				);
+            using (var writer = new StringWriter())
+            {
+                ViewEngineResult viewResult =
+                    _viewEngine.FindView(ControllerContext, viewName, false);
 
-				await viewResult.View.RenderAsync(viewContext);
+                ViewContext viewContext = new ViewContext(
+                    ControllerContext,
+                    viewResult.View,
+                    ViewData,
+                    TempData,
+                    writer,
+                    new HtmlHelperOptions()
+                );
 
-				return writer.GetStringBuilder().ToString();
-			}
-		}
-    
+                await viewResult.View.RenderAsync(viewContext);
+
+                return writer.GetStringBuilder().ToString();
+            }
+        }
+
         [AllowAnonymous]
-		[HttpGet("user")]
+        [HttpGet("user")]
         public async Task<IActionResult> ReportUser([FromServices] INodeServices nodeServices, string userId)
         {
-			
+
             var student = _context.Students
-			               .Where(t=>t.UserId == userId)
-						   .Select(t=>new Student {
-								StudentId = t.StudentId,
-								User = new User { Name=t.User.Name, PhoneNumber = t.User.PhoneNumber },
-								HasScholarship = t.HasScholarship
-						   })
-						   .First();
-			
-		    
-			var projectCampus = _context.TeamMembers
-			        .Include(t=>t.TeamMemberParticipationMeetings)
-					.Include(t=>t.TeamMemberRatings)
-			        .Where(t=>t.Student.UserId == userId)
-					.Select(t=>new ProjectCampus { 
-						Campus = new Campus {
-						   StartDate = t.ProjectCampus.Campus.StartDate,
-						   EndDate = t.ProjectCampus.Campus.EndDate
-						},
-                        Project = new Project {
-                           Name = t.ProjectCampus.Project.Name,
-						   Description = t.ProjectCampus.Project.Description
+                           .Where(t => t.UserId == userId)
+                           .Select(t => new Student
+                           {
+                               StudentId = t.StudentId,
+                               User = new User { Name = t.User.Name, PhoneNumber = t.User.PhoneNumber },
+                               HasScholarship = t.HasScholarship
+                           })
+                           .First();
+
+
+            var projectCampus = _context.TeamMembers
+                    .Include(t => t.TeamMemberParticipationMeetings)
+                    .Include(t => t.TeamMemberRatings)
+                    .Where(t => t.Student.UserId == userId)
+                    .Select(t => new ProjectCampus
+                    {
+                        Campus = new Campus
+                        {
+                            StartDate = t.ProjectCampus.Campus.StartDate,
+                            EndDate = t.ProjectCampus.Campus.EndDate
                         },
-						ProjectMeetings = t.TeamMemberParticipationMeetings
-										   .Select(p=>new ProjectMeeting {
-											   StartTime = p.ProjectMeeting.StartTime,
-											   EndTime = p.ProjectMeeting.EndTime,
-											   TeamMemberParticipationMeetings =
-											    new List<TeamMemberParticipationMeeting> {
-													new TeamMemberParticipationMeeting {
-														Checked = p.Checked
-													}
-												}
-											})
+                        Project = new Project
+                        {
+                            Name = t.ProjectCampus.Project.Name,
+                            Description = t.ProjectCampus.Project.Description
+                        },
+                        ProjectMeetings = t.TeamMemberParticipationMeetings
+                                           .Select(p => new ProjectMeeting
+                                           {
+                                               StartTime = p.ProjectMeeting.StartTime,
+                                               EndTime = p.ProjectMeeting.EndTime,
+                                               TeamMemberParticipationMeetings =
+                                                new List<TeamMemberParticipationMeeting> {
+                                                    new TeamMemberParticipationMeeting {
+                                                        Checked = p.Checked
+                                                    }
+                                                }
+                                           })
                                             .ToList()
-					}).ToList();
-			
-			
-			var model = new StudentReportViewModel {
-				  Student = student,
-				  ProjectCampus = projectCampus  
-			};  
-			
-			var renderedView = await RenderPartialViewToString("StudentReport", model);
-			
-			var result = await nodeServices.InvokeAsync<byte[]>("./pdf", renderedView); 
- 
+                    }).ToList();
+
+
+            var model = new StudentReportViewModel
+            {
+                Student = student,
+                ProjectCampus = projectCampus
+            };
+
+            var renderedView = await RenderPartialViewToString("StudentReport", model);
+
+            var result = await nodeServices.InvokeAsync<byte[]>("./pdf", renderedView);
+
             /*HttpContext.Response.ContentType = "application/pdf"; 
              
             HttpContext.Response.Headers.Add("x-filename", "report.pdf"); 
@@ -139,7 +145,7 @@ namespace EvoManager.Controllers
             HttpContext.Response.Body.Write(result, 0, result.Length); 
             
 			return new ContentResult();*/
-            return File(result, "application/pdf", "report.pdf"); 
+            return File(result, "application/pdf", "report.pdf");
             //return Ok(report!=null?Json(xmloutput):Json("egy"));
         }
     }

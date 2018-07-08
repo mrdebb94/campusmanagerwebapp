@@ -16,25 +16,25 @@ using Serilog;
 public class XsrfTokenController : Controller
 {
     private readonly IAntiforgery _antiforgery;
- 
+
     public XsrfTokenController(IAntiforgery antiforgery)
     {
         _antiforgery = antiforgery;
     }
- 
+
     [HttpGet("[action]")]
     public IActionResult Get()
     {
         var tokens = _antiforgery.GetAndStoreTokens(HttpContext);
- 
+
         /*return new ObjectResult(new {
             token = tokens.RequestToken,
             tokenName = tokens.HeaderName
         });*/
 
-        this.HttpContext.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken, 
+        this.HttpContext.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken,
                         new CookieOptions() { HttpOnly = false });
-        
+
         return Ok();
 
     }

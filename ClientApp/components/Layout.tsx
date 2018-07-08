@@ -33,29 +33,29 @@ import CreateUserDialog from './CreateUserDialog';
     }
  };*/
 
-const createStyle = (browser)=> {
-  const isMobile = browser.lessThan.medium;
-  return {
-    component: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-    } as React.CSSProperties,
-    navmenu: {
-        width: 300
-    },
-    content: {
-        paddingLeft: !isMobile?300:0,
-        paddingTop: 64,
-        height: '100%'
+const createStyle = (navMenuOpen) => {
+    //const isMobile = props.browser!.lessThan.medium;
+    return {
+        component: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+        } as React.CSSProperties,
+        navmenu: {
+            width: 300
+        },
+        content: {
+            paddingLeft: (navMenuOpen) ? 300 : 0,
+            paddingTop: 64,
+            height: '100%'
+        }
     }
-  }
 };
 
 const styles = {
     root: {
         width: '100%',
-		
+
     },
     flex: {
         flex: 1,
@@ -63,32 +63,47 @@ const styles = {
     /*appBarRoot: {
 	   zIndex: 1000
 	}*/
-	 menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
+    menuButton: {
+        marginLeft: -12,
+        marginRight: 20,
+    },
 }
 
+interface LayoutState {
+    snackbarOpen: boolean,
+    snackbarMessage: string,
+    navMenuOpen: boolean
+};
 
 class Layout extends React.Component<
-   StyledComponentProps<'root'|'flex'|'appBarRoot'|'menuButton'>
-   & RouteComponentProps<any>
-   &{browser?:any}, {}> {
+    StyledComponentProps<'root' | 'flex' | 'appBarRoot' | 'menuButton'>
+    & RouteComponentProps<any>
+    & { browser?: any }, LayoutState> {
+
+
+    componentWillReceiveProps(nextProps) {
+        if (!this.props.browser!.lessThan.medium && nextProps.browser!.lessThan.medium) {
+            this.setState({
+                navMenuOpen: false
+            })
+        }
+    }
 
     constructor(props) {
         super(props);
     }
 
     state = {
-		snackbarOpen: false,
-        snackbarMessage: ''
+        snackbarOpen: false,
+        snackbarMessage: '',
+        navMenuOpen: true
     };
-	
+
     public render() {
         const { classes } = this.props;
-		const isMobile = this.props.browser!.lessThan.medium;
-		console.log(isMobile);
-		let style=createStyle(this.props.browser!);
+        const isMobile = this.props.browser!.lessThan.medium;
+        console.log(isMobile);
+        let style = createStyle(this.state.navMenuOpen);
         return (
             <div className={classes!.root}>
                 {/*
@@ -97,27 +112,41 @@ class Layout extends React.Component<
                     style={{ zIndex: 1500, position: 'fixed', top: 0, left: 0}}
                 />*/
                     <AppBar
-					  color='primary'
-					  position='fixed'
-					  
-					 >
+                        color='primary'
+                        position='fixed'
+
+                    >
                         <Toolbar>
-						     <IconButton className={classes!.menuButton} color="inherit" aria-label="Menu">
-								<MenuIcon />
-							 </IconButton>
+                            <IconButton
+                                className={classes!.menuButton}
+                                color="inherit"
+                                aria-label="Menu"
+                                onClick={() => {
+                                    this.setState((prevState, props) => ({
+                                        navMenuOpen: !prevState.navMenuOpen
+                                    }))
+                                }}
+                            >
+                                <MenuIcon />
+                            </IconButton>
                             <Typography type="title" color="inherit" className={classes!.flex}>
-                               EvoCampus manager
+                                EvoCampus manager
                             </Typography>
                         </Toolbar>
                     </AppBar>
                 }
                 <div>
-                    <NavMenu open={!isMobile}/>
+                    <NavMenu open={this.state.navMenuOpen} />
                 </div>
                 <div>
                     <div style={style.content}>
-                        <div style={{ marginLeft: 76, marginRight: 76, marginTop: 30 }}>
-						     <CreateUserDialog />
+                        {/*<div style={{ marginLeft: 76, marginRight: 76, marginTop: 30 }}>
+                            <CreateUserDialog />
+                            {this.props.children}
+                        </div>
+                        */}
+                        <div id="content">
+                            <CreateUserDialog />
                             {this.props.children}
                         </div>
                     </div>
@@ -140,7 +169,7 @@ class Layout extends React.Component<
 }
 
 export default withRouter(connect(
-  (state: ApplicationState) => ({browser: state.browser}) 
+    (state: ApplicationState) => ({ browser: state.browser })
 )(withStyles(styles)(Layout)) as any) as any;
 
 /*export default withRouter(connect(

@@ -1,4 +1,4 @@
-import { fetch, addTask } from 'domain-task';
+import 'whatwg-fetch';
 import { Action, Reducer, ActionCreator } from 'redux';
 import { AppThunkAction } from './';
 
@@ -51,7 +51,7 @@ export const actionCreators = {
                     dispatch({ type: 'RECEIVE_WEATHER_FORECASTS', startDateIndex: startDateIndex, forecasts: data });
                 });
 
-            addTask(fetchTask); // Ensure server-side prerendering waits for this to complete
+            //addTask(fetchTask); // Ensure server-side prerendering waits for this to complete
             dispatch({ type: 'REQUEST_WEATHER_FORECASTS', startDateIndex: startDateIndex });
         }
     }
