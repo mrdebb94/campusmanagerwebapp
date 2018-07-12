@@ -6,6 +6,7 @@ import { ApplicationState, reducers } from './store';
 import { History } from 'history';
 import { responsiveStoreEnhancer } from 'redux-responsive';
 import * as signalR from "@aspnet/signalr";
+import { ActiveProject } from './store/Project';
 
 let signalrMiddleware = store => next => action => {
     switch (action.type) {
@@ -13,12 +14,18 @@ let signalrMiddleware = store => next => action => {
         case 'SET_PROJECT_SUBSCRIBE_CONNECTION':
             console.log("CONNECTION MIDDLAWARE");
             let hubConnection = action.projectSubscribeConnection;
-            hubConnection.on('ProjectSubscribeChange', (user, message) => {
+            hubConnection.on('ProjectSubscribeChange', (user, message, projectListJson) => {
                 //store.dispatch({ type: 'INCREMENT_COUNT' })
                 console.log("Jelentkezes tortent " + user + " " + message);
+                let projectList: ActiveProject[] = JSON.parse(projectListJson) as ActiveProject[];
+                console.log(projectList);
+                store.dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList });
+            });
+            hubConnection.on('ProjectSubscribeMessage', (message) => {
+                //store.dispatch({ type: 'INCREMENT_COUNT' })
+                console.log("Jelentkezes kozben " + message);
             });
             break;
-
         case "SIGNALR_PROJECT_SUBSCRIBE":
             //let connection:signalR.HubConnection
             //TODO: check connection

@@ -45,15 +45,19 @@ namespace EvoManager.Controllers
             var user = await _userManager.GetUserAsync(HttpContext.User);
             IList<String> roles = await _userManager.GetRolesAsync(user);
 
-            //Be van-e iratkozva a félévre
-            var campusParticipation = _context.CampusParticipations
-            .Include(m => m.Student)
-            .Include(m => m.Mentor)
-            .Where(m => m.Campus.Active &&
-                      ((roles.Contains("Student") && m.StudentId != null && m.Student.UserId == user.Id) ||
-                        (roles.Contains("Mentor") && m.MentorId != null && m.Mentor.UserId == user.Id))
+            CampusParticipation campusParticipation = null;
 
-            ).FirstOrDefault();
+            if (!roles.Contains("Admin"))
+            {
+                //Be van-e iratkozva a félévre
+                campusParticipation = _context.CampusParticipations
+                .Include(m => m.Student)
+                .Include(m => m.Mentor)
+                .Where(m => m.Campus.Active &&
+                          ((roles.Contains("Student") && m.StudentId != null && m.Student.UserId == user.Id) ||
+                            (roles.Contains("Mentor") && m.MentorId != null && m.Mentor.UserId == user.Id))
+                ).FirstOrDefault();
+            }
 
             return _context.ProjectCampus
            .Include(m => m.SubscribedStudents)
@@ -97,12 +101,12 @@ namespace EvoManager.Controllers
                        }
                    }
                ).ToList(),
-               Subscribed = ((campusParticipation.StudentId != null
+               Subscribed = ((campusParticipation != null && campusParticipation.StudentId != null
                           && m.SubscribedStudents
                           .Count(s => s.ProjectCampusId == m.ProjectCampusId
                           && s.StudentId == campusParticipation.StudentId
                           && s.Deleted == false) != 0)
-                          || (campusParticipation.MentorId != null
+                          || (campusParticipation != null && campusParticipation.MentorId != null
                           && m.SubscribedMentors
                           .Count(s => s.ProjectCampusId == m.ProjectCampusId
                           && s.MentorId == campusParticipation.MentorId
