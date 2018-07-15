@@ -13,7 +13,7 @@ export interface ProjectStatus {
 export interface SubscribedMentor {
     subscribedMentorId: string,
     projectCampusId: string,
-   
+
 }
 
 export interface SubscribedMentorData extends SubscribedMentor {
@@ -27,7 +27,7 @@ export interface SubscribedStudent {
     projectCampusId: string
 }
 
-export interface SubscribedStudentData extends SubscribedStudent{
+export interface SubscribedStudentData extends SubscribedStudent {
     subscribedStudentId: string,
     projectCampusId: string,
     student: Student;
@@ -36,7 +36,7 @@ export interface SubscribedStudentData extends SubscribedStudent{
 //TODO: ProjectDetails status
 export interface Project {
     projectCampusId: string | null;
-    projectId: string;
+    projectId: string | null;
     name: string;
     description: string;
     campus?: Campus;
@@ -108,9 +108,14 @@ interface SignalrProjectSubscribe {
     projectCampusId: string;
 }
 
+interface SignalrProjectUnSubscribe {
+    type: 'SIGNALR_PROJECT_UNSUBSCRIBE';
+    projectCampusId: string;
+}
+
 type KnownAction = SetProjectListAction | AddProjectAction |
-    ToggleProjectDialog | ModifyEditedProjectAction | SetActiveProjectListAction | ToggleProjectSubscribeDialog 
-    | SignalrProjectSubscribe;
+    ToggleProjectDialog | ModifyEditedProjectAction | SetActiveProjectListAction | ToggleProjectSubscribeDialog
+    | SignalrProjectSubscribe | SignalrProjectUnSubscribe;
 
 export const projectServices = {
 
@@ -362,7 +367,7 @@ export const projectServices = {
 
 export const actionCreators = {
 
-    addProject: (editedProject:Project): AppThunkAction<KnownAction> => (dispatch, getState) => {
+    addProject: (editedProject: Project): AppThunkAction<KnownAction> => (dispatch, getState) => {
 
         //let { project: { editedProject } } = getState();
         let { session } = getState();
@@ -435,7 +440,7 @@ export const actionCreators = {
         projectStatus,
         subscribedMentors = [],
         subscribedStudents = []
-        }:
+    }:
         {
             projectCampusId?: string | null,
             projectId?: string,
@@ -525,11 +530,11 @@ export const actionCreators = {
         projectServices.approveStudentProjectSubscribe(subscribedStudentId, session.xsrfToken).then(
             (response) => {
                 console.log(response);
-				projectServices.listProjectSubscribersInCurrentCampus().then((response) => {
-						let projectList: ActiveProject[] = response as ActiveProject[];
-						console.log(projectList);
-						dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList });
-			    });
+                projectServices.listProjectSubscribersInCurrentCampus().then((response) => {
+                    let projectList: ActiveProject[] = response as ActiveProject[];
+                    console.log(projectList);
+                    dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList });
+                });
             }
         )
     },
@@ -540,11 +545,11 @@ export const actionCreators = {
             projectServices.approveMentorProjectSubscribe(subscribedMentorId, session.xsrfToken).then(
                 (response) => {
                     console.log(response);
-					projectServices.listProjectSubscribersInCurrentCampus().then((response) => {
-						let projectList: ActiveProject[] = response as ActiveProject[];
-						console.log(projectList);
-						dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList });
-					});
+                    projectServices.listProjectSubscribersInCurrentCampus().then((response) => {
+                        let projectList: ActiveProject[] = response as ActiveProject[];
+                        console.log(projectList);
+                        dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList });
+                    });
                 }
             )
         },
@@ -556,16 +561,16 @@ export const actionCreators = {
             projectServices.modifyMentorProjectSubscribe(subscribedMentor, session.xsrfToken!).then(
                 (response) => {
                     console.log(response);
-					projectServices.listProjectSubscribersInCurrentCampus().then((response) => {
-						let projectList: ActiveProject[] = response as ActiveProject[];
-						console.log(projectList);
-						dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList });
-						dispatch({
-                        type: 'TOGGLE_PROJECT_SUBSCRIBE_DIALOG', status: {
-                            open:false, mode: "", projectList:[], subscribedMentor:undefined, subscribedStudent:undefined
-                        }
+                    projectServices.listProjectSubscribersInCurrentCampus().then((response) => {
+                        let projectList: ActiveProject[] = response as ActiveProject[];
+                        console.log(projectList);
+                        dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList });
+                        dispatch({
+                            type: 'TOGGLE_PROJECT_SUBSCRIBE_DIALOG', status: {
+                                open: false, mode: "", projectList: [], subscribedMentor: undefined, subscribedStudent: undefined
+                            }
                         });
-					});
+                    });
                     /*dispatch({
                         type: 'TOGGLE_PROJECT_SUBSCRIBE_DIALOG', status: {
                             open:false, mode: "", projectList:[], subscribedMentor:undefined, subscribedStudent:undefined
@@ -582,17 +587,17 @@ export const actionCreators = {
             projectServices.modifyStudentProjectSubscribe(subscribedStudent, session.xsrfToken!).then(
                 (response) => {
                     console.log(response);
-					projectServices.listProjectSubscribersInCurrentCampus().then((response) => {
-						let projectList: ActiveProject[] = response as ActiveProject[];
-						console.log(projectList);
-						dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList });
-						dispatch({
-							type: 'TOGGLE_PROJECT_SUBSCRIBE_DIALOG', status: {
-								open:false, mode: "", projectList:[], 
-								subscribedMentor:undefined, subscribedStudent:undefined
-							}
+                    projectServices.listProjectSubscribersInCurrentCampus().then((response) => {
+                        let projectList: ActiveProject[] = response as ActiveProject[];
+                        console.log(projectList);
+                        dispatch({ type: 'SET_ACTIVE_PROJECT_LIST', projectList });
+                        dispatch({
+                            type: 'TOGGLE_PROJECT_SUBSCRIBE_DIALOG', status: {
+                                open: false, mode: "", projectList: [],
+                                subscribedMentor: undefined, subscribedStudent: undefined
+                            }
                         });
-					});
+                    });
                     /*dispatch({
                         type: 'TOGGLE_PROJECT_SUBSCRIBE_DIALOG', status: {
                             open:false, mode: "", projectList:[], subscribedMentor:undefined, subscribedStudent:undefined
@@ -601,10 +606,14 @@ export const actionCreators = {
                 }
             );
         },
-        subscribeProjectSignalR: (projectCampusId:string): AppThunkAction<KnownAction> => (dispatch, getState) => {
-            dispatch({ type: 'SIGNALR_PROJECT_SUBSCRIBE', projectCampusId});
-            
-       },
+    subscribeProjectSignalR: (projectCampusId: string): AppThunkAction<KnownAction> => (dispatch, getState) => {
+        dispatch({ type: 'SIGNALR_PROJECT_SUBSCRIBE', projectCampusId });
+
+    },
+    unSubscribeProjectSignalR: (projectCampusId: string): AppThunkAction<KnownAction> => (dispatch, getState) => {
+        dispatch({ type: 'SIGNALR_PROJECT_UNSUBSCRIBE', projectCampusId });
+
+    },
 
 };
 const initialState: ProjectState = {

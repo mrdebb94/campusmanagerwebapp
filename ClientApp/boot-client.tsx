@@ -10,7 +10,7 @@ import { createBrowserHistory } from 'history';
 import configureStore from './configureStore';
 import { ApplicationState }  from './store';
 import * as RoutesModule from './routes';
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import * as signalR from "@aspnet/signalr";
 
 //signalR connection

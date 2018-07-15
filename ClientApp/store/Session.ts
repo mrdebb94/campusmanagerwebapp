@@ -10,6 +10,7 @@ export interface SettingsState {
     authenticated?: boolean;
     roles?: string[];
     failedLogin: boolean;
+    id?:string|null;
 };
 
 interface InitConfigAction {
@@ -32,6 +33,10 @@ interface SetRolesAction {
     roles: string[];
 };
 
+interface SetUserIdAction {
+    type: 'SetUserIdAction';
+    id: string | null;
+};
 
 interface SetFailedLogin {
     type: 'SetFailedLogin';
@@ -39,7 +44,7 @@ interface SetFailedLogin {
 };
 
 type KnownAction = InitConfigAction | SetAuthenticationAction 
-   | SetXsrfTokenAction | SetFailedLogin | SetRolesAction;
+   | SetXsrfTokenAction | SetFailedLogin | SetRolesAction | SetUserIdAction;
 
 export const sessionServices = {
     getXsrfToken: (): Promise<any> => new Promise<any>((resolve) => {
@@ -133,13 +138,15 @@ export const actionCreators = {
         sessionServices.login(userName, password, session.xsrfToken!).then(response => {
             console.log("Bejelentkezve");
 			console.log(response);
-			let roles = response.value;
+            let roles = response.value.roles;
+            let id = response.value.id;
             sessionServices.getXsrfToken().then(respone => {
                 dispatch({ type: 'SetAuthenticationAction', authenticated: true });
                 var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, "$1"); 
                 console.log("Kapott token LOGIN" +  cookieValue);
                 dispatch({type:'SetXsrfTokenAction', xsrfToken: cookieValue});
-				dispatch({ type: 'SetRolesAction', roles });
+                dispatch({ type: 'SetRolesAction', roles });
+                dispatch({ type: 'SetUserIdAction', id});
             })
 
             //TODO: error-ba is?
@@ -150,7 +157,8 @@ export const actionCreators = {
                 console.log("Hiba");
                 dispatch({ type: 'SetAuthenticationAction', authenticated: false });
                 dispatch({ type: 'SetFailedLogin', failedLogin: true  });
-				dispatch({ type: 'SetRolesAction', roles: []});
+                dispatch({ type: 'SetRolesAction', roles: []});
+                dispatch({ type: 'SetUserIdAction', id:null});
         });
     },
     logout: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
@@ -166,7 +174,8 @@ export const actionCreators = {
                 var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, "$1"); 
                 console.log("Kapott token LOGOUT" +  cookieValue);
                 dispatch({type:'SetXsrfTokenAction', xsrfToken: cookieValue});
-				dispatch({ type: 'SetRolesAction', roles: []});
+                dispatch({ type: 'SetRolesAction', roles: []});
+                dispatch({ type: 'SetUserIdAction', id:null});
             })
 
             //dispatch({ type: 'SetAuthenticationAction', authenticated: false });
@@ -177,6 +186,9 @@ export const actionCreators = {
     },
 	setRoles: (roles: string[]): AppThunkAction<KnownAction> => (dispatch, getState) => {
         dispatch({ type: 'SetRolesAction', roles });
+    },
+    setUserId: (id: string): AppThunkAction<KnownAction> => (dispatch, getState) => {
+        dispatch({ type: 'SetUserIdAction',id });
     }
 };
 
@@ -199,7 +211,11 @@ export const reducer: Reducer<SettingsState> = (state: SettingsState, incomingAc
         }
 		case 'SetRolesAction': {
 			 return { ...state, roles: [...action.roles] };
-		}
+        }
+        case 'SetUserIdAction': {
+            console.log("ITT1");
+            return { ...state, id: action.id };
+       }
         default:
             // The following line guarantees that every action in the KnownAction union has been covered by a case above
             // const exhaustiveCheck: never = action;

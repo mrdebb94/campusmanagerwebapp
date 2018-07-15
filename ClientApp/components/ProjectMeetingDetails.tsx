@@ -3,26 +3,29 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 
-import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
-import Toolbar  from 'material-ui/Toolbar';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import Toolbar  from '@material-ui/core/Toolbar';
 
 /*
-import MenuItem from 'material-ui/MenuItem';
-import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from '@material-ui/core/MenuItem';
+import DropDownMenu from '@material-ui/core/DropDownMenu';
 */
 
-import Button from 'material-ui/Button';
-import Checkbox from 'material-ui/Checkbox';
+import Button from '@material-ui/core/Button';
+import Checkbox from '@material-ui/core/Checkbox';
 
-import AppBar from 'material-ui/AppBar';
-import TextField from 'material-ui/TextField';
+import AppBar from '@material-ui/core/AppBar';
+import TextField from '@material-ui/core/TextField';
 
-import Table, {
-    TableBody,
-    TableHead,
-    TableRow,
-    TableCell
-} from 'material-ui/Table';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
 import * as ProjectDetailsStore from '../store/ProjectDetails';
 
@@ -280,4 +283,4 @@ class ProjectMeetingDetails extends React.Component< ProjectDetailsProps, any> {
 export default connect(
     (state: ApplicationState) => state.projectDetails,
     ProjectDetailsStore.actionCreators)
-    (ProjectMeetingDetails) as typeof ProjectMeetingDetails;
+    (ProjectMeetingDetails);

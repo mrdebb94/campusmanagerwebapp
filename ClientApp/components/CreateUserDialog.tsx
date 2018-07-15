@@ -3,24 +3,24 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as UsersState from '../store/Users';
-import Dialog, {
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-} from 'material-ui/Dialog';
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
-import { WithStyles, StyledComponentProps, withStyles } from 'material-ui/styles';
-import { MenuItem } from 'material-ui/Menu';
-import Input, { InputLabel } from 'material-ui/Input';
-import Select from 'material-ui/Select';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import { WithStyles, StyledComponentProps, withStyles } from '@material-ui/core/styles';
+import MenuItem  from '@material-ui/core/MenuItem';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
 
 
 type UsersProps =
     UsersState.UsersState
     & typeof UsersState.actionCreators
-    & StyledComponentProps<'dialog' | 'button'>;
+    & WithStyles<'dialog' | 'button'>;
 
 const styles = theme => ({
     dialog: {

@@ -99,7 +99,7 @@ namespace EvoManager.Controllers
 				*/
                 var user = _context.Users.FirstOrDefault(m => m.UserName == userModel.UserName);
                 IList<String> roles = await _userManager.GetRolesAsync(user);
-                return Ok(Json(roles));
+                return Ok(Json(new { roles, Id = user.Id }));
             }
             else
             {

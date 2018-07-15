@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
-import TextField from 'material-ui/TextField';
-import Button from 'material-ui/Button';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 import * as SessionStore from '../store/Session';
 import { ApplicationState } from '../store';
-import { StyledComponentProps, WithStyles, withStyles } from 'material-ui/styles';
+import { StyledComponentProps, WithStyles, withStyles } from '@material-ui/core/styles';
 
 const style = {
     button: {
@@ -34,7 +34,7 @@ const styles = theme => ({
 });
 
 type LoginType = SessionStore.SettingsState &
-    StyledComponentProps<'button' | 'textField' | 'loginBox'> &
+    WithStyles<'button' | 'textField' | 'loginBox'> &
     typeof SessionStore.actionCreators & 
     RouteComponentProps<{}>
 
@@ -104,7 +104,7 @@ class Login extends React.Component<LoginType, any> {
                 /></div>
                 <div>
                 <Button
-                    raised
+                    variant="raised"
                     color="primary"
                     className={classes!.button}
                     onClick={(event) => {
@@ -118,7 +118,7 @@ class Login extends React.Component<LoginType, any> {
             {this.props.authenticated &&
                 <div>
                     <Button
-                        raised
+                        variant="raised"
                         color="primary"
                         className={classes!.button}
                         onClick={(event) => {
@@ -135,4 +135,4 @@ class Login extends React.Component<LoginType, any> {
 export default connect(
     (state: ApplicationState) => state.session, // Selects which state properties are merged into the component's props
     SessionStore.actionCreators                 // Selects which action creators are merged into the component's props
-)(withStyles(styles)(Login)) as typeof Login;
+)(withStyles(styles)(Login));

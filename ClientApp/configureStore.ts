@@ -10,7 +10,6 @@ import { ActiveProject } from './store/Project';
 
 let signalrMiddleware = store => next => action => {
     switch (action.type) {
-
         case 'SET_PROJECT_SUBSCRIBE_CONNECTION':
             console.log("CONNECTION MIDDLAWARE");
             let hubConnection = action.projectSubscribeConnection;
@@ -26,11 +25,11 @@ let signalrMiddleware = store => next => action => {
                 console.log("Jelentkezes kozben " + message);
             });
             break;
-        case "SIGNALR_PROJECT_SUBSCRIBE":
+        case "SIGNALR_PROJECT_SUBSCRIBE": {
             //let connection:signalR.HubConnection
             //TODO: check connection
             let { signalRConnections: { projectSubscribeConnection } } = store.getState();
-            
+
             if (projectSubscribeConnection) {
                 console.log(projectSubscribeConnection);
                 console.log("Kezd " + action.projectCampusId);
@@ -39,6 +38,21 @@ let signalrMiddleware = store => next => action => {
                 console.log("FEL KELL IRATKOZNI");
             }
             break;
+        }
+        case "SIGNALR_PROJECT_UNSUBSCRIBE": {
+            //let connection:signalR.HubConnection
+            //TODO: check connection
+            let { signalRConnections: { projectSubscribeConnection } } = store.getState();
+
+            if (projectSubscribeConnection) {
+                console.log(projectSubscribeConnection);
+                console.log("Vege " + action.projectCampusId);
+                projectSubscribeConnection.invoke('UnSubscribeProject', action.projectCampusId);
+            } else {
+                console.log("FEL KELL IRATKOZNI");
+            }
+            break;
+        }
     }
     return next(action);
 };
@@ -56,7 +70,7 @@ export default function configureStore(history: History, initialState?: Applicat
 
     // Combine all reducers and instantiate the app-wide store instance
     const allReducers = buildRootReducer(reducers);
-    const store = createStoreWithMiddleware(allReducers, initialState) as Store<ApplicationState>;
+    const store = (<any>createStoreWithMiddleware)(allReducers, initialState) as Store<ApplicationState>;
 
     // Enable Webpack hot module replacement for reducers
     if (module.hot) {

@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using evomanager_next.Models;
 using Microsoft.AspNetCore.Identity;
 //using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
@@ -21,5 +23,7 @@ namespace EvoManager.Models
 	
 	    public string UserTypeId { get; set; }
 		public virtual UserType UserType { get; set; }
-	}
+
+        public virtual ICollection<ProjectSubscribeConnection> ProjectSubscribeConnections { get; set; }
+    }
 }

@@ -3,26 +3,26 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as CampusStore from '../store/Campus';
-import Dialog, {
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-} from 'material-ui/Dialog';
-import ExpansionPanel, {
-  ExpansionPanelDetails,
-  ExpansionPanelSummary,
-  ExpansionPanelActions,
-} from 'material-ui/ExpansionPanel';
-import Typography from 'material-ui/Typography';
-import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
-import Input, { InputLabel } from 'material-ui/Input';
-import Checkbox from 'material-ui/Checkbox';
-import Chip from 'material-ui/Chip';
-import { WithStyles, StyledComponentProps, withStyles } from 'material-ui/styles';
-import { FormGroup, FormControlLabel } from 'material-ui/Form';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelActions from '@material-ui/core/ExpansionPanelActions';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Input from '@material-ui/core/Input';
+import InputLabel  from '@material-ui/core/InputLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Chip from '@material-ui/core/Chip';
+import { WithStyles, StyledComponentProps, withStyles } from '@material-ui/core/styles';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import * as moment from 'moment';
 
 export interface DateRangeText {
@@ -65,7 +65,7 @@ export interface CampusDialogState {
 type CampusProps =
     CampusStore.CampusState        // ... state we've requested from the Redux store
     & typeof CampusStore.actionCreators      // ... plus action creators we've requested
-    & StyledComponentProps<'button' | 'textField' | 'datePickerTextField'
+    & WithStyles<'button' | 'textField' | 'datePickerTextField'
 	                        | 'root' |'heading' | 'secondaryHeading'
 						  >;
 

@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using EvoManager.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-
+using evomanager_next.Models;
 
 namespace EvoManager {
 	
@@ -39,6 +39,7 @@ namespace EvoManager {
 		public DbSet<SubscribedStudent> SubscribedStudents { get; set; }
 		public DbSet<SubscribedMentor> SubscribedMentors { get; set; }
 		public DbSet<ReportResult> ReportResults { get; set; }
+        public DbSet<ProjectSubscribeConnection> ProjectSubscribeConnection { get; set; }
     }
 	
 }

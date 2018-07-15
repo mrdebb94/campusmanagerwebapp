@@ -3,17 +3,16 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as CampusStore from '../store/Campus';
-import Button from 'material-ui/Button';
-import Toolbar from 'material-ui/Toolbar';
-import Checkbox from 'material-ui/Checkbox';
-import Table, {
-    TableBody,
-    TableHead,
-    TableRow,
-    TableCell
-} from 'material-ui/Table';
-import Paper from 'material-ui/Paper';
-import { StyledComponentProps, WithStyles, withStyles } from 'material-ui/styles';
+import Button from '@material-ui/core/Button';
+import Toolbar from '@material-ui/core/Toolbar';
+import Checkbox from '@material-ui/core/Checkbox';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import { StyledComponentProps, WithStyles, withStyles } from '@material-ui/core/styles';
 import CampusDialog from './CampusDialog';
 
 const styles = theme => ({
@@ -31,7 +30,7 @@ type CampusProps =
     CampusStore.CampusState        // ... state we've requested from the Redux store
     & typeof CampusStore.actionCreators      // ... plus action creators we've requested
     & RouteComponentProps<{}>
-    & StyledComponentProps<'root' | 'tableWrapper'>;
+    & WithStyles<'root' | 'tableWrapper'>;
 
 interface CampusTabState {
     //slideIndex: number;
@@ -140,4 +139,4 @@ class Campus extends React.Component<CampusProps, CampusTabState> {
 export default connect(
     (state: ApplicationState) => state.campus, // Selects which state properties are merged into the component's props
     CampusStore.actionCreators                 // Selects which action creators are merged into the component's props
-)(withStyles(styles)(Campus)) as typeof Campus;
+)(withStyles(styles)(Campus));

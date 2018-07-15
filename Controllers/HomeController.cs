@@ -94,10 +94,12 @@ namespace EvoManager.Controllers
             {
                 IList<String> roles = await _userManager.GetRolesAsync(user);
                 this.ViewBag.Roles = roles;
+                this.ViewBag.Id = user.Id;
             }
             else
             {
                 this.ViewBag.Roles = new List<String>();
+                this.ViewBag.Id = null;
             }
 
             this.ViewBag.IsAuthenticated = this.User.Identity.IsAuthenticated;

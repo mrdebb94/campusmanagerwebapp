@@ -4,20 +4,20 @@ import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as ProjectStore from '../store/Project';
 import * as CampusStore from '../store/Campus';
-import Dialog, {
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-} from 'material-ui/Dialog';
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
-import Select from 'material-ui/Select';
-import { MenuItem } from 'material-ui/Menu';
-import Checkbox from 'material-ui/Checkbox';
-import { FormGroup, FormControlLabel } from 'material-ui/Form';
-import Input, { InputLabel } from 'material-ui/Input';
-
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Input from '@material-ui/core/Input';
+import InputLabel  from '@material-ui/core/InputLabel';
 
 const styles = {
     block: {
@@ -49,8 +49,8 @@ const dataSourceConfig = {
 
 type ProjectProps =
     ProjectStore.ProjectState        // ... state we've requested from the Redux store
-    & typeof ProjectStore.actionCreators      // ... plus action creators we've requested
-    & RouteComponentProps<{}>
+    & typeof ProjectStore.actionCreators;      // ... plus action creators we've requested
+
 
 interface ProjectDialogState {
     projectContinueDisabled: boolean;
@@ -61,8 +61,10 @@ interface ProjectDialogState {
     editedProject: ProjectStore.Project;
 }
 
-export class ProjectDialog extends React.Component<ProjectProps, ProjectDialogState> {
+type ProjectDialogStateReadonly = Readonly<ProjectDialogState>
 
+export class ProjectDialog extends React.Component<ProjectProps, ProjectDialogState> {
+    state: ProjectDialogState;
     constructor(props) {
         super(props);
 
@@ -185,7 +187,7 @@ export class ProjectDialog extends React.Component<ProjectProps, ProjectDialogSt
                                     name: 'project',
                                     id: 'project-helper'
                                 }}
-                                value={this.state.editedProject.projectId}
+                                value={this.state.editedProject.projectId!}
                                 onChange={(event) => {
                                     
                                     this.setState((prevState, props) => ({

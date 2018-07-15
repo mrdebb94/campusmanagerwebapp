@@ -1,14 +1,13 @@
 import * as React from 'react';
 
-import  Button  from 'material-ui/Button';
+import  Button  from '@material-ui/core/Button';
 import { Link, RouteComponentProps } from 'react-router-dom';
-import Toolbar from 'material-ui/Toolbar';
-import Table, {
-    TableBody,
-    TableHead,
-    TableRow,
-    TableCell
-} from 'material-ui/Table';
+import Toolbar from '@material-ui/core/Toolbar';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 import { connect } from 'react-redux';
 
 import * as ProjectDetailsStore from '../store/ProjectDetails';
@@ -81,4 +80,4 @@ class ProjectMeetingsList extends React.Component<ProjectDetailsProps,any> {
 export default connect(
     (state: ApplicationState) => state.projectDetails,
     ProjectDetailsStore.actionCreators)
-    (ProjectMeetingsList) as typeof ProjectMeetingsList;
+    (ProjectMeetingsList);

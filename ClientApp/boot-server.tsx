@@ -9,7 +9,7 @@ import { createServerRenderer, RenderResult } from 'aspnet-prerendering';
 import { routes } from './routes';
 import configureStore from './configureStore';
 import { INIT_SESSION } from './store/Session';
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const XSRF_TOKEN_KEY = "xsrfToken";
 const XSRF_TOKEN_NAME_KEY = "xsrfTokenName";
@@ -32,8 +32,9 @@ export default createServerRenderer(params => {
             type: INIT_SESSION, payload: {
                 authenticated: params.data.authenticated,
                 xsrfToken: '',
-                id: params.data.sessionId,
-                roles: params.data.roles
+                id: params.data.id,
+                roles: params.data.roles,
+                
             }
         });
 

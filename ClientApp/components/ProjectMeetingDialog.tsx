@@ -2,23 +2,21 @@ import * as React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
-import Button  from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
+import Button  from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
-import Dialog, {
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-} from 'material-ui/Dialog';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 import * as ProjectDetailsStore from '../store/ProjectDetails';
 import * as moment from 'moment';
 
 type ProjectDetailsProps =
     ProjectDetailsStore.ProjectDetailsState
-    & typeof  ProjectDetailsStore.actionCreators
-    & RouteComponentProps<{}>
+    & typeof  ProjectDetailsStore.actionCreators;
 
 interface ProjectMeetingForm extends ProjectDetailsStore.ProjectMeeting {
 	startDate?: moment.Moment;

@@ -3,19 +3,19 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 
-import Dialog, {
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-} from 'material-ui/Dialog';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
-import Select from 'material-ui/Select';
-import {MenuItem} from 'material-ui/Menu';
-import Input, { InputLabel } from 'material-ui/Input';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
 
 import * as ProjectStore from '../store/Project';
 
@@ -24,13 +24,12 @@ import * as ProjectStore from '../store/Project';
 type ProjectProps =
     ProjectStore.ProjectState        // ... state we've requested from the Redux store
     & typeof ProjectStore.actionCreators      // ... plus action creators we've requested
-    & RouteComponentProps<{}>
 
 interface ProjectSubscribeType {
     selectedProjectId: string | null;
 }
 
-export class ProjectSubscribeDialog extends React.Component<ProjectProps, any> {
+class ProjectSubscribeDialog extends React.Component<ProjectProps, any> {
 
     state: ProjectSubscribeType = {
         selectedProjectId: null
@@ -74,6 +73,8 @@ export class ProjectSubscribeDialog extends React.Component<ProjectProps, any> {
             <Dialog
                 aria-labelledby="project-dialog-title"
                 title="Projekt jelentkezés módosítása"
+                maxWidth="sm"
+                fullWidth
                 open={this.props.projectSubscribeDialog ? this.props.projectSubscribeDialog.open : false}
             >
                 <DialogTitle id="project-dialog-title">Projekt jelentkezés módosítása</DialogTitle>

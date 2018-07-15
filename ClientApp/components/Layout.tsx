@@ -1,12 +1,12 @@
 import * as React from 'react';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import NavMenu from './NavMenu';
-import Snackbar from 'material-ui/Snackbar';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
-import { StyledComponentProps, WithStyles, withStyles } from 'material-ui/styles';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import { StyledComponentProps, WithStyles, withStyles } from '@material-ui/core/styles';
 
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
@@ -76,7 +76,7 @@ interface LayoutState {
 };
 
 class Layout extends React.Component<
-    StyledComponentProps<'root' | 'flex' | 'appBarRoot' | 'menuButton'>
+    WithStyles<'root' | 'flex' | 'appBarRoot' | 'menuButton'>
     & RouteComponentProps<any>
     & { browser?: any }, LayoutState> {
 
@@ -129,7 +129,7 @@ class Layout extends React.Component<
                             >
                                 <MenuIcon />
                             </IconButton>
-                            <Typography type="title" color="inherit" className={classes!.flex}>
+                            <Typography variant="title" color="inherit" className={classes!.flex}>
                                 EvoCampus manager
                             </Typography>
                         </Toolbar>

@@ -4,26 +4,36 @@ import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as UsersStore from '../store/Users';
 import * as SessionStore from '../store/Session';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import CreateUserDialog from './CreateUserDialog';
-import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
-import  Table, {
-  TableBody,
-  TableHead,
-  TableRow,
-  TableCell
-} from 'material-ui/Table';
-import Toolbar from 'material-ui/Toolbar';
-import Paper from 'material-ui/Paper';
-import { StyledComponentProps, WithStyles, withStyles } from 'material-ui/styles';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Toolbar from '@material-ui/core/Toolbar';
+import Paper from '@material-ui/core/Paper';
+import { StyledComponentProps, WithStyles, withStyles } from '@material-ui/core/styles';
+
+interface OwnStates  {
+  reportData:string;
+  anchorEl:HTMLAnchorElement | null;
+  getUserReportPdf(userId:string);
+}
 
 // At runtime, Redux will merge together...
 type UsersProps =
+  OwnStates&
   UsersStore.UsersState        // ... state we've requested from the Redux store
   & typeof UsersStore.actionCreators      // ... plus action creators we've requested
   & typeof SessionStore.actionCreators 
   & RouteComponentProps<{}>
-  & StyledComponentProps<'root'|'tableWrapper'>;
+  & WithStyles<'root'|'tableWrapper'>;
 
   const styles = theme => ({
     root: {
@@ -140,7 +150,13 @@ class Users extends React.Component<UsersProps, {}> {
   }
 }
 
+//const UsersImpl = withStyles(styles)(Users);
+
 export default connect(
   (state: ApplicationState) => (state.users), // Selects which state properties are merged into the component's props
   {...UsersStore.actionCreators, ...SessionStore.actionCreators }                // Selects which action creators are merged into the component's props
-)(withStyles(styles)(Users)) as typeof Users;
+)(withStyles(styles)(Users));
+/*export default connect(
+  (state: ApplicationState) => (state.users), // Selects which state properties are merged into the component's props
+  {...UsersStore.actionCreators, ...SessionStore.actionCreators }                // Selects which action creators are merged into the component's props
+)(withStyles(styles)(Users)) as typeof Users;*/

@@ -85,7 +85,7 @@ namespace EvoManager.Controllers
                        Student = new Student
                        {
                            StudentId = s.Student.StudentId,
-                           User = new User { Name = s.Student.User.Name }
+                           User = new User { Id = s.Student.User.Id, Name = s.Student.User.Name }
                        }
                    }
                ).ToList(),
@@ -97,7 +97,7 @@ namespace EvoManager.Controllers
                        Mentor = new Mentor
                        {
                            MentorId = s.Mentor.MentorId,
-                           User = new User { Name = s.Mentor.User.Name }
+                           User = new User { Id = s.Mentor.User.Id, Name = s.Mentor.User.Name }
                        }
                    }
                ).ToList(),

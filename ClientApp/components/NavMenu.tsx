@@ -1,13 +1,15 @@
 import * as React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import Paper from 'material-ui/Paper';
-import Drawer from 'material-ui/Drawer';
-import Menu from 'material-ui/Menu';
-import Divider from 'material-ui/Divider';
-import { MenuList, MenuItem } from 'material-ui/Menu';
-import { ListItemIcon, ListItemText } from 'material-ui/List';
-import ListSubheader from 'material-ui/List/ListSubheader';
-import { WithStyles, StyledComponentProps, withStyles } from 'material-ui/styles';
+import Paper from '@material-ui/core/Paper';
+import Drawer from '@material-ui/core/Drawer';
+import Menu from '@material-ui/core/Menu';
+import Divider from '@material-ui/core/Divider';
+import MenuList from '@material-ui/core/MenuList';
+import MenuItem from '@material-ui/core/MenuItem'
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import { WithStyles, StyledComponentProps, withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as UsersStore from '../store/Users';
@@ -49,7 +51,7 @@ type NavMenuProps =
   & SessionStore.SettingsState      // ... plus action creators we've requested
   & typeof SessionStore.actionCreators 
  
-  & StyledComponentProps<'menuItem' | 'text' | 
+  & WithStyles<'menuItem' | 'text' | 
 'icon' | 'drawerPaper'|'scrollDiv'>
   & { open: boolean };
 
@@ -64,7 +66,7 @@ class NavMenu extends React.Component<NavMenuProps, {}> {
             <Drawer
                 anchor='left'
                 open={this.props.open}
-                type='persistent'
+                variant='persistent'
                 classes={{
                     paper: classes!.drawerPaper,
                 }}
@@ -72,11 +74,11 @@ class NavMenu extends React.Component<NavMenuProps, {}> {
                 <div className={classes!.scrollDiv}>
                     <MenuList subheader={<ListSubheader disableSticky={true}>Felhasználó</ListSubheader>}>
                         <MenuItem className={classes!.menuItem}>
-                            <ListItemText classes={{ text: classes!.text }} inset primary="Home" />
+                            <ListItemText inset primary="Home" />
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/login'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset primary="Bejelentkezés" />
+                                <ListItemText inset primary="Bejelentkezés" />
                             </NavLink>
                         </MenuItem>
                     </MenuList>
@@ -85,12 +87,12 @@ class NavMenu extends React.Component<NavMenuProps, {}> {
                     <MenuList subheader={<ListSubheader disableSticky={true}>Admin</ListSubheader>}>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/users'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset primary="Felhasználók" />
+                                <ListItemText inset primary="Felhasználók" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/campus'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset primary="Szemeszterek" />
+                                <ListItemText  inset primary="Szemeszterek" />
                             </NavLink>
                         </MenuItem>
                     </MenuList> 
@@ -100,38 +102,32 @@ class NavMenu extends React.Component<NavMenuProps, {}> {
                     <MenuList subheader={<ListSubheader disableSticky={true}>Aktuális félév</ListSubheader>}>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/currentcampus'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Szemeszter jelentkezés" />
+                                <ListItemText inset primary="Szemeszter jelentkezés" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/currentparticipants'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Résztvevők" />
+                                <ListItemText inset primary="Résztvevők" />
                             </NavLink>
                         </MenuItem>
                     <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/subscribe/add'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Projekt jelentkezés" />
+                                <ListItemText inset primary="Projekt jelentkezés" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/projects'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Projektek" />
+                                <ListItemText inset primary="Projektek" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/subscribe/list'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Projekt jelentkezések" />
+                                <ListItemText inset primary="Projekt jelentkezések" />
                             </NavLink>
                         </MenuItem>
                         <MenuItem className={classes!.menuItem}>
                             <NavLink exact to={'/projectmeetings/list'} activeClassName='active'>
-                                <ListItemText classes={{ text: classes!.text }} inset
-                                    primary="Megbeszélések" />
+                                <ListItemText inset primary="Megbeszélések" />
                             </NavLink>
                         </MenuItem>
                     </MenuList>

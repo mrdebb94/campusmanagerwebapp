@@ -2,18 +2,18 @@ import * as React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
-import AppBar from 'material-ui/AppBar';
-import Button from 'material-ui/Button';
-import Toolbar from 'material-ui/Toolbar';
-import Tabs, { Tab } from 'material-ui/Tabs';
-import Table, {
-    TableBody,
-    TableHead,
-    TableRow,
-    TableCell
-} from 'material-ui/Table';
-import { StyledComponentProps, WithStyles, withStyles } from 'material-ui/styles';
-import Checkbox from 'material-ui/Checkbox';
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import Toolbar from '@material-ui/core/Toolbar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab  from '@material-ui/core/Tab';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { StyledComponentProps, WithStyles, withStyles } from '@material-ui/core/styles';
+import Checkbox from '@material-ui/core/Checkbox';
 
 //TODO: rename CampusParticipations ??
 
@@ -24,7 +24,7 @@ type CampusParticipationProps =
     CampusParticipationStore.CampusParticipationState        // ... state we've requested from the Redux store
     & typeof CampusParticipationStore.actionCreators      // ... plus action creators we've requested
     & RouteComponentProps<{}>
-    & StyledComponentProps<'root' | 'tableWrapper'>;
+    & WithStyles<'root' | 'tableWrapper'>;
 
 interface StudentTabState {
     slideIndex: number;
@@ -194,4 +194,4 @@ class CurrentParticipants extends React.Component<CampusParticipationProps, Stud
 export default connect(
     (state: ApplicationState) => state.campusParticipation,
     CampusParticipationStore.actionCreators
-)(withStyles(styles)(CurrentParticipants)) as typeof CurrentParticipants;
+)(withStyles(styles)(CurrentParticipants));

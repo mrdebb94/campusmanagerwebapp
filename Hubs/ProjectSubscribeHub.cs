@@ -11,16 +11,17 @@ using EvoManager.Models;
 using EvoManager.ViewModels;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using evomanager_next.Models;
 
 namespace evomanager_next.Hubs
 {
     [Authorize]
-    public class ProjectSubscribeHub:Hub
+    public class ProjectSubscribeHub : Hub
     {
         private readonly UserManager<EvoManager.Models.User> _userManager;
         private EvoDbContext _context;
 
-        public ProjectSubscribeHub(EvoDbContext context, UserManager<EvoManager.Models.User> userManager) :base()
+        public ProjectSubscribeHub(EvoDbContext context, UserManager<EvoManager.Models.User> userManager) : base()
         {
             _userManager = userManager;
             _context = context;
@@ -33,6 +34,35 @@ namespace evomanager_next.Hubs
                 await Clients.All.SendAsync("ProjectSubscribeChange", Context.User.Identity.Name, message);
             
         }*/
+
+        public override async System.Threading.Tasks.Task OnConnectedAsync()
+        {
+            //await Groups.AddToGroupAsync(Context.ConnectionId, "SignalR Users");
+            var user = await _userManager.GetUserAsync(Context.User);
+
+            ProjectSubscribeConnection projectSubscribeConnection = new ProjectSubscribeConnection();
+            projectSubscribeConnection.UserId = user.Id;
+            projectSubscribeConnection.ConnectionId = Context.ConnectionId;
+            _context.ProjectSubscribeConnection.Add(projectSubscribeConnection);
+            _context.SaveChanges();
+
+            await base.OnConnectedAsync();
+        }
+
+        public override async System.Threading.Tasks.Task OnDisconnectedAsync(Exception exception)
+        {
+            //await Groups.RemoveFromGroupAsync(Context.ConnectionId, "SignalR Users");
+            var user = await _userManager.GetUserAsync(Context.User);
+            var projectSubscribeConnections = _context.ProjectSubscribeConnection.Where(m => m.User.Id == user.Id);
+
+            foreach(var projectSubscribeConnection in projectSubscribeConnections)
+            {
+                _context.ProjectSubscribeConnection.Remove(projectSubscribeConnection);
+                _context.SaveChanges();
+            }
+
+            await base.OnDisconnectedAsync(exception);
+        }
 
         [Authorize(Roles = "Mentor, Student")]
         public async System.Threading.Tasks.Task SubscribeProject(string projectCampusId)
@@ -181,7 +211,7 @@ namespace evomanager_next.Hubs
                        Student = new Student
                        {
                            StudentId = s.Student.StudentId,
-                           User = new User { Name = s.Student.User.Name }
+                           User = new User {  Id = s.Student.User.Id, Name = s.Student.User.Name }
                        }
                    }
                ).ToList(),
@@ -193,7 +223,166 @@ namespace evomanager_next.Hubs
                        Mentor = new Mentor
                        {
                            MentorId = s.Mentor.MentorId,
-                           User = new User { Name = s.Mentor.User.Name }
+                           User = new User { Id = s.Mentor.User.Id, Name = s.Mentor.User.Name }
+                       }
+                   }
+               ).ToList(),
+               /*Subscribed = ((campusParticipation.StudentId != null
+                          && m.SubscribedStudents
+                          .Count(s => s.ProjectCampusId == m.ProjectCampusId
+                          && s.StudentId == campusParticipation.StudentId
+                          && s.Deleted == false) != 0)
+                          || (campusParticipation.MentorId != null
+                          && m.SubscribedMentors
+                          .Count(s => s.ProjectCampusId == m.ProjectCampusId
+                          && s.MentorId == campusParticipation.MentorId
+                          && s.Deleted == false) != 0))*/
+               Subscribed = false
+               
+
+
+           })
+           .ToList();
+
+            var serializerSettings = new JsonSerializerSettings();
+            serializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            String listString = JsonConvert.SerializeObject(list, serializerSettings);
+
+            await Clients.All.SendAsync("ProjectSubscribeChange", Context.User.Identity.Name, projectCampusId, listString);
+        }
+
+        [Authorize(Roles = "Mentor, Student")]
+        public async System.Threading.Tasks.Task UnSubscribeProject(string projectCampusId)
+        {
+            String returnMessage = "";
+            bool success = false;
+            DateTime currentDate = DateTime.Now;
+
+            var user = await _userManager.GetUserAsync(Context.User);
+            IList<String> roles = await _userManager.GetRolesAsync(user);
+
+            //Be van-e iratkozva a félévre
+            var campusParticipation = _context.CampusParticipations
+            .Include(m => m.Student)
+            .Include(m => m.Mentor)
+            .Where(m => m.Campus.Active &&
+                      ((roles.Contains("Student") && m.StudentId != null && m.Student.UserId == user.Id) ||
+                        (roles.Contains("Mentor") && m.MentorId != null && m.Mentor.UserId == user.Id))
+
+            ).FirstOrDefault();
+
+            if (campusParticipation != null)
+            {
+                //Létezik-e ilyen azonosítójú, 
+                var projectCampus = _context.ProjectCampus
+                   .FirstOrDefault(m => m.ProjectCampusId == projectCampusId &&
+                   m.ProjectStatus.Value == "Active");
+                //TODO: jelentkezési időszak !!!!
+
+                //ha létező projektre jelentkeztünk, és a projekt aktív félévben van
+                //TODO: és aktív státuszú
+                if (projectCampus != null)
+                {
+                    if (campusParticipation.StudentId != null)
+                    {
+                        var subscribedStudent = _context.SubscribedStudents
+                        .FirstOrDefault(m => m.ProjectCampusId == projectCampusId
+                        && m.StudentId == campusParticipation.StudentId
+                        && m.Deleted == false);
+
+                        if (subscribedStudent != null)
+                        {
+                            subscribedStudent.Deleted = true;
+                            _context.SaveChanges();
+                            success = true;
+                        }
+                        else
+                        {
+                            returnMessage = "Érvénytelen leiratkozás!";
+                        }
+
+                    }
+                    else if (campusParticipation.MentorId != null)
+                    {
+                        var subscribedMentor = _context.SubscribedMentors
+                        .FirstOrDefault(m => m.ProjectCampusId == projectCampusId
+                        && m.MentorId == campusParticipation.MentorId
+                        && m.Deleted == false);
+                        if (subscribedMentor != null)
+                        {
+                            subscribedMentor.Deleted = true;
+                            _context.SaveChanges();
+                            success = true;
+                        }
+                        else
+                        {
+                            returnMessage = "Érvénytelen leiratkozás!";
+                        }
+                    }
+
+                }
+                else
+                {
+                    //return Ok(Json("Nem lehet erre a projektre jelentkezni!"));	
+                    returnMessage = "Nem lehet erre a projektre jelentkezni!";
+                }
+
+
+            }
+            else
+            {
+                //return Ok(Json("Nincs beiratkozva a félévre!"));	
+                returnMessage = "Nincs beiratkozva a félévre!";
+            }
+
+            if (!success)
+            {
+                await Clients.Caller.SendAsync("ProjectSubscribeMessage", returnMessage);
+            }
+            else
+            {
+                await Clients.Caller.SendAsync("ProjectSubscribeMessage", returnMessage);
+            }
+
+            var list = _context.ProjectCampus
+           .Include(m => m.SubscribedStudents)
+           .Where(m => m.Campus.Active &&
+                  m.ProjectStatus.Value == "Active")
+           .Select(m => new ProjectViewModel
+           {
+               ProjectCampusId = m.ProjectCampusId,
+               Name = m.Project.Name,
+               Description = m.Project.Description,
+               ProjectStatus = new ProjectStatus
+               {
+                   Value = m.ProjectStatus.Value
+               },
+               Campus = new Campus
+               {
+                   StartDate = m.Campus.StartDate,
+                   EndDate = m.Campus.EndDate
+               },
+               SubscribedStudents = m.SubscribedStudents
+               .Where(s => s.Deleted == false)
+               .Select(
+                   s => new SubscribedStudentViewModel
+                   {
+                       Student = new Student
+                       {
+                           StudentId = s.Student.StudentId,
+                           User = new User { Id = s.Student.User.Id, Name = s.Student.User.Name }
+                       }
+                   }
+               ).ToList(),
+               SubscribedMentors = m.SubscribedMentors
+               .Where(s => s.Deleted == false)
+               .Select(
+                   s => new SubscribedMentorViewModel
+                   {
+                       Mentor = new Mentor
+                       {
+                           MentorId = s.Mentor.MentorId,
+                           User = new User { Id = s.Mentor.User.Id, Name = s.Mentor.User.Name }
                        }
                    }
                ).ToList(),
@@ -215,9 +404,11 @@ namespace evomanager_next.Hubs
             String listString = JsonConvert.SerializeObject(list, serializerSettings);
 
             await Clients.All.SendAsync("ProjectSubscribeChange", Context.User.Identity.Name, projectCampusId, listString);
+
+            //return Ok(Json(returnMessage));
         }
 
-       
+
 
     }
 }
